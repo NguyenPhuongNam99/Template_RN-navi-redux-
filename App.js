@@ -7,11 +7,12 @@ import {
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import Stacknavigation from './src/navigation/Stacknavigation';
-
+import TabNavigation from './src/navigation/TabNavigation';
 const App =()=>{
   return(
     <NavigationContainer>
-      <Stacknavigation />
+      {/* <Stacknavigation /> */}
+      <TabNavigation />
     </NavigationContainer>
    
   )
