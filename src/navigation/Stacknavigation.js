@@ -10,7 +10,7 @@ const Stacknavigation = () => {
     <Stack.Navigator>
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="BookScreen" component={BookScreen} />
-      <Stack.Screen name="TestChuyenTab" component={TestChuyenTab} />
+      {/* <Stack.Screen name="TestChuyenTab" component={TestChuyenTab} /> */}
     </Stack.Navigator>
   );
 }
