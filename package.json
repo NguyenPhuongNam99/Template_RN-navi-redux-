@@ -12,7 +12,11 @@
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/bottom-tabs": "^5.11.8",
+<<<<<<< HEAD
     "@react-navigation/drawer": "^5.12.4",
+=======
+    "@react-navigation/material-top-tabs": "^5.3.14",
+>>>>>>> 44030877a9282490bfa64bf07838982884874b69
     "@react-navigation/native": "^5.9.3",
     "@react-navigation/stack": "^5.14.3",
     "react": "16.13.1",
@@ -22,9 +26,13 @@
     "react-native-reanimated": "^1.13.2",
     "react-native-safe-area-context": "^3.1.9",
     "react-native-screens": "^2.18.0",
+<<<<<<< HEAD
     "react-native-step-indicator": "^1.0.3",
     "react-native-svg": "^12.1.0",
     "react-navigation-tabs": "^2.11.0",
+=======
+    "react-native-tab-view": "^2.15.2",
+>>>>>>> 44030877a9282490bfa64bf07838982884874b69
     "react-redux": "^7.2.2",
     "redux": "^4.0.5"
   },
