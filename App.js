@@ -82,7 +82,7 @@ export default App => {
   const [activeIndex,setActiveIndex] = React.useState(0)
   const scrollToActiveIndex =(index)=>{
     //scroll flatlist
-    setActiveIndex(index)
+    setActiveIndex(index);
 
   }
   console.log("da imag", data)
@@ -97,7 +97,7 @@ export default App => {
         pagingEnabled
         showsHorizontalScrollIndicator={false}
         onMomentumScrollEnd={ev =>{
-          setActiveIndex(Math.floor(ev.nativeEvent.contentOffset.x/width))
+          scrollToActiveIndex(Math.floor(ev.nativeEvent.contentOffset.x/width))
         }}
         renderItem={({ item }) => {
           return (
@@ -118,16 +118,19 @@ export default App => {
         keyExtractor={item => item.id.toString()}
         horizontal
         pagingEnabled
+        style={{position:'absolute',bottom:IMAGE_SIZE}}
+        contentContainerStyle={{paddingHorizontal:SPACING}}
+
         showsHorizontalScrollIndicator={false}
-        renderItem={({ item }) => {
+        renderItem={({ item ,index}) => {
           return (
            <TouchableOpacity onPress={()=>scrollToActiveIndex(index)}>
               < Image
                 source={{ uri: item.src }}
                 style={{width:IMAGE_SIZE,height:IMAGE_SIZE,borderRadius:12,
                   marginRight:SPACING,
-                  borderRadius:2,
-                  borderColor:activeIndex === index ?'yellow':'green'
+                  borderWidth:2,
+                  borderColor:activeIndex === index ? 'yellow': 'green'
 
                 }}
 
