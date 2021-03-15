@@ -39,20 +39,6 @@ import {
 } from 'react-native';
 const { width, height } = Dimensions.get('screen');
 
-// const API_KEY = "YOUR_PEXELS.COM_API_KEY"
-// const API_URL = "https://api.pexels.com/v1/search?query=nature&orientation=portrait&size=small&per_page=20"
-
-// const fetchImagesFromPexels = async() =>{
-//   const data= await fetch(API_URL,{
-//     headers:{
-//       'Authorization':API_KEY
-//     }
-//     })
-//     const {photo} =await data.json();
-//     // console.log(results);
-//     return photo
-// }
-
 const data = [
   { id: 1, src: "https://www.w3schools.com/w3css/img_lights.jpg" },
   { id: 2, src: "https://killerattitudestatus.in/wp-content/uploads/2019/12/gud-night-images.jpg" },
@@ -60,77 +46,84 @@ const data = [
   { id: 4, src: "https://static.toiimg.com/photo/msid-67868104/67868104.jpg?1368689" },
   { id: 5, src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzB0pqU6H_nbOYszqC0JStl9-Fj-cjvF80iw&usqp=CAU" }
 ]
-const IMAGE_SIZE =80;
-const SPACING =10;
-export default App => {
+const IMAGE_SIZE = 80;
+const SPACING = 10;
+const App = ()=> {
   const [images, setImages] = React.useState(data);
-  //   React.useEffect(()=>{
-  //     const fetchImages = async ()=>{
-  //       const images = await fetchImagesFromPexels();
-  //       setImages(images)
-  //       console.log(images);
-  //     }
-
-  //     fetchImages();
-  // //1 api ///laays api ra
-  //   },[])
+  
   if (!images) {
     return <Text style={{ color: 'green' }}>Loading....</Text>;
   }
   const topRef = React.useRef();
   const thumbRef = React.useRef();
-  const [activeIndex,setActiveIndex] = React.useState(0)
-  const scrollToActiveIndex =(index)=>{
+  const [activeIndex, setActiveIndex] = React.useState(0)
+  const scrollToActiveIndex = (index) => {
     //scroll flatlist
     setActiveIndex(index);
-
+    topRef?.current?.scrollToOffset({
+      offset: index * width,
+      animated:true
+    })
+    if(index *(IMAGE_SIZE + SPACING) -IMAGE_SIZE / 2 >width /2)
+    {
+      thumbRef?.current?.scrollToOffset({
+        offset:index *(IMAGE_SIZE + SPACING) -width /2 + IMAGE_SIZE/2,
+        animated:true
+      })
+    }
+    else{
+      thumbRef?.current?.scrollToOffset({
+        offset: 0,
+        animated:true
+      })
+    }
   }
+  const { width, height } = Dimensions.get('screen');
   console.log("da imag", data)
   return (
     <View style={{ flex: 1 }}>
       {/* <StatusBar hidden /> */}
       <FlatList
-        data={images}
         ref={topRef}
+        data={images}
         keyExtractor={item => item.id.toString()}
         horizontal
         pagingEnabled
         showsHorizontalScrollIndicator={false}
-        onMomentumScrollEnd={ev =>{
-          scrollToActiveIndex(Math.floor(ev.nativeEvent.contentOffset.x/width))
-        }}
+        onMomentumScrollEnd={ev => {
+          scrollToActiveIndex(Math.floor(ev.nativeEvent.contentOffset.x / width))
+      }}
         renderItem={({ item }) => {
           return (
-            <View style={{ width, height }}>
+            <View style={{ width:359, height:160,marginTop:7 }}>
               < Image
                 source={{ uri: item.src }}
                 style={[StyleSheet.absoluteFillObject]}
-
+                resizeMethod='resize'
               />
             </View>
           )
-
         }}
       />
       <FlatList
-        data={images}
         ref={thumbRef}
+        data={images}
         keyExtractor={item => item.id.toString()}
         horizontal
         pagingEnabled
-        style={{position:'absolute',bottom:IMAGE_SIZE}}
-        contentContainerStyle={{paddingHorizontal:SPACING}}
-
+        style={{ position: 'absolute', top: 170}}
+        contentContainerStyle={{ paddingHorizontal: SPACING }}
         showsHorizontalScrollIndicator={false}
-        renderItem={({ item ,index}) => {
+        renderItem={({ item, index }) => {
           return (
-           <TouchableOpacity onPress={()=>scrollToActiveIndex(index)}>
+            <TouchableOpacity onPress={() => scrollToActiveIndex(index)}>
               < Image
                 source={{ uri: item.src }}
-                style={{width:IMAGE_SIZE,height:IMAGE_SIZE,borderRadius:12,
-                  marginRight:SPACING,
-                  borderWidth:2,
-                  borderColor:activeIndex === index ? 'yellow': 'green'
+                style={{
+                  width:114, height: IMAGE_SIZE, borderRadius: 12,
+                  marginRight: SPACING-7,
+                  borderWidth: 2,
+                  borderColor: activeIndex === index ? 'yellow' : 'green'
 
                 }}
 
@@ -143,3 +136,4 @@ export default App => {
     </View>
   );
 };
+export default App;
