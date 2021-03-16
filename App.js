@@ -40,11 +40,11 @@ import {
 const { width, height } = Dimensions.get('screen');
 
 const data = [
-  { id: 1, src: "https://www.w3schools.com/w3css/img_lights.jpg" },
+  { id: 1, src: "https://killerattitudestatus.in/wp-content/uploads/2019/12/gud-night-images.jpg" },
   { id: 2, src: "https://killerattitudestatus.in/wp-content/uploads/2019/12/gud-night-images.jpg" },
-  { id: 3, src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVWO8TWW3bYnPdYA17QYp2O5DXmkLg5yReTw&usqp=CAU" },
-  { id: 4, src: "https://static.toiimg.com/photo/msid-67868104/67868104.jpg?1368689" },
-  { id: 5, src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzB0pqU6H_nbOYszqC0JStl9-Fj-cjvF80iw&usqp=CAU" }
+  { id: 3, src: "https://killerattitudestatus.in/wp-content/uploads/2019/12/gud-night-images.jpg" },
+  { id: 4, src: "https://killerattitudestatus.in/wp-content/uploads/2019/12/gud-night-images.jpg" },
+  { id: 5, src: "https://killerattitudestatus.in/wp-content/uploads/2019/12/gud-night-images.jpg" }
 ]
 const IMAGE_SIZE = 80;
 const SPACING = 10;
@@ -61,7 +61,7 @@ const App = ()=> {
     //scroll flatlist
     setActiveIndex(index);
     topRef?.current?.scrollToOffset({
-      offset: index * width,
+      offset: index * width +100,
       animated:true
     })
     if(index *(IMAGE_SIZE + SPACING) -IMAGE_SIZE / 2 >width /2)
@@ -88,18 +88,19 @@ const App = ()=> {
         data={images}
         keyExtractor={item => item.id.toString()}
         horizontal
-        pagingEnabled
+       style={{width:420}}
+        pagingEnabled 
+        contentContainerStyle={{ paddingHorizontal: SPACING }}
         showsHorizontalScrollIndicator={false}
         onMomentumScrollEnd={ev => {
-          scrollToActiveIndex(Math.floor(ev.nativeEvent.contentOffset.x / width))
+          scrollToActiveIndex(Math.floor(ev.nativeEvent.contentOffset.x / width ))
       }}
         renderItem={({ item }) => {
           return (
-            <View style={{ width:359, height:160,marginTop:7 }}>
+            <View style={{width:420, height:160,marginTop:7,backgroundColor:'green'}}>
               < Image
-                source={{ uri: item.src }}
-                style={[StyleSheet.absoluteFillObject]}
-                resizeMethod='resize'
+                source={{ uri: item.src }} resizeMode='cover'
+                style={{width:"100%",height:180,padding:20}}
               />
             </View>
           )
@@ -111,7 +112,7 @@ const App = ()=> {
         keyExtractor={item => item.id.toString()}
         horizontal
         pagingEnabled
-        style={{ position: 'absolute', top: 170}}
+        style={{ position: 'absolute', top: 190}}
         contentContainerStyle={{ paddingHorizontal: SPACING }}
         showsHorizontalScrollIndicator={false}
         renderItem={({ item, index }) => {
@@ -120,7 +121,7 @@ const App = ()=> {
               < Image
                 source={{ uri: item.src }}
                 style={{
-                  width:114, height: IMAGE_SIZE, borderRadius: 12,
+                  width:130, height: IMAGE_SIZE, borderRadius: 12,
                   marginRight: SPACING-7,
                   borderWidth: 2,
                   borderColor: activeIndex === index ? 'yellow' : 'green'
