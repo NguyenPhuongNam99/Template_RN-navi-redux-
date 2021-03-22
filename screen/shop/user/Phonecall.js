@@ -7,16 +7,36 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity
+  TouchableOpacity,
+  ScrollView
 } from 'react-native';
  
 // either import the whole module and call as Communications.method()
 import Communications from 'react-native-communications';
- 
+import ImagePicker from 'react-native-image-crop-picker';
 
+const gotimage =()=>{
+  ImagePicker.openPicker({
+    width: 300,
+    height: 400,
+    cropping: true
+  }).then(image => {
+    console.log(image);
+  });
+}
+const getcamera =()=>{
+  ImagePicker.openCamera({
+    width: 300,
+    height: 400,
+    cropping: true,
+  }).then(image => {
+    console.log(image);
+  });
+}
  
 const Phonecall = ()=>{
      return (
+      
       <View style={styles.container}>
         <TouchableOpacity onPress={() => Communications.phonecall('0123456789', true)}>
           <View style={styles.holder}>
@@ -28,7 +48,7 @@ const Phonecall = ()=>{
             <Text style={styles.text}>Send an email</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => Communications.text('0123456789')}>
+        {/* <TouchableOpacity onPress={() => Communications.text('0123456789')}>
           <View style={styles.holder}>
             <Text style={styles.text}>Send a text/iMessage</Text>
           </View>
@@ -37,8 +57,19 @@ const Phonecall = ()=>{
           <View style={styles.holder}>
             <Text style={styles.text}>Open react-native repo on Github</Text>
           </View>
+        </TouchableOpacity> */}
+        <TouchableOpacity onPress={() => gotimage()}>
+          <View style={styles.holder}>
+            <Text style={styles.text}>Open react-native repo on Github</Text>
+          </View>
         </TouchableOpacity>
+        <TouchableOpacity onPress={() => getcamera()}>
+          <View style={styles.holder}>
+            <Text style={styles.text}>Open react-native repo on Github</Text>
+          </View>
+        </TouchableOpacity> 
       </View>
+     
     );
 }
  
