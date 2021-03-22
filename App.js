@@ -50,7 +50,7 @@
 // const SPACING = 10;
 // const App = ()=> {
 //   const [images, setImages] = React.useState(data);
-  
+
 //   if (!images) {
 //     return <Text style={{ color: 'green' }}>Loading....</Text>;
 //   }
@@ -161,7 +161,7 @@
 //     );
 //   };
 
- 
+
 //     return (
 //       <QRCodeScanner
 //         onRead={onSuccess}
@@ -180,7 +180,7 @@
 //         }
 //       />
 //     );
-  
+
 // }
 
 // const styles = StyleSheet.create({
@@ -205,13 +205,13 @@
 // export default App
 
 import React from 'react';
-import {View,Text} from 'react-native';
-
-const App =()=>{
-  return(
+import { View, Text } from 'react-native';
+import SlideImage from './src/SlideImage';
+const App = () => {
+  return (
 
     <View>
-      <Text>Hello</Text>
+      
     </View>
   )
 }

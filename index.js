@@ -7,4 +7,6 @@ import App from './App';
 import {name as appName} from './app.json';
 import ProductOverview from './screen/shop/ProductOverview';
 import Hello from './screen/shop/user/Hello';
-AppRegistry.registerComponent(appName, () => App);
+import SlideImage from './src/SlideImage';
+import QRCODE from './src/QRCODE'
+AppRegistry.registerComponent(appName, () => SlideImage);

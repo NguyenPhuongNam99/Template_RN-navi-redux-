@@ -48,16 +48,16 @@ const data = [
 ]
 const IMAGE_SIZE = 80;
 const SPACING = 10;
-const App = ()=> {
+const SlideImage = ()=> {
   const [images, setImages] = React.useState(data);
-  
+
   if (!images) {
     return <Text style={{ color: 'green' }}>Loading....</Text>;
   }
   const topRef = React.useRef();
   const thumbRef = React.useRef();
   const [activeIndex, setActiveIndex] = React.useState(0)
-  const SlideImage = (index) => {
+  const scrollToActiveIndex = (index) => {
     //scroll flatlist
     setActiveIndex(index);
     topRef?.current?.scrollToOffset({
@@ -89,6 +89,7 @@ const App = ()=> {
         keyExtractor={item => item.id.toString()}
         horizontal
        style={{width:420}}
+       snapToInterval={width}
         pagingEnabled 
         contentContainerStyle={{ paddingHorizontal: SPACING }}
         showsHorizontalScrollIndicator={false}
@@ -97,7 +98,7 @@ const App = ()=> {
       }}
         renderItem={({ item }) => {
           return (
-            <View style={{width:420, height:160,marginTop:7,backgroundColor:'green'}}>
+            <View style={{width:420, height:160,marginTop:7,backgroundColor:'green',margin:40}}>
               < Image
                 source={{ uri: item.src }} resizeMode='cover'
                 style={{width:"100%",height:180,padding:20}}
