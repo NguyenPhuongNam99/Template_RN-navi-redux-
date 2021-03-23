@@ -186,6 +186,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation project(':react-native-contacts')
     implementation 'com.android.support:multidex:2.0.1'
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
