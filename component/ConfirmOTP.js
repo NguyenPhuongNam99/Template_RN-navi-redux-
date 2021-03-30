@@ -7,7 +7,7 @@ import {
   useBlurOnFulfill,
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
-import OTPInputView from '@twotalltotems/react-native-otp-input'
+// import OTPInputView from '@twotalltotems/react-native-otp-input'
 
 const styles = StyleSheet.create({
   root: {flex: 1, padding: 20,backgroundColor:'#E5E5E5'},

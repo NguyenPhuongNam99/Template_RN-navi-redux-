@@ -46,7 +46,7 @@ const Home = () => {
         },
         {
             id: 2,
-            image: require('../assets/v5.jpg')
+            image: require('../assets/lb.jpg')
         },
         {
             id: 3,
@@ -62,30 +62,30 @@ const Home = () => {
         {
             id: 1,
             image: require('../assets/Lt.png'),
-            image2: require('../assets/v22.png'),
+            image2: require('../assets/lb.jpg'),
             image3: require('../assets/lt2.png'),
             image4: require('../assets/lt3.png'),
         },
         {
             id: 2,
-            image: require('../assets/voucher.png'),
-            image2: require('../assets/voucher.png'),
-            image3: require('../assets/voucher.png'),
-            image2: require('../assets/voucher.png'),
+            image: require('../assets/lb.jpg'),
+            image2: require('../assets/lb1.jpg'),
+            image3: require('../assets/lb2.jpg'),
+            image4: require('../assets/lb3.jpg'),
         },
         {
             id: 3,
-            image: require('../assets/voucher.png'),
-            image2: require('../assets/voucher.png'),
-            image3: require('../assets/voucher.png'),
-            image2: require('../assets/voucher.png'),
+            image: require('../assets/hg1.jpg'),
+            image2: require('../assets/hg2.jpg'),
+            image3: require('../assets/hg3.jpg'),
+            image4: require('../assets/hg4.jpg'),
         },
         {
             id: 4,
-            image: require('../assets/voucher.png'),
-            image2: require('../assets/voucher.png'),
-            image3: require('../assets/voucher.png'),
-            image2: require('../assets/voucher.png'),
+            image: require('../assets/sn1.jpg'),
+            image2: require('../assets/sn2.jpg'),
+            image3: require('../assets/sn3.jpg'),
+            image4: require('../assets/sn4.jpg'),
         },
     ]
     const Item = ({ item }) => {
@@ -134,7 +134,7 @@ const Home = () => {
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
                         data={data}
-                        keyExtractor={(item) => item.id}
+                        keyExtractor={item => item.index_id.toString()}
                         renderItem={({ item }) =>
                             <Item item={item} />
                         }
@@ -172,7 +172,7 @@ const Home = () => {
                         data={voucherdata}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item) => item.id}
+                        keyExtractor={item => item.index_id.toString()}
                         renderItem={({ item }) =>
                             <Voucher voucher_item={item} />
                         }
@@ -190,13 +190,30 @@ const Home = () => {
                         data={sheduleNowData}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item) => item.id}
+                        keyExtractor={item => item.index_id.toString()}
                         renderItem={({ item }) =>
                             <SheduleNow sheduleNow_item={item} />
                         }
                     />
                 </View>
-
+ {/* khuyến mại */}
+ <View style={styles.Discount}>
+                    <Text style={styles.discount_title}>Khuyến mại</Text>
+                    <TouchableOpacity>
+                        <Text style={styles.discount_title1}>Xem thêm ></Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                    <FlatList
+                        data={voucherdata}
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                        keyExtractor={item => item.index_id.toString()}
+                        renderItem={({ item }) =>
+                            <Voucher voucher_item={item} />
+                        }
+                    />
+                </View>
             </View>
         </ScrollView>
     )
