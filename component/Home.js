@@ -65,57 +65,274 @@ const Home = () => {
             image2: require('../assets/v22.png'),
             image3: require('../assets/lt2.png'),
             image4: require('../assets/lt3.png'),
+            title: 'Đà Lạt, Lâm Đồng',
+            time: '(5 ngày)',
+            location: require('../assets/location.png'),
+            des: 'Việt Nam',
+            avatar: require('../assets/nam.jpg'),
+            name: 'Phương Nam',
+            timmer: '10 giờ trước'
         },
         {
             id: 2,
-            image: require('../assets/voucher.png'),
-            image2: require('../assets/voucher.png'),
-            image3: require('../assets/voucher.png'),
-            image2: require('../assets/voucher.png'),
+            image: require('../assets/hg1.jpg'),
+            image2: require('../assets/hg2.jpg'),
+            image3: require('../assets/hg3.jpg'),
+            image4: require('../assets/hg4.jpg'),
+            title: 'Đà Lạt, Lâm Đồng',
+            time: '(5 ngày)',
+            location: require('../assets/location.png'),
+            des: 'Việt Nam',
+            avatar: require('../assets/trang.jpg'),
+            name: 'Huyền Trang',
+            timmer: '10 giờ trước'
+
         },
         {
             id: 3,
-            image: require('../assets/voucher.png'),
-            image2: require('../assets/voucher.png'),
-            image3: require('../assets/voucher.png'),
-            image2: require('../assets/voucher.png'),
+            image: require('../assets/lb.jpg'),
+            image2: require('../assets/lb1.jpg'),
+            image3: require('../assets/lb2.jpg'),
+            image4: require('../assets/lb3.jpg'),
+            title: 'Đà Lạt, Lâm Đồng',
+            time: '(5 ngày)',
+            location: require('../assets/location.png'),
+            des: 'Việt Nam',
+            avatar: require('../assets/hung.jpg'),
+            name: 'Quốc Hùng',
+            timmer: '10 giờ trước'
         },
         {
             id: 4,
-            image: require('../assets/voucher.png'),
-            image2: require('../assets/voucher.png'),
-            image3: require('../assets/voucher.png'),
-            image2: require('../assets/voucher.png'),
+            image: require('../assets/sn1.jpg'),
+            image2: require('../assets/sn2.jpg'),
+            image3: require('../assets/sn3.jpg'),
+            image4: require('../assets/sn4.jpg'),
+            title: 'Đà Lạt, Lâm Đồng',
+            time: '(5 ngày)',
+            location: require('../assets/location.png'),
+            des: 'Việt Nam',
+            avatar: require('../assets/trang1.jpg'),
+            name: 'Nguyễn Trang',
+            timmer: '10 giờ trước'
+        },
+    ]
+    //địa điểm phổ biến data
+
+    const Desdata = [
+        {
+            id: 1,
+            image: require('../assets/ls.png'),
+        },
+        {
+            id: 2,
+            image: require('../assets/nt.png'),
+        },
+        {
+            id: 3,
+            image: require('../assets/tr3.jpg'),
+            name: 'Phú Quốc'
+        },
+        {
+            id: 4,
+            image: require('../assets/tr1.jpg'),
+            name: 'Hà Nội'
+        },
+        {
+            id: 5,
+            image: require('../assets/tr2.jpg'),
+            name: 'Thạch Thất'
+        },
+        //điểm đến 
+       
+
+    ]
+    //trải nghiệm nổi bật 
+    const Expe = [
+        {
+            id: 1,
+            image: require('../assets/ex.png'),
+            name: 'Ngắm bình minh Phú Yên',
+            location: require('../assets/location.png'),
+            des: 'Phú Yên , Việt Nam'
+        },
+        {
+            id: 2,
+            image: require('../assets/ex2.png'),
+            name: 'Chinh phục Fanxipan',
+            location: require('../assets/location.png'),
+            des: 'Phú Quốc , Việt Nam'
+        },
+        {
+            id: 3,
+            image: require('../assets/ex3.jpg'),
+            name: 'Công viên các hoàng tử',
+            location: require('../assets/location.png'),
+            des: 'Hà Giang , Việt Nam'
+        },
+        {
+            id: 4,
+            image: require('../assets/ex4.jpg'),
+            name: 'Hà nội yêu dấu',
+            location: require('../assets/location.png'),
+            des: 'Yên Sở , Việt Nam'
+        },
+        {
+            id: 5,
+            image: require('../assets/ex5.jpg'),
+            name: 'Thạch thất quê tôi',
+            location: require('../assets/location.png'),
+            des: 'Hà Tây , Việt Nam'
+        },
+    ]
+    const DiemDen =[
+        {
+            id: 1,
+            imagedd: require('../assets/sp.png'),
+           
+        },
+        {
+            id: 2,
+            imagedd: require('../assets/mc.png'),
+           
+        },
+        {
+            id: 3,
+            imagedd: require('../assets/dd.jpg'),
+            namedd: 'Thạch Thất'
+        },
+        {
+            id:4,
+            imagedd: require('../assets/dd3.jpg'),
+            namedd: 'Thạch Thất'
+        },
+        {
+            id: 5,
+            imagedd: require('../assets/dd2.jpg'),
+            namedd: 'Thạch Thất'
+        },
+        {
+            id: 6,
+            imagedd: require('../assets/dd4.jpg'),
+            namedd: 'Thạch Thất'
+        },
+        {
+            id: 7,
+            imagedd: require('../assets/dd5.jpg'),
+            namedd: 'Thạch Thất'
         },
     ]
     const Item = ({ item }) => {
         return (
             <View style={{ flexDirection: 'column', paddingHorizontal: 11, paddingTop: 29 }}>
-                <Image style={{ width: 35, height: 35, marginBottom: 6, marginHorizontal: 4 }} source={item.img} />
+                <Image style={{ width: 35, height: 35, marginBottom: 6, marginHorizontal: 4 }} resizeMode='cover' source={item.img} />
                 <Text style={{ color: '#FFFFFF', fontSize: 12, fontWeight: '500', lineHeight: 14 }}>{item.title}</Text>
             </View>
         )
     }
+    //voucher
     const Voucher = ({ voucher_item }) => {
         return (
             <Image style={{ width: 300, height: 150, marginHorizontal: 6, borderRadius: 5 }} source={voucher_item.image} />
 
         )
     }
+    //lịch trình
     const SheduleNow = ({ sheduleNow_item }) => {
         return (
-            <View style={styles.header_shedule}>
-                <View style={styles.left1}>
-                    <Image style={{ width: 120, height: 160, borderTopLeftRadius: 5 }} source={sheduleNow_item.image} />
+            <View style={styles.container_header}>
+
+
+                <View style={styles.header_shedule}>
+                    <View style={styles.left1}>
+                        <Image style={{ width: 120, height: 160, borderTopLeftRadius: 5 }} source={sheduleNow_item.image} />
+                    </View>
+                    <View style={styles.right1}>
+                        <Image style={{ width: 174, height: 77, marginHorizontal: 6, borderRadius: 5 }} resizeMode='cover' source={sheduleNow_item.image2} />
+                        <View style={styles.schedule_bottom}>
+                            <Image style={{ width: 84, height: 77, marginHorizontal: 6, }} resizeMode='cover' source={sheduleNow_item.image4} />
+                            <Image style={{ width: 84, height: 77, }} resizeMode='cover' source={sheduleNow_item.image3} />
+                        </View>
+                    </View>
+
+
                 </View>
-                <View style={styles.right1}>
-                    <Image style={{ width: 174, height: 77, marginHorizontal: 6, borderRadius: 5 }} resizeMode='cover' source={sheduleNow_item.image2} />
-                    <View style={styles.schedule_bottom}>
-                    <Image style={{ width: 84, height: 77, marginHorizontal: 6,  }} resizeMode='cover' source={sheduleNow_item.image4} />
-                    <Image style={{ width: 84, height: 77,   }} resizeMode='cover' source={sheduleNow_item.image3} />
+                <View style={styles.header_title_block}>
+                    <View style={styles.left_header}>
+                        <View style={{ flexDirection: 'row' }}>
+                            <Text style={{ color: '#000000', fontSize: 14, fontWeight: 'bold' }}>{sheduleNow_item.title} </Text>
+                            <Text>{sheduleNow_item.time}</Text>
+                        </View>
+                        <View style={{ flexDirection: 'row', marginTop: 3, paddingRight: 4 }}>
+                            <Image style={{ width: 25, height: 25, marginHorizontal: 6, borderRadius: 14 }}
+                                resizeMode='cover'
+                                source={sheduleNow_item.avatar} />
+                            <View >
+                                <Text>{sheduleNow_item.name}</Text>
+                                <Text>{sheduleNow_item.timmer}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View style={styles.right_header}>
+                        <View style={{ flexDirection: 'row' }}>
+                            <Image style={{ width: 25, height: 25, marginHorizontal: 6, borderRadius: 14 }}
+                                resizeMode='contain'
+                                source={sheduleNow_item.location} />
+                            <Text>{sheduleNow_item.des}</Text>
+                        </View>
+                        <TouchableOpacity style={{ backgroundColor: '#FF5F24', width: 104, height: 20, justifyContent: 'center', alignItems: 'center', borderRadius: 5 }}>
+                            <Text style={{ color: '#FFFFFF', fontSize: 10, fontWeight: 'normal', }}>5,200,000 đ/ người</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
             </View>
+        )
+    }
+
+    const Destination = ({ Destination_item }) => {
+        return (
+            <View>
+                <Image style={{ width: 150, height: 200, borderRadius: 5, marginHorizontal: 11 }} source={Destination_item.image} />
+                <Text style={{ position: 'absolute', bottom: 8, left: 19, color: '#FFFFFF', fontSize: 14, fontWeight: '600' }}>{Destination_item.des}</Text>
+            </View>
+
+
+        )
+    }
+
+    //trải nghiệm Experient
+
+    const Experient = ({ Experient_item }) => {
+        return (
+            <View >
+                <View>
+                    <Image style={{ width: 200, height: 200, borderRadius: 5, marginHorizontal: 11 }} source={Experient_item.image} />
+
+                </View>
+                {/* <Text style={{color:'#FFFFFF',fontSize:14,fontWeight:'600',width:100}}>{Experient_item.name}</Text> */}
+                <View style={{ marginTop: 12, marginHorizontal: 13 }}>
+
+                    <Text style={{fontFamily:'Roboto-Black',lineHeight:17, color: '#000000', fontSize: 14, fontWeight: '500', fontStyle: 'normal' }}>{Experient_item.name}</Text>
+                    <View style={{flexDirection:'row',marginTop:4}}>
+                    <Image style={{ width: 25, height: 25, borderRadius: 14 }}
+                        resizeMode='contain'
+                        source={Experient_item.location} />
+                    <Text style={{paddingLeft:4}}>{Experient_item.des}</Text>
+                    </View>
+                </View>
+
+            </View>
+
+
+        )
+    }
+    const Destination1 = ({ Destination1_item }) => {
+        return (
+            <View>
+                <Image style={{ width: 150, height: 200, borderRadius: 5, marginHorizontal: 11 }} source={Destination1_item.imagedd} />
+                <Text style={{ position: 'absolute', bottom: 8, left: 19, fontSize: 14, color: '#FFFFFF', fontWeight: '600' }}>{Destination1_item.namedd}</Text>
+            </View>
+
 
         )
     }
@@ -196,7 +413,60 @@ const Home = () => {
                         }
                     />
                 </View>
+                {/* destination */}
+                <View style={styles.Discount}>
+                    <Text style={styles.discount_title}>Địa điểm phổ biến</Text>
+                    <TouchableOpacity>
+                        <Text style={styles.discount_title1}>Xem thêm ></Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                    <FlatList
+                        data={Desdata}
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                        keyExtractor={(item) => item.id}
+                        renderItem={({ item }) =>
+                            <Destination Destination_item={item} />
+                        }
+                    />
+                </View>
 
+                <View style={styles.Discount}>
+                    <Text style={styles.discount_title}>Trải nghiệm nổi bật</Text>
+                    <TouchableOpacity>
+                        <Text style={styles.discount_title1}>Xem thêm ></Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                    <FlatList
+                        data={Expe}
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                        keyExtractor={(item) => item.id}
+                        renderItem={({ item }) =>
+                            <Experient Experient_item={item} />
+                        }
+                    />
+                </View>
+
+                <View style={styles.Discount}>
+                    <Text style={styles.discount_title}>Điểm đến tháng 12</Text>
+                    <TouchableOpacity>
+                        <Text style={styles.discount_title1}>Xem thêm ></Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                    <FlatList
+                        data={DiemDen}
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                        keyExtractor={(item) => item.id}
+                        renderItem={({ item }) =>
+                            <Destination1 Destination1_item={item} />
+                        }
+                    />
+                </View>
             </View>
         </ScrollView>
     )
@@ -283,8 +553,19 @@ const styles = StyleSheet.create({
         lineHeight: 14,
         fontWeight: 'normal'
     },
+    container_header: {
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
+    },
     header_shedule: {
-        flexDirection: 'row',marginHorizontal:4
+        flexDirection: 'row', marginHorizontal: 4
     },
     left1: {
         flex: 1,
@@ -292,10 +573,16 @@ const styles = StyleSheet.create({
     },
     right1: {
         flex: 4,
-       
+
     },
-    schedule_bottom:{
-        flexDirection:'row',marginTop:5
+    schedule_bottom: {
+        flexDirection: 'row', marginTop: 5
+    },
+    header_title_block: {
+        marginTop: 16,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginHorizontal: 16
     }
 })
 export default Home
