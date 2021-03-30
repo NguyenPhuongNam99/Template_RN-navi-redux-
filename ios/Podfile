@@ -10,6 +10,8 @@ target 'tesst' do
 
   pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
 
+  pod 'SajjadBlurOverlay', :path => '../node_modules/react-native-blur-overlay'
+
   target 'tesstTests' do
     inherit! :complete
     # Pods for testing

@@ -11,5 +11,8 @@ import SlideImage from './src/SlideImage';
 import QRCODE from './src/QRCODE';
 import Phonecall from './screen/shop/user/Phonecall';
 import OrderScreen from './screen/shop/OrderScreen';
-import ConfirmOTP from './src/ConfirmOTP';
-AppRegistry.registerComponent(appName, () => ConfirmOTP);
+import Blur from './screen/shop/Blur'
+import ConfirmOTP from './src/ConfirmOTP'
+import UpdateProfile from './src/UpdateProfile'
+import Home from './src/Home';
+AppRegistry.registerComponent(appName, () => Home);
