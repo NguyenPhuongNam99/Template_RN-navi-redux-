@@ -12,7 +12,10 @@ import QRCODE from './src/QRCODE';
 import Phonecall from './screen/shop/user/Phonecall';
 import OrderScreen from './screen/shop/OrderScreen';
 import Blur from './screen/shop/Blur'
-import ConfirmOTP from './src/ConfirmOTP'
 import UpdateProfile from './src/UpdateProfile'
 import Home from './src/Home';
-AppRegistry.registerComponent(appName, () => Home);
+import FirstScreen from './component/FirstScreen';
+import SecondScreen from './component/SecondScreen';
+import ConfirmOTP from './component/ConfirmOTP'
+
+AppRegistry.registerComponent(appName, () => ConfirmOTP);
