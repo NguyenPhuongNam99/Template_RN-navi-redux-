@@ -27,5 +27,11 @@ dependencies {
     }
   2 Gradel.wrapper property : change :  distributionUrl=https://services.gradle.org/distributions/gradle-6.1.1-all.zip
   
- 3 : NDK NOT VERSION
+ 3 : NDK NOT VERSION OR NDK NOT HAVE A SOURCE PROPERTIES FILESS:
  ==>ANDROID STUDIO INSTALL VERSION ==>SEARCH STACKOVERFLOW ==>HOẶC KHI BÁO LỖI NÓ SẼ IN RA VERSION MẶC ĐỊNH ==>TA CHỌN RỒI INSTALL
+ 
+ 
+![image](https://user-images.githubusercontent.com/73121884/113107113-ba32b100-922d-11eb-946d-9ba168a60414.png)
+==>Slove PROBLEM :
+              +)Kiểm tra trong ANDROID STUDIO đã cài NDK chưa ? ==>nếu chưa thì install ===>bản mặc định của nó ( hiển thị khi build project lỗi )==>tìm rồi install
+              +)vào code tìm app/build.gradle : search NDK version : chỉnh sửa giống với version đã install ở android studio
