@@ -26,3 +26,6 @@ dependencies {
         // in the individual module build.gradle files
     }
   2 Gradel.wrapper property : change :  distributionUrl=https://services.gradle.org/distributions/gradle-6.1.1-all.zip
+  
+ 3 : NDK NOT VERSION
+ ==>ANDROID STUDIO INSTALL VERSION ==>SEARCH STACKOVERFLOW ==>HOẶC KHI BÁO LỖI NÓ SẼ IN RA VERSION MẶC ĐỊNH ==>TA CHỌN RỒI INSTALL
