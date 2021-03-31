@@ -17,4 +17,6 @@ import {name as appName} from './app.json';
 // import SecondScreen from './component/SecondScreen';
 import ConfirmOTP from './component/ConfirmOTP'
 import Home from './component/Home'
-AppRegistry.registerComponent(appName, () => Home);
+import HomeScreen from './src/HomeScreen'
+import Stacknavigation from './src/navigation/Stacknavigation'
+AppRegistry.registerComponent(appName, () => App);

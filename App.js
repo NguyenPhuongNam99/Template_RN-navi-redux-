@@ -141,6 +141,49 @@
 
 // 'use strict';
 
+
+
+import React from "react";
+import { createStackNavigator } from "@react-navigation/stack";
+import HomeScreen from './src/HomeScreen'
+import BookScreen from './src/BookScreen'
+import { NavigationContainer } from '@react-navigation/native';
+
+// import TestChuyenTab from '../TestChuyenTab';
+// import Home from '../../component/Home'
+import Home from './component/Home';
+import Hotel_Icon from './component/Hotel_Icon'
+import RestaurantIcon from './component/RestaurantIcon';
+import DiscountHeader from './component/DiscountHeader'
+import ScheduleHeader from './component/ScheduleHeader';
+const Stack = createStackNavigator();
+
+const App = () => {
+  return (
+    <NavigationContainer>
+    <Stack.Navigator initialRouteName="ScheduleHeader">
+      <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen name="BookScreen" component={BookScreen} />
+      <Stack.Screen name="Home" component={Home}  options={{headerShown: false}} />
+      <Stack.Screen name="Hotel_Icon" component={Hotel_Icon}  options={{headerShown: false}}/>
+      <Stack.Screen name="RestaurantIcon" component={RestaurantIcon}  options={{headerShown: false}}/>
+      <Stack.Screen name="DiscountHeader" component={DiscountHeader}  options={{headerShown: false}}/>
+      <Stack.Screen name="ScheduleHeader" component={ScheduleHeader}  options={{headerShown: false}}/>
+
+
+
+    </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default  App;
+
+
+
+
+
+
 // import React, { Component } from 'react';
 
 // import {
@@ -204,15 +247,15 @@
 // });
 // export default App
 
-import React from 'react';
-import { View, Text } from 'react-native';
-import SlideImage from './src/SlideImage';
-const App = () => {
-  return (
+// import React from 'react';
+// import { View, Text } from 'react-native';
+// import SlideImage from './src/SlideImage';
+// const App = () => {
+//   return (
 
-    <View>
+//     <View>
       
-    </View>
-  )
-}
-export default App
+//     </View>
+//   )
+// }
+// export default App

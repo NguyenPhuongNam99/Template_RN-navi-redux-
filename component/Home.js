@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, FlatList, TextInput, ScrollView } from '
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
-const Home = () => {
+const Home = ({navigation}) => {
     //data icon Top
     const data = [
         {
@@ -144,7 +144,7 @@ const Home = () => {
             name: 'Thạch Thất'
         },
         //điểm đến 
-       
+
 
     ]
     //trải nghiệm nổi bật 
@@ -185,16 +185,16 @@ const Home = () => {
             des: 'Hà Tây , Việt Nam'
         },
     ]
-    const DiemDen =[
+    const DiemDen = [
         {
             id: 1,
             imagedd: require('../assets/sp.png'),
-           
+
         },
         {
             id: 2,
             imagedd: require('../assets/mc.png'),
-           
+
         },
         {
             id: 3,
@@ -202,7 +202,7 @@ const Home = () => {
             namedd: 'Thạch Thất'
         },
         {
-            id:4,
+            id: 4,
             imagedd: require('../assets/dd3.jpg'),
             namedd: 'Thạch Thất'
         },
@@ -213,90 +213,90 @@ const Home = () => {
         },
         {
             id: 6,
-            imagedd: require('../assets/dd4.jpg'),
+            imagedd: require('../assets/tr4.jpg'),
             namedd: 'Thạch Thất'
         },
         {
             id: 7,
-            imagedd: require('../assets/dd5.jpg'),
+            imagedd: require('../assets/tr5.jpg'),
             namedd: 'Thạch Thất'
         },
     ]
-    const Hoteldata =[
+    const Hoteldata = [
         {
-            id:1,
+            id: 1,
             image: require('../assets/ks.png'),
-            version:'khách sạn',
+            version: 'khách sạn',
             name: 'The Herriott Hotel & Suite',
-            comment:require('../assets/sa.png'),
+            comment: require('../assets/sa.png'),
             location: require('../assets/location.png'),
             des: 'Phước Mỹ , Đà Nẵng',
-            price:'500,000 đ/ đêm'
+            price: '500,000 đ/ đêm'
 
         },
         {
-            id:2,
+            id: 2,
             image: require('../assets/ks1.png'),
-            version:'Resort',
+            version: 'Resort',
             name: ' Naman Retreat',
-            comment:require('../assets/sa.png'),
+            comment: require('../assets/sa.png'),
             location: require('../assets/location.png'),
             des: 'Phước Mỹ , Đà Nẵng',
-            price:'500,000 đ/ đêm'
+            price: '500,000 đ/ đêm'
 
         },
         {
-            id:3,
+            id: 3,
             image: require('../assets/ht.jpg'),
-            version:'Resort',
-            name: 'Thạch Thất',
-            comment:require('../assets/sa.png'),
+            version: 'Resort',
+            name: 'Tây Phương',
+            comment: require('../assets/sa.png'),
             location: require('../assets/location.png'),
-            des: 'Phước Mỹ , Đà Nẵng',
-            price:'500,000 đ/ đêm'
+            des: 'Quốc Oai, Hà Nội',
+            price: '1,000,000 đ/ đêm'
 
         },
         {
-            id:4,
-            image: require('../assets/ht1.jpg'),
-            version:'khách sạn',
-            name: 'Thạch Thất',
-            comment:require('../assets/sa.png'),
-            location: require('../assets/location.png'),
-            des: 'Phước Mỹ , Đà Nẵng',
-            price:'500,000 đ/ đêm'
-
-        },
-        {
-            id:5,
-            image: require('../assets/ht3.jpg'),
-            version:'khách sạn',
-            name: 'Thạch Thất',
-            comment:require('../assets/sa.png'),
-            location: require('../assets/location.png'),
-            des: 'Phước Mỹ , Đà Nẵng',
-            price:'500,000 đ/ đêm'
-
-        },
-        ,
-        {
-            id:6,
+            id: 4,
             image: require('../assets/ht2.jpg'),
-            version:'khách sạn',
-            name: 'Thạch Thất',
-            comment:require('../assets/sa.png'),
+            version: 'Resort',
+            name: 'Chùa Thầy',
+            comment: require('../assets/sa.png'),
             location: require('../assets/location.png'),
-            des: 'Phước Mỹ , Đà Nẵng',
-            price:'500,000 đ/ đêm'
+            des: 'Thạch Thất ,Hà Nội',
+            price: '500,000 đ/ đêm'
 
         },
+        {
+            id: 5,
+            image: require('../assets/ht3.jpg'),
+            version: 'Resort',
+            name: 'Phú Quốc ',
+            comment: require('../assets/sa.png'),
+            location: require('../assets/location.png'),
+            des: 'Phú Quốc, Kiên Giang',
+            price: '500,000 đ/ đêm'
+
+        },
+
     ]
+    const check =(item)=>{
+        if(item == 3){
+            navigation.navigate('Hotel_Icon')
+        }
+        if(item ==4){
+            navigation.navigate('RestaurantIcon')
+        }
+    } 
     const Item = ({ item }) => {
         return (
-            <View style={{ flexDirection: 'column', paddingHorizontal: 11, paddingTop: 29 }}>
+            <TouchableOpacity onPress={()=>check(item.id)}>
+                 <View style={{ flexDirection: 'column', paddingHorizontal: 11, paddingTop: 29 }}>
                 <Image style={{ width: 35, height: 35, marginBottom: 6, marginHorizontal: 4 }} resizeMode='cover' source={item.img} />
                 <Text style={{ color: '#FFFFFF', fontSize: 12, fontWeight: '500', lineHeight: 14 }}>{item.title}</Text>
             </View>
+            </TouchableOpacity>
+           
         )
     }
     //voucher
@@ -344,12 +344,12 @@ const Home = () => {
                     </View>
                     <View style={styles.right_header}>
                         <View style={{ flexDirection: 'row' }}>
-                            <Image style={{ width: 25, height: 25, marginHorizontal: 6, borderRadius: 14 }}
-                                resizeMode='contain'
+                            <Image style={{ width: 12, height: 13, marginHorizontal: 6, borderRadius: 14 }}
+
                                 source={sheduleNow_item.location} />
                             <Text>{sheduleNow_item.des}</Text>
                         </View>
-                        <TouchableOpacity style={{ backgroundColor: '#FF5F24', width: 104, height: 20, justifyContent: 'center', alignItems: 'center', borderRadius: 5 }}>
+                        <TouchableOpacity style={{ backgroundColor: '#FF5F24', width: 104, height: 20, justifyContent: 'center', alignItems: 'center', borderRadius: 5,marginTop:4 }}>
                             <Text style={{ color: '#FFFFFF', fontSize: 10, fontWeight: 'normal', }}>5,200,000 đ/ người</Text>
                         </TouchableOpacity>
                     </View>
@@ -381,12 +381,12 @@ const Home = () => {
                 {/* <Text style={{color:'#FFFFFF',fontSize:14,fontWeight:'600',width:100}}>{Experient_item.name}</Text> */}
                 <View style={{ marginTop: 12, marginHorizontal: 13 }}>
 
-                    <Text style={{fontFamily:'Roboto-Black',lineHeight:17, color: '#000000', fontSize: 14, fontWeight: '500', fontStyle: 'normal' }}>{Experient_item.name}</Text>
-                    <View style={{flexDirection:'row',marginTop:4}}>
-                    <Image style={{ width: 25, height: 25, borderRadius: 14 }}
-                        resizeMode='contain'
-                        source={Experient_item.location} />
-                    <Text style={{paddingLeft:4}}>{Experient_item.des}</Text>
+                    <Text style={{ fontFamily: 'Roboto-Black', lineHeight: 17, color: '#000000', fontSize: 14, fontWeight: '500', fontStyle: 'normal' }}>{Experient_item.name}</Text>
+                    <View style={{ flexDirection: 'row', marginTop: 4 }}>
+                        <Image style={{ width: 12, height: 14, borderRadius: 14 }}
+
+                            source={Experient_item.location} />
+                        <Text style={{ paddingLeft: 4 }}>{Experient_item.des}</Text>
                     </View>
                 </View>
 
@@ -406,24 +406,24 @@ const Home = () => {
         )
     }
 
-    const Hotel = ({ Hotel_item }) => {
+    const Hotel = ({ HotelItem }) => {
         return (
             <View>
-                <Image style={{ width: 160, height: 150, borderRadius: 5, marginHorizontal: 11 }} source={Hotel_item.image} />
+                <Image style={{ width: 160, height: 150, borderRadius: 5, marginHorizontal: 11 }} source={HotelItem.image} />
                 <View>
-                    <View style={{flexDirection:'row',justifyContent:'space-between',marginHorizontal:9}}>
-                        <Text style={{fontSize:10,fontWeight:'normal',color:'#A2A2A2',marginHorizontal:8}}>{Hotel_item.version}</Text>
-                        <Image style={{ width: 62, height: 10, borderRadius: 5,marginTop:4 }} source={Hotel_item.comment} />
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 9 }}>
+                        <Text style={{ fontSize: 10, fontWeight: 'normal', color: '#A2A2A2', marginHorizontal: 8 }}>{HotelItem.version}</Text>
+                        <Image style={{ width: 62, height: 10, borderRadius: 5, marginTop: 4 }} source={HotelItem.comment} />
 
                     </View>
-                    <Text style={{ fontSize: 14, color: '#000000', fontWeight: '500' , marginHorizontal: 11}}>{Hotel_item.name}</Text>
-                    <View style={{flexDirection:'row'}}>
-                    <Image style={{ width: 25, height: 25, borderRadius: 14 }}
-                        resizeMode='contain'
-                        source={Hotel_item.location} />
-                        <Text>{Hotel_item.des}</Text>
+                    <Text style={{ fontSize: 14, color: '#000000', fontWeight: '500', marginHorizontal: 11 }}>{HotelItem.name}</Text>
+                    <View style={{ flexDirection: 'row' ,marginHorizontal:10,marginVertical:2}}>
+                        <Image style={{ width: 12, height: 14, borderRadius: 14 }}
+
+                            source={HotelItem.location} />
+                        <Text style={{paddingHorizontal:10,fontSize:10,fontWeight:'normal',color:'#3076FE'}}>{HotelItem.des}</Text>
                     </View>
-                    <Text style={{ fontSize: 12, color: '#FF2424', fontWeight: '500' , marginHorizontal: 11}}>{Hotel_item.price}</Text>
+                    <Text style={{ fontSize: 12, color: '#FF2424', fontWeight: '500', marginHorizontal: 13}}>{HotelItem.price}</Text>
 
                 </View>
 
@@ -565,7 +565,25 @@ const Home = () => {
                 </View>
 
 
+
                 <View style={styles.Discount}>
+                    <Text style={styles.discount_title}>Khách sạn & Resort</Text>
+                    <TouchableOpacity>
+                        <Text style={styles.discount_title1}>Xem thêm ></Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                    <FlatList
+                        data={Hoteldata}
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                        keyExtractor={(item) => item.id}
+                        renderItem={({ item }) =>
+                            <Hotel HotelItem={item} />
+                        }
+                    />
+                </View>
+                {/* <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Khách sạn & Resort</Text>
                     <TouchableOpacity>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
@@ -581,7 +599,7 @@ const Home = () => {
                             <Hotel Hotel_item={item} />
                         }
                     />
-                </View>
+                </View> */}
             </View>
         </ScrollView>
     )
@@ -701,3 +719,9 @@ const styles = StyleSheet.create({
     }
 })
 export default Home
+
+
+
+
+
+

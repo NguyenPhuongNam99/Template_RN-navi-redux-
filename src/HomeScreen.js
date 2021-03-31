@@ -5,7 +5,7 @@ const HomeScreen = ({navigation}) => {
   return (
     <View style={styles.center}>
       <Text>This is the home screen</Text>
-      <Button title="Go to About Screen" z/>
+      <Button onPress={() => navigation.navigate('Hotel_Icon')} title="Go to About Screen" z/>
     </View>
   );
 };
