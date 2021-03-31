@@ -476,7 +476,7 @@ const Home = ({navigation}) => {
                 {/* khuyến mại */}
                 <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Khuyến mại</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate('DiscountHeader')}>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
@@ -494,7 +494,7 @@ const Home = ({navigation}) => {
                 {/* lịch trình gần đây */}
                 <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Lịch trình gần đây</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate('ScheduleHeader')}>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
@@ -512,7 +512,7 @@ const Home = ({navigation}) => {
                 {/* destination */}
                 <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Địa điểm phổ biến</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate('DestionationPopular')}>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>

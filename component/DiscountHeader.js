@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 import { DiscountData } from '../Data/DiscountData';
-const DiscountHeader = () => {
+const DiscountHeader = ({navigation}) => {
     const MultipleDetail = ({ Item }) => {
         return (
             <View style={styles.banner}>
-                <Image style={{ width: 373, height: 150, resizeMode: 'stretch', }} source={Item.image} />
+                <Image style={{ flex:1}} source={Item.image} />
                 <View style={styles.banner_bottom}>
                       <Text style={styles.title}>{Item.title}</Text>
                         <View style={{flexDirection:'row',fontSize:12}}>
@@ -30,7 +30,7 @@ const DiscountHeader = () => {
                     <Image style={{ width: 12, height: 12, }} source={require('../assets/search2.png')} />
                 </TouchableOpacity>
             </View>
-            <View style={{marginBottom:70}}>
+            <View style={{flex:1}}>
                 <FlatList
                     data={DiscountData}
 
@@ -58,10 +58,10 @@ const styles = StyleSheet.create({
         height: 70,
 
         alignItems: 'center',
-        paddingHorizontal: 16
+        paddingHorizontal: 16,
     },
     banner: {
-        marginHorizontal: 16, width: 373, height: 215,
+        marginHorizontal: 14, height: 215,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -72,7 +72,8 @@ const styles = StyleSheet.create({
       
         elevation: 1,
         marginVertical:10,
-        backgroundColor:'#FFFFFF'
+        backgroundColor:'#FFFFFF',
+        flex:1
     },
     banner_bottom:{
         marginHorizontal:16

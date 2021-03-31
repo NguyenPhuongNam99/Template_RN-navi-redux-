@@ -2,7 +2,7 @@ import React from 'react';
 import {View,Text,TouchableOpacity,Image,StyleSheet,FlatList} from 'react-native';
 import {ScheduleNowData} from '../Data/ScheduleData';
 import ScheduleNow_Item from '../component/ScheduleNow_Item'
-const ScheduleHeader =()=>{
+const ScheduleHeader =({navigation})=>{
     return(
         <View style={styles.container}>
             <View style={styles.header}>
@@ -14,17 +14,17 @@ const ScheduleHeader =()=>{
                     <Image style={{ width: 12, height: 12, }} source={require('../assets/search2.png')} />
                 </TouchableOpacity>
             </View>
-            <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+            {/* <View style={{ marginHorizontal: 10, marginTop: 10,flex:1 }}> */}
                     <FlatList
                         data={ScheduleNowData}
-                        horizontal={true}
+                        // horizontal={true}
                         showsHorizontalScrollIndicator={false}
                         keyExtractor={(item) => item.id}
                         renderItem={({ item }) =>
                             <ScheduleNow_Item Item={item} />
                         }
                     />
-                </View>
+                {/* </View> */}
         </View>
     )
 }

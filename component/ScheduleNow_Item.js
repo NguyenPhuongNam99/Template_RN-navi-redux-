@@ -1,25 +1,25 @@
 import React from 'react';
-import {View,Text,TouchableOpacity,Image} from 'react-native';
+import {View,Text,TouchableOpacity,Image,StyleSheet} from 'react-native';
 
 const ScheduleNow_Item = ({ Item }) => {
     return (
         <View style={styles.container_header}>
 
 
-            <View style={styles.header_shedule}>
-                <View style={styles.left1}>
-                    <Image style={{ width: 120, height: 160, borderTopLeftRadius: 5 }} source={Item.image} />
-                </View>
-                <View style={styles.right1}>
-                    <Image style={{ width: 174, height: 77, marginHorizontal: 6, borderRadius: 5 }} resizeMode='cover' source={Item.image2} />
-                    <View style={styles.schedule_bottom}>
-                        <Image style={{ width: 84, height: 77, marginHorizontal: 6, }} resizeMode='cover' source={Item.image4} />
-                        <Image style={{ width: 84, height: 77, }} resizeMode='cover' source={Item.image3} />
+<View style={styles.header_shedule}>
+                    <View style={styles.left1}>
+                        <Image style={{ width: 140, height: 160, borderTopLeftRadius: 5 }} source={Item.image} />
                     </View>
+                    <View style={styles.right1}>
+                        <Image style={{ width: 199, height: 77, marginHorizontal: 6, borderRadius: 5 }} resizeMode='cover' source={Item.image2} />
+                        <View style={styles.schedule_bottom}>
+                            <Image style={{ width: 96, height: 77, marginHorizontal: 6, }} resizeMode='cover' source={Item.image4} />
+                            <Image style={{ width: 96, height: 77, }} resizeMode='cover' source={Item.image3} />
+                        </View>
+                    </View>
+
+
                 </View>
-
-
-            </View>
             <View style={styles.header_title_block}>
                 <View style={styles.left_header}>
                     <View style={{ flexDirection: 'row' }}>
@@ -62,7 +62,34 @@ const styles = StyleSheet.create({
         shadowRadius: 3.84,
 
         elevation: 5,
+    
+        backgroundColor: '#FFFFFF',
+       marginVertical:16,
+       paddingTop:10,
+       paddingBottom:10,
+       marginHorizontal:13
+       
     },
+    // header_shedule: {
+    //     flexDirection: 'row', 
+    //     marginHorizontal: 10,
+        
+    //     marginHorizontal:10
+    //     // width:373,
+    //     // backgroundColor:'green'
+    // },
+    // left1: {
+    //     flex: 1,
+    //     // width:'100%'
+       
+    //     // flex:1,backgroundColor:'green'
+    // },
+    // right1: {
+    //     flex: 2,
+    //     // width:199
+      
+
+    // },
     header_shedule: {
         flexDirection: 'row', marginHorizontal: 4
     },
@@ -71,7 +98,7 @@ const styles = StyleSheet.create({
 
     },
     right1: {
-        flex: 4,
+        flex: 4, marginHorizontal: 14
 
     },
     schedule_bottom: {

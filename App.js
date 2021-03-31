@@ -156,12 +156,13 @@ import Hotel_Icon from './component/Hotel_Icon'
 import RestaurantIcon from './component/RestaurantIcon';
 import DiscountHeader from './component/DiscountHeader'
 import ScheduleHeader from './component/ScheduleHeader';
+import DestionationPopular from './component/DestionationPopular'
 const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-    <Stack.Navigator initialRouteName="ScheduleHeader">
+    <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="BookScreen" component={BookScreen} />
       <Stack.Screen name="Home" component={Home}  options={{headerShown: false}} />
@@ -169,6 +170,7 @@ const App = () => {
       <Stack.Screen name="RestaurantIcon" component={RestaurantIcon}  options={{headerShown: false}}/>
       <Stack.Screen name="DiscountHeader" component={DiscountHeader}  options={{headerShown: false}}/>
       <Stack.Screen name="ScheduleHeader" component={ScheduleHeader}  options={{headerShown: false}}/>
+      <Stack.Screen name="DestionationPopular" component={DestionationPopular}  options={{headerShown: false}}/>
 
 
 
