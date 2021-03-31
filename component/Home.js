@@ -222,6 +222,75 @@ const Home = () => {
             namedd: 'Thạch Thất'
         },
     ]
+    const Hoteldata =[
+        {
+            id:1,
+            image: require('../assets/ks.png'),
+            version:'khách sạn',
+            name: 'The Herriott Hotel & Suite',
+            comment:require('../assets/sa.png'),
+            location: require('../assets/location.png'),
+            des: 'Phước Mỹ , Đà Nẵng',
+            price:'500,000 đ/ đêm'
+
+        },
+        {
+            id:2,
+            image: require('../assets/ks1.png'),
+            version:'Resort',
+            name: ' Naman Retreat',
+            comment:require('../assets/sa.png'),
+            location: require('../assets/location.png'),
+            des: 'Phước Mỹ , Đà Nẵng',
+            price:'500,000 đ/ đêm'
+
+        },
+        {
+            id:3,
+            image: require('../assets/ht.jpg'),
+            version:'Resort',
+            name: 'Thạch Thất',
+            comment:require('../assets/sa.png'),
+            location: require('../assets/location.png'),
+            des: 'Phước Mỹ , Đà Nẵng',
+            price:'500,000 đ/ đêm'
+
+        },
+        {
+            id:4,
+            image: require('../assets/ht1.jpg'),
+            version:'khách sạn',
+            name: 'Thạch Thất',
+            comment:require('../assets/sa.png'),
+            location: require('../assets/location.png'),
+            des: 'Phước Mỹ , Đà Nẵng',
+            price:'500,000 đ/ đêm'
+
+        },
+        {
+            id:5,
+            image: require('../assets/ht3.jpg'),
+            version:'khách sạn',
+            name: 'Thạch Thất',
+            comment:require('../assets/sa.png'),
+            location: require('../assets/location.png'),
+            des: 'Phước Mỹ , Đà Nẵng',
+            price:'500,000 đ/ đêm'
+
+        },
+        ,
+        {
+            id:6,
+            image: require('../assets/ht2.jpg'),
+            version:'khách sạn',
+            name: 'Thạch Thất',
+            comment:require('../assets/sa.png'),
+            location: require('../assets/location.png'),
+            des: 'Phước Mỹ , Đà Nẵng',
+            price:'500,000 đ/ đêm'
+
+        },
+    ]
     const Item = ({ item }) => {
         return (
             <View style={{ flexDirection: 'column', paddingHorizontal: 11, paddingTop: 29 }}>
@@ -331,6 +400,33 @@ const Home = () => {
             <View>
                 <Image style={{ width: 150, height: 200, borderRadius: 5, marginHorizontal: 11 }} source={Destination1_item.imagedd} />
                 <Text style={{ position: 'absolute', bottom: 8, left: 19, fontSize: 14, color: '#FFFFFF', fontWeight: '600' }}>{Destination1_item.namedd}</Text>
+            </View>
+
+
+        )
+    }
+
+    const Hotel = ({ Hotel_item }) => {
+        return (
+            <View>
+                <Image style={{ width: 160, height: 150, borderRadius: 5, marginHorizontal: 11 }} source={Hotel_item.image} />
+                <View>
+                    <View style={{flexDirection:'row',justifyContent:'space-between',marginHorizontal:9}}>
+                        <Text style={{fontSize:10,fontWeight:'normal',color:'#A2A2A2',marginHorizontal:8}}>{Hotel_item.version}</Text>
+                        <Image style={{ width: 62, height: 10, borderRadius: 5,marginTop:4 }} source={Hotel_item.comment} />
+
+                    </View>
+                    <Text style={{ fontSize: 14, color: '#000000', fontWeight: '500' , marginHorizontal: 11}}>{Hotel_item.name}</Text>
+                    <View style={{flexDirection:'row'}}>
+                    <Image style={{ width: 25, height: 25, borderRadius: 14 }}
+                        resizeMode='contain'
+                        source={Hotel_item.location} />
+                        <Text>{Hotel_item.des}</Text>
+                    </View>
+                    <Text style={{ fontSize: 12, color: '#FF2424', fontWeight: '500' , marginHorizontal: 11}}>{Hotel_item.price}</Text>
+
+                </View>
+
             </View>
 
 
@@ -464,6 +560,25 @@ const Home = () => {
                         keyExtractor={(item) => item.id}
                         renderItem={({ item }) =>
                             <Destination1 Destination1_item={item} />
+                        }
+                    />
+                </View>
+
+
+                <View style={styles.Discount}>
+                    <Text style={styles.discount_title}>Khách sạn & Resort</Text>
+                    <TouchableOpacity>
+                        <Text style={styles.discount_title1}>Xem thêm ></Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                    <FlatList
+                        data={Hoteldata}
+                        // horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                        keyExtractor = {item => item.id}                       
+                         renderItem={({ item }) =>
+                            <Hotel Hotel_item={item} />
                         }
                     />
                 </View>
