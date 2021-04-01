@@ -145,10 +145,12 @@
 
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import HomeScreen from './src/HomeScreen'
-import BookScreen from './src/BookScreen'
-import { NavigationContainer } from '@react-navigation/native';
-
+// import HomeScreen from './src/HomeScreen'
+// import BookScreen from './src/BookScreen'
+// import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer } from "@react-navigation/native";
+import TabNavigation from './src/navigation/TabNavigation'
+// import BottomTabNavigator from "./navigation/TabNavigator";
 // import TestChuyenTab from '../TestChuyenTab';
 // import Home from '../../component/Home'
 import Home from './component/Home';
@@ -157,25 +159,33 @@ import RestaurantIcon from './component/RestaurantIcon';
 import DiscountHeader from './component/DiscountHeader'
 import ScheduleHeader from './component/ScheduleHeader';
 import DestionationPopular from './component/DestionationPopular'
+import Responsive from './component/Responsive'
 const Stack = createStackNavigator();
 
 const App = () => {
   return (
+
+
     <NavigationContainer>
-    <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      <Stack.Screen name="BookScreen" component={BookScreen} />
-      <Stack.Screen name="Home" component={Home}  options={{headerShown: false}} />
-      <Stack.Screen name="Hotel_Icon" component={Hotel_Icon}  options={{headerShown: false}}/>
-      <Stack.Screen name="RestaurantIcon" component={RestaurantIcon}  options={{headerShown: false}}/>
-      <Stack.Screen name="DiscountHeader" component={DiscountHeader}  options={{headerShown: false}}/>
-      <Stack.Screen name="ScheduleHeader" component={ScheduleHeader}  options={{headerShown: false}}/>
-      <Stack.Screen name="DestionationPopular" component={DestionationPopular}  options={{headerShown: false}}/>
+      
+      <TabNavigation />
+  </NavigationContainer>
+    // <NavigationContainer>
+    // <Stack.Navigator initialRouteName="Home">
+    //   <Stack.Screen name="HomeScreen" component={HomeScreen} />
+    //   <Stack.Screen name="BookScreen" component={BookScreen} />
+    //   <Stack.Screen name="Home" component={Home}  options={{headerShown: false}} />
+    //   <Stack.Screen name="Hotel_Icon" component={Hotel_Icon}  options={{headerShown: false}}/>
+    //   <Stack.Screen name="RestaurantIcon" component={RestaurantIcon}  options={{headerShown: false}}/>
+    //   <Stack.Screen name="DiscountHeader" component={DiscountHeader}  options={{headerShown: false}}/>
+    //   <Stack.Screen name="ScheduleHeader" component={ScheduleHeader}  options={{headerShown: false}}/>
+    //   <Stack.Screen name="DestionationPopular" component={DestionationPopular}  options={{headerShown: false}}/>
+    //   <Stack.Screen name="Responsive" component={Responsive}  options={{headerShown: false}}/>
 
 
 
-    </Stack.Navigator>
-    </NavigationContainer>
+    // </Stack.Navigator>
+    // </NavigationContainer>
   );
 }
 
