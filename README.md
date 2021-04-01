@@ -35,3 +35,12 @@ dependencies {
 ==>Slove PROBLEM :
               +)Kiểm tra trong ANDROID STUDIO đã cài NDK chưa ? ==>nếu chưa thì install ===>bản mặc định của nó ( hiển thị khi build project lỗi )==>tìm rồi install
               +)vào code tìm app/build.gradle : search NDK version : chỉnh sửa giống với version đã install ở android studio
+              
+ 4 Lỗi khi build Project
+ ERROR : The specified Android SDK Build Tools version (25.0.0) is ignored, as it is below the minimum supported version (29.0.2) for Android Gradle Plugin 4.0.1.
+ ==>Lỗi phiên bản SDK khi build 
+ 
+ ![image](https://user-images.githubusercontent.com/73121884/113256117-ed8b4380-92f2-11eb-825f-4321f38a6a4a.png)
+ vào APP/Build.gradle xem các phần version có giống với version gợi ý ko ==>như trên thì lỗi thông báo nên dùng version 25.0.0  
+ (Bonus thêm là vào Android Studio xóa wipe Data của Máy điện thoại )
+
