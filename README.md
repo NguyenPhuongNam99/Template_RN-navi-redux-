@@ -43,4 +43,4 @@ dependencies {
  ![image](https://user-images.githubusercontent.com/73121884/113256117-ed8b4380-92f2-11eb-825f-4321f38a6a4a.png)
  vào APP/Build.gradle xem các phần version có giống với version gợi ý ko ==>như trên thì lỗi thông báo nên dùng version 25.0.0  
  (Bonus thêm là vào Android Studio xóa wipe Data của Máy điện thoại )
-
+link youtube : https://www.youtube.com/watch?v=Tx6jt5L1Vq0
