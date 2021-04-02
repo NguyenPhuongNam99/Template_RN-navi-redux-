@@ -19,4 +19,7 @@ import ConfirmOTP from './component/ConfirmOTP'
 import Home from './component/Home'
 import HomeScreen from './src/HomeScreen'
 import Stacknavigation from './src/navigation/Stacknavigation'
+import ScheduleHeader from './component/ScheduleHeader'
+import Re from './component/Re';
+import Viewok from './component/Viewok'
 AppRegistry.registerComponent(appName, () => App);

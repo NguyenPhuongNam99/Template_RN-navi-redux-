@@ -31,8 +31,10 @@ const Hotel_Icon = ({navigation}) => {
                     style={styles.input}
                     placeholder='Bạn muốn đi đâu ?'
                 />
-
-                <Image style={styles.banner} source={require('../assets/banner.png')} />
+                <View style={{marginHorizontal:16}}>
+                    <Image style={styles.banner} source={require('../assets/banner.png')} />
+                </View>
+                
                 <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Điểm đến tháng 12</Text>
                     <TouchableOpacity>
@@ -144,10 +146,10 @@ const styles = StyleSheet.create({
         paddingLeft: 16
     },
     banner: {
-        width: 377,
+        width:'100%',
         height: 150,
-        marginHorizontal: 16,
-        resizeMode: 'stretch',
+        // marginHorizontal: 16,
+       
         borderRadius: 5
     }
     ,

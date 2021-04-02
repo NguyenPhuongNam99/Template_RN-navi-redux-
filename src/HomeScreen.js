@@ -1,6 +1,5 @@
 import React from "react";
 import { View, Button, Text, StyleSheet } from "react-native";
-import TestChuyenTab from './TestChuyenTab';
 const HomeScreen = ({navigation}) => {
   return (
     <View style={styles.center}>

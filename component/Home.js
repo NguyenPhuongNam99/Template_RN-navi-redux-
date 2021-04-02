@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, FlatList, TextInput, ScrollView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Home = ({navigation}) => {
     //data icon Top
@@ -438,6 +438,7 @@ const Home = ({navigation}) => {
                 <Image style={styles.image} source={require('../assets/home.png')} />
                 <View style={styles.header_bottom}>
                     <Text style={styles.header}>Khám Phá</Text>
+                   
                     <Text style={styles.shedule}>
                         Lên lịch trình, đặt vé máy bay, khách sạn, tìm kiếm các tour lịch và các hoạt động vui chơi giải trí
                  </Text>

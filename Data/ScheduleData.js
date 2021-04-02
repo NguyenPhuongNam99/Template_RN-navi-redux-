@@ -11,7 +11,9 @@ export const ScheduleNowData = [
         des: 'Việt Nam',
         avatar: require('../assets/nam.jpg'),
         name: 'Phương Nam',
-        timmer: '10 giờ trước'
+        timmer: '10 giờ trước',
+        share: require('../assets/share.png'),
+        tym: require('../assets/tym.png')
     },
     {
         id: 2,
@@ -25,7 +27,9 @@ export const ScheduleNowData = [
         des: 'Việt Nam',
         avatar: require('../assets/trang.jpg'),
         name: 'Huyền Trang',
-        timmer: '10 giờ trước'
+        timmer: '10 giờ trước',
+        share: require('../assets/share.png'),
+        tym: require('../assets/tym.png')
 
     },
     {
@@ -40,7 +44,9 @@ export const ScheduleNowData = [
         des: 'Việt Nam',
         avatar: require('../assets/hung.jpg'),
         name: 'Quốc Hùng',
-        timmer: '10 giờ trước'
+        timmer: '10 giờ trước',
+        share: require('../assets/share.png'),
+        tym: require('../assets/tym.png')
     },
     {
         id: 4,
@@ -54,6 +60,8 @@ export const ScheduleNowData = [
         des: 'Việt Nam',
         avatar: require('../assets/trang1.jpg'),
         name: 'Nguyễn Trang',
-        timmer: '10 giờ trước'
+        timmer: '10 giờ trước',
+        share: require('../assets/share.png'),
+        tym: require('../assets/tym.png')
     },
 ]
