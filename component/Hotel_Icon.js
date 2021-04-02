@@ -37,7 +37,7 @@ const Hotel_Icon = ({navigation}) => {
                 
                 <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Điểm đến tháng 12</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate('ScheduleHeader')}>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
