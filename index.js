@@ -22,4 +22,6 @@ import Stacknavigation from './src/navigation/Stacknavigation'
 import ScheduleHeader from './component/ScheduleHeader'
 import Re from './component/Re';
 import Viewok from './component/Viewok'
-AppRegistry.registerComponent(appName, () => App);
+import Destionation12 from './component/Destionation12'
+import DetailDiscount from './component/DetailDiscount'
+AppRegistry.registerComponent(appName, () => DetailDiscount);

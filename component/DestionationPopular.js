@@ -13,7 +13,7 @@ const DestionationPopular = ({navigation})=>{
         },
         {
             id:3,
-            image:require('../assets/pb4.png')
+            image:require('../assets/oke.jpg')
         },
         {
             id:4,
@@ -38,7 +38,7 @@ const DestionationPopular = ({navigation})=>{
                 keyExtractor={(item)=>item.id}
                 renderItem={(({item})=>{
                     return(
-                    <View style={{flex:1,marginVertical:10}}>
+                    <View style={{marginVertical:10,  height:180}}>
                         <Image source={item.image} style={styles.tinilogo}/>
                     </View>
                     )
@@ -63,12 +63,15 @@ header: {
     paddingHorizontal: 16
 },
 block:{
-    flex:1,
+   
     marginHorizontal:16,
-    marginVertical:16
+    marginVertical:16,marginBottom:20,flex:1
 },
 tinilogo:{
-    flex:1
+   width:'100%',
+   height:'100%',
+   resizeMode:'stretch'
+//    height:'100%',backgroundColor:'green'
 }
 })
 export default DestionationPopular

@@ -14,31 +14,32 @@ import Hotel_Icon from '../../component/Hotel_Icon'
 import UpdateProfile from '../../component/UpdateProfile'
 import TabView from '../../component/TabView'
 import DestionationPopular from '../../component/DestionationPopular'
+import Destination12 from '../../component/Destionation12'
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigation() {
   return (
    
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={Home}
+        <Tab.Screen name="Destionation12" component={Destionation12}
         options={{
           tabBarIcon:()=><Icon name="search" size={19} color="#9A9A9A" />
         }}
         />
-        <Tab.Screen name="ScheduleHeader"
+        <Tab.Screen name="DestionationPopular"
          options={{
           tabBarIcon:()=><Icon name="briefcase" size={19} color="#9A9A9A" />
         }}
-        component={ScheduleHeader} />
+        component={DestionationPopular} />
         
-        <Tab.Screen name="DestionationPopular"
+        <Tab.Screen name="ScheduleHeader"
         //  options={{
         //   tabBarIcon: <TabView />
         
         // }}
 
         options ={{tabBarOnPress: () => {} ,tabBarIcon : () =>   <TabView/>, tabBarLabel: ''}}
-        component={DestionationPopular} />
+        component={ScheduleHeader} />
 
         <Tab.Screen name="Hotel_Icon" 
          options={{
