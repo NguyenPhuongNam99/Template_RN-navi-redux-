@@ -24,4 +24,5 @@ import Re from './component/Re';
 import Viewok from './component/Viewok'
 import Destionation12 from './component/Destionation12'
 import DetailDiscount from './component/DetailDiscount'
-AppRegistry.registerComponent(appName, () => DetailDiscount);
+import ScheduleAll from './component/ScheduleAll'
+AppRegistry.registerComponent(appName, () => App);

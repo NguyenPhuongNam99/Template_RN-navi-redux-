@@ -21,11 +21,20 @@ export default function TabNavigation() {
   return (
    
       <Tab.Navigator>
-        <Tab.Screen name="Destionation12" component={Destionation12}
+        {/* <Tab.Screen name="Destionation12"
+       
         options={{
           tabBarIcon:()=><Icon name="search" size={19} color="#9A9A9A" />
-        }}
-        />
+        }} 
+        component={Destination12}
+        /> */}
+         <Tab.Screen name="Home"
+       
+       options={{
+         tabBarIcon:()=><Icon name="search" size={19} color="#9A9A9A" />
+       }} 
+       component={Home}
+       />
         <Tab.Screen name="DestionationPopular"
          options={{
           tabBarIcon:()=><Icon name="briefcase" size={19} color="#9A9A9A" />

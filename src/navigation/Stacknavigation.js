@@ -39,12 +39,13 @@ import ScheduleHeader from '../../component/ScheduleHeader';
 import DestionationPopular from '../../component/DestionationPopular'
 import Responsive from '../../component/Responsive';
 import Destionation12 from '../../component/Destionation12'
+import DetailDiscount from '../../component/DetailDiscount'
 const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-    <Stack.Navigator initialRouteName="DestionationPopular">
+    <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="BookScreen" component={BookScreen} />
       <Stack.Screen name="Home" component={Home}  options={{headerShown: false}} />
@@ -55,9 +56,9 @@ const App = () => {
       <Stack.Screen name="DestionationPopular" component={DestionationPopular}  options={{headerShown: false}}/>
       <Stack.Screen name="Responsive" component={Responsive}  options={{headerShown: false}}/>
       <Stack.Screen name="Destionation12" component={Destionation12}  options={{headerShown: false}}/>
+      <Stack.Screen name="DetailDiscount" component={DetailDiscount}  options={{headerShown: false}}/>
 
-
-
+      
     </Stack.Navigator>
     </NavigationContainer>
   );

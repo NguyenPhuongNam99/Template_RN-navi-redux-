@@ -282,9 +282,11 @@ const Home = ({navigation}) => {
     ]
     const check =(item)=>{
         if(item == 3){
+            console.log('da klich Hotel_icon')
             navigation.navigate('Hotel_Icon')
         }
         if(item ==4){
+            console.log('Da Kich Restẩunty')
             navigation.navigate('RestaurantIcon')
         }
     } 
@@ -584,23 +586,7 @@ const Home = ({navigation}) => {
                         }
                     />
                 </View>
-                {/* <View style={styles.Discount}> ooook
-                    <Text style={styles.discount_title}>Khách sạn & Resort</Text>
-                    <TouchableOpacity>
-                        <Text style={styles.discount_title1}>Xem thêm ></Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={{ marginHorizontal: 10, marginTop: 10 }}>
-                    <FlatList
-                        data={Hoteldata}
-                        // horizontal={true}
-                        showsHorizontalScrollIndicator={false}
-                        keyExtractor = {item => item.id}                       
-                         renderItem={({ item }) =>
-                            <Hotel Hotel_item={item} />
-                        }
-                    />
-                </View> */}
+               
             </View>
         </ScrollView>
     )
