@@ -3,9 +3,15 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, FlatList } from 'react
 import { DiscountData } from '../Data/DiscountData';
 const DiscountHeader = ({navigation}) => {
     const MultipleDetail = ({ Item }) => {
+        const check =(item)=>{
+            if(item ==1){
+                navigation.navigate('DetailDiscount')
+            }
+        }
         return (
-            <View style={styles.banner}>
-                <Image style={{ flex:1}} source={Item.image} />
+            <TouchableOpacity onPress={()=>check(Item.id)}>
+                 <View style={styles.banner}>
+                <Image style={{ width:'100%'}} source={Item.image} />
                 <View style={styles.banner_bottom}>
                       <Text style={styles.title}>{Item.title}</Text>
                         <View style={{flexDirection:'row',fontSize:12}}>
@@ -17,6 +23,8 @@ const DiscountHeader = ({navigation}) => {
               
 
             </View>
+            </TouchableOpacity>
+           
         )
     }
     return (

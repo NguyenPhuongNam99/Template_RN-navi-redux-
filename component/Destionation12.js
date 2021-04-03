@@ -2,10 +2,13 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
 import Header from '../component/Header';
 import { Destionation } from '../Data/Destination1_Data'
-const Destination12 = () => {
+const Destination12 = ({navigation}) => {
+    const goback =()=>{
+        navigation.goBack();
+    }
     return (
         <View style={styles.container}>
-            <Header Name='Trải nghiệm nổi bật' />
+            <Header Name='Trải nghiệm nổi bật' back ={goback} />
             <View style={styles.block}>
                 <FlatList
                     data={Destionation}
@@ -56,7 +59,7 @@ const styles = StyleSheet.create({
         elevation:2,
         marginVertical: 16,
         marginHorizontal:16,
-        // backgroundColor:'green'
+        backgroundColor:'white'
         
     },
     tong: {

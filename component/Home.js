@@ -479,7 +479,7 @@ const Home = ({navigation}) => {
                 {/* khuyến mại */}
                 <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Khuyến mại</Text>
-                    <TouchableOpacity onPress={()=>navigation.navigate('ScheduleHeader')}>
+                    <TouchableOpacity onPress={()=>navigation.navigate('DiscountHeader')}>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
@@ -533,7 +533,7 @@ const Home = ({navigation}) => {
 
                 <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Trải nghiệm nổi bật</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate('Destionation12')}>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
@@ -551,7 +551,7 @@ const Home = ({navigation}) => {
 
                 <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Điểm đến tháng 12</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity >
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>

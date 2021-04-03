@@ -25,4 +25,5 @@ import Viewok from './component/Viewok'
 import Destionation12 from './component/Destionation12'
 import DetailDiscount from './component/DetailDiscount'
 import ScheduleAll from './component/ScheduleAll'
-AppRegistry.registerComponent(appName, () => App);
+import LocationPopular from './component/LocationPopular/LocationPopular'
+AppRegistry.registerComponent(appName, () => LocationPopular);

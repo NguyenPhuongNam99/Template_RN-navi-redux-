@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 // import HomeScreen from '../HomeScreen';
 // import TestChuyenTab from '../TestChuyenTab';
-// import Stacknavigation from '../navigation/Stacknavigation';
+import Stacknavigation from '../navigation/Stacknavigation';
 import Home from '../../component/Home'
 import ScheduleHeader from '../../component/ScheduleHeader'
 import Hotel_Icon from '../../component/Hotel_Icon'
@@ -21,34 +21,34 @@ export default function TabNavigation() {
   return (
    
       <Tab.Navigator>
-        {/* <Tab.Screen name="Destionation12"
+        <Tab.Screen name="Home"
        
         options={{
           tabBarIcon:()=><Icon name="search" size={19} color="#9A9A9A" />
         }} 
-        component={Destination12}
-        /> */}
-         <Tab.Screen name="Home"
+        component={Stacknavigation}
+        />
+         {/* <Tab.Screen name="Home"
        
        options={{
          tabBarIcon:()=><Icon name="search" size={19} color="#9A9A9A" />
        }} 
        component={Home}
-       />
+       /> */}
         <Tab.Screen name="DestionationPopular"
          options={{
           tabBarIcon:()=><Icon name="briefcase" size={19} color="#9A9A9A" />
         }}
         component={DestionationPopular} />
         
-        <Tab.Screen name="ScheduleHeader"
+        {/* <Tab.Screen name="ScheduleHeader"
         //  options={{
         //   tabBarIcon: <TabView />
         
         // }}
 
         options ={{tabBarOnPress: () => {} ,tabBarIcon : () =>   <TabView/>, tabBarLabel: ''}}
-        component={ScheduleHeader} />
+        component={ScheduleHeader} /> */}
 
         <Tab.Screen name="Hotel_Icon" 
          options={{

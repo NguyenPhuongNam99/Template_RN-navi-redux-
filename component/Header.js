@@ -1,10 +1,10 @@
 import React from 'react';
 import {View,Text,Image,StyleSheet,TouchableOpacity} from 'react-native';
 
-const Header =({Name})=>{
+const Header =({Name,navigation,back})=>{
     return(
         <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity onPress={back}>
             <Image style={{ width: 8, height: 12, }} source={require('../assets/search1.png')} />
         </TouchableOpacity>
         <Text style={styles.header_titlle}>{Name}</Text>

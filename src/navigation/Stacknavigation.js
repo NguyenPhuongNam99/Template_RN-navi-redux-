@@ -44,10 +44,10 @@ const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
+   
     <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      <Stack.Screen name="BookScreen" component={BookScreen} />
+      {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
+      {/* <Stack.Screen name="BookScreen" component={BookScreen} /> */}
       <Stack.Screen name="Home" component={Home}  options={{headerShown: false}} />
       <Stack.Screen name="Hotel_Icon" component={Hotel_Icon}  options={{headerShown: false}}/>
       <Stack.Screen name="RestaurantIcon" component={RestaurantIcon}  options={{headerShown: false}}/>
@@ -60,7 +60,7 @@ const App = () => {
 
       
     </Stack.Navigator>
-    </NavigationContainer>
+    
   );
 }
 
