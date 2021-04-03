@@ -39,7 +39,10 @@ const DestionationPopular = ({navigation})=>{
                 renderItem={(({item})=>{
                     return(
                     <View style={{marginVertical:10,  height:180}}>
-                        <Image source={item.image} style={styles.tinilogo}/>
+                        
+                            <Image source={item.image} style={styles.tinilogo}/>
+                      
+                        
                     </View>
                     )
                 })}

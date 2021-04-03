@@ -55,7 +55,7 @@ const Hotel_Icon = ({navigation}) => {
 
                 <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Khách sạn & Resort</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity  onPress={()=>navigation.navigate('DetailDiscount')}>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
