@@ -20,6 +20,11 @@ const DestionationPopular = ({navigation})=>{
             image:require('../assets/pb5.png')
         },
     ]
+    const check =(item )=>{
+        if(item ==1 ){
+            navigation.navigate('LocationDetail')
+        }
+    }
     return(
         <View style={styles.container}>
             <View style={styles.header}>
@@ -39,8 +44,10 @@ const DestionationPopular = ({navigation})=>{
                 renderItem={(({item})=>{
                     return(
                     <View style={{marginVertical:10,  height:180}}>
-                        
-                            <Image source={item.image} style={styles.tinilogo}/>
+                        <TouchableOpacity onPress={()=>check(item.id)}>
+                              <Image source={item.image} style={styles.tinilogo}/>
+                        </TouchableOpacity>
+                          
                       
                         
                     </View>

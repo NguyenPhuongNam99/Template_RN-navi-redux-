@@ -26,4 +26,6 @@ import Destionation12 from './component/Destionation12'
 import DetailDiscount from './component/DetailDiscount'
 import ScheduleAll from './component/ScheduleAll'
 import LocationPopular from './component/LocationPopular/LocationPopular'
-AppRegistry.registerComponent(appName, () => LocationPopular);
+import LocationDetail from './component/LocationPopular/LocationDetail'
+import RestaurantDetail from './component/LocationPopular/RestaurantDetail'
+AppRegistry.registerComponent(appName, () => RestaurantDetail);

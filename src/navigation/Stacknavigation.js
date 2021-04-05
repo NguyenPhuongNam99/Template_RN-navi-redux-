@@ -40,6 +40,7 @@ import DestionationPopular from '../../component/DestionationPopular'
 import Responsive from '../../component/Responsive';
 import Destionation12 from '../../component/Destionation12'
 import DetailDiscount from '../../component/DetailDiscount'
+import LocationDetail from '../../component/LocationPopular/LocationDetail'
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -57,6 +58,7 @@ const App = () => {
       <Stack.Screen name="Responsive" component={Responsive}  options={{headerShown: false}}/>
       <Stack.Screen name="Destionation12" component={Destionation12}  options={{headerShown: false}}/>
       <Stack.Screen name="DetailDiscount" component={DetailDiscount}  options={{headerShown: false}}/>
+      <Stack.Screen name="LocationDetail" component={LocationDetail}  options={{headerShown: false}}/>
 
       
     </Stack.Navigator>

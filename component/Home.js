@@ -151,14 +151,14 @@ const Home = ({navigation}) => {
     const Expe = [
         {
             id: 1,
-            image: require('../assets/ex.png'),
+            image: require('../assets/ma15.jpg'),
             name: 'Ngắm bình minh Phú Yên',
             location: require('../assets/location.png'),
             des: 'Phú Yên , Việt Nam'
         },
         {
             id: 2,
-            image: require('../assets/ex2.png'),
+            image: require('../assets/ma16.jpg'),
             name: 'Chinh phục Fanxipan',
             location: require('../assets/location.png'),
             des: 'Phú Quốc , Việt Nam'
@@ -188,12 +188,14 @@ const Home = ({navigation}) => {
     const DiemDen = [
         {
             id: 1,
-            imagedd: require('../assets/sp.png'),
+            imagedd: require('../assets/ma12.jpg'),
+            namedd: 'Thạch Thất'
 
         },
         {
             id: 2,
-            imagedd: require('../assets/mc.png'),
+            imagedd: require('../assets/ma13.jpg'),
+            namedd: 'Thạch Thất'
 
         },
         {
@@ -551,7 +553,7 @@ const Home = ({navigation}) => {
 
                 <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Điểm đến tháng 12</Text>
-                    <TouchableOpacity >
+                    <TouchableOpacity onPress={()=>navigation.navigate('DestionationPopular')}>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
@@ -571,7 +573,7 @@ const Home = ({navigation}) => {
 
                 <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Khách sạn & Resort</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate('RestaurantIcon')}>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
