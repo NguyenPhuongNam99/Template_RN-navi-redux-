@@ -44,8 +44,8 @@ const LocationItem = ({ Item }) => {
                     </View>
 
                 </View>
-                <View style={{ paddingTop: 16 }}>
-                    <View style={{ flexDirection: 'row', paddingBottom: 6 ,alignItems:'flex-end'}}>
+                <View style={{ paddingTop: 16,alignItems:'flex-end' }}>
+                    <View style={{ flexDirection: 'row', paddingBottom: 6 }}>
                         <Image style={{ height: 15, width: 10, marginRight: 5 }} source={require('../../assets/location.png')} />
                         <Text style={{ color: '#3076FE', fontSize: 12 ,textAlign:'right'}}>Việt Nam</Text>
                     </View>

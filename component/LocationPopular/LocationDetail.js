@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, FlatList } from 'react-native';
 import { LocationDetail_Data,LocationDetail_Data2,LocationDetail_Data3,LocationDetail_Data1   } from '../../Data/LocationDetail_Data'
 import LocationItem from '../LocationPopular/LocationItem'
+import {LocationDetail1,RestauRantnear} from '../../HotelData'
+import MultipleDetail from '../MultipleDetail'
 const LocationDetail = () => {
     return (
         <ScrollView style={{ flex: 1 }}>
@@ -72,43 +74,45 @@ const LocationDetail = () => {
 
 
                 />
-
-
-                <View style={styles.Discount}>
-                    <Text style={styles.discount_title}>Lịch trình OKGO đề xuất</Text>
-                    <TouchableOpacity onPress={() => navigation.navigate('DiscountHeader')}>
+                 <View style={styles.Discount}>
+                    <Text style={styles.discount_title}>Khách sạn</Text>
+                    <TouchableOpacity>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
-                <FlatList
-                    data={LocationDetail_Data2}
-                    keyExtractor={(item) => item.id}
-                    horizontal={true}
-                    showsHorizontalScrollIndicator={false}
-                    renderItem={({ item }) =>
-                        <LocationItem Item={item} />
-                    }
+                <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                    <FlatList
+                        data={LocationDetail1}
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                        keyExtractor={(item) => item.id}
+                        renderItem={({ item }) =>
+                        //Tạo component rồi gọi đến
+                            <MultipleDetail Item={item} />
+                        }
+                    />
+                </View>
 
-
-                />
 
                 <View style={styles.Discount}>
-                    <Text style={styles.discount_title}>Lịch trình OKGO đề xuất</Text>
-                    <TouchableOpacity onPress={() => navigation.navigate('DiscountHeader')}>
+                    <Text style={styles.discount_title}>Nhà hàng </Text>
+                    <TouchableOpacity>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
-                <FlatList
-                    data={LocationDetail_Data3}
-                    keyExtractor={(item) => item.id}
-                    horizontal={true}
-                    showsHorizontalScrollIndicator={false}
-                    renderItem={({ item }) =>
-                        <LocationItem Item={item} />
-                    }
+                <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                    <FlatList
+                        data={RestauRantnear}
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                        keyExtractor={(item) => item.id}
+                        renderItem={({ item }) =>
+                        //Tạo component rồi gọi đến
+                            <MultipleDetail Item={item} />
+                        }
+                    />
+                </View>
 
-
-                />
 
             </View>
         </ScrollView>
@@ -199,6 +203,25 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%'
 
+    },
+    Discount: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginHorizontal: 16,
+        marginTop: 19
+    },
+    discount_title: {
+        color: '#000000',
+        fontSize: 14,
+        lineHeight: 17,
+        fontWeight: 'bold'
+    }
+    ,
+    discount_title1: {
+        color: '#9E9E9E',
+        fontSize: 12,
+        lineHeight: 14,
+        fontWeight: 'normal'
     },
     Discount: {
         flexDirection: 'row',

@@ -28,4 +28,5 @@ import ScheduleAll from './component/ScheduleAll'
 import LocationPopular from './component/LocationPopular/LocationPopular'
 import LocationDetail from './component/LocationPopular/LocationDetail'
 import RestaurantDetail from './component/LocationPopular/RestaurantDetail'
-AppRegistry.registerComponent(appName, () => RestaurantDetail);
+import Hotel_Icon from './component/Hotel_Icon'
+AppRegistry.registerComponent(appName, () => LocationDetail);

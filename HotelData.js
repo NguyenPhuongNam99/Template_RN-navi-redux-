@@ -199,3 +199,134 @@ export const Suggestion_Double =[
         price: '500,000 đ/ đêm',
     },
 ]
+//nam o file RestaurrantDetail;
+export const restaurant =[
+    {
+        id:1,
+        image:require('./assets/re1.png'),
+        version: 'Khách sạn',
+        name:'Thạch Thất'  
+        ,comment: require('./assets/sa.png'),
+        location: require('./assets/location.png'),
+        des: 'Phú Quốc, Kiên Giang',
+        price: '500,000 đ/ đêm',
+    },
+    {
+        id:2,
+        image:require('./assets/re2.png'),
+        version: 'Resort',
+        name:'Hà Nội',
+        comment: require('./assets/sa.png'),
+        location: require('./assets/location.png'),
+        des: 'Phú Quốc, Kiên Giang',
+        price: '500,000 đ/ đêm',
+    },
+    {
+        id:3,
+        image:require('./assets/sp4.jpg'),
+        version: 'Resort',
+        name:'Lại Thượng',
+        comment: require('./assets/sa.png'),
+        location: require('./assets/location.png'),
+        des: 'Phú Quốc, Kiên Giang',
+        price: '500,000 đ/ đêm',
+    },
+    {
+        id:4,
+        image:require('./assets/sp5.jpg'),
+        version: 'Resort',
+        name:'Phú Nghĩa',
+        comment: require('./assets/sa.png'),
+        location: require('./assets/location.png'),
+        des: 'Phú Quốc, Kiên Giang',
+        price: '500,000 đ/ đêm',
+    },
+]
+
+///Data LocationDetail 
+export const LocationDetail1 =[
+    {
+        id:1,
+        image:require('./assets/ksd1.jpg'),
+        version: 'Khách sạn',
+        name:'Central Lý Sơn'  
+        ,comment: require('./assets/sa.png'),
+        location: require('./assets/location.png'),
+        des: 'Lý Sơn ,Quảng Ngãi',
+        price: '650,000 đ/ đêm',
+    },
+    {
+        id:2,
+        image:require('./assets/ksd2.jpg'),
+        version: 'Resort',
+        name:'Mường Thanh Holiday',
+        comment: require('./assets/sa.png'),
+        location: require('./assets/location.png'),
+        des: 'Lý Sơn , Quảng Ngãi',
+        price: '650,000 đ/ đêm',
+    },
+    {
+        id:3,
+        image:require('./assets/ksd3.jpg'),
+        version: 'Resort',
+        name:'Lại Thượng',
+        comment: require('./assets/sa.png'),
+        location: require('./assets/location.png'),
+        des: 'Phú Quốc, Kiên Giang',
+        price: '500,000 đ/ đêm',
+    },
+    {
+        id:4,
+        image:require('./assets/ksd4.jpg'),
+        version: 'Resort',
+        name:'Phú Nghĩa',
+        comment: require('./assets/sa.png'),
+        location: require('./assets/location.png'),
+        des: 'Phú Quốc, Kiên Giang',
+        price: '500,000 đ/ đêm',
+    },
+]
+
+//cung file LocationDetail thuoc tab nha hang lan can
+export const RestauRantnear =[
+    {
+        id:1,
+        image:require('./assets/lc6.png'),
+        version: 'Khách sạn',
+        name:'Hải sản khói chiều'  
+        ,comment: require('./assets/sa.png'),
+        location: require('./assets/location.png'),
+        des: 'Phú Quốc, Kiên Giang',
+        price: '20.000 - 400.000 đ/ đêm',
+    },
+    {
+        id:2,
+        image:require('./assets/lc7.png'),
+        version: 'Resort',
+        name:'Hải sản thịnh phát',
+        comment: require('./assets/sa.png'),
+        location: require('./assets/location.png'),
+        des: 'Phú Quốc, Kiên Giang',
+        price: '40.000 -200.000 đ/ đêm',
+    },
+    {
+        id:3,
+        image:require('./assets/lc8.jpg'),
+        version: 'Resort',
+        name:'Lại Thượng',
+        comment: require('./assets/sa.png'),
+        location: require('./assets/location.png'),
+        des: 'Phú Quốc, Kiên Giang',
+        price: '500,000 đ/ đêm',
+    },
+    {
+        id:4,
+        image:require('./assets/lc9.png'),
+        version: 'Resort',
+        name:'Phú Nghĩa',
+        comment: require('./assets/sa.png'),
+        location: require('./assets/location.png'),
+        des: 'Phú Quốc, Kiên Giang',
+        price: '500,000 đ/ đêm',
+    },
+]
