@@ -19,7 +19,7 @@ const ScheduleHeader =({navigation})=>{
                         data={ScheduleNowData}
                         // horizontal={true}
                         showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item) => item.id}
+                        keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
                             <ScheduleNow_Item Item={item} />
                         }

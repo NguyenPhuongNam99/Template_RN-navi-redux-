@@ -13,7 +13,7 @@ const LocationPopular = ({ navigation }) => {
             <View style={styles.flat}>
                 <FlatList
                     data={LocationPopular_Data}
-                    keyExtractor={item => item.id}
+                    keyExtractor={item => item.id.toString()}
                     renderItem={({ item }) => {
                         return (
                             <View style={styles.headerTop}>

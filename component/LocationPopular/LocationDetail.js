@@ -1,10 +1,16 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, FlatList } from 'react-native';
-import { LocationDetail_Data,LocationDetail_Data2,LocationDetail_Data3,LocationDetail_Data1   } from '../../Data/LocationDetail_Data'
+import { LocationDetail_Data, LocationDetail_Data2, LocationDetail_Data3, LocationDetail_Data1 } from '../../Data/LocationDetail_Data'
 import LocationItem from '../LocationPopular/LocationItem'
-import {LocationDetail1,RestauRantnear} from '../../HotelData'
+import { LocationDetail1, RestauRantnear } from '../../HotelData'
 import MultipleDetail from '../MultipleDetail'
 const LocationDetail = () => {
+    const check =(Item)=>{
+        if(Item ==1){
+            console.log('hello',Item)
+
+        }
+    }
     return (
         <ScrollView style={{ flex: 1 }}>
             <View style={styles.conatiner}>
@@ -46,7 +52,7 @@ const LocationDetail = () => {
                 </View>
                 <FlatList
                     data={LocationDetail_Data}
-                    keyExtractor={(item) => item.id}
+                    keyExtractor={(item) => item.id.toString()}
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
                     renderItem={({ item }) =>
@@ -65,7 +71,7 @@ const LocationDetail = () => {
                 </View>
                 <FlatList
                     data={LocationDetail_Data1}
-                    keyExtractor={(item) => item.id}
+                    keyExtractor={(item) => item.id.toString()}
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
                     renderItem={({ item }) =>
@@ -74,7 +80,7 @@ const LocationDetail = () => {
 
 
                 />
-                 <View style={styles.Discount}>
+                <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Khách sạn</Text>
                     <TouchableOpacity>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
@@ -85,9 +91,9 @@ const LocationDetail = () => {
                         data={LocationDetail1}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item) => item.id}
+                        keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
-                        //Tạo component rồi gọi đến
+                            //Tạo component rồi gọi đến
                             <MultipleDetail Item={item} />
                         }
                     />
@@ -105,10 +111,10 @@ const LocationDetail = () => {
                         data={RestauRantnear}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item) => item.id}
+                        keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
-                        //Tạo component rồi gọi đến
-                            <MultipleDetail Item={item} />
+                            //Tạo component rồi gọi đến
+                            <MultipleDetail Item={item} check ={check(item)} />
                         }
                     />
                 </View>

@@ -160,16 +160,22 @@ import DiscountHeader from './component/DiscountHeader'
 import ScheduleHeader from './component/ScheduleHeader';
 import DestionationPopular from './component/DestionationPopular'
 import Responsive from './component/Responsive'
+import reducer from './src/reducer';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux'
+import store from './src/store'
 const Stack = createStackNavigator();
 
 const App = () => {
   return (
 
+    <Provider store={store}>
+      <NavigationContainer>
 
-    <NavigationContainer>
-      
-      <TabNavigation />
-  </NavigationContainer>
+        <TabNavigation />
+      </NavigationContainer>
+    </Provider>
+
     // <NavigationContainer>
     // <Stack.Navigator initialRouteName="Home">
     //   <Stack.Screen name="HomeScreen" component={HomeScreen} />
@@ -189,7 +195,7 @@ const App = () => {
   );
 }
 
-export default  App;
+export default App;
 
 
 
@@ -266,7 +272,7 @@ export default  App;
 //   return (
 
 //     <View>
-      
+
 //     </View>
 //   )
 // }

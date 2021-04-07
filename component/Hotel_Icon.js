@@ -46,7 +46,7 @@ const Hotel_Icon = ({navigation}) => {
                         data={Suggest_DestionData}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item) => item.id}
+                        keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
                             <Destination1 Destination1_item={item} />
                         }
@@ -64,7 +64,7 @@ const Hotel_Icon = ({navigation}) => {
                         data={Suggestion_toYou}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item) => item.id}
+                        keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
                         //Tạo component rồi gọi đến
                             <MultipleDetail Item={item} />
@@ -82,7 +82,7 @@ const Hotel_Icon = ({navigation}) => {
                         data={HomeStay}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item) => item.id}
+                        keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
                         //Tạo component rồi gọi đến
                             <MultipleDetail Item={item} />
@@ -101,7 +101,7 @@ const Hotel_Icon = ({navigation}) => {
                         data={Suggestion_Double}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item) => item.id}
+                        keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
                         //Tạo component rồi gọi đến
                             <MultipleDetail Item={item} />

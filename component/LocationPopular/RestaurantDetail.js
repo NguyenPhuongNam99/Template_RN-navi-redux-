@@ -109,7 +109,7 @@ const RestaurantDetail = () => {
                         data={restaurant}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item) => item.id}
+                        keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
                         //Tạo component rồi gọi đến
                             <MultipleDetail Item={item} />

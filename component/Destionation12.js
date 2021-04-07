@@ -12,7 +12,7 @@ const Destination12 = ({navigation}) => {
             <View style={styles.block}>
                 <FlatList
                     data={Destionation}
-                    keyExtractor={(item) => item.id}
+                    keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => {
                         return (
                             <View style={styles.header}>

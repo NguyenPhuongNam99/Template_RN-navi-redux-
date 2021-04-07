@@ -1,29 +1,22 @@
-
 import React from 'react';
 import { View, Text, Image, StyleSheet, FlatList } from 'react-native';
-import Header from './Header'
-import { Destination_PopularData } from '../Data/Destionation12_Head_Data'
-import { TouchableOpacity } from 'react-native-gesture-handler';
-const DestionationPopular = ({navigation}) => {
+import Header from '../Header'
+import { Destionation12_Head1 } from '../../Data/Destionation12_Head_Data'
+import { color } from 'react-native-reanimated';
+const Destionation12_Head = ({navigation}) => {
     const goback = () => {
         navigation.goBack();
     }
-    const check =(item )=>{
-                if(item ==1 ){
-                    navigation.navigate('LocationDetail')
-                }
-            }
     return (
         <View style={styles.container}>
-            <Header Name='Địa điểm phổ biến' back={goback} />
+            <Header Name='Điểm đến tháng 12' back={goback} />
             <View style={styles.flatlist}>
                 <FlatList
-                    data={Destination_PopularData}
+                    data={Destionation12_Head1}
                     keyExtractor={(item) => item.id.toString()}
                     showsVerticalScrollIndicator={false}
                     renderItem={({ item }) => {
                         return (
-                            <TouchableOpacity onPress={()=>check(item.id)}>
                             <View style={styles.block_image}>
                                 <Image
                                     style={styles.image}
@@ -36,7 +29,6 @@ const DestionationPopular = ({navigation}) => {
                                     <Text style={styles.location}>{item.location}</Text>
                                 </View>
                             </View>
-                            </TouchableOpacity>
                         )
                     }}
                 />
@@ -101,4 +93,4 @@ const styles = StyleSheet.create({
         marginLeft:6
     }
 })
-export default DestionationPopular;
+export default Destionation12_Head;

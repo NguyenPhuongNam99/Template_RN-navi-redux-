@@ -452,7 +452,7 @@ const Home = ({navigation}) => {
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
                         data={data}
-                        keyExtractor={(item) => item.id}
+                        keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
                             <Item item={item} />
                         }
@@ -490,7 +490,7 @@ const Home = ({navigation}) => {
                         data={voucherdata}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item) => item.id}
+                        keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
                             <Voucher voucher_item={item} />
                         }
@@ -508,7 +508,7 @@ const Home = ({navigation}) => {
                         data={sheduleNowData}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item) => item.id}
+                        keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
                             <SheduleNow sheduleNow_item={item} />
                         }
@@ -526,7 +526,7 @@ const Home = ({navigation}) => {
                         data={Desdata}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item) => item.id}
+                        keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
                             <Destination Destination_item={item} />
                         }
@@ -544,7 +544,7 @@ const Home = ({navigation}) => {
                         data={Expe}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item) => item.id}
+                        keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
                             <Experient Experient_item={item} />
                         }
@@ -553,7 +553,7 @@ const Home = ({navigation}) => {
 
                 <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Điểm đến tháng 12</Text>
-                    <TouchableOpacity onPress={()=>navigation.navigate('DestionationPopular')}>
+                    <TouchableOpacity onPress={()=>navigation.navigate('Destionation12_Head')}>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
@@ -562,7 +562,7 @@ const Home = ({navigation}) => {
                         data={DiemDen}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item) => item.id}
+                        keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
                             <Destination1 Destination1_item={item} />
                         }
@@ -573,7 +573,7 @@ const Home = ({navigation}) => {
 
                 <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Khách sạn & Resort</Text>
-                    <TouchableOpacity onPress={()=>navigation.navigate('RestaurantIcon')}>
+                    <TouchableOpacity onPress={()=>navigation.navigate('Hotel_Icon')}>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
@@ -582,7 +582,7 @@ const Home = ({navigation}) => {
                         data={Hoteldata}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item) => item.id}
+                        keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
                             <Hotel HotelItem={item} />
                         }
