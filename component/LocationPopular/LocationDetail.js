@@ -4,19 +4,43 @@ import { LocationDetail_Data, LocationDetail_Data2, LocationDetail_Data3, Locati
 import LocationItem from '../LocationPopular/LocationItem'
 import { LocationDetail1, RestauRantnear } from '../../HotelData'
 import MultipleDetail from '../MultipleDetail'
-const LocationDetail = () => {
+import Icon from 'react-native-vector-icons/FontAwesome';
+const LocationDetail = ({navigation}) => {
     const check =(Item)=>{
         if(Item ==1){
             console.log('hello',Item)
 
         }
     }
+    const back =()=>{
+        navigation.goBack()
+    }
     return (
         <ScrollView style={{ flex: 1 }}>
             <View style={styles.conatiner}>
                 <View style={styles.header}>
                     <Image style={styles.header_image} source={require('../../assets/lyson.jpg')} />
-
+                    {/* <View>
+                        <View style={{position:'absolute',top:20,left:30,zIndex:30}}>
+                            <Image style={{backgroundColor:'green',width:200,height:80,}} source={require('../../assets/back1.png')}/>
+                        </View>
+                        <View>
+                          
+                        </View>
+                    </View> */}
+                </View>
+                <View>
+                    <TouchableOpacity style={{position:'absolute',top:-145,left:16,zIndex:30}} onPress={()=>back()}>
+                    <Icon name="chevron-left" size={12} color="#FFFFFF" />
+                          {/* <Image style={{width:8,height:10,position:'absolute',top:-145,left:16,zIndex:30}}  source={require('../../assets/back1.png')}/> */}
+                    </TouchableOpacity>
+                    
+                </View>
+                <View>
+                <TouchableOpacity style={{position:'absolute',top:-145,right:16,zIndex:30}} onPress={()=>back()}>
+                    <Icon name="search" size={12} color="#FFFFFF" />
+                          {/* <Image style={{width:8,height:10,position:'absolute',top:-145,left:16,zIndex:30}}  source={require('../../assets/back1.png')}/> */}
+                    </TouchableOpacity>
                 </View>
                 <View style={{ height: 210, backgroundColor: '#FFFFFF', paddingHorizontal: 10, position: 'absolute', top: 150, left: 0, borderTopRightRadius: 13, borderTopLeftRadius: 13 }}>
                     <View style={styles.title}>

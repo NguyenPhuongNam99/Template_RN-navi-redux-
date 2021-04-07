@@ -60,7 +60,7 @@ const ScheduleNow_Item = ({ Item }) => {
                         <Image style={{ width: 14, height: 14, marginBottom: 5,marginRight:10 }}
                             resizeMode='stretch'
                             source={Item.share} />
-                        <Image style={{ width: 13, height: 14, marginBottom: 5 }}
+                        <Image style={{ width: 16, height: 14, marginBottom: 5 }}
 
                             source={Item.tym} />
                     </View>

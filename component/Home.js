@@ -122,11 +122,13 @@ const Home = ({navigation}) => {
     const Desdata = [
         {
             id: 1,
-            image: require('../assets/ls.png'),
+            image: require('../assets/ts.png'),
+            name:'Lý Sơn, Quảng Ngãi'
         },
         {
             id: 2,
-            image: require('../assets/nt.png'),
+            image: require('../assets/ts1.jpg'),
+            name:'Thạch Thất ,Hà Nội'
         },
         {
             id: 3,
@@ -366,7 +368,7 @@ const Home = ({navigation}) => {
         return (
             <View>
                 <Image style={{ width: 150, height: 200, borderRadius: 5, marginHorizontal: 11 }} source={Destination_item.image} />
-                <Text style={{ position: 'absolute', bottom: 8, left: 19, color: '#FFFFFF', fontSize: 14, fontWeight: '600' }}>{Destination_item.des}</Text>
+                <Text style={{ position: 'absolute', bottom: 8, left: 19, color: '#FFFFFF', fontSize: 14, fontWeight: '600' }}>{Destination_item.name}</Text>
             </View>
 
 
@@ -666,7 +668,7 @@ const styles = StyleSheet.create({
         color: '#000000',
         fontSize: 14,
         lineHeight: 17,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     }
     ,
     discount_title1: {

@@ -29,5 +29,12 @@ import LocationPopular from './component/LocationPopular/LocationPopular'
 import LocationDetail from './component/LocationPopular/LocationDetail'
 import RestaurantDetail from './component/LocationPopular/RestaurantDetail'
 import Hotel_Icon from './component/Hotel_Icon'
-import Destionation12_Head from './component/LocationPopular/Destionation12_Head'
-AppRegistry.registerComponent(appName, () => App);
+import Destionation12_Head from './component/LocationPopular/Destionation12_Head';
+import LocationDetail2 from './component/LocationPopular/LocationDetail2'
+import FirstScreen from './component/FirstScreen'
+import ScheduleNext from './component/MySchedule/ScheduleNext'
+import MyScheduleGo from './component/MySchedule/MyScheduleGo'
+import FinishSchedule from './component/MySchedule/FinishSchedule'
+import index from './component/MySchedule/index'
+
+AppRegistry.registerComponent(appName, () => LocationDetail2);

@@ -15,6 +15,8 @@ import UpdateProfile from '../../component/UpdateProfile'
 import TabView from '../../component/TabView'
 import DestionationPopular from '../../component/DestionationPopular'
 import Destination12 from '../../component/Destionation12'
+import TabVoucher from '../../component/MySchedule/index'
+import Tab1 from '../../component/MySchedule/Tab1'
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigation() {
@@ -50,11 +52,11 @@ export default function TabNavigation() {
         options ={{tabBarOnPress: () => {} ,tabBarIcon : () =>   <TabView/>, tabBarLabel: ''}}
         component={ScheduleHeader} /> */}
 
-        <Tab.Screen name="Hotel_Icon" 
+        <Tab.Screen name="TabVoucher" 
          options={{
           tabBarIcon:()=><Icon name="bell" size={19} color="#9A9A9A" />
         }}
-        component={Hotel_Icon} />
+        component={TabVoucher} />
         <Tab.Screen name="UpdateProfile"
           options={{
             tabBarIcon:()=><Icon name="user" size={19} color="#9A9A9A" />
