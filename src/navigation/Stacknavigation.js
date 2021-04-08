@@ -44,12 +44,16 @@ import LocationDetail from '../../component/LocationPopular/LocationDetail'
 import Destionation12_Head from '../../component/LocationPopular/Destionation12_Head'
 import RestaurantDetail from '../../component/LocationPopular/RestaurantDetail'
 import MultipleDetail from '../../component/MultipleDetail'
+import Profile from '../../component/Profile/Profile';
+import Favourite from '../../component/Profile/Favourite'
+import Setting from '../../component/Profile/Setting'
+import PolycySetting from '../../component/Profile/PolycySetting'
 const Stack = createStackNavigator();
 
-const App = () => {
+const App1 = () => {
   return (
    
-    <Stack.Navigator initialRouteName="Home">
+    <Stack.Navigator >
       {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
       {/* <Stack.Screen name="BookScreen" component={BookScreen} /> */}
       <Stack.Screen name="Home" component={Home}  options={{headerShown: false}} />
@@ -73,4 +77,19 @@ const App = () => {
   );
 }
 
-export default  App;
+const App2 =()=>{
+  return(
+    <Stack.Navigator >
+      <Stack.Screen name="Profile" component={Profile}  options={{headerShown: false}} />
+      <Stack.Screen name="Favourite" component={Favourite}  options={{headerShown: false}}/>
+      <Stack.Screen name="Setting" component={Setting}  options={{headerShown: false}}/>
+      <Stack.Screen name="PolycySetting" component={PolycySetting}  options={{headerShown: false}}/>
+
+      {/* <Stack.Screen name="Home" component={Home}  options={{headerShown: false}}/>
+      <Stack.Screen name="DiscountHeader" component={DiscountHeader}  options={{headerShown: false}}/> */}
+      
+    </Stack.Navigator>
+    
+  )
+}
+export  {App1,App2};

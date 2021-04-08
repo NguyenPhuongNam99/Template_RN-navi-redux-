@@ -306,7 +306,7 @@ export const RestauRantnear =[
         name:'Hải sản thịnh phát',
         comment: require('./assets/sa.png'),
         location: require('./assets/location.png'),
-        des: 'Phú Quốc, Kiên Giang',
+        des: 'Thạch Thất ,Hà Nội',
         price: '40.000 -200.000 đ/ đêm',
     },
     {

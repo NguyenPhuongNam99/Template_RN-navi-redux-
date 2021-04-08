@@ -5,22 +5,26 @@ import LocationItem from '../LocationPopular/LocationItem'
 import { LocationDetail1, RestauRantnear } from '../../HotelData'
 import MultipleDetail from '../MultipleDetail'
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {useDispatch,useSelector} from 'react-redux'
+import {useSelector,useDispatch} from 'react-redux'
 const LocationDetail = ({navigation}) => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const back =()=>{
         navigation.goBack()
     }
     const check =(item)=>{
-        if(item == 3){
-            console.log('da klich Hotel_icon')
-            navigation.navigate('Hotel_Icon')
-        }
-        if(item ==4){
-            console.log('Da Kich Restẩunty')
-            navigation.navigate('RestaurantIcon')
-        }
+        // if(item == 1){
+        //     console.log('da klich Hotel_icon')
+            navigation.navigate('RestaurantDetail')
+        // }
+        // if(item ==4){
+        //     console.log('Da Kich Restẩunty')
+        //     navigation.navigate('RestaurantIcon')
+        // }
     } 
+    const pass =(Item)=>{
+      
+             dispatch({type:'ADDDISCOUNT',item:Item})
+    }
     return (
         <ScrollView style={{ flex: 1 }}>
             <View style={styles.conatiner}>
@@ -129,6 +133,7 @@ const LocationDetail = ({navigation}) => {
                             <MultipleDetail Item={item} />
                         }
                     />
+                  {/* để hàm pass lên đây ,,,,khi click ở dưới tab nhà hàng thì nó sẽ báo pass undefine */}
                 </View>
 
 
@@ -147,7 +152,7 @@ const LocationDetail = ({navigation}) => {
                         renderItem={({ item }) =>{
                           
                             //Tạo component rồi gọi đến
-                           return <MultipleDetail Item={item}  check ={()=>check(item.id)}/>
+                           return <MultipleDetail Item={item}  pass={()=>pass(item)} check ={()=>check(item)}/>
                         }
                         }
                     />

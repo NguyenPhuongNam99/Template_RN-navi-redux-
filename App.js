@@ -169,12 +169,12 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
 
-    // <Provider store={store}>
+    <Provider store={store}>
       <NavigationContainer>
 
         <TabNavigation />
       </NavigationContainer>
-    // </Provider>
+   </Provider>
 
     // <NavigationContainer>
     // <Stack.Navigator initialRouteName="Home">

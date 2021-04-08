@@ -36,5 +36,10 @@ import ScheduleNext from './component/MySchedule/ScheduleNext'
 import MyScheduleGo from './component/MySchedule/MyScheduleGo'
 import FinishSchedule from './component/MySchedule/FinishSchedule'
 import index from './component/MySchedule/index'
-
-AppRegistry.registerComponent(appName, () => App);
+import Counbt from './component/Counbt'
+import RestaurantIcon from './component/RestaurantIcon'
+import Profile from './component/Profile/Profile'
+import Favourite from './component/Profile/Favourite'
+import Setting from './component/Profile/Setting'
+import  PolycySetting from "./component/Profile/PolycySetting";
+AppRegistry.registerComponent(appName, () =>App);

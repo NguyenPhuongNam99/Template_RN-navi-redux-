@@ -1,10 +1,13 @@
 import React from 'react';
 import { View, Text, Image ,TouchableOpacity} from 'react-native';
 
-const MultipleDetail = ({ Item,check }) => {
-    
+const MultipleDetail = ({ Item,check ,pass}) => {
+    const xuly =()=>{
+        check()
+        pass()
+    }
     return (
-        <TouchableOpacity onPress={check}>
+        <TouchableOpacity onPress={xuly}>
             <View>
                 <Image style={{ width: 160, height: 150, borderRadius: 5, marginHorizontal: 11 }} source={Item.image} />
                 <View>
@@ -30,3 +33,5 @@ const MultipleDetail = ({ Item,check }) => {
     )
 }
 export default MultipleDetail;
+
+//casch xu ly khi co nhieu file,co nhieu ham gioong nhu the

@@ -17,18 +17,25 @@ import DestionationPopular from '../../component/DestionationPopular'
 import Destination12 from '../../component/Destionation12'
 import TabVoucher from '../../component/MySchedule/index'
 import Tab1 from '../../component/MySchedule/Tab1'
+import Counbt from '../../component/Counbt'
+import Profile from '../../component/Profile/Profile'
+import {App1,App2} from '../../src/navigation/Stacknavigation'
+// import App2 from '../../src/navigation/Stacknavigation'
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigation() {
   return (
    
-      <Tab.Navigator>
-        <Tab.Screen name="Home"
-       
+      <Tab.Navigator tabBarOptions={{
+        showLabel:false
+      }}>
+        <Tab.Screen name="App1"
+        
         options={{
           tabBarIcon:()=><Icon name="search" size={19} color="#9A9A9A" />
+        
         }} 
-        component={Stacknavigation}
+        component={App1}
         />
          {/* <Tab.Screen name="Home"
        
@@ -57,11 +64,11 @@ export default function TabNavigation() {
           tabBarIcon:()=><Icon name="bell" size={19} color="#9A9A9A" />
         }}
         component={TabVoucher} />
-        <Tab.Screen name="UpdateProfile"
+        <Tab.Screen name="App2"
           options={{
             tabBarIcon:()=><Icon name="user" size={19} color="#9A9A9A" />
           }}
-        component={UpdateProfile} />
+        component={App2} />
 
       </Tab.Navigator>
     

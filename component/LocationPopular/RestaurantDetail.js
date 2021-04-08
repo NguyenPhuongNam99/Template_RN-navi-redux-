@@ -4,7 +4,10 @@ import { ScrollView } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {restaurant} from '../../HotelData'
 import MultipleDetail from '../MultipleDetail'
-const RestaurantDetail = () => {
+import {useSelector,useDispatch} from 'react-redux'
+const RestaurantDetail = ({navigation}) => {
+    const dispatch = useDispatch();
+    const item = useSelector(state=>state.chitietkm)
     const [star, setStar] = useState([1, 2, 3, 4, 5]);
     const starA = require('../../assets/star.png')
     const CustomBar = () => {
@@ -27,25 +30,32 @@ const RestaurantDetail = () => {
             </View>
         )
     }
+    // const back =()=>{
+    //     navigation.goBack();
+    // }
+    const back =()=>{
+        console.log('da kichh go back')
+        navigation.goBack()
+    }
     return (
         <ScrollView>
             <View style={styles.coontainer}>
                 <View style={{ height: 240 }}>
-                    <Image style={{ width: '100%', height: '100%', backgroundColor: '#FFFFFF' }} source={require('../../assets/tom.png')} />
+                    <Image style={{ width: '100%', height: '100%', backgroundColor: '#FFFFFF' }} source={item.image} />
                 </View>
                 <View style={styles.postion}>
 
                 </View>
 
                 <View>
-                    <TouchableOpacity>
-                        <Icon style={styles.postion1} name="angle-left" size={19} color="#FFFFFF" />
+                    <TouchableOpacity style={styles.postion1}  onPress={()=>back()}>
+                        <Icon  name="angle-left" size={19} color="#FFFFFF" />
                     </TouchableOpacity>
                     <View style={styles.block}>
-                        <Text style={styles.text}>Nhà hàng hải sản Khói Chiều</Text>
+                        <Text style={styles.text}>{item.name}  </Text>
                         <View style={styles.block_body}>
                             <Image style={styles.image_location} source={require('../../assets/location1.png')} />
-                            <Text style={styles.destination}>Lý Sơn, Quảng Ngãi</Text>
+                            <Text style={styles.destination}>{item.des}</Text>
                         </View>
                     </View>
                 </View>
