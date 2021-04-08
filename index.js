@@ -37,4 +37,4 @@ import MyScheduleGo from './component/MySchedule/MyScheduleGo'
 import FinishSchedule from './component/MySchedule/FinishSchedule'
 import index from './component/MySchedule/index'
 
-AppRegistry.registerComponent(appName, () => LocationDetail2);
+AppRegistry.registerComponent(appName, () => App);

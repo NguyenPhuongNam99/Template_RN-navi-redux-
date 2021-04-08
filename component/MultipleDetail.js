@@ -1,12 +1,10 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { check } from 'react-native-permissions';
+import { View, Text, Image ,TouchableOpacity} from 'react-native';
 
 const MultipleDetail = ({ Item,check }) => {
- 
+    
     return (
-        <TouchableOpacity onPress={()=>check(Item.id)}>
+        <TouchableOpacity onPress={check}>
             <View>
                 <Image style={{ width: 160, height: 150, borderRadius: 5, marginHorizontal: 11 }} source={Item.image} />
                 <View>

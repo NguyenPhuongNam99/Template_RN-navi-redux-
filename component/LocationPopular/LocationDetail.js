@@ -5,16 +5,22 @@ import LocationItem from '../LocationPopular/LocationItem'
 import { LocationDetail1, RestauRantnear } from '../../HotelData'
 import MultipleDetail from '../MultipleDetail'
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {useDispatch,useSelector} from 'react-redux'
 const LocationDetail = ({navigation}) => {
-    const check =(Item)=>{
-        if(Item ==1){
-            console.log('hello',Item)
-
-        }
-    }
+    const dispatch = useDispatch()
     const back =()=>{
         navigation.goBack()
     }
+    const check =(item)=>{
+        if(item == 3){
+            console.log('da klich Hotel_icon')
+            navigation.navigate('Hotel_Icon')
+        }
+        if(item ==4){
+            console.log('Da Kich Restẩunty')
+            navigation.navigate('RestaurantIcon')
+        }
+    } 
     return (
         <ScrollView style={{ flex: 1 }}>
             <View style={styles.conatiner}>
@@ -105,7 +111,9 @@ const LocationDetail = ({navigation}) => {
 
                 />
                 <View style={styles.Discount}>
+                  
                     <Text style={styles.discount_title}>Khách sạn</Text>
+                   
                     <TouchableOpacity>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
@@ -136,9 +144,11 @@ const LocationDetail = ({navigation}) => {
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
                         keyExtractor={(item) => item.id.toString()}
-                        renderItem={({ item }) =>
+                        renderItem={({ item }) =>{
+                          
                             //Tạo component rồi gọi đến
-                            <MultipleDetail Item={item} check ={check(item)} />
+                           return <MultipleDetail Item={item}  check ={()=>check(item.id)}/>
+                        }
                         }
                     />
                 </View>
