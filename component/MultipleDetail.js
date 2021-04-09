@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, Image ,TouchableOpacity} from 'react-native';
 
-const MultipleDetail = ({ Item,check ,pass}) => {
+const MultipleDetail = ({ Item,check ,pass,check1}) => {
     const xuly =()=>{
-        check()
-        pass()
+       check &&check()
+       pass && pass()
+       check1 && check1()
     }
     return (
         <TouchableOpacity onPress={xuly}>

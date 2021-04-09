@@ -285,11 +285,11 @@ const Home = ({navigation}) => {
 
     ]
     const check =(item)=>{
-        if(item == 3){
+        if(item == 2){
             console.log('da klich Hotel_icon')
             navigation.navigate('Hotel_Icon')
         }
-        if(item ==4){
+        if(item ==5){
             console.log('Da Kich Restẩunty')
             navigation.navigate('RestaurantIcon')
         }

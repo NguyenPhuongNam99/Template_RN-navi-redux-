@@ -12,6 +12,9 @@ const LocationDetail2 = () => {
 
         )
     }
+
+   
+
     const Desdata = [
         {
             id: 1,

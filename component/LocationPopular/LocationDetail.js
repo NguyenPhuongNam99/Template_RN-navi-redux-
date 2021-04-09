@@ -11,6 +11,7 @@ const LocationDetail = ({navigation}) => {
     const back =()=>{
         navigation.goBack()
     }
+    const locationpopular = useSelector(state=>state.locationpopular)
     const check =(item)=>{
         // if(item == 1){
         //     console.log('da klich Hotel_icon')
@@ -21,15 +22,19 @@ const LocationDetail = ({navigation}) => {
         //     navigation.navigate('RestaurantIcon')
         // }
     } 
+    const check1 =()=>{
+        navigation.navigate('LocationDetail2')
+    }
     const pass =(Item)=>{
       
              dispatch({type:'ADDDISCOUNT',item:Item})
     }
+    // require('../../assets/lyson.jpg')
     return (
         <ScrollView style={{ flex: 1 }}>
             <View style={styles.conatiner}>
                 <View style={styles.header}>
-                    <Image style={styles.header_image} source={require('../../assets/lyson.jpg')} />
+                    <Image style={styles.header_image} source={locationpopular.image} />
                     {/* <View>
                         <View style={{position:'absolute',top:20,left:30,zIndex:30}}>
                             <Image style={{backgroundColor:'green',width:200,height:80,}} source={require('../../assets/back1.png')}/>
@@ -130,7 +135,7 @@ const LocationDetail = ({navigation}) => {
                         keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
                             //Tạo component rồi gọi đến
-                            <MultipleDetail Item={item} />
+                            <MultipleDetail Item={item} check={check1}/>
                         }
                     />
                   {/* để hàm pass lên đây ,,,,khi click ở dưới tab nhà hàng thì nó sẽ báo pass undefine */}

@@ -1,13 +1,14 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet,TouchableOpacity ,ScrollView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import {useDispatch,useSelector} from 'react-redux'
 const DetailDiscount = ({navigation}) => {
+    const banner = useSelector(state=>state.banner)
     return (
         <ScrollView>
         <View style={styles.container}>
             <View style={styles.top}>
-                <Image style={styles.image} source={require('../assets/banner.png')} />
+                <Image style={styles.image} source={banner.image} />
                 <View style={styles.position}>
                     <TouchableOpacity onPress={()=>navigation.goBack()}>
                          <Icon name="chevron-left" size={16} color="#FFFFFF" style={styles.image1} />

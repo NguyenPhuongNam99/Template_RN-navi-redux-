@@ -48,6 +48,7 @@ import Profile from '../../component/Profile/Profile';
 import Favourite from '../../component/Profile/Favourite'
 import Setting from '../../component/Profile/Setting'
 import PolycySetting from '../../component/Profile/PolycySetting'
+import LocationDetail2 from '../../component/LocationPopular/LocationDetail2'
 const Stack = createStackNavigator();
 
 const App1 = () => {
@@ -69,6 +70,7 @@ const App1 = () => {
       <Stack.Screen name="Destionation12_Head" component={LocationDetail}  options={{headerShown: false}}/>
       <Stack.Screen name="RestaurantDetail" component={RestaurantDetail}  options={{headerShown: false}}/>
       <Stack.Screen name="MultipleDetail" component={MultipleDetail}  options={{headerShown: false}}/>
+      <Stack.Screen name="LocationDetail2" component={LocationDetail2}  options={{headerShown: false}}/>
 
 
       

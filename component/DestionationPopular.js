@@ -4,14 +4,17 @@ import { View, Text, Image, StyleSheet, FlatList } from 'react-native';
 import Header from './Header'
 import { Destination_PopularData } from '../Data/Destionation12_Head_Data'
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import {useDispatch,useSelector} from 'react-redux'
 const DestionationPopular = ({navigation}) => {
     const goback = () => {
         navigation.goBack();
     }
+    const dispatch = useDispatch();
+    
     const check =(item )=>{
-                if(item ==1 ){
+                    dispatch({type:'LocationPopular',locationpopular:item})
                     navigation.navigate('LocationDetail')
-                }
+              
             }
     return (
         <View style={styles.container}>
@@ -23,7 +26,7 @@ const DestionationPopular = ({navigation}) => {
                     showsVerticalScrollIndicator={false}
                     renderItem={({ item }) => {
                         return (
-                            <TouchableOpacity onPress={()=>check(item.id)}>
+                            <TouchableOpacity onPress={()=>check(item)}>
                             <View style={styles.block_image}>
                                 <Image
                                     style={styles.image}

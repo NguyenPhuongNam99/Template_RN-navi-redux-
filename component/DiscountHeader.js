@@ -1,15 +1,19 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 import { DiscountData } from '../Data/DiscountData';
+import {useDispatch,useSelector} from 'react-redux'
 const DiscountHeader = ({navigation}) => {
     const MultipleDetail = ({ Item }) => {
-        const check =(item)=>{
-            if(item ==1){
+        const checkBanner =(item)=>{
+            // if(item ==1){
+                dispatch({type:'PassBanner',banner:item})
+                console.log('df',item)
                 navigation.navigate('DetailDiscount')
-            }
+            // }
         }
+        const dispatch = useDispatch();
         return (
-            <TouchableOpacity onPress={()=>check(Item.id)}>
+            <TouchableOpacity onPress={()=>checkBanner(Item)}>
                  <View style={styles.banner}>
                 <Image style={{ width:'100%'}} source={Item.image} />
                 <View style={styles.banner_bottom}>
