@@ -2,7 +2,6 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, FlatList } from 'react-native';
 import Header from '../Header'
 import { Destionation12_Head1 } from '../../Data/Destionation12_Head_Data'
-import { color } from 'react-native-reanimated';
 const Destionation12_Head = ({navigation}) => {
     const goback = () => {
         navigation.goBack();

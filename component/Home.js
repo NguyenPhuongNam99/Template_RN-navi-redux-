@@ -555,7 +555,7 @@ const Home = ({navigation}) => {
 
                 <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Điểm đến tháng 12</Text>
-                    <TouchableOpacity onPress={()=>navigation.navigate('Destionation12_Head')}>
+                    <TouchableOpacity onPress={()=>navigation.navigate('LocationPopular')}>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>

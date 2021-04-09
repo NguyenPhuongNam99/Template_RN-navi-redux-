@@ -17,7 +17,7 @@ const Setting =({navigation})=>{
                    
                     <Text style={styles.textTab} onPress={()=>navigation.navigate('PolycySetting')}>Chính sách bảo mật</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.block}>
+                <TouchableOpacity style={styles.block} onPress={()=>navigation.navigate('TermOfUse')}>
                   
                     <Text style={styles.textTab}>Điều khoản sử dụng </Text>
                 </TouchableOpacity>

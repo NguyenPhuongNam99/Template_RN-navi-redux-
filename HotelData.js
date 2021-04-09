@@ -330,3 +330,28 @@ export const RestauRantnear =[
         price: '500,000 đ/ đêm',
     },
 ]
+
+
+//My PrOFILE :
+export const ProfileDta =[
+    {
+        id:1,
+        image:require('./assets/dn2.png'),
+        name:'Hội An'
+    },
+    {
+        id:2,
+        image:require('./assets/dn3.png'),
+        name:'Đà Nẵng'
+    },
+    {
+        id:3,
+        image:require('./assets/ht2.jpg'),
+        name:'Sơn Tây'
+    },
+    {
+        id:4,
+        image:require('./assets/sp1.jpg'),
+        name:'Quốc Oai'
+    },
+]

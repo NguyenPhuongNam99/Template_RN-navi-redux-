@@ -7,11 +7,11 @@ const Profile =({navigation})=>{
             <View style={styles.header}>
                 <Text style={styles.header_title}>Thông tin cá nhân </Text>
             </View>
-            <View style={styles.block_image}>
+            <TouchableOpacity style={styles.block_image} onPress={()=>navigation.navigate('MyProfile')}>
                 <Image style={styles.image}  source={require('../../assets/nam.jpg')}/>
                 <Text style={styles.name}>Nguyễn Phương Nam</Text>
 
-            </View>
+            </TouchableOpacity>
             <View style={styles.block_tab}>
                 <TouchableOpacity style={styles.block}>
                     <Image style={styles.image_tab} source={require('../../assets/1.png')}/>

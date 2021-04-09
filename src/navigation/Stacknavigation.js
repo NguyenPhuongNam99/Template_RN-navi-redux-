@@ -49,6 +49,9 @@ import Favourite from '../../component/Profile/Favourite'
 import Setting from '../../component/Profile/Setting'
 import PolycySetting from '../../component/Profile/PolycySetting'
 import LocationDetail2 from '../../component/LocationPopular/LocationDetail2'
+import TermOfUse from '../../component/Profile/TermOfUse'
+import MyProfile from '../../component/Profile/MyProfile'
+import LocationPopular from '../../component/LocationPopular/LocationPopular'
 const Stack = createStackNavigator();
 
 const App1 = () => {
@@ -71,6 +74,7 @@ const App1 = () => {
       <Stack.Screen name="RestaurantDetail" component={RestaurantDetail}  options={{headerShown: false}}/>
       <Stack.Screen name="MultipleDetail" component={MultipleDetail}  options={{headerShown: false}}/>
       <Stack.Screen name="LocationDetail2" component={LocationDetail2}  options={{headerShown: false}}/>
+      <Stack.Screen name="LocationPopular" component={LocationPopular}  options={{headerShown: false}}/>
 
 
       
@@ -86,6 +90,8 @@ const App2 =()=>{
       <Stack.Screen name="Favourite" component={Favourite}  options={{headerShown: false}}/>
       <Stack.Screen name="Setting" component={Setting}  options={{headerShown: false}}/>
       <Stack.Screen name="PolycySetting" component={PolycySetting}  options={{headerShown: false}}/>
+      <Stack.Screen name="TermOfUse" component={TermOfUse}  options={{headerShown: false}}/>
+      <Stack.Screen name="MyProfile" component={MyProfile}  options={{headerShown: false}}/>
 
       {/* <Stack.Screen name="Home" component={Home}  options={{headerShown: false}}/>
       <Stack.Screen name="DiscountHeader" component={DiscountHeader}  options={{headerShown: false}}/> */}

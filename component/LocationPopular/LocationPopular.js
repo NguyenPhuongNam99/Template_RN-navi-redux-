@@ -14,6 +14,7 @@ const LocationPopular = ({ navigation }) => {
                 <FlatList
                     data={LocationPopular_Data}
                     keyExtractor={item => item.id.toString()}
+                    showsVerticalScrollIndicator={false}
                     renderItem={({ item }) => {
                         return (
                             <View style={styles.headerTop}>
@@ -47,13 +48,14 @@ const styles = StyleSheet.create({
        
         flex:1,
         backgroundColor:' rgba(0, 0, 0, 0.25)',
-        marginVertical: 16,
-        height:'100%'
-       
+        marginTop: 16,
+        height:'100%',
+        width:'100%'
     },
     flat:{
         
-   marginHorizontal:16 ,marginBottom:150
+   marginHorizontal:16 ,
+   marginBottom:150
     },
     header: {
         height: 180,
@@ -62,6 +64,8 @@ const styles = StyleSheet.create({
     },
     tinilogo: {
         width: '100%',
+        height:'100%',
+        
         borderRadius:15
     },
     position: {
@@ -83,13 +87,14 @@ const styles = StyleSheet.create({
         fontSize:16,
         lineHeight:19,
         fontFamily:'sf-ui-display-bold-58646a511e3d9',
-        position:'absolute',top:-100,left:'40%'
+        position:'absolute',top:-100,left:'40%',zIndex:100
      },
      footer:{
         flexDirection:'row',
         position:'absolute',
         bottom:16,
-        left:16
+        left:16,
+        zIndex:100
      },
      image:{
          width:11,

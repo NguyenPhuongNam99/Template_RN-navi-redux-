@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, ScrollView ,TouchableOpacity,FlatList} from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView, FlatList, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-const LocationDetail2 = () => {
+const LocationDetail2 = ({ navigation }) => {
     const Destination = ({ Destination_item }) => {
         return (
             <View>
@@ -13,18 +14,18 @@ const LocationDetail2 = () => {
         )
     }
 
-   
+
 
     const Desdata = [
         {
             id: 1,
             image: require('../../assets/hl2.jpeg'),
-            name:'Lý Sơn, Quảng Ngãi'
+            name: 'Lý Sơn, Quảng Ngãi'
         },
         {
             id: 2,
             image: require('../../assets/hl1.jpg'),
-            name:'Thạch Thất ,Hà Nội'
+            name: 'Thạch Thất ,Hà Nội'
         },
         {
             id: 3,
@@ -45,6 +46,9 @@ const LocationDetail2 = () => {
 
 
     ]
+    const back = () => {
+        navigation.goBack()
+    }
     return (
         <ScrollView>
             <View style={styles.container}>
@@ -52,6 +56,16 @@ const LocationDetail2 = () => {
                     <View style={styles.top}>
                         <Image style={styles.image} source={require('../../assets/lson.jpg')} />
                     </View>
+                    {/* <TouchableOpacity style={{ position: 'absolute', top: 34, left: 15, width: 40 }} onPress={()=>back()}>
+                        {/* <Image style={{width:6,height:12,}} source={require('../../assets/back11.png')}/> */}
+                        {/* <Icon name="chevron-left" size={12} color="#FFFFFF" />style={{position:'absolute',top:-145,left:16}}
+                    </TouchableOpacity> */} 
+
+                    <TouchableOpacity style={{ position: 'absolute', top: 34, left: 15,zIndex:30 }} onPress={()=>back()}>
+                    <Icon name="chevron-left" size={12} color="#FFFFFF" />
+                          {/* <Image style={{width:8,height:10,position:'absolute',top:-145,left:16,zIndex:30}}  source={require('../../assets/back1.png')}/> */}
+                    </TouchableOpacity>
+                    
                     <View style={styles.block}>
                         <Text style={styles.text_Header}>Khám phá Đảo bé</Text>
                         <View style={styles.block_body}>
@@ -110,53 +124,53 @@ const LocationDetail2 = () => {
                                 Bảng giá thuê ca nô nguyên chiếc khứ hồi:
                             </Text>
 
-                            <Text style={{fontSize:13, color:'#333333',fontWeight:'900'}}>
+                            <Text style={{ fontSize: 13, color: '#333333', fontWeight: '900' }}>
                                 - Ca nô 25 chỗ: 1600k.
                             </Text>
-                            <Text style={{fontSize:13, color:'#333333'}}>- Ca nô 35 chỗ: 2600k.</Text>
-                            <Text style={{fontSize:13, color:'#333333'}}>- Ca nô 40 chỗ: 3100k.</Text>
+                            <Text style={{ fontSize: 13, color: '#333333' }}>- Ca nô 35 chỗ: 2600k.</Text>
+                            <Text style={{ fontSize: 13, color: '#333333' }}>- Ca nô 40 chỗ: 3100k.</Text>
                         </View>
                         <Text style={styles.title_header1}>Thời điểm thích hợp để khám phá Đảo Bé Lý Sơn</Text>
                         <View>
                             <Text style={styles.text}>- Nếu đi Đảo Bé trong ngày, du khách nên xuất phát từ Đảo Lớn lúc sáng
-                                 sau đó chiều về lại. Du khách ở lại Đảo Bé một ngày thì nên xuất phát 
-                                 từ sáng và về lại lúc trưa ngày hôm sau.
+                            sau đó chiều về lại. Du khách ở lại Đảo Bé một ngày thì nên xuất phát
+                            từ sáng và về lại lúc trưa ngày hôm sau.
                             </Text>
                             <Text style={styles.text}>
-                            - Khi đi Đảo Bé du khách nên đi từ tháng 2 đến tháng 9. Đây là thời điểm du lịch Lý Sơn không có mưa gió.
+                                - Khi đi Đảo Bé du khách nên đi từ tháng 2 đến tháng 9. Đây là thời điểm du lịch Lý Sơn không có mưa gió.
                             </Text>
                         </View>
                         <Text style={styles.title_header1}>Chơi gì ở Đảo Bé</Text>
                         <Text style={styles.title_header2}>Lặn ngắm san hô</Text>
                         <Text style={styles.text}>
-                            
-                            Rạn san hô ở Đảo Bé được đánh giá đẹp nhất Việt Nam. 
+
+                            Rạn san hô ở Đảo Bé được đánh giá đẹp nhất Việt Nam.
                             Du khách có thể lựa chọn thuê thuyền thúng đi lặn san hô.
-                             Mỗi lần lặn san hô như vậy là giá 80k/người. Giá lặn san 
-                             hô đã bao gồm tiền thuê kính, thuê áo phao. 
+                            Mỗi lần lặn san hô như vậy là giá 80k/người. Giá lặn san
+                            hô đã bao gồm tiền thuê kính, thuê áo phao.
 
                         </Text>
                         <Text style={styles.title_header2}>Tắm biển ở Đảo Bé.</Text>
                         <Text style={styles.text}>
-                            
-                        Bãi Sau là bãi tắm nổi tiếng nhất tại Lý Sơn. Ở bãi tắm có 
-                        nhiều bãi đá đen trầm tích để du khách có thể check-in với 
-                        những tấm ảnh ấn tượng. Ở Bãi Sau sóng biển khá là bình
-                         yên nên việc tắm biển rất thích thú.
+
+                            Bãi Sau là bãi tắm nổi tiếng nhất tại Lý Sơn. Ở bãi tắm có
+                            nhiều bãi đá đen trầm tích để du khách có thể check-in với
+                            những tấm ảnh ấn tượng. Ở Bãi Sau sóng biển khá là bình
+                            yên nên việc tắm biển rất thích thú.
 
                         </Text>
                         <Text style={styles.title_header2}>Check-in cây cô đơn và cầu sống ảo.</Text>
                         <Text style={styles.text}>
-                        Cây phong ba dù đứng một mình ở Bãi Tây vẫn được cư dân mạng phong tặng là cây 
-                        cô đơn ở Lý Sơn. Cây có hình dáng lạ, đẹp được nhiều du khách ưu thích check-in. 
-                        Ngoài cây cô đơn trên Đảo Bé còn có cây cầu sống ảo du khách không thể bỏ qua.
+                            Cây phong ba dù đứng một mình ở Bãi Tây vẫn được cư dân mạng phong tặng là cây
+                            cô đơn ở Lý Sơn. Cây có hình dáng lạ, đẹp được nhiều du khách ưu thích check-in.
+                            Ngoài cây cô đơn trên Đảo Bé còn có cây cầu sống ảo du khách không thể bỏ qua.
                         </Text>
                         <Text style={styles.title_header2}>Ở lại homestay tại Đảo Bé.</Text>
                         <Text style={styles.text}>
-                        So với các homestay trên Đảo Lớn thì hiện tại ở Đảo Bé có rất nhiều homestay giúp du khách có thể gần gũi 
-                        với thiên nhiên. Buổi tối bạn có muốn 
-                        tổ chức một buổi tiệc BBQ trên biển thật sự hay 
-                        căm trại tại Đảo Bé. Đây sẽ là những trải nghiệm mà không phải ai cũng có thể có được khi đến Lý Sơn.
+                            So với các homestay trên Đảo Lớn thì hiện tại ở Đảo Bé có rất nhiều homestay giúp du khách có thể gần gũi
+                            với thiên nhiên. Buổi tối bạn có muốn
+                            tổ chức một buổi tiệc BBQ trên biển thật sự hay
+                            căm trại tại Đảo Bé. Đây sẽ là những trải nghiệm mà không phải ai cũng có thể có được khi đến Lý Sơn.
                         </Text>
                     </View>
 
@@ -165,11 +179,11 @@ const LocationDetail2 = () => {
                 </View>
                 <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Địa điểm phổ biến</Text>
-                    <TouchableOpacity onPress={()=>navigation.navigate('DestionationPopular')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('DestionationPopular')}>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
-                <View style={{ marginHorizontal: 10, marginTop: 10 ,paddingBottom:20}}>
+                <View style={{ marginHorizontal: 10, marginTop: 10, paddingBottom: 20 }}>
                     <FlatList
                         data={Desdata}
                         horizontal={true}
@@ -258,23 +272,23 @@ const styles = StyleSheet.create({
     headerText: {
         marginHorizontal: 16,
         color: '#333333',
-       
+
     },
     title_header: {
         color: '#000000',
         fontWeight: '600',
         fontFamily: 'sf-ui-display-bold-58646a511e3d9',
         lineHeight: 18,
-        paddingBottom:8,
-        
+        paddingBottom: 8,
+
     },
     title_header1: {
         color: '#000000',
         fontWeight: '600',
         fontFamily: 'sf-ui-display-bold-58646a511e3d9',
         lineHeight: 18,
-        
-        paddingTop:10
+
+        paddingTop: 10
     }
     ,
     title_header2: {
@@ -282,15 +296,15 @@ const styles = StyleSheet.create({
         fontWeight: 'normal',
         fontFamily: 'sf-ui-display-semibold-58646eddcae92',
         lineHeight: 18,
-        paddingBottom:8,
-        fontSize:13,
-        paddingTop:8
+        paddingBottom: 8,
+        fontSize: 13,
+        paddingTop: 8
     },
-    text:{
-        marginVertical:6,
-        fontSize:13,
-        fontWeight:'normal',
-        color:'#333333',lineHeight:17
+    text: {
+        marginVertical: 6,
+        fontSize: 13,
+        fontWeight: 'normal',
+        color: '#333333', lineHeight: 17
     }
     ,
     Discount: {

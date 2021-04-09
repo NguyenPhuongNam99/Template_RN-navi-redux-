@@ -14,7 +14,7 @@ import {name as appName} from './app.json';
 // import UpdateProfile from './src/UpdateProfile'
 // import Home from './src/Home';
 // import FirstScreen from './component/FirstScreen';
-// import SecondScreen from './component/SecondScreen';
+import SecondScreen from './component/SecondScreen';
 import ConfirmOTP from './component/ConfirmOTP'
 import Home from './component/Home'
 import HomeScreen from './src/HomeScreen'
@@ -42,4 +42,7 @@ import Profile from './component/Profile/Profile'
 import Favourite from './component/Profile/Favourite'
 import Setting from './component/Profile/Setting'
 import  PolycySetting from "./component/Profile/PolycySetting";
+import TermOfUse from './component/Profile/TermOfUse'
+import MyProfile from './component/Profile/MyProfile'
+import Login from './component/Login/Login'
 AppRegistry.registerComponent(appName, () =>App);

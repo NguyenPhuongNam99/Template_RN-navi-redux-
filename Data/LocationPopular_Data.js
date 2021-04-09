@@ -1,42 +1,42 @@
 export const LocationPopular_Data =[
     {
         id:1,
-        imgae:require('../assets/lo1.png'),
+        imgae:require('../assets/lca.jpg'),
         image1:require('../assets/location.png'),
-        tile:'Lý Sơn',
-        name:'Ninh Thuận',
+        tile:'Hạ Long',
+        name:'Quảng Ninh',
 
     },
     {
         id:2,
-        imgae:require('../assets/nt1.png'),
+        imgae:require('../assets/lca2.jpg'),
         image1:require('../assets/location.png'),
-        tile:'Nha Trang',
-        name:'Khánh Hòa',
+        tile:'Tam Chúc',
+        name:'Hà Nam',
 
     },
     {
         id:3,
-        imgae:require('../assets/pq.png'),
+        imgae:require('../assets/lca1.jpg'),
         image1:require('../assets/location.png'),
-        tile:'Phú Quốc',
-        name:'Kiên Giang',
+        tile:'  Cát Bà',
+        name:'Hải Phòng',
 
     },
     {
         id:4,
-        imgae:require('../assets/lo1.png'),
+        imgae:require('../assets/bd.jpg'),
         image1:require('../assets/location.png'),
-        tile:'Lý Sơn',
-        name:'Ninh Thuận',
+        tile:'Bái Đính',
+        name:'Ninh Bình',
 
     },
     {
         id:5,
-        imgae:require('../assets/lo1.png'),
+        imgae:require('../assets/bd1.jpg'),
         image1:require('../assets/location.png'),
-        tile:'Lý Sơn',
-        name:'Ninh Thuận',
+        tile:'Bái Đính',
+        name:'Ninh Bình',
 
     },
 
