@@ -52,6 +52,7 @@ import LocationDetail2 from '../../component/LocationPopular/LocationDetail2'
 import TermOfUse from '../../component/Profile/TermOfUse'
 import MyProfile from '../../component/Profile/MyProfile'
 import LocationPopular from '../../component/LocationPopular/LocationPopular'
+import HotelResort_Header from '../../component/LocationPopular/HotelResort_Header'
 const Stack = createStackNavigator();
 
 const App1 = () => {
@@ -75,6 +76,7 @@ const App1 = () => {
       <Stack.Screen name="MultipleDetail" component={MultipleDetail}  options={{headerShown: false}}/>
       <Stack.Screen name="LocationDetail2" component={LocationDetail2}  options={{headerShown: false}}/>
       <Stack.Screen name="LocationPopular" component={LocationPopular}  options={{headerShown: false}}/>
+      <Stack.Screen name="HotelResort_Header" component={HotelResort_Header}  options={{headerShown: false}}/>
 
 
       

@@ -355,3 +355,79 @@ export const ProfileDta =[
         name:'Quốc Oai'
     },
 ]
+
+
+//khách sạn và resort 
+
+export const Hotel =[
+    {
+        id: 1,
+        image: require('./assets/ks.jpg'),
+        image1: require('./assets/ks1.jpg'),
+        image2: require('./assets/ks2.jpg'),
+        image3: require('./assets/ks3.jpg'),
+        version: 'khách sạn',
+        name: 'The Herriott Hotel & Suite',
+        comment: require('./assets/sa.png'),
+        location: require('./assets/location.png'),
+        des: 'Phước Mỹ , Đà Nẵng',
+        price: '500,000 đ/ đêm'
+
+    },
+    {
+        id: 2,
+        image: require('./assets/ks5.jpg'),
+        image1: require('./assets/ks6.jpg'),
+        image2: require('./assets/ks7.jpg'),
+        image3: require('./assets/ks8.jpg'),
+        version: 'khách sạn',
+        name: 'The ThachThat House',
+        comment: require('./assets/sa.png'),
+        location: require('./assets/location.png'),
+        des: 'Thạch Thất ,Hà Nội',
+        price: '500,000 đ/ đêm'
+
+    },
+    {
+        id: 3,
+        image: require('./assets/ks10.jpg'),
+        image1: require('./assets/ks11.jpg'),
+        image2: require('./assets/ks12.jpg'),
+        image3: require('./assets/ks14.jpg'),
+        version: 'khách sạn',
+        name: 'The Supermarket ',
+        comment: require('./assets/sa.png'),
+        location: require('./assets/location.png'),
+        des: 'Chùa Thày,Quốc Oai',
+        price: '1,500,000 đ/ đêm'
+
+    },
+    {
+        id:4,
+        image: require('./assets/ks18.jpg'),
+        image1: require('./assets/ks19.jpg'),
+        image2: require('./assets/ks20.jpg'),
+        image3: require('./assets/ks21.jpg'),
+        version: 'khách sạn',
+        name: 'The SunWorld',
+        comment: require('./assets/sa.png'),
+        location: require('./assets/location.png'),
+        des: 'Hạ Long, Quảng Ninh',
+        price: '500,000 đ/ đêm'
+
+    },
+    {
+        id: 5,
+        image: require('./assets/ks26.jpg'),
+        image1: require('./assets/ks23.jpg'),
+        image2: require('./assets/ks24.jpg'),
+        image3: require('./assets/ks25.jpg'),
+        version: 'khách sạn',
+        name: 'The Herriott Hotel & Suite',
+        comment: require('./assets/sa.png'),
+        location: require('./assets/location.png'),
+        des: 'Phước Mỹ , Đà Nẵng',
+        price: '500,000 đ/ đêm'
+
+    },
+]

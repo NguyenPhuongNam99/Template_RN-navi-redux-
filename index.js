@@ -45,4 +45,6 @@ import  PolycySetting from "./component/Profile/PolycySetting";
 import TermOfUse from './component/Profile/TermOfUse'
 import MyProfile from './component/Profile/MyProfile'
 import Login from './component/Login/Login'
+import HotelResort from './component/LocationPopular/HotelResort'
+import HotelResort_Header from './component/LocationPopular/HotelResort_Header'
 AppRegistry.registerComponent(appName, () =>App);

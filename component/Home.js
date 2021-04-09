@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, FlatList, TextInput, ScrollView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import HotelResort_Header from '../component/LocationPopular/HotelResort_Header'
 const Home = ({navigation}) => {
     //data icon Top
     const data = [
@@ -575,7 +575,7 @@ const Home = ({navigation}) => {
 
                 <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Khách sạn & Resort</Text>
-                    <TouchableOpacity onPress={()=>navigation.navigate('Hotel_Icon')}>
+                    <TouchableOpacity onPress={()=>navigation.navigate('HotelResort_Header')}>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
