@@ -29,10 +29,10 @@ const MyProfile = ({ navigation }) => {
                 </View>
                 <View style={styles.HeaderRight}>
                     <View style={styles.top}>
-                        <View style={styles.HeaderTop}>
+                        <TouchableOpacity style={styles.HeaderTop} onPress={()=>navigation.navigate('Follow')}>
                             <Text style={styles.follow}>100</Text>
                             <Text>Người theo dõi</Text>
-                        </View>
+                        </TouchableOpacity>
 
                         <View style={styles.HeaderBottom}>
                             <Text style={styles.follow}>200</Text>

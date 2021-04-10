@@ -53,6 +53,7 @@ import TermOfUse from '../../component/Profile/TermOfUse'
 import MyProfile from '../../component/Profile/MyProfile'
 import LocationPopular from '../../component/LocationPopular/LocationPopular'
 import HotelResort_Header from '../../component/LocationPopular/HotelResort_Header'
+import Follow from '../../component/Profile/Follow'
 const Stack = createStackNavigator();
 
 const App1 = () => {
@@ -94,6 +95,7 @@ const App2 =()=>{
       <Stack.Screen name="PolycySetting" component={PolycySetting}  options={{headerShown: false}}/>
       <Stack.Screen name="TermOfUse" component={TermOfUse}  options={{headerShown: false}}/>
       <Stack.Screen name="MyProfile" component={MyProfile}  options={{headerShown: false}}/>
+      <Stack.Screen name="Follow" component={Follow}  options={{headerShown: false}}/>
 
       {/* <Stack.Screen name="Home" component={Home}  options={{headerShown: false}}/>
       <Stack.Screen name="DiscountHeader" component={DiscountHeader}  options={{headerShown: false}}/> */}

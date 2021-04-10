@@ -47,4 +47,9 @@ import MyProfile from './component/Profile/MyProfile'
 import Login from './component/Login/Login'
 import HotelResort from './component/LocationPopular/HotelResort'
 import HotelResort_Header from './component/LocationPopular/HotelResort_Header'
+import HotelDetail from './component/LocationPopular/HotelDetail'
+import SelectRoom from './component/LocationPopular/SelectRoom'
+import SelectRoom_Header from './component/LocationPopular/SelectRoom_Header';
+import ReverseRoom from './component/LocationPopular/ReverseRoom'
+import Follow from './component/Profile/Follow'
 AppRegistry.registerComponent(appName, () =>App);
