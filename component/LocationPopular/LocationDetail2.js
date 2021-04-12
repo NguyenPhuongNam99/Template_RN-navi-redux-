@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, ScrollView, FlatList, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import {useSelector,useDispatch} from 'react-redux'
 const LocationDetail2 = ({ navigation }) => {
+    const discovery = useSelector(state=>state.discovery)
     const Destination = ({ Destination_item }) => {
         return (
             <View>
@@ -54,7 +55,7 @@ const LocationDetail2 = ({ navigation }) => {
             <View style={styles.container}>
                 <View >
                     <View style={styles.top}>
-                        <Image style={styles.image} source={require('../../assets/lson.jpg')} />
+                        <Image style={styles.image} source={discovery.image} />
                     </View>
                     {/* <TouchableOpacity style={{ position: 'absolute', top: 34, left: 15, width: 40 }} onPress={()=>back()}>
                         {/* <Image style={{width:6,height:12,}} source={require('../../assets/back11.png')}/> */}
@@ -67,10 +68,10 @@ const LocationDetail2 = ({ navigation }) => {
                     </TouchableOpacity>
                     
                     <View style={styles.block}>
-                        <Text style={styles.text_Header}>Khám phá Đảo bé</Text>
+                        <Text style={styles.text_Header}>{discovery.name}</Text>
                         <View style={styles.block_body}>
                             <Image style={{ width: 10, height: 11 }} source={require('../../assets/location1.png')} />
-                            <Text style={styles.location}>Lý Sơn ,Quảng Ngãi</Text>
+                            <Text style={styles.location}>{discovery.des}</Text>
                         </View>
                     </View>
                     <View style={{ position: 'absolute', top: 0, left: 0, width: '100%', backgroundColor: 'rgba(0, 0, 0, 0.4)', height: '100%' }}>

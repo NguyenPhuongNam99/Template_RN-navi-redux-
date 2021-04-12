@@ -3,13 +3,14 @@ import { View, Text, Image, TouchableOpacity, StyleSheet, FlatList } from 'react
 import { Suggestion_toYou } from '../../HotelData'
 import MultipleDetail from '../MultipleDetail'
 
-const HotelResort = ({Item}) => {
+const HotelResort = ({Item,check}) => {
   
     return (
+        <TouchableOpacity onPress={check}>
         <View style={styles.container}>
            <View style={styles.body}>
 
-          <TouchableOpacity>
+          
                 <View style={styles.block}>
                     <View style={styles.blockTop}>
                         <View style={styles.blockLeft}>
@@ -45,11 +46,11 @@ const HotelResort = ({Item}) => {
 
                     </View>
                 </View>
- </TouchableOpacity>
+
                 </View>
                
         </View>
-
+        </TouchableOpacity>
     )
 }
 const styles = StyleSheet.create({

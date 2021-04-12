@@ -53,4 +53,7 @@ import SelectRoom_Header from './component/LocationPopular/SelectRoom_Header';
 import ReverseRoom from './component/LocationPopular/ReverseRoom'
 import Follow from './component/Profile/Follow'
 import Notification from './component/Notification'
+import Hotel from './component/LocationPopular/Hotel'
+import UpdateInfo from './component/Profile/UpdateInfo'
+import SelectSchedule from './component/SelectSchedule.js/SelectSchedule'
 AppRegistry.registerComponent(appName, () =>App);

@@ -65,6 +65,81 @@ export const ScheduleNowData = [
         tym: require('../assets/tym.png')
     },
 ]
+
+//chọn lịch trình
+export const SelectScheduleData = [
+    {
+        id: 1,
+        image: require('../assets/ta.jpg'),
+        image2: require('../assets/ta1.jpg'),
+        image3: require('../assets/ta2.jpg'),
+        image4: require('../assets/ta3.jpg'),
+        r:require('../assets/r.png'),
+        title: 'Đà Lạt, Lâm Đồng',
+        time: '(5 ngày)',
+        location: require('../assets/location.png'),
+        des: 'Việt Nam',
+        avatar: require('../assets/nam.jpg'),
+        name: 'Phương Nam',
+        timmer: '10 giờ trước',
+        share: require('../assets/share.png'),
+        tym: require('../assets/tym.png')
+    },
+    {
+        id: 2,
+        image: require('../assets/nq1.jpg'),
+        image2: require('../assets/nq.jpg'),
+        image3: require('../assets/nq2.jpg'),
+        image4: require('../assets/nq3.jpg'),
+        r:require('../assets/r.png'),
+        title: 'Đà Lạt, Lâm Đồng',
+        time: '(5 ngày)',
+        location: require('../assets/location.png'),
+        des: 'Việt Nam',
+        avatar: require('../assets/trang.jpg'),
+        name: 'Huyền Trang',
+        timmer: '10 giờ trước',
+        share: require('../assets/share.png'),
+        tym: require('../assets/tym.png')
+
+    },
+    {
+        id: 3,
+        image: require('../assets/mcc1.jpg'),
+        image2: require('../assets/mcc2.jpg'),
+        image3: require('../assets/mcc3.jpg'),
+        image4: require('../assets/mcc.jpg'),
+        r:require('../assets/r.png'),
+        title: 'Đà Lạt, Lâm Đồng',
+        time: '(5 ngày)',
+        location: require('../assets/location.png'),
+        des: 'Việt Nam',
+        avatar: require('../assets/hung.jpg'),
+        name: 'Quốc Hùng',
+        timmer: '10 giờ trước',
+        share: require('../assets/share.png'),
+        tym: require('../assets/tym.png')
+    },
+    {
+        id: 4,
+        image: require('../assets/deo.jpg'),
+        image2: require('../assets/deo1.jpg'),
+        image3: require('../assets/deo2.jpg'),
+        image4: require('../assets/deo3.jpg'),
+        r:require('../assets/r.png'),
+        title: 'Đà Lạt, Lâm Đồng',
+        time: '(5 ngày)',
+        location: require('../assets/location.png'),
+        des: 'Việt Nam',
+        avatar: require('../assets/trang1.jpg'),
+        name: 'Nguyễn Trang',
+        timmer: '10 giờ trước',
+        share: require('../assets/share.png'),
+        tym: require('../assets/tym.png')
+    },
+]
+
+
 export const ScheduleGo = [
     {
         id: 1,

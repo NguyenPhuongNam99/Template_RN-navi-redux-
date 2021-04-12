@@ -47,7 +47,7 @@ const MyProfile = ({ navigation }) => {
                     <Text style={styles.name}>Phương Nam</Text>
                 </View>
                 <View style={styles.Bottom}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate('UpdateInfo')}>
                         <Text style={styles.textTouchable}>Sửa thông tin cá nhân </Text>
                     </TouchableOpacity>
                 </View>

@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, FlatList } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, FlatList, Touchable } from 'react-native';
 import { LocationDetail_Data, LocationDetail_Data2, LocationDetail_Data3, LocationDetail_Data1 } from '../../Data/LocationDetail_Data'
 import LocationItem from '../LocationPopular/LocationItem'
 import { LocationDetail1, RestauRantnear } from '../../HotelData'
 import MultipleDetail from '../MultipleDetail'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useSelector,useDispatch} from 'react-redux'
+import {Discovery} from '../../Data/LocationPopular_Data'
 const LocationDetail = ({navigation}) => {
     const dispatch = useDispatch();
     const back =()=>{
@@ -22,12 +23,42 @@ const LocationDetail = ({navigation}) => {
         //     navigation.navigate('RestaurantIcon')
         // }
     } 
-    const check1 =()=>{
+    const check1 =(Experient_item)=>{
+        dispatch({type:'Discovery',discovery:Experient_item})
         navigation.navigate('LocationDetail2')
     }
     const pass =(Item)=>{
       
              dispatch({type:'ADDDISCOUNT',item:Item})
+    }
+    const checkHotel= (item)=>{
+        navigation.navigate('Hotel')
+        dispatch({type:'CheckHotel',hotel:item})
+    }
+    const Experient = ({ Experient_item }) => {
+        return (
+            <TouchableOpacity onPress={()=>check1(Experient_item)}>
+            <View >
+                <View>
+                    <Image style={{ width: 200, height: 200, borderRadius: 5, marginHorizontal: 11 }} source={Experient_item.image} />
+
+                </View>
+                {/* <Text style={{color:'#FFFFFF',fontSize:14,fontWeight:'600',width:100}}>{Experient_item.name}</Text> */}
+                <View style={{ marginTop: 12, marginHorizontal: 13 }}>
+
+                    <Text style={{ lineHeight: 17, color: '#000000', fontSize: 14, fontWeight: 'bold', fontStyle: 'normal' }}>{Experient_item.name}</Text>
+                    <View style={{ flexDirection: 'row', marginTop: 4 }}>
+                        <Image style={{ width: 12, height: 14, borderRadius: 14 }}
+
+                            source={Experient_item.location} />
+                        <Text style={{ paddingLeft: 4 }}>{Experient_item.des}</Text>
+                    </View>
+                </View>
+
+            </View>
+            </TouchableOpacity>
+
+        )
     }
     // require('../../assets/lyson.jpg')
     return (
@@ -135,7 +166,7 @@ const LocationDetail = ({navigation}) => {
                         keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
                             //Tạo component rồi gọi đến
-                            <MultipleDetail Item={item} check={check1}/>
+                            <MultipleDetail Item={item} check={()=>checkHotel(item)}/>
                         }
                     />
                   {/* để hàm pass lên đây ,,,,khi click ở dưới tab nhà hàng thì nó sẽ báo pass undefine */}
@@ -159,6 +190,23 @@ const LocationDetail = ({navigation}) => {
                             //Tạo component rồi gọi đến
                            return <MultipleDetail Item={item}  pass={()=>pass(item)} check ={()=>check(item)}/>
                         }
+                        }
+                    />
+                </View>
+                <View style={styles.Discount}>
+                    <Text style={styles.discount_title}>Trải nghiệm nổi bật</Text>
+                    <TouchableOpacity onPress={()=>navigation.navigate('Destionation12')}>
+                        <Text style={styles.discount_title1}>Xem thêm ></Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                    <FlatList
+                        data={Discovery}
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                        keyExtractor={(item) => item.id.toString()}
+                        renderItem={({ item }) =>
+                            <Experient Experient_item={item} />
                         }
                     />
                 </View>

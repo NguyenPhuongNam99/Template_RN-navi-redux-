@@ -4,8 +4,9 @@ import { View, Text, StyleSheet, Image, TouchableOpacity,ScrollView } from 'reac
 const HotelDetail = () => {
     return (
 
-      
+    
         <View style={styles.container}>
+          
             <View style={styles.Header}>
                 <Image style={styles.imageBanner} source={require('../../assets/ksd.jpg')} />
                 <TouchableOpacity style={styles.back}>
@@ -46,7 +47,7 @@ const HotelDetail = () => {
                     <Image style={styles.imageMap} source={require('../../assets/map6.png')} />
                 </View>
 
-                <View style={styles.Top}>
+                {/* <View style={styles.Top}>
                     <View style={styles.block}>
                         <Image style={{ width: '100%', height: '100%' }} source={require('../../assets/ks3.jpg')} />
                     </View>
@@ -59,7 +60,7 @@ const HotelDetail = () => {
                         <Image style={styles.sum} source={require('../../assets/sum.png')} />
                         
                     </View>
-                </View>
+                </View> */}
 
                 <TouchableOpacity style={styles.touchable}>
                     <Text style={styles.textTouchable}>Chọn phòng</Text>
@@ -67,19 +68,21 @@ const HotelDetail = () => {
 
 
             </View>
-
+  
         </View>
+      
         
     )
 }
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // backgroundColor: 'green'
+        
     },
     Header: {
         height: 240,
-        backgroundColor: 'green'
+        backgroundColor: 'green',
+        zIndex:100
     },
     imageBanner: {
         width: '100%',
@@ -89,7 +92,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 15,
         position: 'absolute',
         top: '48%',
-        left: 15
+        left: 15,zIndex:100
     },
     back: {
         width: 8,
@@ -102,18 +105,21 @@ const styles = StyleSheet.create({
     imageLocation: {
         width: 8,
         height: 10,
-        marginRight: 6
+        marginRight: 6,
+        zIndex:100
 
     },
     title: {
         color: '#FFFFFF',
         fontSize: 18,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        zIndex:100
     },
     titleLocation: {
         fontSize: 10,
         fontWeight: 'normal',
-        color: '#FFFFFF'
+        color: '#FFFFFF',
+        zIndex:100
     },
     blockLocation: {
         flexDirection: 'row',

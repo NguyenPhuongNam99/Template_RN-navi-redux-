@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -39,7 +39,7 @@ export default function TabNavigation() {
         <Tab.Screen name="App1"
         
         options={{
-          tabBarIcon:({tintColor})=><Icon name="search" size={19} color="#9A9A9A" active={tintColor === "red"}/>
+          tabBarIcon:({focused})=> focused ? <Image source={require('../../assets/ac.png')}/>   :    <Icon name="search" size={19} color="#9A9A9A" />
         
         }} 
         component={App1}
@@ -53,7 +53,7 @@ export default function TabNavigation() {
        /> */}
         <Tab.Screen name="TabVoucher"
          options={{
-          tabBarIcon:({tintColor})=><Icon name="briefcase" size={19} color="#9A9A9A" active={tintColor === "red"}/>
+          tabBarIcon:({focused})=> focused ? <Image source={require('../../assets/ac1.png')} /> :      <Icon name="briefcase" size={19} color="#9A9A9A" />
         }}
         component={TabVoucher} />
         
@@ -68,12 +68,12 @@ export default function TabNavigation() {
 
         <Tab.Screen name="Notification" 
          options={{
-          tabBarIcon:({tintColor})=><Icon name="bell" size={19} color="#9A9A9A" active={tintColor === "red"}/>
+          tabBarIcon:({focused})=>focused ? <Image source={require('../../assets/ac4.png')} /> : <Icon name="bell" size={19} color="#9A9A9A" />
         }}
         component={Notification} />
         <Tab.Screen name="App2"
           options={{
-            tabBarIcon:({tintColor})=><Icon name="user" size={19} color="#9A9A9A" active={tintColor === "red"}/>
+            tabBarIcon:({focused})=>focused ? <Image source={require('../../assets/ac3.png')} /> : <Icon name="user" size={19} color="#9A9A9A" />
           }}
         component={App2} />
 

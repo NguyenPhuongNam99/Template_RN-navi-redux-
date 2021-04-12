@@ -54,6 +54,10 @@ import MyProfile from '../../component/Profile/MyProfile'
 import LocationPopular from '../../component/LocationPopular/LocationPopular'
 import HotelResort_Header from '../../component/LocationPopular/HotelResort_Header'
 import Follow from '../../component/Profile/Follow'
+import SelectRoom_Header from '../../component/LocationPopular/SelectRoom_Header'
+import Hotel from '../../component/LocationPopular/Hotel'
+import ReverseRoom from '../../component/LocationPopular/ReverseRoom'
+import UpdateInfo from '../../component/Profile/UpdateInfo'
 const Stack = createStackNavigator();
 
 const App1 = () => {
@@ -78,10 +82,12 @@ const App1 = () => {
       <Stack.Screen name="LocationDetail2" component={LocationDetail2}  options={{headerShown: false}}/>
       <Stack.Screen name="LocationPopular" component={LocationPopular}  options={{headerShown: false}}/>
       <Stack.Screen name="HotelResort_Header" component={HotelResort_Header}  options={{headerShown: false}}/>
-
-
+      <Stack.Screen name="SelectRoom_Header" component={SelectRoom_Header}  options={{headerShown: false}}/>
+      <Stack.Screen name="Hotel" component={Hotel}  options={{headerShown: false}}/>
+      <Stack.Screen name="ReverseRoom" component={ReverseRoom}  options={{headerShown: false}}/>
       
     </Stack.Navigator>
+    
     
   );
 }
@@ -96,7 +102,7 @@ const App2 =()=>{
       <Stack.Screen name="TermOfUse" component={TermOfUse}  options={{headerShown: false}}/>
       <Stack.Screen name="MyProfile" component={MyProfile}  options={{headerShown: false}}/>
       <Stack.Screen name="Follow" component={Follow}  options={{headerShown: false}}/>
-
+      <Stack.Screen name="UpdateInfo" component={UpdateInfo}  options={{headerShown: false}}/>
       {/* <Stack.Screen name="Home" component={Home}  options={{headerShown: false}}/>
       <Stack.Screen name="DiscountHeader" component={DiscountHeader}  options={{headerShown: false}}/> */}
       

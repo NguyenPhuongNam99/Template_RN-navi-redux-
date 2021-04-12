@@ -1,7 +1,7 @@
 import React from 'react';
 import {View,Text,StyleSheet,Image,TouchableOpacity} from 'react-native'
 import Header from '../Header'
-const SelectRoom =({Item})=>{
+const SelectRoom =({Item,check,pass})=>{
     const goback=()=>{
         navigation.goBack()
     }
@@ -42,7 +42,7 @@ const SelectRoom =({Item})=>{
                         <Text style={styles.bonus}> (Chưa bao gồm thuế và phí)</Text>
                     
                         
-                        <TouchableOpacity style={styles.Touchable}>
+                        <TouchableOpacity style={styles.Touchable} onPress={pass} >
                             <Text style={styles.textTouch}>Chọn</Text>
                         </TouchableOpacity>
                     </View>

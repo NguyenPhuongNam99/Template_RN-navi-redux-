@@ -12,6 +12,21 @@ const reducer =(state = inital,action)=>{
                 ...state,locationpopular : action.locationpopular
             }
         }
+        case 'SelectRoom':{
+            return {
+                ...state,select:action.select
+            }
+        }
+        case 'Discovery':{
+            return {
+                ...state,discovery:action.discovery
+            }
+        }
+        case 'CheckHotel':{
+            return{
+                ...state,hotel:action.hotel
+            }
+        }
         // case 'Up':
         //     return{
         //        count: state.count +1
