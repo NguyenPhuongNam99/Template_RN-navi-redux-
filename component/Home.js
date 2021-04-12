@@ -439,6 +439,7 @@ const Home = ({navigation}) => {
         )
     }
     return (
+        <View>
         <ScrollView>
             <View style={styles.container}>
                 <Image style={styles.image} source={require('../assets/home.png')} />
@@ -590,9 +591,14 @@ const Home = ({navigation}) => {
                         }
                     />
                 </View>
-               
+              
+                
+             
             </View>
         </ScrollView>
+           <Image style={{position:'absolute',
+           bottom:0,right:0,zIndex:1000}} source={require('../assets/e.png')} />
+           </View>
     )
 }
 const styles = StyleSheet.create({

@@ -52,4 +52,5 @@ import SelectRoom from './component/LocationPopular/SelectRoom'
 import SelectRoom_Header from './component/LocationPopular/SelectRoom_Header';
 import ReverseRoom from './component/LocationPopular/ReverseRoom'
 import Follow from './component/Profile/Follow'
+import Notification from './component/Notification'
 AppRegistry.registerComponent(appName, () =>App);

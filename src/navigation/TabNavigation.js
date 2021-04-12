@@ -21,18 +21,25 @@ import Counbt from '../../component/Counbt'
 import Profile from '../../component/Profile/Profile'
 import {App1,App2} from '../../src/navigation/Stacknavigation'
 // import App2 from '../../src/navigation/Stacknavigation'
+import Notification from '../../component/Notification'
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigation() {
   return (
    
-      <Tab.Navigator tabBarOptions={{
-        showLabel:false
+      <Tab.Navigator
+    
+       tabBarOptions={{
+        showLabel:false,
+        activeTintColor: 'green',
+        inactiveTintColor: 'lightgray',
+        
+        // activeBackgroundColor: '#c4461c',
       }}>
         <Tab.Screen name="App1"
         
         options={{
-          tabBarIcon:()=><Icon name="search" size={19} color="#9A9A9A" />
+          tabBarIcon:({tintColor})=><Icon name="search" size={19} color="#9A9A9A" active={tintColor === "red"}/>
         
         }} 
         component={App1}
@@ -44,11 +51,11 @@ export default function TabNavigation() {
        }} 
        component={Home}
        /> */}
-        <Tab.Screen name="DestionationPopular"
+        <Tab.Screen name="TabVoucher"
          options={{
-          tabBarIcon:()=><Icon name="briefcase" size={19} color="#9A9A9A" />
+          tabBarIcon:({tintColor})=><Icon name="briefcase" size={19} color="#9A9A9A" active={tintColor === "red"}/>
         }}
-        component={DestionationPopular} />
+        component={TabVoucher} />
         
         {/* <Tab.Screen name="ScheduleHeader"
         //  options={{
@@ -59,14 +66,14 @@ export default function TabNavigation() {
         options ={{tabBarOnPress: () => {} ,tabBarIcon : () =>   <TabView/>, tabBarLabel: ''}}
         component={ScheduleHeader} /> */}
 
-        <Tab.Screen name="TabVoucher" 
+        <Tab.Screen name="Notification" 
          options={{
-          tabBarIcon:()=><Icon name="bell" size={19} color="#9A9A9A" />
+          tabBarIcon:({tintColor})=><Icon name="bell" size={19} color="#9A9A9A" active={tintColor === "red"}/>
         }}
-        component={TabVoucher} />
+        component={Notification} />
         <Tab.Screen name="App2"
           options={{
-            tabBarIcon:()=><Icon name="user" size={19} color="#9A9A9A" />
+            tabBarIcon:({tintColor})=><Icon name="user" size={19} color="#9A9A9A" active={tintColor === "red"}/>
           }}
         component={App2} />
 
