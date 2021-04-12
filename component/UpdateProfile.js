@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity ,Button} from 'react-native';
 import Modal from 'react-native-modal';
 
-const UpdateProfile = () => {
+const UpdateProfile = ({navigation}) => {
     const [checkHoten, setCheckhoten] = useState(false);
     const [hoten,setHoten] = useState('')
     const [checkten, setCheckten] = useState(false);
@@ -122,7 +122,7 @@ const UpdateProfile = () => {
             </View>
             {
                 checkHoten  && checkten?
-                 <TouchableOpacity style={styles.touchable} >
+                 <TouchableOpacity style={styles.touchable} onPress={()=>navigation.navigate('Home')}>
                 <Text>Hoàn thành</Text>
             </TouchableOpacity>
             :

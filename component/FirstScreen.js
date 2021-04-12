@@ -1,5 +1,6 @@
 
-import React from 'react';
+import React , { useEffect }from 'react';
+
 import {
     SafeAreaView,
     ScrollView,
@@ -11,7 +12,17 @@ import {
     Image
 } from 'react-native';
 
-const FirstScreen = () => {
+const FirstScreen = ({navigation}) => {
+   
+    //   useEffect(()=>{
+    //     setTimeout(() => navigation.navigate("Home"), 2000);
+    //   })
+//     useEffect(()=>{
+//  setTimeout(() => {
+//         navigation.navigate("Home");
+//         }, 3000);
+//     })
+   
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.container}>

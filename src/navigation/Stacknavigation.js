@@ -58,6 +58,8 @@ import SelectRoom_Header from '../../component/LocationPopular/SelectRoom_Header
 import Hotel from '../../component/LocationPopular/Hotel'
 import ReverseRoom from '../../component/LocationPopular/ReverseRoom'
 import UpdateInfo from '../../component/Profile/UpdateInfo'
+import FirstScreen from '../../component/FirstScreen'
+import UpdateProfile from '../UpdateProfile'
 const Stack = createStackNavigator();
 
 const App1 = () => {
@@ -66,6 +68,7 @@ const App1 = () => {
     <Stack.Navigator >
       {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
       {/* <Stack.Screen name="BookScreen" component={BookScreen} /> */}
+      
       <Stack.Screen name="Home" component={Home}  options={{headerShown: false}} />
       <Stack.Screen name="Hotel_Icon" component={Hotel_Icon}  options={{headerShown: false}}/>
       <Stack.Screen name="RestaurantIcon" component={RestaurantIcon}  options={{headerShown: false}}/>
@@ -85,7 +88,9 @@ const App1 = () => {
       <Stack.Screen name="SelectRoom_Header" component={SelectRoom_Header}  options={{headerShown: false}}/>
       <Stack.Screen name="Hotel" component={Hotel}  options={{headerShown: false}}/>
       <Stack.Screen name="ReverseRoom" component={ReverseRoom}  options={{headerShown: false}}/>
-      
+      <Stack.Screen name="FirstScreen" component={FirstScreen}  options={{headerShown: false}}/>
+      <Stack.Screen name="UpdateProfile" component={UpdateProfile}  options={{headerShown: false}}/>
+
     </Stack.Navigator>
     
     

@@ -11,7 +11,7 @@ import {name as appName} from './app.json';
 // import Phonecall from './screen/shop/user/Phonecall';
 // import OrderScreen from './screen/shop/OrderScreen';
 // import Blur from './screen/shop/Blur'
-// import UpdateProfile from './src/UpdateProfile'
+import UpdateProfile from './src/UpdateProfile'
 // import Home from './src/Home';
 // import FirstScreen from './component/FirstScreen';
 import SecondScreen from './component/SecondScreen';
