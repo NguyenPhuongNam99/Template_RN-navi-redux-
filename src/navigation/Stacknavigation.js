@@ -60,6 +60,10 @@ import ReverseRoom from '../../component/LocationPopular/ReverseRoom'
 import UpdateInfo from '../../component/Profile/UpdateInfo'
 import FirstScreen from '../../component/FirstScreen'
 import UpdateProfile from '../UpdateProfile'
+import EvaluationSchedule from '../../component/SelectSchedule.js/EvaluationSchedule'
+import SelectSchedule from '../../component/SelectSchedule.js/SelectSchedule'
+import CreateSchedule from '../../component/CteateSchedule/CreateSchedule';
+import Location from '../../component/CteateSchedule/Location'
 const Stack = createStackNavigator();
 
 const App1 = () => {
@@ -90,6 +94,11 @@ const App1 = () => {
       <Stack.Screen name="ReverseRoom" component={ReverseRoom}  options={{headerShown: false}}/>
       <Stack.Screen name="FirstScreen" component={FirstScreen}  options={{headerShown: false}}/>
       <Stack.Screen name="UpdateProfile" component={UpdateProfile}  options={{headerShown: false}}/>
+      <Stack.Screen name="EvaluationSchedule" component={EvaluationSchedule}  options={{headerShown: false}}/>
+      <Stack.Screen name="SelectSchedule" component={SelectSchedule}  options={{headerShown: false}}/>
+      <Stack.Screen name="CreateSchedule" component={CreateSchedule}  options={{headerShown: false}}/>
+
+      <Stack.Screen name="Location" component={Location}  options={{headerShown: false}}/>
 
     </Stack.Navigator>
     

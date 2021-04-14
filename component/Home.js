@@ -30,6 +30,13 @@ const Home = ({navigation}) => {
         if(item==1){
             navigation.navigate('Hotel')
         }
+        if(item ==3){
+            navigation.navigate('SelectSchedule')
+        }
+        if(item ==4){
+            navigation.navigate('CreateSchedule')
+        }
+
     } 
     const Item = ({ item }) => {
         return (

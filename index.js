@@ -56,4 +56,7 @@ import Notification from './component/Notification'
 import Hotel from './component/LocationPopular/Hotel'
 import UpdateInfo from './component/Profile/UpdateInfo'
 import SelectSchedule from './component/SelectSchedule.js/SelectSchedule'
+import EvaluationSchedule from './component/SelectSchedule.js/EvaluationSchedule'
+import CreateSchedule from './component/CteateSchedule/CreateSchedule'
+import Location from './component/CteateSchedule/Location'
 AppRegistry.registerComponent(appName, () =>App);

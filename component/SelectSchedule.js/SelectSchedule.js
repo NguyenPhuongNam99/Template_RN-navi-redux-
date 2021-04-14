@@ -7,18 +7,20 @@ const SelectSchedule =({navigation})=>{
     const goback =()=>{
         navigation.goBack()
     }
+    const check =()=>{
+        navigation.navigate('EvaluationSchedule')
+    }
     return(
         <View style={styles.container}>
             <Header Name ='Chọn lịch trình'  back ={goback}/>
            
-            {/* <View style={{ marginHorizontal: 10, marginTop: 10,flex:1 }}> */}
                     <FlatList
                         data={SelectScheduleData}
-                        // horizontal={true}
+                     
                         showsHorizontalScrollIndicator={false}
                         keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
-                            <SelectShedule_item Item={item} />
+                            <SelectShedule_item Item={item} check={check} />
                         }
                     />
         </View>

@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 
-const SelectShedule_item = ({ Item }) => {
+const SelectShedule_item = ({ Item,check }) => {
     return (
-        <View style={styles.container_header}>
+        <TouchableOpacity style={styles.container_header} onPress={check}>
             <View style={styles.top}>
                 <View style={styles.left}>
                     <Image style={{ width: '100%', height: '100%', borderTopLeftRadius: 5 }} source={Item.image} />
@@ -72,7 +72,7 @@ const SelectShedule_item = ({ Item }) => {
 
             </View>
 
-        </View>
+        </TouchableOpacity>
     )
 }
 const styles = StyleSheet.create({
