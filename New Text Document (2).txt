@@ -1,0 +1,17 @@
+state:filterstatus= combo
+import cac combonent
+if(stete(filterStatus==combo)
+	return combonent
+if()
+if()
+
+{}
+
+
+danh sach cac icon
+van viet flatlist binh thuong
+if (id==1)
+	gan fix cung cho filtersttaus=combo
+if(id==2)
+	filterSattus = caffe
+if......
