@@ -59,4 +59,6 @@ import SelectSchedule from './component/SelectSchedule.js/SelectSchedule'
 import EvaluationSchedule from './component/SelectSchedule.js/EvaluationSchedule'
 import CreateSchedule from './component/CteateSchedule/CreateSchedule'
 import Location from './component/CteateSchedule/Location'
+import ScreenSuggest from './component/ScreenSuggest/ScreenSuggest'
+import ScreenInterested from './component/ScreenSuggest/ScreenInterested'
 AppRegistry.registerComponent(appName, () =>App);

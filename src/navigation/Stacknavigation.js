@@ -64,6 +64,7 @@ import EvaluationSchedule from '../../component/SelectSchedule.js/EvaluationSche
 import SelectSchedule from '../../component/SelectSchedule.js/SelectSchedule'
 import CreateSchedule from '../../component/CteateSchedule/CreateSchedule';
 import Location from '../../component/CteateSchedule/Location'
+import ScreenSuggest from '../../component/ScreenSuggest/ScreenSuggest'
 const Stack = createStackNavigator();
 
 const App1 = () => {
@@ -72,7 +73,7 @@ const App1 = () => {
     <Stack.Navigator >
       {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
       {/* <Stack.Screen name="BookScreen" component={BookScreen} /> */}
-      
+      {/* <Stack.Screen name="FirstScreen" component={FirstScreen}  options={{headerShown: false}}/> */}
       <Stack.Screen name="Home" component={Home}  options={{headerShown: false}} />
       <Stack.Screen name="Hotel_Icon" component={Hotel_Icon}  options={{headerShown: false}}/>
       <Stack.Screen name="RestaurantIcon" component={RestaurantIcon}  options={{headerShown: false}}/>
@@ -92,12 +93,11 @@ const App1 = () => {
       <Stack.Screen name="SelectRoom_Header" component={SelectRoom_Header}  options={{headerShown: false}}/>
       <Stack.Screen name="Hotel" component={Hotel}  options={{headerShown: false}}/>
       <Stack.Screen name="ReverseRoom" component={ReverseRoom}  options={{headerShown: false}}/>
-      <Stack.Screen name="FirstScreen" component={FirstScreen}  options={{headerShown: false}}/>
       <Stack.Screen name="UpdateProfile" component={UpdateProfile}  options={{headerShown: false}}/>
       <Stack.Screen name="EvaluationSchedule" component={EvaluationSchedule}  options={{headerShown: false}}/>
       <Stack.Screen name="SelectSchedule" component={SelectSchedule}  options={{headerShown: false}}/>
       <Stack.Screen name="CreateSchedule" component={CreateSchedule}  options={{headerShown: false}}/>
-
+      <Stack.Screen name="ScreenSuggest" component={ScreenSuggest}  options={{headerShown: false}}/>
       <Stack.Screen name="Location" component={Location}  options={{headerShown: false}}/>
 
     </Stack.Navigator>

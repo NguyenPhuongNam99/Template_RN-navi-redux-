@@ -1,5 +1,6 @@
 const inital ={
-    count :30
+    count :30,
+    filterStatus:'Primary'
 }
 const reducer =(state = inital,action)=>{
     switch(action.type){
@@ -27,14 +28,27 @@ const reducer =(state = inital,action)=>{
                 ...state,hotel:action.hotel
             }
         }
-        // case 'Up':
-        //     return{
-        //        count: state.count +1
-        //     }
-        // case 'Do':
-        //     return {
-        //        count: state.count-1
-        //     }
+        case 'Primary':{
+            return{
+                ...state,filterStatus:'Primary'
+            }
+        }
+        case 'Double':{
+            return {
+                ...state,filterStatus:'Double'
+            }
+        }
+        case 'Family':{
+            return{
+                ...state,filterStatus:'Family'
+            }
+        }
+        case 'Tour':{
+            return{
+                ...state,filterStatus:'Tour'
+            }
+        }
+        
         default :
             return state;
     }

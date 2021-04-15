@@ -17,12 +17,12 @@ const FirstScreen = ({navigation}) => {
     //   useEffect(()=>{
     //     setTimeout(() => navigation.navigate("Home"), 2000);
     //   })
-//     useEffect(()=>{
-//  setTimeout(() => {
-//         navigation.navigate("Home");
-//         }, 3000);
-//     })
-   
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         navigation.navigate("Home");
+    //     }, 3000);
+    // })
+
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.container}>
