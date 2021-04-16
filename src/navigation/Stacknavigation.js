@@ -67,6 +67,7 @@ import Location from '../../component/CteateSchedule/Location'
 import ScreenSuggest from '../../component/ScreenSuggest/ScreenSuggest'
 import ScreenInterested from '../../component/ScreenSuggest/ScreenInterested'
 import AllShedule from '../../component/AllSchedule/AllShedule'
+import OverView from '../../component/AllSchedule/OverView'
 const Stack = createStackNavigator();
 
 const App1 = () => {
@@ -103,6 +104,7 @@ const App1 = () => {
       <Stack.Screen name="Location" component={Location}  options={{headerShown: false}}/>
       <Stack.Screen name="ScreenInterested" component={ScreenInterested}  options={{headerShown: false}}/>
       <Stack.Screen name="AllShedule" component={AllShedule}  options={{headerShown: false}}/>
+      <Stack.Screen name="OverView" component={OverView}  options={{headerShown: false}}/>
 
     </Stack.Navigator>
     

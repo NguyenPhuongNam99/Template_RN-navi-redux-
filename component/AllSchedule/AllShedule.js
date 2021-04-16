@@ -89,7 +89,7 @@ const AllSchedule =()=>{
             </View>
             <FlatList 
                 data={getData()}
-                keyExtractor={(item)=>item.id}
+                keyExtractor={(item)=>item.id.toString()}
                 renderItem={({item})=>
                 filterStatus =='Primary'? <Primaryhe item={item} /> : filterStatus=='Double' ? <Doublehe item={item} /> : null
             

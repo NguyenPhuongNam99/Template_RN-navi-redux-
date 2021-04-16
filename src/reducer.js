@@ -2,7 +2,8 @@ import { act } from "react-test-renderer"
 
 const inital ={
     count :30,
-    filterStatus:'Primary'
+    filterStatus:'Primary',
+    statusOver:'SCHEDULE'
 }
 const reducer =(state = inital,action)=>{
     switch(action.type){
@@ -65,7 +66,26 @@ const reducer =(state = inital,action)=>{
                 ...state,startDate:action.startDate,endDate:action.endDate
             }
         }
-        
+        case 'SCHEDULE':{
+            return {
+                ...state,statusOver:'SCHEDULE'
+            }
+        }
+        case 'AIRPLANE':{
+            return {
+                ...state,statusOver:'AIRPLANE'
+            }
+        }        
+        case 'HOTEL':{
+            return {
+                ...state,statusOver:'HOTEL'
+            }
+        }       
+         case 'VISIT':{
+            return {
+                ...state,statusOver:'VISIT'
+            }
+        }
         default :
             return state;
     }

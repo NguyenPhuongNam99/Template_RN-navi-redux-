@@ -28,7 +28,8 @@ const Home = ({navigation}) => {
             navigation.navigate('RestaurantIcon')
         }
         if(item==1){
-            navigation.navigate('AllShedule')
+            // navigation.navigate('AllShedule')
+            navigation.navigate('OverView')
         }
         if(item ==3){
             navigation.navigate('SelectSchedule')

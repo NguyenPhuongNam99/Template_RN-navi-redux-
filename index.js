@@ -62,4 +62,5 @@ import Location from './component/CteateSchedule/Location'
 import ScreenSuggest from './component/ScreenSuggest/ScreenSuggest'
 import ScreenInterested from './component/ScreenSuggest/ScreenInterested'
 import AllShedule from './component/AllSchedule/AllShedule'
+import OverView from './component/AllSchedule/OverView'
 AppRegistry.registerComponent(appName, () =>App);
