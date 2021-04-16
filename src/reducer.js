@@ -1,3 +1,5 @@
+import { act } from "react-test-renderer"
+
 const inital ={
     count :30,
     filterStatus:'Primary'
@@ -46,6 +48,21 @@ const reducer =(state = inital,action)=>{
         case 'Tour':{
             return{
                 ...state,filterStatus:'Tour'
+            }
+        }
+        case 'ADDLOCATIOON':{
+            return {
+                ...state,addlocation:action.item
+            }
+        }
+        case 'ADDDESTINATION':{
+            return{
+                ...state,adddestination:action.adddestination
+            }
+        }
+        case 'ADDTIME':{
+            return {
+                ...state,startDate:action.startDate,endDate:action.endDate
             }
         }
         

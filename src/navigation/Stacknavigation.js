@@ -65,6 +65,8 @@ import SelectSchedule from '../../component/SelectSchedule.js/SelectSchedule'
 import CreateSchedule from '../../component/CteateSchedule/CreateSchedule';
 import Location from '../../component/CteateSchedule/Location'
 import ScreenSuggest from '../../component/ScreenSuggest/ScreenSuggest'
+import ScreenInterested from '../../component/ScreenSuggest/ScreenInterested'
+import AllShedule from '../../component/AllSchedule/AllShedule'
 const Stack = createStackNavigator();
 
 const App1 = () => {
@@ -99,6 +101,8 @@ const App1 = () => {
       <Stack.Screen name="CreateSchedule" component={CreateSchedule}  options={{headerShown: false}}/>
       <Stack.Screen name="ScreenSuggest" component={ScreenSuggest}  options={{headerShown: false}}/>
       <Stack.Screen name="Location" component={Location}  options={{headerShown: false}}/>
+      <Stack.Screen name="ScreenInterested" component={ScreenInterested}  options={{headerShown: false}}/>
+      <Stack.Screen name="AllShedule" component={AllShedule}  options={{headerShown: false}}/>
 
     </Stack.Navigator>
     

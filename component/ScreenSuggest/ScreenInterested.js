@@ -1,11 +1,15 @@
 import React from 'react';
-import {View,Text,Image,TouchableOpacity,CheckBox,StyleSheet,FlatList} from 'react-native'
+import {View,Text,Image,TouchableOpacity,CheckBox,StyleSheet,FlatList,ScrollView} from 'react-native'
 import { ScreenSuggestData } from '../../Data/ScreenSuggest_Data';
-const ScreenInterested =()=>{
+const ScreenInterested =({navigation})=>{
     return(
+        <ScrollView>
         <View style={styles.container}>
             <View style={styles.header}>
-                <Image style={styles.back} source={require('../../assets/back.png')}/>
+                <TouchableOpacity onPress={()=>navigation.goBack()}>
+                      <Image style={styles.back} source={require('../../assets/back.png')}/>
+                </TouchableOpacity>
+              
                 <Text style={styles.title}>Có thể bạn quan tâm</Text>
                 <Image  source={require('../../assets/select.png')}/>
             </View>
@@ -33,9 +37,12 @@ const ScreenInterested =()=>{
                         />
             </View>
              <View style={styles.footer}>
-
+                <TouchableOpacity style={{height:35,backgroundColor:'#FF5F24',justifyContent:'center',alignItems:'center',borderRadius:5,flex:1}}>
+                    <Text style={{color:'#FFFFFF',fontWeight:'600'}}>Xong</Text>
+                </TouchableOpacity>
             </View>
         </View>
+        </ScrollView>
     )
 }
 const styles = StyleSheet.create({
@@ -63,22 +70,30 @@ const styles = StyleSheet.create({
         flex:8,
        
         flexDirection:'row',
-        flexWrap:'wrap',justifyContent:'space-between' 
+        flexWrap:'wrap',justifyContent:'space-between',
+        marginHorizontal:10
     },
     footer:{
         flex:1,
-        backgroundColor:'orange'
+        marginHorizontal:10,
+        marginVertical:12
     },
     blockFlat: {
-        backgroundColor: '#FFFFFF', height: 162, width: 162, marginLeft: 16, shadowColor: "#000",
+        backgroundColor: '#FFFFFF', height: 162, width: 162, 
+        // marginLeft: 16,
+        shadowColor: "#000",
         shadowOffset: {
             width: 0,
             height: 2,
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-
-        elevation: 2, borderRadius: 5
+        width:'49%',
+        elevation: 2, borderRadius: 5,
+        justifyContent:'space-between',
+        marginRight:12,
+        marginVertical:8
+        
     },
     checkbox:{
         position:'absolute',
