@@ -1,258 +1,310 @@
 import React from 'react'
-import {View,Text,Image,TouchableOpacity,FlatList,StyleSheet,ScrollView} from 'react-native'
-import {useDispatch,useSelector} from 'react-redux'
-import {scheduleData2} from '../../Data/OverViewData'
-const OverView =()=>{
-    const data =[
-        {
-            id:1,
-            title:'Lịch trình',
-            name:'SCHEDULE'
-        },
-        {
-            id:2,
-            title:'Máy bay',
-            name:'AIRPLANE'
-        },
-        {
-            id:3,
-            title:'Khách sạn',
-            name:'HOTEL'
-        },
-        {
-            id:4,
-            title:'Thăm quan',
-            name:'VISIT'
-        },
-    ]
+import { View, Text, Image, TouchableOpacity, FlatList, StyleSheet, ScrollView, Dimensions } from 'react-native'
+import { useDispatch, useSelector } from 'react-redux'
+import { scheduleData2, data } from '../../Data/OverViewData'
+import OverView_Item from './OverView_Item'
+import OverView_Plan from './OverView_Plan'
+import {
+    responsiveHeight,
+    responsiveWidth,
+    responsiveFontSize,
+    responsiveScreenWidth,
+
+} from "react-native-responsive-dimensions";
+const OverView = () => {
+
     const dispatch = useDispatch();
-    const statusOver = useSelector(state=>state.statusOver)
-    const dispatchdata = (Datatype)=>{
-        dispatch({type:Datatype})
+    const statusOver = useSelector(state => state.statusOver)
+    const dispatchdata = (Datatype) => {
+        dispatch({ type: Datatype })
     }
-    const getData =(statusName)=>{
-        if(statusOver == 'SCHEDULE'){
+    const getData = (statusName) => {
+        if (statusOver == 'SCHEDULE') {
             return scheduleData
         }
-        if(statusOver == 'HOTEL'){
+        if (statusOver == 'HOTEL') {
             return hotelData
         }
-        if(statusOver == 'AIRPLANE'){
+        if (statusOver == 'AIRPLANE') {
             return airplaneData
         }
-        if(statusOver == 'VISIT'){
+        if (statusOver == 'VISIT') {
             return visitData
         }
     }
-    const getStyle= (statusName)=>{
-        if(statusOver === statusName){
-            return{
-                backgroundColor:'#FF5F24',
-                borderRadius:5
+    const getStyle = (statusName) => {
+        if (statusOver === statusName) {
+            return {
+                backgroundColor: '#FF5F24',
+                borderRadius: 5
             }
         }
-        else{
-           return{ backgroundColor:'#ECF1FF',borderRadius:5}
+        else {
+            return { backgroundColor: '#ECF1FF', borderRadius: 5 }
         }
     }
-    const ScheduleItem =({item})=>{
-        return(
-            <View style={styles.blockImage}>
-                <Image style={styles.imageBlock} source={item.image} />
-                <View style={styles.timer}>
-                    <Text style={styles.textTimer}>{item.timerDate}</Text>
-                </View>
-                <View style={{backgroundColor:'green',marginTop:15}}>
-                     <Text>{item.date}</Text>
-                <Text>{item.text}</Text>
-                </View>
-               
-            </View>
-        )
-    }
-    return(
-        <View>
-  <ScrollView >
-        
+
+    return (
+
+
+
         <View style={styles.container}>
-          
-            <View style={{ height: 150, position: 'relative' }}>
+            <ScrollView vertical={true} nestedScrollEnabled={true}
+                contentContainerStyle={{
+                    flexGrow: 1,
+                }}>
+                <View style={{ height: 150 }}>
 
 
-                <View style={styles.headerImage}>
-                    <Image style={styles.imageBanner} source={require('../../assets/qn1.jpg')} />
+                    <View style={styles.headerImage}>
+                        <Image style={styles.imageBanner} source={require('../../assets/qn1.jpg')} />
+                    </View>
+
+                    <View style={styles.blockAvatar}>
+                        <Image style={styles.avatar} source={require('../../assets/nam.jpg')} />
+                    </View>
                 </View>
-                <View style={styles.blockAvatar}>
-                    <Image style={styles.avatar} source={require('../../assets/nam.jpg')} />
-                </View>
-                <View style={styles.title}>
-                    <Text style={styles.titleHeader}>Quy Nhơn ,Bình Định</Text>
-                    <Text style={styles.titleFontSize}>5/12 -10/12</Text>
-                </View>
-                <View style={styles.option}>
-                    {
-                        data.map((item)=>(
-                                <TouchableOpacity key={item.id} onPress={()=>dispatchdata(item.name)} style={[styles.touchable,getStyle(item.name)]}>
+                <View style={{ flex: 1 }}>
+                    <View style={styles.title}>
+                        <Text style={styles.titleHeader}>Quy Nhơn ,Bình Định</Text>
+                        <Text style={styles.titleFontSize}>5/12 -10/12</Text>
+                    </View>
+
+                    <View style={styles.option}>
+                        {
+                            data.map((item) => (
+                                <TouchableOpacity key={item.id} onPress={() => dispatchdata(item.name)} style={[styles.touchable, getStyle(item.name)]}>
                                     <Text>{item.title}</Text>
                                 </TouchableOpacity>
                             )
-                        )
-                    }
+                            )
+                        }
+                    </View>
+                    {/* <OverView_Plan /> */}
+                    <View >
+                        <View style={styles.shedule}>
+                            <Text style={styles.sheduleAir}>Hà Nội - Quy Nhơn</Text>
+                            <View>
+                                <View style={styles.plantAir}>
+                                    <Text style={styles.sheduleAir}>HAN</Text>
+                                    <Image style={{ width: 10, height: 8 }} source={require('../../assets/ia.png')} />
+                                    <Text style={styles.sheduleAir}>UIH</Text>
+                                </View>
+                                <Text style={styles.timerAir}>Thứ 5, 5 tháng 12, 2019</Text>
+                            </View>
+                            <Image style={styles.imagViet} source={require('../../assets/viet.png')} />
+                            <Text style={styles.nameAir}>Chuyến bay: VJ345</Text>
+                        </View>
+
+                        <View style={styles.BlockInfoAir}>
+                            <View>
+                                <Text style={styles.name}>HAN</Text>
+                                <Text style={styles.timer}>13:00</Text>
+                            </View>
+                            <View style={{ width: responsiveWidth(20), borderBottomColor: '#828282', borderBottomWidth: 0.5 }} />
+                            <View>
+                                <Text style={{ textAlign: 'center' }}>1h35m</Text>
+                                <Text>Hạng thương gia</Text>
+                            </View>
+                            <View style={{ width: responsiveWidth(20), borderBottomColor: '#828282', borderBottomWidth: 0.5 }} />
+                            <View>
+                                <Text style={styles.name}>UNI</Text>
+                                <Text style={styles.timer}>13:00</Text>
+                            </View>
+                        </View>
+                        <View style={{ justifyContent: 'center', alignItems: 'center', marginVertical: 25 }}>
+                            <View style={{ padding: 'auto', borderBottomWidth: 1, width: responsiveWidth(40) }} />
+                        </View>
+
+
+                    </View>
+
+                    <View >
+                        <View style={styles.shedule}>
+                            <Text style={styles.sheduleAir}> Quy Nhơn - Hà Nội </Text>
+                            <View>
+                                <View style={styles.plantAir}>
+                                    <Text style={styles.sheduleAir}>UNI</Text>
+                                    <Image style={{ width: 10, height: 8 }} source={require('../../assets/ia.png')} />
+                                    <Text style={styles.sheduleAir}>HAN</Text>
+                                </View>
+                                <Text style={styles.timerAir}>Thứ 5, 5 tháng 12, 2019</Text>
+                            </View>
+                            <Image style={styles.imagViet} source={require('../../assets/viet.png')} />
+                            <Text style={styles.nameAir}>Chuyến bay: VJ345</Text>
+                        </View>
+
+                        <View style={styles.BlockInfoAir}>
+                            <View>
+                                <Text style={styles.name}>UNI</Text>
+                                <Text style={styles.timer}>10:00</Text>
+                            </View>
+                            <View style={{ width: responsiveWidth(20), borderBottomColor: '#828282', borderBottomWidth: 0.5 }} />
+                            <View>
+                                <Text style={{ textAlign: 'center' }}>1h35m</Text>
+                                <Text>Hạng thương gia</Text>
+                            </View>
+                            <View style={{ width: responsiveWidth(20), borderBottomColor: '#828282', borderBottomWidth: 0.5 }} />
+                            <View>
+                                <Text style={styles.name}>HNA</Text>
+                                <Text style={styles.timer}>11:00</Text>
+                            </View>
+                        </View>
+                        <View style={{ justifyContent: 'center', alignItems: 'center', marginVertical: 25 }}>
+                            <View style={{ padding: 'auto', borderBottomWidth: 1, width: responsiveWidth(40) }} />
+                        </View>
+
+
+                    </View>
+
                 </View>
-                <View style={styles.blockbody}>
-                    <Text style={styles.plan}>Kế hoạch</Text>
-                    <TouchableOpacity>
-                        <Text style={styles.all}>Tất cả  ></Text>
+
+                <View style={styles.touchableEnd}>
+                    <Text style={styles.price}>5,200,000 đ/người</Text>
+                    <TouchableOpacity style={{ backgroundColor: '#FF5F24', width: 71, height: 25, justifyContent: 'center', alignItems: 'center', borderRadius: 5 }}>
+                        <Text style={styles.order}>Đặt ngay</Text>
                     </TouchableOpacity>
                 </View>
-                <View >
-                    <FlatList
-                        data ={scheduleData2}
-                        showsHorizontalScrollIndicator={false}
-                        horizontal={true}
-                        keyExtractor={(item)=>item.id.toString()}
-                        renderItem={({item})=>
-                            <ScheduleItem  item ={item}/>
-                    }
-                    />
-                   
 
-                </View>
-                <View style={styles.transformBlock}>
-                    <Text style={{fontWeight:'bold',color:'#000000',fontSize:14,marginBottom:10}}>Chuyến đi gồm </Text>
-                    <View style={{flexDirection:'row',marginTop:10}}>
-                        <View style={styles.left}>
-                            <Image style={{width:28,height:18,marginRight:11}} source={require('../../assets/anh23.png')} />
-                        </View>
-                        <View style={styles.right}>
-                            <Text style={{fontSize:13,fontWeight:'bold'}}>Khách sạn</Text>
-                            <Text style={{fontSize:12,color:'#9A9A9A'}}>1 khách sạn, 5 ngày 4 đêm</Text>
-                        </View>
-                    </View>
-                    <View style={{flexDirection:'row',marginTop:10}}>
-                        <View style={styles.left}>
-                            <Image style={{width:28,height:18,marginRight:11}} source={require('../../assets/v33.png')} />
-                        </View>
-                        <View style={styles.right}>
-                        <Text style={{fontSize:13,fontWeight:'bold'}}>Máy bay</Text>
-                            <Text style={{fontSize:12,color:'#9A9A9A'}}>2 vé khứ hồi</Text>
-                        </View>
-                    </View>
-                </View>
-                <Text style={{fontSize:14,fontWeight:'bold'}}> Thành viên</Text>
-                <View style={styles.info}>
-                        <Image style={{width:40,height:40,borderRadius:19,marginRight:10}} source={require('../../assets/nam.jpg')} />
-                        <Image style={{width:40,height:40,borderRadius:19}} source={require('../../assets/nam.jpg')} />
 
-                </View>
-                
-            </View>
-           
-        </View>
-        </ScrollView> 
+
+            </ScrollView>
         </View>
     )
 }
-const styles= StyleSheet.create({
-    container:{
-        flex:1
+const styles = StyleSheet.create({
+    container: {
+        flex: 1, zIndex: 100
     },
-    headerImage:{
-        height:150,
-        backgroundColor:'green',
-        position:'relative',
-        
+    headerImage: {
+        height: 150,
+        backgroundColor: 'green',
+        position: 'relative',
+
     },
-    imageBanner:{
-        width:'100%',
-        height:'100%'
+    imageBanner: {
+        width: '100%',
+        height: '100%'
     },
-    blockAvatar:{
+    blockAvatar: {
         // justifyContent:'center',
         // alignItems:'center',
-        position:'absolute',
-        bottom:-18,
-        left:'45%'
+        position: 'absolute',
+        bottom: -18,
+        left: '45%'
     },
-    avatar:{
-        width:50,
-        height:50,
-        borderRadius:20
+    avatar: {
+        width: 50,
+        height: 50,
+        borderRadius: 20
     },
-    title:{
-        justifyContent:'center',
-        alignItems:'center',
-        zIndex:100,
-        marginTop:20
+    title: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: 100,
+        marginTop: 20
     },
-    titleHeader:{
-        fontSize:16,
-        fontWeight:'bold',
-        marginBottom:2
+    titleHeader: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        marginBottom: 2
     },
-    titleFontSize:{
-        color:'#333333',
-        fontSize:12
+    titleFontSize: {
+        color: '#333333',
+        fontSize: 12
     },
-    option:{
-        flexDirection:'row',
-        justifyContent:'space-between',
-        marginTop:16,
-        marginBottom:20
-       
+    option: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: 16,
+        marginBottom: 20
+
     },
-    touchable:{
-        width:85,
-        height:30,
+    touchable: {
+        width: 85,
+        height: 30,
         // backgroundColor:'#FF5F24',
-        justifyContent:'center',
-        alignItems:'center'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
 
     //body
-    blockbody:{
-        flexDirection:'row',
-        justifyContent:'space-between',
-        marginHorizontal:15
+    titleHeader: {
+        color: '#000000',
+        fontSize: 14,
+        fontWeight: 'bold',
     },
-    plan:{
-        color:'#000000',
-        fontSize:14,
-        fontWeight:'bold'
+    touchableEnd: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        backgroundColor: '#FFFFFF',
+        height: 55,
+        alignItems: 'center',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
+        marginTop: 20,
+        paddingHorizontal: 15
     },
-    all:{
-        fontSize:12,
-        color:'#9E9E9E'
+    price: {
+        fontSize: 16,
+        color: '#FF5F24',
+        fontWeight: 'bold',
+
     },
-    blockImage:{
-        height:200,
-        width:150,
-        backgroundColor:'green',
-        marginLeft:16,
-        position:'relative'
+    order: {
+        color: '#FFFFFF'
     },
-    imageBlock:{
-        width:'100%',
-        height:'100%'
+
+
+    ///máy bay
+    shedule: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    }, plantAir: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        marginTop: 10
+    }, sheduleAir: {
+        fontSize: 14,
+        fontWeight: 'bold'
     },
-    timer:{
-        position:'absolute',
-        bottom:20,
-        left:15,
-        backgroundColor:'green',zIndex:100
+    timerAir: {
+        fontSize: 12,
+        marginTop: 8
     },
-    textTimer:{
-        color:'green',
-        fontSize:14,
-        fontWeight:'bold'
+    imagViet: {
+        width: 40,
+        height: 15,
+        marginTop: 16
     },
-    transformBlock:{
-        marginHorizontal:15,
-        marginVertical:13
+    nameAir: {
+        fontSize: 12,
+        color: '#828282', marginTop: 16
     },
-    info:{
-        flexDirection:'row',
-        marginHorizontal:15
+    BlockInfoAir: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: 15,
+        marginTop: 18
+
+
+    },
+    name: {
+        fontSize: 14,
+        fontWeight: 'bold'
+    },
+    timer: {
+        fontWeight: '600',
+        fontSize: 12
     }
 })
 export default OverView
