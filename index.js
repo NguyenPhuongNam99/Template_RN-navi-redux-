@@ -63,4 +63,5 @@ import ScreenSuggest from './component/ScreenSuggest/ScreenSuggest'
 import ScreenInterested from './component/ScreenSuggest/ScreenInterested'
 import AllShedule from './component/AllSchedule/AllShedule'
 import OverView from './component/AllSchedule/OverView'
+import DetailVisit from './component/AllSchedule/DetailVisit'
 AppRegistry.registerComponent(appName, () =>App);

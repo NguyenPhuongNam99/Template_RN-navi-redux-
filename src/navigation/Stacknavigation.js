@@ -1,27 +1,4 @@
-// import React from "react";
-// import { createStackNavigator } from "@react-navigation/stack";
-// import HomeScreen from '../HomeScreen';
-// import BookScreen from '../BookScreen';
-// import TestChuyenTab from '../TestChuyenTab';
-// import Home from '../../component/Home'
-// import Hotel_Icon from '../../component/Hotel_Icon';
-// import DestionationPopular from '../../component/DestionationPopular';
-// const Stack = createStackNavigator();
 
-// const Stacknavigation = () => {
-//   return (
-//     <Stack.Navigator initialRouteName="DestionationPopular">
-//       <Stack.Screen name="HomeScreen" component={HomeScreen} />
-//       <Stack.Screen name="BookScreen" component={BookScreen} />
-//       <Stack.Screen name="Home" component={Home} />
-//       <Stack.Screen name="Hotel_Icon" component={Hotel_Icon} />
-//       <Stack.Screen name="DestionationPopular" component={DestionationPopular} />
-//       {/* <Stack.Screen name="TestChuyenTab" component={TestChuyenTab} /> */}
-//     </Stack.Navigator>
-//   );
-// }
-
-// export default  Stacknavigation;
 
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -68,16 +45,24 @@ import ScreenSuggest from '../../component/ScreenSuggest/ScreenSuggest'
 import ScreenInterested from '../../component/ScreenSuggest/ScreenInterested'
 import AllShedule from '../../component/AllSchedule/AllShedule'
 import OverView from '../../component/AllSchedule/OverView'
+import OverView_Visit from '../../component/AllSchedule/OverView_Visit'
+import OverView_Plan from '../../component/AllSchedule/OverView_Plan';
+import OverViewHotel from '../../component/AllSchedule/OverViewHotel'
+import OverViewPlant from '../../component/AllSchedule/OverViewPlant'
+import DetailVisit from '../../component/AllSchedule/DetailVisit'
+import TabNavigation from '../../src/navigation/TabNavigation'
 const Stack = createStackNavigator();
 
-const App1 = () => {
+const Stacknavigation = () => {
   return (
-   
+    <NavigationContainer> 
     <Stack.Navigator >
       {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
       {/* <Stack.Screen name="BookScreen" component={BookScreen} /> */}
       {/* <Stack.Screen name="FirstScreen" component={FirstScreen}  options={{headerShown: false}}/> */}
       <Stack.Screen name="Home" component={Home}  options={{headerShown: false}} />
+      <Stack.Screen name="TabNavigation" component={TabNavigation}  options={{headerShown: false}} />
+
       <Stack.Screen name="Hotel_Icon" component={Hotel_Icon}  options={{headerShown: false}}/>
       <Stack.Screen name="RestaurantIcon" component={RestaurantIcon}  options={{headerShown: false}}/>
       <Stack.Screen name="DiscountHeader" component={DiscountHeader}  options={{headerShown: false}}/>
@@ -105,16 +90,11 @@ const App1 = () => {
       <Stack.Screen name="ScreenInterested" component={ScreenInterested}  options={{headerShown: false}}/>
       <Stack.Screen name="AllShedule" component={AllShedule}  options={{headerShown: false}}/>
       <Stack.Screen name="OverView" component={OverView}  options={{headerShown: false}}/>
-
-    </Stack.Navigator>
-    
-    
-  );
-}
-
-const App2 =()=>{
-  return(
-    <Stack.Navigator >
+      <Stack.Screen name="OverView_Visit" component={OverView_Visit}  options={{headerShown: false}}/>
+      <Stack.Screen name="OverView_Plan" component={OverView_Plan}  options={{headerShown: false}}/>
+      <Stack.Screen name="OverViewHotel" component={OverViewHotel}  options={{headerShown: false}}/>
+      <Stack.Screen name="OverViewPlant" component={OverViewPlant}  options={{headerShown: false}}/>
+      <Stack.Screen name="DetailVisit" component={DetailVisit}  options={{headerShown: false}}/>
       <Stack.Screen name="Profile" component={Profile}  options={{headerShown: false}} />
       <Stack.Screen name="Favourite" component={Favourite}  options={{headerShown: false}}/>
       <Stack.Screen name="Setting" component={Setting}  options={{headerShown: false}}/>
@@ -123,11 +103,29 @@ const App2 =()=>{
       <Stack.Screen name="MyProfile" component={MyProfile}  options={{headerShown: false}}/>
       <Stack.Screen name="Follow" component={Follow}  options={{headerShown: false}}/>
       <Stack.Screen name="UpdateInfo" component={UpdateInfo}  options={{headerShown: false}}/>
-      {/* <Stack.Screen name="Home" component={Home}  options={{headerShown: false}}/>
-      <Stack.Screen name="DiscountHeader" component={DiscountHeader}  options={{headerShown: false}}/> */}
-      
     </Stack.Navigator>
+    </NavigationContainer> 
     
-  )
+  );
 }
-export  {App1,App2};
+
+// const App2 =()=>{
+//   return(
+//     <Stack.Navigator >
+//       <Stack.Screen name="Profile" component={Profile}  options={{headerShown: false}} />
+//       <Stack.Screen name="Favourite" component={Favourite}  options={{headerShown: false}}/>
+//       <Stack.Screen name="Setting" component={Setting}  options={{headerShown: false}}/>
+//       <Stack.Screen name="PolycySetting" component={PolycySetting}  options={{headerShown: false}}/>
+//       <Stack.Screen name="TermOfUse" component={TermOfUse}  options={{headerShown: false}}/>
+//       <Stack.Screen name="MyProfile" component={MyProfile}  options={{headerShown: false}}/>
+//       <Stack.Screen name="Follow" component={Follow}  options={{headerShown: false}}/>
+//       <Stack.Screen name="UpdateInfo" component={UpdateInfo}  options={{headerShown: false}}/>
+//       {/* <Stack.Screen name="Home" component={Home}  options={{headerShown: false}}/>
+//       <Stack.Screen name="DiscountHeader" component={DiscountHeader}  options={{headerShown: false}}/> */}
+      
+//     </Stack.Navigator>
+    
+//   )
+// }
+// export  {App1,App2};
+export default Stacknavigation;

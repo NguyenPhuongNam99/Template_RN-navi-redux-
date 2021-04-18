@@ -17,7 +17,7 @@ const Home = ({navigation}) => {
         navigation.navigate('LocationDetail')
   
 }
-    
+   
     const check =(item)=>{
         if(item == 2){
             console.log('da klich Hotel_icon')
@@ -60,9 +60,9 @@ const Home = ({navigation}) => {
         )
     }
     //lịch trình
-    const SheduleNow = ({ sheduleNow_item }) => {
+    const SheduleNow = ({ sheduleNow_item,ScheduleNowNavigation }) => {
         return (
-            <View style={styles.container_header}>
+            <TouchableOpacity style={styles.container_header} onPress={ScheduleNowNavigation}>
 
 
                 <View style={styles.header_shedule}>
@@ -107,7 +107,7 @@ const Home = ({navigation}) => {
                         </TouchableOpacity>
                     </View>
                 </View>
-            </View>
+            </TouchableOpacity>
         )
     }
 
@@ -260,7 +260,7 @@ const Home = ({navigation}) => {
                         showsHorizontalScrollIndicator={false}
                         keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
-                            <SheduleNow sheduleNow_item={item} />
+                            <SheduleNow sheduleNow_item={item}  />
                         }
                     />
                 </View>

@@ -19,9 +19,11 @@ import TabVoucher from '../../component/MySchedule/index'
 import Tab1 from '../../component/MySchedule/Tab1'
 import Counbt from '../../component/Counbt'
 import Profile from '../../component/Profile/Profile'
-import {App1,App2} from '../../src/navigation/Stacknavigation'
+// import {App1,App2} from '../../src/navigation/Stacknavigation'
 // import App2 from '../../src/navigation/Stacknavigation'
 import Notification from '../../component/Notification'
+import App1 from '../../src/navigation/Stacknavigation'
+
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigation() {
@@ -71,11 +73,11 @@ export default function TabNavigation() {
           tabBarIcon:({focused})=>focused ? <Image source={require('../../assets/ac4.png')} /> : <Icon name="bell" size={19} color="#9A9A9A" />
         }}
         component={Notification} />
-        <Tab.Screen name="App2"
+        <Tab.Screen name="Hotel_Icon"
           options={{
             tabBarIcon:({focused})=>focused ? <Image source={require('../../assets/ac3.png')} /> : <Icon name="user" size={19} color="#9A9A9A" />
           }}
-        component={App2} />
+        component={Hotel_Icon} />
 
       </Tab.Navigator>
     

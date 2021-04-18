@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { scheduleData2, data } from '../../Data/OverViewData'
 import OverView_Item from './OverView_Item'
 import OverView_Plan from './OverView_Plan'
+import OverViewHotel from './OverViewHotel'
+import {OverView_VisitData} from '../../Data/OverView_VisitData'
 import {
     responsiveHeight,
     responsiveWidth,
@@ -11,6 +13,8 @@ import {
     responsiveScreenWidth,
 
 } from "react-native-responsive-dimensions";
+import OverViewPlant from './OverViewPlant'
+import OverView_Visit from './OverView_Visit'
 const OverView = () => {
 
     const dispatch = useDispatch();
@@ -80,91 +84,23 @@ const OverView = () => {
                             )
                         }
                     </View>
-                    {/* <OverView_Plan /> */}
-                    <View >
-                        <View style={styles.shedule}>
-                            <Text style={styles.sheduleAir}>Hà Nội - Quy Nhơn</Text>
-                            <View>
-                                <View style={styles.plantAir}>
-                                    <Text style={styles.sheduleAir}>HAN</Text>
-                                    <Image style={{ width: 10, height: 8 }} source={require('../../assets/ia.png')} />
-                                    <Text style={styles.sheduleAir}>UIH</Text>
-                                </View>
-                                <Text style={styles.timerAir}>Thứ 5, 5 tháng 12, 2019</Text>
-                            </View>
-                            <Image style={styles.imagViet} source={require('../../assets/viet.png')} />
-                            <Text style={styles.nameAir}>Chuyến bay: VJ345</Text>
-                        </View>
 
-                        <View style={styles.BlockInfoAir}>
-                            <View>
-                                <Text style={styles.name}>HAN</Text>
-                                <Text style={styles.timer}>13:00</Text>
-                            </View>
-                            <View style={{ width: responsiveWidth(20), borderBottomColor: '#828282', borderBottomWidth: 0.5 }} />
-                            <View>
-                                <Text style={{ textAlign: 'center' }}>1h35m</Text>
-                                <Text>Hạng thương gia</Text>
-                            </View>
-                            <View style={{ width: responsiveWidth(20), borderBottomColor: '#828282', borderBottomWidth: 0.5 }} />
-                            <View>
-                                <Text style={styles.name}>UNI</Text>
-                                <Text style={styles.timer}>13:00</Text>
-                            </View>
-                        </View>
-                        <View style={{ justifyContent: 'center', alignItems: 'center', marginVertical: 25 }}>
-                            <View style={{ padding: 'auto', borderBottomWidth: 1, width: responsiveWidth(40) }} />
-                        </View>
+                   {
+                        statusOver ==='SCHEDULE' ? <OverView_Plan /> 
+                        : statusOver === 'AIRPLANE' ? <OverViewPlant /> 
+                        : statusOver ==='HOTEL'?  <OverViewHotel />
+                        : statusOver === 'VISIT' ? <OverView_Visit />
+                        : null
+                    } 
+                
 
+      
 
-                    </View>
-
-                    <View >
-                        <View style={styles.shedule}>
-                            <Text style={styles.sheduleAir}> Quy Nhơn - Hà Nội </Text>
-                            <View>
-                                <View style={styles.plantAir}>
-                                    <Text style={styles.sheduleAir}>UNI</Text>
-                                    <Image style={{ width: 10, height: 8 }} source={require('../../assets/ia.png')} />
-                                    <Text style={styles.sheduleAir}>HAN</Text>
-                                </View>
-                                <Text style={styles.timerAir}>Thứ 5, 5 tháng 12, 2019</Text>
-                            </View>
-                            <Image style={styles.imagViet} source={require('../../assets/viet.png')} />
-                            <Text style={styles.nameAir}>Chuyến bay: VJ345</Text>
-                        </View>
-
-                        <View style={styles.BlockInfoAir}>
-                            <View>
-                                <Text style={styles.name}>UNI</Text>
-                                <Text style={styles.timer}>10:00</Text>
-                            </View>
-                            <View style={{ width: responsiveWidth(20), borderBottomColor: '#828282', borderBottomWidth: 0.5 }} />
-                            <View>
-                                <Text style={{ textAlign: 'center' }}>1h35m</Text>
-                                <Text>Hạng thương gia</Text>
-                            </View>
-                            <View style={{ width: responsiveWidth(20), borderBottomColor: '#828282', borderBottomWidth: 0.5 }} />
-                            <View>
-                                <Text style={styles.name}>HNA</Text>
-                                <Text style={styles.timer}>11:00</Text>
-                            </View>
-                        </View>
-                        <View style={{ justifyContent: 'center', alignItems: 'center', marginVertical: 25 }}>
-                            <View style={{ padding: 'auto', borderBottomWidth: 1, width: responsiveWidth(40) }} />
-                        </View>
-
-
-                    </View>
-
+                  
+                      
                 </View>
 
-                <View style={styles.touchableEnd}>
-                    <Text style={styles.price}>5,200,000 đ/người</Text>
-                    <TouchableOpacity style={{ backgroundColor: '#FF5F24', width: 71, height: 25, justifyContent: 'center', alignItems: 'center', borderRadius: 5 }}>
-                        <Text style={styles.order}>Đặt ngay</Text>
-                    </TouchableOpacity>
-                </View>
+              
 
 
 
@@ -187,8 +123,6 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     blockAvatar: {
-        // justifyContent:'center',
-        // alignItems:'center',
         position: 'absolute',
         bottom: -18,
         left: '45%'
@@ -263,48 +197,9 @@ const styles = StyleSheet.create({
     },
 
 
-    ///máy bay
-    shedule: {
-        justifyContent: 'center',
-        alignItems: 'center'
-    }, plantAir: {
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        alignItems: 'center',
-        marginTop: 10
-    }, sheduleAir: {
-        fontSize: 14,
-        fontWeight: 'bold'
-    },
-    timerAir: {
-        fontSize: 12,
-        marginTop: 8
-    },
-    imagViet: {
-        width: 40,
-        height: 15,
-        marginTop: 16
-    },
-    nameAir: {
-        fontSize: 12,
-        color: '#828282', marginTop: 16
-    },
-    BlockInfoAir: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        paddingHorizontal: 15,
-        marginTop: 18
-
-
-    },
-    name: {
-        fontSize: 14,
-        fontWeight: 'bold'
-    },
-    timer: {
-        fontWeight: '600',
-        fontSize: 12
-    }
+    ///khách sạn 
+  
+    
+   
 })
 export default OverView

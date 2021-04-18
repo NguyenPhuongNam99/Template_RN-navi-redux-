@@ -143,7 +143,7 @@
 
 
 
-import React from "react";
+import React,{useState} from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 // import HomeScreen from './src/HomeScreen'
 // import BookScreen from './src/BookScreen'
@@ -164,16 +164,29 @@ import reducer from './src/reducer';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux'
 import store from './src/store'
+import Stacknavigation from './src/navigation/Stacknavigation'
+import FirstScreen from './component/FirstScreen'
 const Stack = createStackNavigator();
 
 const App = () => {
+  const PhamJin =  () => {
+    const [isLoading, setLoading] = React.useState(true);
+    React.useEffect(() =>{
+      setTimeout(() =>{
+        setLoading(false);
+      }, 3000);
+    }, [])
+    return isLoading ? <FirstScreen/> : <Stacknavigation/>;
+  };
+  
   return (
 
     <Provider store={store}>
-      <NavigationContainer>
+      {/* <NavigationContainer> */}
 
-        <TabNavigation />
-      </NavigationContainer>
+       <PhamJin />
+        {/* <Stacknavigation /> */}
+      {/* </NavigationContainer> */}
    </Provider>
 
     // <NavigationContainer>
