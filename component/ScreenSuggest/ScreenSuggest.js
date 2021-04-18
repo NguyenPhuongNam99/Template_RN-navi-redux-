@@ -299,7 +299,8 @@ const ScreenSuggest = ({ navigation }) => {
                     flex: 1,
                     justifyContent: "center",
                     alignItems: "center",
-                   
+                   height:294,
+                   backgroundColor:'#FFFFFF'
                  
                 }}>
                   
