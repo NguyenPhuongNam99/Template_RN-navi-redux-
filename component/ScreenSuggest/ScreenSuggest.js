@@ -21,6 +21,9 @@ const ScreenSuggest = ({ navigation }) => {
     const endDateuse = useSelector(state => state.endDate)
     const startdateuse = useSelector(state => state.startDate)
     const filterStatus = useSelector(state => state.filterStatus)
+    const peopleOld = useSelector(state=>state.peopleOld)
+    const peopleMidle = useSelector(state=>state.peopleMidle)
+    const peopleBaby = useSelector(state=>state.peopleBaby)
     const getStyle = (styleTouchable) => {
         if (styleTouchable === filterStatus) {
             return { backgroundColor: '#FF5F24' }
@@ -296,13 +299,13 @@ const ScreenSuggest = ({ navigation }) => {
                                     value={priceItem && priceItem ? priceItem :null}
                                 />
                             </TouchableOpacity>
-                            <TouchableOpacity style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', borderBottomWidth: 0.5, borderBottomColor: '#000000', marginHorizontal: 15, marginTop: 16 }}>
+                            <TouchableOpacity onPress={() =>navigation.navigate('PeopleJoin')} style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', borderBottomWidth: 0.5, borderBottomColor: '#000000', marginHorizontal: 15, marginTop: 16 }}>
                                 <Image source={require('../../assets/pin5.png')} />
                                 <TextInput style={{ flex: 1 }}
                                     placeholder="Người tham gia"
                                     underlineColorAndroid="transparent"
                                     placeholderTextColor='#989898'
-
+                                    value={peopleOld  ? peopleOld.name +'  ' +peopleOld.countOld : null}
                                 />
                             </TouchableOpacity>
                         </View>

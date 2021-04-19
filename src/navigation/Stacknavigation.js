@@ -54,6 +54,7 @@ import TabNavigation from '../../src/navigation/TabNavigation'
 import SecondScreen from '../../component/SecondScreen'
 import Login from '../../component/Login/Login'
 import ConfirmOTP from '../../component/ConfirmOTP'
+import PeopleJoin from '../../component/ScreenSuggest/PeopleJoin'
 const Stack = createStackNavigator();
 
 const Stacknavigation = () => {
@@ -109,6 +110,7 @@ const Stacknavigation = () => {
       <Stack.Screen name="UpdateInfo" component={UpdateInfo}  options={{headerShown: false}}/>
       <Stack.Screen name="DetailVisitabc" component={DetailVisit}  options={{headerShown: false}}/>
       <Stack.Screen name="OverView_Visit" component={OverView_Visit}  options={{headerShown: false}}/>
+      <Stack.Screen name="PeopleJoin" component={PeopleJoin}  options={{headerShown: false}}/>
 
     </Stack.Navigator>
     // </NavigationContainer> 8678678

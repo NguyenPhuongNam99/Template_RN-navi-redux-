@@ -91,6 +91,11 @@ const reducer =(state = inital,action)=>{
                 ...state,priceItem:action.priceItem
             }
         }
+        case 'ADDSTATUS':{
+            return {
+                ...state,peopleOld:action.peopleOld,peopleMidle:action.peopleMidle,peopleBaby:action.peopleBaby
+            }
+        }
         default :
             return state;
     }
