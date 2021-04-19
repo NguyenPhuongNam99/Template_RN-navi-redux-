@@ -7,6 +7,11 @@ import { Checkbox } from 'react-native-paper';
 import CalendarPicker from 'react-native-calendar-picker';
 import moment from 'moment';
 const ScreenSuggest = ({ navigation }) => {
+    const [onSelect,setOnSelect] = useState(false);
+    // const checkSelect = (item)=>{
+    //    setOnSelect(item)
+    // }
+    const priceItem = useSelector(state=>state.priceItem)
     const addlocation = useSelector(state => state.addlocation)
     const adddestination = useSelector(state => state.adddestination)
     const goback = () => {
@@ -102,7 +107,28 @@ const ScreenSuggest = ({ navigation }) => {
     //     }
     // }
 
-
+    const dataprice =[
+        {
+            id:1,
+            price:'1.000.000 - 2.000.000 dd'
+        },
+        {
+            id:2,
+            price:'3.000.000 - 5.000.000 dd'
+        },
+        {
+            id:3,
+            price:'3.000.000 - 22.000.000 dd'
+        },
+        {
+            id:4,
+            price:'21.000.000 - 156.000.000 dd'
+        },
+        {
+            id:5,
+            price:'12.000.000 - 290.000.000 dd'
+        },
+    ]
     const getData =()=>{
         if(filterStatus =='Primary'){
             return ScreenSuggestData
@@ -267,7 +293,7 @@ const ScreenSuggest = ({ navigation }) => {
                                     placeholder="Ngân sách"
                                     underlineColorAndroid="transparent"
                                     placeholderTextColor='#989898'
-
+                                    value={priceItem && priceItem ? priceItem :null}
                                 />
                             </TouchableOpacity>
                             <TouchableOpacity style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', borderBottomWidth: 0.5, borderBottomColor: '#000000', marginHorizontal: 15, marginTop: 16 }}>
@@ -298,20 +324,42 @@ const ScreenSuggest = ({ navigation }) => {
                 <View style={{
                     flex: 1,
                     justifyContent: "center",
-                    alignItems: "center",
-                   height:294,
-                   backgroundColor:'#FFFFFF'
+                    alignItems: "center"
+                 
                  
                 }}>
                   
-                        <View style={{  marginHorizontal: 10 }}>
+                        <View style={{  marginHorizontal: 10,backgroundColor:'#FFFFFF',
+                   height:294,width:264 ,paddingHorizontal:16,borderRadius:10}}>
+                            <Text style={{fontSize:16,fontWeight:'bold',paddingTop:16}}>Chon ngan sach</Text>
+                            <View style={{paddingTop:25}}>
 
-                            <Text>1000.00000</Text>
-                            <Text>1000.00000</Text>
-                            <Text>1000.00000</Text>
-                            <Text>1000.00000</Text>
-                            <Text>1000.00000</Text>
-                          
+                                {dataprice.map((item)=>{
+                                    return(
+                                        <TouchableOpacity onPress={()=>setOnSelect(item.price)}>
+                                            <Text style={styles.item}>{item.price}</Text>
+                                        </TouchableOpacity>
+                                    )
+                                })}
+                              
+                                <TextInput placeholder='chon so khac' onChangeText={(item)=>setOnSelect(item)} />
+                            </View>
+                            <View style={{flexDirection:'row',justifyContent:'space-between'}}> 
+                                <TouchableOpacity onPress={()=>{
+                                      setModalVisible(!modalVisible),
+                                      setOnSelect('')
+                                }}>
+                                    <Text style={{fontSize:14,color:'#9A9A9A',fontWeight:'bold'}}>Cancel</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={()=>{
+                                    setModalVisible(!modalVisible),
+                                    dispatch({type:'ADDPRICE',priceItem:onSelect})}
+                                } >
+                                
+                                   
+                                    <Text style={{fontSize:14,color:'#FF5F24',fontWeight:'bold'}}>Ok</Text>
+                                </TouchableOpacity>
+                            </View>
                         </View>
                     
                 </View>
@@ -374,6 +422,9 @@ const styles = StyleSheet.create({
         top: 0,
         right: 0, zIndex: 100,
         color: 'green'
+    },
+    item:{
+        paddingBottom:12
     }
 
 })

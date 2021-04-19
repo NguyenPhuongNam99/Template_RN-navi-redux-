@@ -86,6 +86,11 @@ const reducer =(state = inital,action)=>{
                 ...state,statusOver:'VISIT'
             }
         }
+        case 'ADDPRICE':{
+            return {
+                ...state,priceItem:action.priceItem
+            }
+        }
         default :
             return state;
     }

@@ -3,7 +3,7 @@ import { View, Text, Image, TouchableOpacity, FlatList, StyleSheet } from 'react
 import {OverView_VisitData} from '../../Data/OverView_VisitData'
 const OverView_Visit = ({navigation}) => {
     const checknavigation =()=>{
-        navigation.navigate('DetailVisit')
+        navigation.navigate('DetailVisit');
     }
     const OverView_Visit_Item = ({ item ,checknavigation}) => {
        return(
@@ -21,7 +21,7 @@ const OverView_Visit = ({navigation}) => {
                     data={OverView_VisitData}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) =>
-                        <OverView_Visit_Item item={item}  checknavigation ={checknavigation}/>
+                        <OverView_Visit_Item item={item}  checknavigation ={()=>navigation.navigate('DetailVisitabc')}/>
                 }
                 />
             </View>
