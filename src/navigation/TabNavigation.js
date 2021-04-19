@@ -38,13 +38,13 @@ export default function TabNavigation() {
         
         // activeBackgroundColor: '#c4461c',
       }}>
-        <Tab.Screen name="App1"
+        <Tab.Screen name="Home"
         
         options={{
           tabBarIcon:({focused})=> focused ? <Image source={require('../../assets/ac.png')}/>   :    <Icon name="search" size={19} color="#9A9A9A" />
         
         }} 
-        component={App1}
+        component={Home}
         />
          {/* <Tab.Screen name="Home"
        

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {SafeAreaView, Text, StyleSheet} from 'react-native';
+import {SafeAreaView, Text, StyleSheet,TouchableOpacity,View} from 'react-native';
  
 import {
   CodeField,
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
  
 const CELL_COUNT = 4;
  
-const ConfirmOTP = () => {
+const ConfirmOTP = ({navigation}) => {
   const [value, setValue] = useState('');
   const ref = useBlurOnFulfill({value, cellCount: CELL_COUNT});
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
@@ -70,6 +70,12 @@ const ConfirmOTP = () => {
           </Text>
         )}
       />
+      <View style={{ flex: 1 }}>
+        <TouchableOpacity onPress={() => navigation.navigate('UpdateProfile')} style={{ zIndex: 1000, position: 'absolute', width: '100%', top: '45%', left: 0, justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#FF5F24', borderRadius: 22, marginTop: 48 }}>
+          <Text style={{ color: 'red', fontSize: 20, fontWeight: 'bold', color: '#FFFFFF' }}>OK</Text>
+        </TouchableOpacity>
+      </View>
+
     </SafeAreaView>
   );
 };

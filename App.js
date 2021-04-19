@@ -169,7 +169,7 @@ import FirstScreen from './component/FirstScreen'
 const Stack = createStackNavigator();
 
 const App = () => {
-  const PhamJin =  () => {
+  const TabNavi =  () => {
     const [isLoading, setLoading] = React.useState(true);
     React.useEffect(() =>{
       setTimeout(() =>{
@@ -182,11 +182,11 @@ const App = () => {
   return (
 
     <Provider store={store}>
-      {/* <NavigationContainer> */}
+      <NavigationContainer>
 
-       <PhamJin />
+       <TabNavi />
         {/* <Stacknavigation /> */}
-      {/* </NavigationContainer> */}
+      </NavigationContainer>
    </Provider>
 
     // <NavigationContainer>

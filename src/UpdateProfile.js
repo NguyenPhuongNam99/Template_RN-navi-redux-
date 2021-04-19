@@ -91,11 +91,14 @@ const UpdateProfile = ({navigation}) => {
                  {/* <Button title="Hide modal" onPress={toggleModal} /> */}
              </View>
              </Modal>
-            <Image
+             <TouchableOpacity onPress={()=>navigation.goBack()}>
+                 <Image
                 style={styles.tinyLogo}
                 source={require('../assets/arrow-left.png')}
                 
             />
+             </TouchableOpacity>
+            
             <Text style={styles.title}>Cập nhật thông tin </Text>
             <View style={styles.input_header}>
                 <TextInput
@@ -122,7 +125,7 @@ const UpdateProfile = ({navigation}) => {
             </View>
             {
                 checkHoten  && checkten?
-                 <TouchableOpacity style={styles.touchable}  onPress={()=>{navigation.navigate('Hotel')}}>
+                 <TouchableOpacity style={styles.touchable}  onPress={()=>{navigation.navigate('TabNavigation')}}>
                 <Text>Hoàn thành</Text>
             </TouchableOpacity>
             :

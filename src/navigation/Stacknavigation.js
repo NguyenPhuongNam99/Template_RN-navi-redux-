@@ -51,19 +51,25 @@ import OverViewHotel from '../../component/AllSchedule/OverViewHotel'
 import OverViewPlant from '../../component/AllSchedule/OverViewPlant'
 import DetailVisit from '../../component/AllSchedule/DetailVisit'
 import TabNavigation from '../../src/navigation/TabNavigation'
+import SecondScreen from '../../component/SecondScreen'
+import Login from '../../component/Login/Login'
+import ConfirmOTP from '../../component/ConfirmOTP'
 const Stack = createStackNavigator();
 
 const Stacknavigation = () => {
   return (
-    <NavigationContainer> 
+    // <NavigationContainer> 
     <Stack.Navigator >
       {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
       {/* <Stack.Screen name="BookScreen" component={BookScreen} /> */}
       {/* <Stack.Screen name="FirstScreen" component={FirstScreen}  options={{headerShown: false}}/> */}
-      <Stack.Screen name="Home" component={Home}  options={{headerShown: false}} />
+      {/* <Stack.Screen name="SecondScreen" component={SecondScreen}  options={{headerShown: false}} /> */} 
+      <Stack.Screen name="Login" component={Login}  options={{headerShown: false}} />
       <Stack.Screen name="TabNavigation" component={TabNavigation}  options={{headerShown: false}} />
+      <Stack.Screen name="ConfirmOTP" component={ConfirmOTP}  options={{headerShown: false}} />
 
-      <Stack.Screen name="Hotel_Icon" component={Hotel_Icon}  options={{headerShown: false}}/>
+      <Stack.Screen name="Home" component={Home}  options={{headerShown: false}} />
+   <Stack.Screen name="Hotel_Icon" component={Hotel_Icon}  options={{headerShown: false}}/>
       <Stack.Screen name="RestaurantIcon" component={RestaurantIcon}  options={{headerShown: false}}/>
       <Stack.Screen name="DiscountHeader" component={DiscountHeader}  options={{headerShown: false}}/>
       <Stack.Screen name="ScheduleHeader" component={ScheduleHeader}  options={{headerShown: false}}/>
@@ -104,7 +110,7 @@ const Stacknavigation = () => {
       <Stack.Screen name="Follow" component={Follow}  options={{headerShown: false}}/>
       <Stack.Screen name="UpdateInfo" component={UpdateInfo}  options={{headerShown: false}}/>
     </Stack.Navigator>
-    </NavigationContainer> 
+    // </NavigationContainer> 
     
   );
 }
