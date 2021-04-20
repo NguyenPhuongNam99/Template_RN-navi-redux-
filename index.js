@@ -65,4 +65,5 @@ import AllShedule from './component/AllSchedule/AllShedule'
 import OverView from './component/AllSchedule/OverView'
 import DetailVisit from './component/AllSchedule/DetailVisit'
 import PeopleJoin from './component/ScreenSuggest/PeopleJoin'
-AppRegistry.registerComponent(appName, () =>App);
+import DetailSchedule from './component/AllSchedule/DetailSchedule'
+AppRegistry.registerComponent(appName, () =>DetailSchedule);
