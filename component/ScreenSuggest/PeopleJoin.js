@@ -7,39 +7,50 @@ import {useDispatch,useSelector} from 'react-redux'
 const PeopleJoin =({navigation})=>{
     const dispatch = useDispatch()
     const ADDSTATUS =()=>{
-        dispatch({type:'ADDSTATUS',peopleOld:peopleOld,peopleMidle:peopleMidle,peopleBaby:peopleBaby})
-        navigation.navigate('ScreenSuggest')
+        if (peopleOld.countOld > 0 && peopleMidle.countMidle > 0 && peopleBaby.countBaby > 0) {
+            dispatch({ type: 'ADDSTATUS', peopleOld: peopleOld , peopleMidle: peopleMidle, peopleBaby: peopleBaby })  
+            navigation.navigate('ScreenSuggest')
+        }
+        
+         
+       
+        else {
+            console.log('null')
+        }
     }
+
+
+      
     const goback = ()=>{
         navigation.goBack()
     }
-    const [peopleOld,setPeopleOld] = useState({nameok:'người lớn',countOld:2})
-    const [peopleMidle,setPeopleMidle] = useState({nameok:'trẻ em',countMidle:0})
-    const [peopleBaby,setPeopleBaby] = useState({nameok:'em bé',countBaby:0}) 
+    const [peopleOld,setPeopleOld] = useState({name:'người lớn',countOld:2})
+    const [peopleMidle,setPeopleMidle] = useState({name:'trẻ em',countMidle:0})
+    const [peopleBaby,setPeopleBaby] = useState({name:'em bé',countBaby:0}) 
     const setCoundOld =()=>{
-        setPeopleOld({...peopleOld.name,countOld:peopleOld.countOld +1})
+        setPeopleOld({...peopleOld,countOld:peopleOld.countOld +1})
     }
     const subCoundOld =()=>{
         if(peopleOld.countOld > 0){
-            setPeopleOld({...peopleOld.name,countOld:peopleOld.countOld - 1})
+            setPeopleOld({...peopleOld,countOld:peopleOld.countOld - 1})
         }
         
     }
     const setCoundMidle =()=>{
-        setPeopleMidle({...peopleMidle.name,countMidle:peopleMidle.countMidle +1})
+        setPeopleMidle({...peopleMidle,countMidle:peopleMidle.countMidle +1})
     }
     const subCoundMidle =()=>{
-        if(peopleOld.countOld > 0){
-            setPeopleMidle({...peopleMidle.name,countMidle:peopleMidle.countMidle - 1})
+        if(peopleMidle.countMidle > 0){
+            setPeopleMidle({...peopleMidle,countMidle:peopleMidle.countMidle - 1})
         }
         
     }
     const setCoundBaby =()=>{
-        setPeopleBaby({...peopleBaby.name,countBaby:peopleBaby.countBaby +1})
+        setPeopleBaby({...peopleBaby,countBaby:peopleBaby.countBaby +1})
     }
     const subCounBaby =()=>{
-        if(peopleOld.countOld > 0){
-            setPeopleBaby({...peopleBaby.name,countBaby:peopleBaby.countBaby - 1})
+        if(peopleBaby.countBaby > 0){
+            setPeopleBaby({...peopleBaby,countBaby:peopleBaby.countBaby - 1})
         }
         
     }

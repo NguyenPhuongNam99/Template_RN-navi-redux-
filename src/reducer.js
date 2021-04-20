@@ -3,7 +3,9 @@ import { act } from "react-test-renderer"
 const inital ={
     count :30,
     filterStatus:'Primary',
-    statusOver:'SCHEDULE'
+    statusOver:'SCHEDULE',
+    // peopOld:{name:'người lớn',countOld:2},
+    // peopleMidle:{name:'trẻ em',countMidle:0}
 }
 const reducer =(state = inital,action)=>{
     switch(action.type){
@@ -93,6 +95,8 @@ const reducer =(state = inital,action)=>{
         }
         case 'ADDSTATUS':{
             return {
+                // peopleOld_name:peopleOld.name,peopleOld_countOld:peopleOld.countOld,peopleMidle_name:peopleMidle.name,
+                // peopleMidle_count=peopleMidle.countMidle,peopleBaby_name:peopleBaby.name,peopleBaby_count:peopleBaby.countBaby
                 ...state,peopleOld:action.peopleOld,peopleMidle:action.peopleMidle,peopleBaby:action.peopleBaby
             }
         }

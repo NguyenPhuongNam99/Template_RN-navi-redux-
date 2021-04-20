@@ -46,12 +46,12 @@ export default function TabNavigation() {
         }} 
         component={Home}
         />
-         {/* <Tab.Screen name="Home"
+         {/* <Tab.Screen name="TabView"
        
        options={{
          tabBarIcon:()=><Icon name="search" size={19} color="#9A9A9A" />
        }} 
-       component={Home}
+       component={TabView}
        /> */}
         <Tab.Screen name="TabVoucher"
          options={{
@@ -59,25 +59,25 @@ export default function TabNavigation() {
         }}
         component={TabVoucher} />
         
-        {/* <Tab.Screen name="ScheduleHeader"
+        <Tab.Screen name="ScheduleHeader"
         //  options={{
         //   tabBarIcon: <TabView />
         
         // }}
 
         options ={{tabBarOnPress: () => {} ,tabBarIcon : () =>   <TabView/>, tabBarLabel: ''}}
-        component={ScheduleHeader} /> */}
+        component={ScheduleHeader} />
 
         <Tab.Screen name="Notification" 
          options={{
           tabBarIcon:({focused})=>focused ? <Image source={require('../../assets/ac4.png')} /> : <Icon name="bell" size={19} color="#9A9A9A" />
         }}
         component={Notification} />
-        <Tab.Screen name="Hotel_Icon"
+        <Tab.Screen name="Profile"
           options={{
             tabBarIcon:({focused})=>focused ? <Image source={require('../../assets/ac3.png')} /> : <Icon name="user" size={19} color="#9A9A9A" />
           }}
-        component={Hotel_Icon} />
+        component={Profile} />
 
       </Tab.Navigator>
     

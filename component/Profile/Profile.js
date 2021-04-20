@@ -16,6 +16,15 @@ const Profile = ({ navigation }) => {
   const alert =()=>{
       Alert.alert
   }
+  const createTwoButtonAlert = () =>
+  Alert.alert(
+    "Cảm ơn bạn đã đánh giá",
+    "",
+    [
+     
+      { text: "OK", onPress: () => setVisible(false) }
+    ]
+  );
     return (
         <View style={styles.container}>
  
@@ -82,11 +91,11 @@ const Profile = ({ navigation }) => {
                         
                     </View>
                     <View style={{width:'100%',justifyContent:'center',alignItems:'center',borderTopWidth:0.5,padding:10,borderTopColor:'#979797'}}>
-                    <TouchableOpacity style={styles.touchable}>
+                    <TouchableOpacity style={styles.touchable} onPress={createTwoButtonAlert}>
                             <Text>Đánh giá ngay</Text>
                     </TouchableOpacity>
                     </View>
-                    <View style={{width:'100%',justifyContent:'center',alignItems:'center',borderTopWidth:0.5,padding:10,borderTopColor:'#979797'}}>
+                    <View style={{width:'100%',justifyContent:'center',alignItems:'center',borderTopWidth:0.5,padding:10,borderTopColor:'#979797'}} onPress={()=>setVisible(false)}>
                     <TouchableOpacity style={styles.touchable}>
                             <Text>Nhắc tôi sau</Text>
                     </TouchableOpacity>

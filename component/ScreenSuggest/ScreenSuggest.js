@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, Image, TouchableOpacity, FlatList, ScrollView, CheckBox, Modal,Alert} from 'react-native'
+import { View, Text, StyleSheet, TextInput, Image, TouchableOpacity, FlatList, ScrollView, Modal,Alert} from 'react-native'
 import Header from '../Header'
 import { ScreenSuggestData } from '../../Data/ScreenSuggest_Data';
 import { useSelector, useDispatch } from 'react-redux'
 import { Checkbox } from 'react-native-paper';
 import CalendarPicker from 'react-native-calendar-picker';
 import moment from 'moment';
+import CheckBox from '@react-native-community/checkbox';
 const ScreenSuggest = ({ navigation }) => {
     const [onSelect,setOnSelect] = useState(false);
     // const checkSelect = (item)=>{
@@ -195,8 +196,8 @@ const ScreenSuggest = ({ navigation }) => {
                                         months={['Tháng 1,', 'Tháng 2,', 'Tháng 3,', 'Tháng 4,', 'Tháng 5,', 'Tháng 6,', 'Tháng 7,', 'Tháng 8,', 'Tháng 9,', 'Tháng 10,', 'Tháng 11,', 'Tháng 12,']}
                                         selectedDayTextColor="#FFFFFF"
                                         selectedRangeStartStyle={{ backgroundColor: '#F8530D' }}
-                                        selectedRangeEndStyle={{ backgroundColor: '#F8530D' }}
-                                        selectedRangeStyle={{ backgroundColor: 'green', opacity: 0.1 }}
+                                        selectedRangeEndStyle={{ backgroundColor: '#F8530D'}}
+                                        selectedRangeStyle={{ backgroundColor: '#FCDAD5', opacity: 1 }}
                                         previousTitle='<'
                                         nextTitle='>'
                                         customDatesStyles='YYYY-MM'
@@ -305,8 +306,7 @@ const ScreenSuggest = ({ navigation }) => {
                                     placeholder="Người tham gia"
                                     underlineColorAndroid="transparent"
                                     placeholderTextColor='#989898'
-                                    value={peopleOld  ? peopleOld.name +'  ' +peopleOld.countOld : null}
-                                />
+                                    value={peopleOld && peopleMidle && peopleBaby ? peopleOld.name + '  '+ peopleOld.countOld + '  '+ peopleMidle.name + '  '+ peopleMidle.countMidle + '  '+ peopleBaby.name + '  '+ peopleBaby.countBaby :null } />
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -334,7 +334,7 @@ const ScreenSuggest = ({ navigation }) => {
                   
                         <View style={{  marginHorizontal: 10,backgroundColor:'#FFFFFF',
                    height:294,width:264 ,paddingHorizontal:16,borderRadius:10}}>
-                            <Text style={{fontSize:16,fontWeight:'bold',paddingTop:16}}>Chon ngan sach</Text>
+                            <Text style={{fontSize:16,fontWeight:'bold',paddingTop:16}}>Chọn ngân sách</Text>
                             <View style={{paddingTop:25}}>
 
                                 {dataprice.map((item)=>{

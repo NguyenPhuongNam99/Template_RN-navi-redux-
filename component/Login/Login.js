@@ -6,7 +6,26 @@ import { Picker } from '@react-native-picker/picker';
 const Login = ({ navigation }) => {
   const [selectedValue, setSelectedValue] = useState();
   const [text, onChangeText] = React.useState(null);
+  /(84|0[3|5|7|8|9])+([0-9]{8})\b/
 
+  const [checklogin, setChecklogin] = useState(false);
+  const [phone,setPhone] = useState('')
+
+  const validateten = (text1) => {
+    let reg = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
+    if (reg.test(text1) === false) {
+        setPhone(text1)
+        setChecklogin(false)
+        return false;
+       
+
+    } else {
+        setPhone(text1);
+        setChecklogin(true)
+       
+
+    }
+}
   return (
     <ImageBackground style={styles.container} source={require('../../assets/b1.png')}>
 
@@ -46,13 +65,15 @@ const Login = ({ navigation }) => {
         </View>
 
 
-        <TextInput keyboardType="numeric" onChangeText={onChangeText} style={{ paddingLeft: 180, borderRadius: 30, width: '100%', borderWidth: 1, zIndex: 100, backgroundColor: 'rgba(0, 0, 0, 0.5)' }} />
+        <TextInput keyboardType="numeric" 
+          onChangeText={(text1) => validateten(text1)}
+          style={{ paddingLeft: 180, borderRadius: 30, width: '100%', borderWidth: 1, zIndex: 100, backgroundColor: 'rgba(0, 0, 0, 0.5)' }} />
 
 
       </View>
 
       {
-        text && text ?
+        phone && checklogin ?
           <TouchableOpacity onPress={() => navigation.navigate('ConfirmOTP')} style={{ zIndex: 1000, position: 'absolute', top: '45%', left: 10, width: '94%', justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#FF5F24', borderRadius: 22, marginTop: 48 }}>
             <Text style={{ color: 'red', fontSize: 20, fontWeight: 'bold', color: '#FFFFFF' }}>OK</Text>
           </TouchableOpacity>

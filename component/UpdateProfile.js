@@ -15,7 +15,7 @@ const UpdateProfile = ({navigation}) => {
     setModalVisible(!isModalVisible);
   };
     const validateHoten = (text1) => {
-        let reg = /^[a-zA-Z]{2,40}( [a-zA-Z]{2,40})+$/;
+        let reg =/[^A-Za-z0-9]/;
         if (reg.test(text1) === false) {
             setHoten(text1)
             setCheckhoten(false)
@@ -30,7 +30,7 @@ const UpdateProfile = ({navigation}) => {
         }
     }
     const validateten = (text1) => {
-        let reg = /^[a-zA-Z]{2,40}( [a-zA-Z]{2,40})+$/;
+        let reg = /[^A-Za-z0-9]/;
         if (reg.test(text1) === false) {
             setTen(text1)
             setCheckten(false)
