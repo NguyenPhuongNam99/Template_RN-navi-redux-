@@ -15,7 +15,7 @@ import {
 } from "react-native-responsive-dimensions";
 import OverViewPlant from './OverViewPlant'
 import OverView_Visit from './OverView_Visit'
-const OverView = () => {
+const OverView = ({navigation}) => {
 
     const dispatch = useDispatch();
     const statusOver = useSelector(state => state.statusOver)
@@ -47,7 +47,10 @@ const OverView = () => {
             return { backgroundColor: '#ECF1FF', borderRadius: 5 }
         }
     }
-
+    const navigateDetailSchedule = ()=>{
+        navigation.navigate('DetailSchedule')
+        console.log('da kichj')
+    }
     return (
 
 
@@ -86,8 +89,8 @@ const OverView = () => {
                     </View>
 
                    {
-                        statusOver ==='SCHEDULE' ? <OverView_Plan /> 
-                        : statusOver === 'AIRPLANE' ? <OverViewPlant /> 
+                        statusOver ==='SCHEDULE' ? <OverView_Plan navigateDetailSchedule={navigateDetailSchedule}/> 
+                        : statusOver === 'AIRPLANE' ? <OverViewPlant  /> 
                         : statusOver ==='HOTEL'?  <OverViewHotel />
                         : statusOver === 'VISIT' ? <OverView_Visit />
                         : null

@@ -1,11 +1,12 @@
 import { act } from "react-test-renderer"
-
+import {FisrtDay_Data} from '../Data/OverViewDay_Data'
 const inital ={
     count :30,
     filterStatus:'Primary',
     statusOver:'SCHEDULE',
     // peopOld:{name:'người lớn',countOld:2},
     // peopleMidle:{name:'trẻ em',countMidle:0}
+    overviewDay:FisrtDay_Data
 }
 const reducer =(state = inital,action)=>{
     switch(action.type){
@@ -99,6 +100,17 @@ const reducer =(state = inital,action)=>{
                 // peopleMidle_count=peopleMidle.countMidle,peopleBaby_name:peopleBaby.name,peopleBaby_count:peopleBaby.countBaby
                 ...state,peopleOld:action.peopleOld,peopleMidle:action.peopleMidle,peopleBaby:action.peopleBaby
             }
+        }
+        case 'ADD_ID':{
+            return {
+                ...state,id_delete:action.itemDelete
+            }
+        }
+        case 'DELETE_ITEM':{
+          return{
+              ...state,
+              overviewDay:state.overviewDay.filter(item=>item.id !== action.id_delete)
+          }
         }
         default :
             return state;

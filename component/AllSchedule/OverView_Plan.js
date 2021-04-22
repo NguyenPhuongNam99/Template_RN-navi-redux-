@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, Image, TouchableOpacity, StyleSheet, FlatList } from 'react-native'
 import { scheduleData2, data } from '../../Data/OverViewData'
 import OverView_Item from './OverView_Item'
-const OverView_Plan = () => {
+const OverView_Plan = ({navigateDetailSchedule}) => {
     return (
         <View style={{ flex: 1 }}>
             <View style={styles.blockbody}>
@@ -64,7 +64,7 @@ const OverView_Plan = () => {
             
             <View style={styles.touchableEnd}>
                     <Text style={styles.price}>5,200,000 đ/người</Text>
-                    <TouchableOpacity style={{ backgroundColor: '#FF5F24', width: 71, height: 25, justifyContent: 'center', alignItems: 'center', borderRadius: 5 }}>
+                    <TouchableOpacity  onPress={navigateDetailSchedule} style={{ backgroundColor: '#FF5F24', width: 71, height: 25, justifyContent: 'center', alignItems: 'center', borderRadius: 5 }}>
                         <Text style={styles.order}>Đặt ngay</Text>
                     </TouchableOpacity>
             </View>

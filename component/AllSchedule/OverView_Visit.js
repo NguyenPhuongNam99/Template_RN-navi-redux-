@@ -21,7 +21,7 @@ const OverView_Visit = ({navigation}) => {
                     data={OverView_VisitData}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) =>
-                        <OverView_Visit_Item item={item}  checknavigation ={()=>navigation.navigate('DetailVisitabc')}/>
+                        <OverView_Visit_Item item={item}  checknavigation ={checknavigation}/>
                 }
                 />
             </View>

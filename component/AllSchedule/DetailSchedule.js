@@ -6,15 +6,21 @@ import SecondDay from './SecondDay';
 import ThirdDay from './ThirdDay';
 import FourDay from './FourDay'
 import { NavigationContainer } from '@react-navigation/native';
-const DetailSchedule = () => {
+
+const DetailSchedule = ({navigation}) => {
     const Tab = createMaterialTopTabNavigator();
+    const goback =()=>{
+        navigation.goBack()
+    }
+   
+  
     return (
         <View style={styles.container}>
             <View style={styles.header}>
                 <Image style={styles.imageBanner} source={require('../../assets/qn1.jpg')} />
                 <View style={styles.titleHeader}>
-                    <TouchableOpacity>
-                        <Image style={styles.back} source={require('../../assets/back1.png')} />
+                    <TouchableOpacity onPress={goback} style={styles.back}>
+                        <Image  source={require('../../assets/back1.png')} />
                     </TouchableOpacity>
                 </View>
                 <View style={styles.titleBanner}>
@@ -22,7 +28,7 @@ const DetailSchedule = () => {
                     <Text style={styles.timer}>5/12 - 10/12</Text>
                 </View>
             </View>
-            <NavigationContainer>
+            {/* <NavigationContainer> */}
                 <Tab.Navigator tabBarOptions={{
                     activeTintColor: '#000000',
                     inactiveTintColor: '#5E5E5E',
@@ -69,7 +75,7 @@ const DetailSchedule = () => {
                             </View>
                     }} />
                 </Tab.Navigator>
-            </NavigationContainer>
+            {/* </NavigationContainer> */}
         </View>
     )
 }
@@ -92,7 +98,8 @@ const styles = StyleSheet.create({
     },
     back: {
         width: 8,
-        height: 12, zIndex: 100
+        height: 12, zIndex: 100,
+        marginLeft:16
     },
     titleBanner: {
         justifyContent: 'center',
