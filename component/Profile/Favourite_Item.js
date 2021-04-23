@@ -1,22 +1,16 @@
 import React,{useState} from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
-import {useSelector,useDispatch} from 'react-redux'
-const ScheduleNow_Item = ({ Item,ScheduleNowNavigation }) => {
-    const dispatch = useDispatch()
-    const [imageState,setImageState]= useState(false)
-    const item_tym = useSelector(state=>state.item_tym)
-    const setCheck =(item)=>{
-        setImageState(!imageState)
-        if(imageState === true && item_tym.id !== item.id){
-            
-            dispatch({type:'ADD_TYM',item_tym:item})
-            console.log("item tym la",item)
-        }
-        else{
-            console.log('null')
-        } 
-      
-    }
+
+const Favourite_Item = ({ Item,ScheduleNowNavigation }) => {
+    // const dispatch = useDispatch()
+    // const [imageState,setImageState]= useState(false)
+    // const setCheck =(item)=>{
+    //     setImageState(!imageState)
+    //     if(imageState == true){
+    //         dispatch({type:'ADD_TYM',item_tym:item})
+    //         console.log("item tym la",item)
+    //     }
+    // }
     return (
         <View style={styles.container_header} >
             <TouchableOpacity style={styles.top} onPress={ScheduleNowNavigation}>
@@ -75,13 +69,11 @@ const ScheduleNow_Item = ({ Item,ScheduleNowNavigation }) => {
                         <Image style={{ width: 14, height: 14, marginBottom: 5,marginRight:10 }}
                             resizeMode='stretch'
                             source={Item.share} />
-                            <TouchableOpacity onPress={()=>setCheck(Item)}>
+                            <TouchableOpacity >
                                 {
-                                    imageState ?  <Image style={{ width: 16, height: 14, marginBottom: 5 }}
+                                     <Image style={{ width: 16, height: 14, marginBottom: 5 }}
                                     source={Item.tym2} />
-                                    : 
-                                    <Image style={{ width: 16, height: 14, marginBottom: 5 }}
-                            source={Item.tym} />
+                                 
                                 }
                                 
                             </TouchableOpacity>
@@ -173,4 +165,4 @@ const styles = StyleSheet.create({
     //     marginHorizontal: 16
     // }
 })
-export default ScheduleNow_Item
+export default Favourite_Item

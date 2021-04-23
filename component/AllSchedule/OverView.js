@@ -71,6 +71,10 @@ const OverView = ({navigation}) => {
                         <Image style={styles.avatar} source={require('../../assets/nam.jpg')} />
                     </View>
                 </View>
+                <TouchableOpacity onPress={()=>navigation.goBack()} style={{position:'absolute',top:'2%',left:15,zIndex:1000}}>
+                    <Image style={{width:9,height:12}} source={require('../../assets/back1.png')}/>
+                </TouchableOpacity>
+
                 <View style={{ flex: 1 }}>
                     <View style={styles.title}>
                         <Text style={styles.titleHeader}>Quy Nhơn ,Bình Định</Text>

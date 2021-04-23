@@ -6,7 +6,8 @@ const inital ={
     statusOver:'SCHEDULE',
     // peopOld:{name:'người lớn',countOld:2},
     // peopleMidle:{name:'trẻ em',countMidle:0}
-    overviewDay:FisrtDay_Data
+    overviewDay:FisrtDay_Data,
+    item_tym:[]
 }
 const reducer =(state = inital,action)=>{
     switch(action.type){
@@ -111,6 +112,12 @@ const reducer =(state = inital,action)=>{
               ...state,
               overviewDay:state.overviewDay.filter(item=>item.id !== action.id_delete)
           }
+        }
+        case 'ADD_TYM':{
+            return {
+                ...state,
+                item_tym:[...state.item_tym,action.item_tym]
+            }
         }
         default :
             return state;

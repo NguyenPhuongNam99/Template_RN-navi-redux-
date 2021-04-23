@@ -71,6 +71,7 @@ const Stacknavigation = () => {
       <Stack.Screen name="Login" component={Login}  options={{headerShown: false}} />
       <Stack.Screen name="TabNavigation" component={TabNavigation}  options={{headerShown: false}} />
       <Stack.Screen name="ConfirmOTP" component={ConfirmOTP}  options={{headerShown: false}} />
+      <Stack.Screen name="UpdateProfile" component={UpdateProfile}  options={{headerShown: false}}/>
 
       <Stack.Screen name="Home" component={Home}  options={{headerShown: false}} />
    <Stack.Screen name="Hotel_Icon" component={Hotel_Icon}  options={{headerShown: false}}/>
@@ -91,7 +92,6 @@ const Stacknavigation = () => {
       <Stack.Screen name="SelectRoom_Header" component={SelectRoom_Header}  options={{headerShown: false}}/>
       <Stack.Screen name="Hotel" component={Hotel}  options={{headerShown: false}}/>
       <Stack.Screen name="ReverseRoom" component={ReverseRoom}  options={{headerShown: false}}/>
-      <Stack.Screen name="UpdateProfile" component={UpdateProfile}  options={{headerShown: false}}/>
       <Stack.Screen name="EvaluationSchedule" component={EvaluationSchedule}  options={{headerShown: false}}/>
       <Stack.Screen name="SelectSchedule" component={SelectSchedule}  options={{headerShown: false}}/>
       <Stack.Screen name="CreateSchedule" component={CreateSchedule}  options={{headerShown: false}}/>

@@ -27,8 +27,9 @@ const FirstScreen = ({navigation}) => {
         <SafeAreaView style={styles.container}>
             <View style={styles.container}>
                 <View style={styles.header}>
-                    <Image
-                        style={styles.tinyLogo}
+                    <View  style={styles.tinyLogo}>
+                        <Image
+                      
                         source={require('../assets/logo.png')}
                         resizeMode='center'
                     />
@@ -37,6 +38,9 @@ const FirstScreen = ({navigation}) => {
                         source={require('../assets/ok.png')}
                         resizeMode='contain'
                     />
+                    </View>
+                    
+                    
                     <Image
                         style={styles.map}
                         source={require('../assets/map.png')}
@@ -62,6 +66,7 @@ const FirstScreen = ({navigation}) => {
                         source={require('../assets/home1.png')}
 
                     />
+                    <Text style={{position:'absolute',bottom:0,color:'#4F3018',fontSize:13}}>Welcome !</Text>
                 </View>
 
             </View>
@@ -82,14 +87,14 @@ const styles = StyleSheet.create({
     tinyLogo: {
         position: 'absolute',
         top: '-4%',
-        left: '12%',
+        left: '35%',
         width: '80%'
 
     },
     header_title: {
-        position: 'absolute',
-        top: '16%',
-        left: '42%',
+     position:'absolute',
+     top:'83%',
+     left:'10%'
 
     },
     map: {

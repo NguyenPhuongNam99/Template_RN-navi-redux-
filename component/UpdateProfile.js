@@ -123,11 +123,11 @@ const UpdateProfile = ({navigation}) => {
             {
                 checkHoten  && checkten?
                  <TouchableOpacity style={styles.touchable} onPress={()=>navigation.navigate('Home')}>
-                <Text>Hoàn thành</Text>
+                <Text style={styles.finish}>Hoàn thành</Text>
             </TouchableOpacity>
             :
             <TouchableOpacity style={styles.touchable1}>
-            <Text>Hoàn thành</Text>
+            <Text style={styles.finish}>Hoàn thành</Text>
         </TouchableOpacity>
 
             }
@@ -135,13 +135,8 @@ const UpdateProfile = ({navigation}) => {
 
 
             <TouchableOpacity onPress={toggleModal} >
-                <Text style={styles.footer}>Bằng cách tham gia OKGO, bạn đã đồng ý với
-            
-                 <Text style={styles.text}>
-                       Chính sách bảo mật và Điều khoản sử dụng
-                 </Text>
-          
-             của chúng tôi</Text>
+                <Text style={styles.footer}>Bằng cách tham gia OKGO, bạn đã đồng ý với <Text style={styles.text}>  Chính sách bảo mật và Điều khoản sử dụng
+                 </Text>  của chúng tôi</Text>
             </TouchableOpacity>
         </View>
     )
@@ -197,7 +192,13 @@ const styles = StyleSheet.create({
         
       },
       text:{
-            textDecorationLine:'underline'
+            textDecorationLine:'underline',
+            marginHorizontal:2
+      },
+      finish:{
+        color:'#FFFFFF',
+        fontSize:18,
+        fontWeight:'bold'
       }
 })
 export default UpdateProfile;

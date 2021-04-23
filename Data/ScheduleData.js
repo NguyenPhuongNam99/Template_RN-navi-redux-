@@ -13,7 +13,8 @@ export const ScheduleNowData = [
         name: 'Phương Nam',
         timmer: '10 giờ trước',
         share: require('../assets/share.png'),
-        tym: require('../assets/tym.png')
+        tym: require('../assets/tym.png'),
+        tym2: require('../assets/tym2.png'),
     },
     {
         id: 2,
@@ -21,7 +22,7 @@ export const ScheduleNowData = [
         image2: require('../assets/nq.jpg'),
         image3: require('../assets/nq2.jpg'),
         image4: require('../assets/nq3.jpg'),
-        title: 'Đà Lạt, Lâm Đồng',
+        title: 'Thạch Thất, Hà Nội',
         time: '(5 ngày)',
         location: require('../assets/location.png'),
         des: 'Việt Nam',
@@ -29,7 +30,8 @@ export const ScheduleNowData = [
         name: 'Huyền Trang',
         timmer: '10 giờ trước',
         share: require('../assets/share.png'),
-        tym: require('../assets/tym.png')
+        tym: require('../assets/tym.png'),
+        tym2: require('../assets/tym2.png'),
 
     },
     {
@@ -38,7 +40,7 @@ export const ScheduleNowData = [
         image2: require('../assets/mcc2.jpg'),
         image3: require('../assets/mcc3.jpg'),
         image4: require('../assets/mcc.jpg'),
-        title: 'Đà Lạt, Lâm Đồng',
+        title: 'Ba Vì, Hà Nội',
         time: '(5 ngày)',
         location: require('../assets/location.png'),
         des: 'Việt Nam',
@@ -46,7 +48,8 @@ export const ScheduleNowData = [
         name: 'Quốc Hùng',
         timmer: '10 giờ trước',
         share: require('../assets/share.png'),
-        tym: require('../assets/tym.png')
+        tym: require('../assets/tym.png'),
+        tym2: require('../assets/tym2.png'),
     },
     {
         id: 4,
@@ -54,7 +57,7 @@ export const ScheduleNowData = [
         image2: require('../assets/deo1.jpg'),
         image3: require('../assets/deo2.jpg'),
         image4: require('../assets/deo3.jpg'),
-        title: 'Đà Lạt, Lâm Đồng',
+        title: 'Phú Quốc, Kiên Giang',
         time: '(5 ngày)',
         location: require('../assets/location.png'),
         des: 'Việt Nam',
@@ -62,7 +65,8 @@ export const ScheduleNowData = [
         name: 'Nguyễn Trang',
         timmer: '10 giờ trước',
         share: require('../assets/share.png'),
-        tym: require('../assets/tym.png')
+        tym: require('../assets/tym.png'),
+        tym2: require('../assets/tym2.png'),
     },
 ]
 

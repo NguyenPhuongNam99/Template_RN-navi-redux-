@@ -126,11 +126,11 @@ const UpdateProfile = ({navigation}) => {
             {
                 checkHoten  && checkten?
                  <TouchableOpacity style={styles.touchable}  onPress={()=>{navigation.navigate('TabNavigation')}}>
-                <Text>Hoàn thành</Text>
+                <Text style={styles.finishOk}>Hoàn thành</Text>
             </TouchableOpacity>
             :
             <TouchableOpacity style={styles.touchable1} >
-            <Text>Hoàn thành</Text>
+            <Text style={styles.finishOk}>Hoàn thành</Text>
         </TouchableOpacity>
 
             }
@@ -201,6 +201,11 @@ const styles = StyleSheet.create({
       },
       text:{
             textDecorationLine:'underline'
+      },
+      finishOk:{
+          color:'#FFFFFF',
+          fontSize:18,
+          fontWeight:'bold'
       }
 })
 export default UpdateProfile;
