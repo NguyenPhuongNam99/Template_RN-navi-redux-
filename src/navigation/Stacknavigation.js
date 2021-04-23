@@ -56,8 +56,9 @@ import Login from '../../component/Login/Login'
 import ConfirmOTP from '../../component/ConfirmOTP'
 import PeopleJoin from '../../component/ScreenSuggest/PeopleJoin'
 import TabView from '../../component/TabView'
-
+import TimeMySchedule from '../../component/MySchedule/TimeMySchedule'
 import DetailSchedule from '../../component/AllSchedule/DetailSchedule'
+import MyScheduleGo from '../../component/MySchedule/MyScheduleGo'
 const Stack = createStackNavigator();
 
 const Stacknavigation = () => {
@@ -116,6 +117,8 @@ const Stacknavigation = () => {
       <Stack.Screen name="PeopleJoin" component={PeopleJoin}  options={{headerShown: false}}/>
       <Stack.Screen name="TabView" component={TabView}  options={{headerShown: false}}/>
       <Stack.Screen name="DetailSchedule" component={DetailSchedule}  options={{headerShown: false}}/>
+      <Stack.Screen name="TimeMySchedule" component={TimeMySchedule}  options={{headerShown: false}}/>
+      <Stack.Screen name="MyScheduleGo" component={MyScheduleGo}  options={{headerShown: false}}/>
 
     </Stack.Navigator>
     // </NavigationContainer> 8678678

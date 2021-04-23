@@ -87,7 +87,8 @@ export const SelectScheduleData = [
         name: 'Phương Nam',
         timmer: '10 giờ trước',
         share: require('../assets/share.png'),
-        tym: require('../assets/tym.png')
+        tym: require('../assets/tym.png'),
+        tym2:require('../assets/tym2.png')
     },
     {
         id: 2,
@@ -104,7 +105,8 @@ export const SelectScheduleData = [
         name: 'Huyền Trang',
         timmer: '10 giờ trước',
         share: require('../assets/share.png'),
-        tym: require('../assets/tym.png')
+        tym: require('../assets/tym.png'),
+        tym2:require('../assets/tym2.png')
 
     },
     {
@@ -122,7 +124,8 @@ export const SelectScheduleData = [
         name: 'Quốc Hùng',
         timmer: '10 giờ trước',
         share: require('../assets/share.png'),
-        tym: require('../assets/tym.png')
+        tym: require('../assets/tym.png'),
+        tym2:require('../assets/tym2.png')
     },
     {
         id: 4,
@@ -139,7 +142,8 @@ export const SelectScheduleData = [
         name: 'Nguyễn Trang',
         timmer: '10 giờ trước',
         share: require('../assets/share.png'),
-        tym: require('../assets/tym.png')
+        tym: require('../assets/tym.png'),
+        tym2:require('../assets/tym2.png')
     },
 ]
 
@@ -159,7 +163,8 @@ export const ScheduleGo = [
         name: 'Phương Nam',
         timmer: '10 giờ trước',
         share: require('../assets/share.png'),
-        tym: require('../assets/tym.png')
+        tym: require('../assets/tym.png'),
+        tym2:require('../assets/tym2.png')
     },
     
 ]
@@ -179,7 +184,8 @@ export const FinishScheduleData =[
         name: 'Phương Nam',
         timmer: '10 giờ trước',
         share: require('../assets/share.png'),
-        tym: require('../assets/tym.png')
+        tym: require('../assets/tym.png'),
+        tym2:require('../assets/tym2.png')
     },
     {
         id: 2,
@@ -195,6 +201,7 @@ export const FinishScheduleData =[
         name: 'Phương Nam',
         timmer: '10 giờ trước',
         share: require('../assets/share.png'),
-        tym: require('../assets/tym.png')
+        tym: require('../assets/tym.png'),
+        tym2:require('../assets/tym2.png')
     },
 ]

@@ -2,7 +2,10 @@ import React from 'react';
 import {View, Text,Image,StyleSheet,FlatList} from 'react-native'
 import {ScheduleGo} from '../../Data/ScheduleData'
 import ScheduleNow_Item from '../../component/ScheduleNow_Item'
-const MyScheduleGo =()=>{
+const MyScheduleGo =({navigation})=>{
+    const check =()=>{
+        navigation.navigate('TimeMySchedule')
+    }
     return(
         <View style={styles.container}>
   <FlatList
@@ -11,7 +14,7 @@ const MyScheduleGo =()=>{
                         showsHorizontalScrollIndicator={false}
                         keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
-                            <ScheduleNow_Item Item={item} />
+                            <ScheduleNow_Item Item={item}  check={check}/>
                         }
                     />
         </View>

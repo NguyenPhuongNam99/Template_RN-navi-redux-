@@ -1,14 +1,14 @@
 import React,{useState} from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import {useSelector,useDispatch} from 'react-redux'
-const ScheduleNow_Item = ({ Item,ScheduleNowNavigation }) => {
+const ScheduleNow_Item = ({ Item,ScheduleNowNavigation ,check}) => {
     const dispatch = useDispatch()
     const [imageState,setImageState]= useState(false)
     const item_tym = useSelector(state=>state.item_tym)
     const setCheck =(item)=>{
         setImageState(!imageState)
-        if(imageState === true && item_tym.id !== item.id){
-            
+        if(imageState === true){
+
             dispatch({type:'ADD_TYM',item_tym:item})
             console.log("item tym la",item)
         }
@@ -17,9 +17,13 @@ const ScheduleNow_Item = ({ Item,ScheduleNowNavigation }) => {
         } 
       
     }
+    const xuly =()=>{
+        check && check()
+        ScheduleNowNavigation && ScheduleNowNavigation()
+    }
     return (
         <View style={styles.container_header} >
-            <TouchableOpacity style={styles.top} onPress={ScheduleNowNavigation}>
+            <TouchableOpacity style={styles.top} onPress={xuly}>
                 <View style={styles.left}>
                     <Image style={{ width: '100%', height: '100%', borderTopLeftRadius: 5 }} source={Item.image} />
 
