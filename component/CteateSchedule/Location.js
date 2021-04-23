@@ -1,10 +1,13 @@
-import React from 'react';
+import React ,{useState} from 'react';
 import {View,Text,StyleSheet, TextInput, FlatList,Image,Alert} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {LocationSchedule} from '../../Data/LocationData'
 import {useDispatch,useSelector} from 'react-redux'
+import { text } from 'react-native-communications';
 const Location =({navigation})=>{
+    const [data,setData] = useState(LocationSchedule)
+    const [search,setSearch] = useState('')
     const dispatch = useDispatch();
     const createTwoButtonAlert = () =>
     Alert.alert(
@@ -42,6 +45,21 @@ const Location =({navigation})=>{
         </TouchableOpacity>
         )
     }
+    const searchBar =(text)=>{
+        if (text){
+            const masterData = data.filter((item)=>{
+                const itemData = item.location ? item.location.toUpperCase() : ''.toUpperCase();
+                const textData = text.toUpperCase();
+                return itemData.indexOf(textData) > -1
+            });
+            setData(masterData)
+            setSearch(masterData)
+        }
+        else{
+            setData(data)
+            setSearch(text)
+        }
+    }
     return(
         <View style={styles.container}>
             <View style={styles.header}>
@@ -51,9 +69,11 @@ const Location =({navigation})=>{
                 <TextInput
                     style={{ flex: 1,paddingHorizontal:10,fontSize:12
                         }}
+                        value={search}
                     placeholder="Bạn muốn đi đâu"
                     underlineColorAndroid="transparent"
                     placeholderTextColor='#B6B6B6'
+                    onChangeText={(text)=>searchBar(text)}
                 />
                 <TouchableOpacity onPress={createTwoButtonAlert}>
                     <Text style={{color:'#828282',fontSize:12}}>Hủy</Text>
@@ -61,7 +81,7 @@ const Location =({navigation})=>{
             </View>
             <View>
                 <FlatList
-                    data ={LocationSchedule}
+                    data ={data}
                     keyExtractor={(item)=>item.id.toString()}
                     renderItem={({item})=>{
                         return(

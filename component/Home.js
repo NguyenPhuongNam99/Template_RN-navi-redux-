@@ -35,8 +35,8 @@ const Home = ({navigation}) => {
             navigation.navigate('SelectSchedule')
         }
         if(item ==4){
-            // navigation.navigate('CreateSchedule')
-           navigation.navigate('ScreenSuggest')
+            navigation.navigate('CreateSchedule')
+        //    navigation.navigate('ScreenSuggest')
 
         }
 
