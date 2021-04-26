@@ -67,4 +67,4 @@ import DetailVisit from './component/AllSchedule/DetailVisit'
 import PeopleJoin from './component/ScreenSuggest/PeopleJoin'
 import DetailSchedule from './component/AllSchedule/DetailSchedule'
 import TimeMySchedule from './component/MySchedule/TimeMySchedule'
-AppRegistry.registerComponent(appName, () =>FirstScreen);
+AppRegistry.registerComponent(appName, () =>App);

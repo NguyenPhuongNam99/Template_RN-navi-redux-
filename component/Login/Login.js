@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { ScrolView, StyleSheet, View, Text, Image, TouchableOpacity, TextInput, ImageBackground, Dimensions } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Picker } from '@react-native-picker/picker';
+import { AccessToken, LoginManager  } from 'react-native-fbsdk-next';
+import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
 
 const Login = ({ navigation }) => {
   const [selectedValue, setSelectedValue] = useState();
   const [text, onChangeText] = React.useState(null);
   // /(84|0[3|5|7|8|9])+([0-9]{8})\b/
-
+  const [loggedIn, setloggedIn] = useState(false);
+  const [userInfo, setuserInfo] = useState([]);
   const [checklogin, setChecklogin] = useState(false);
   const [phone, setPhone] = useState('')
 
@@ -25,6 +28,49 @@ const Login = ({ navigation }) => {
 
 
     }
+  }
+  
+ const signInok = async () => {
+    try {
+      await GoogleSignin.hasPlayServices();
+      const userInfo = await GoogleSignin.signIn();
+      setloggedIn( userInfo );
+    } catch (error) {
+      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+        // user cancelled the login flow
+      } else if (error.code === statusCodes.IN_PROGRESS) {
+        // operation (e.g. sign in) is in progress already
+      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+        // play services not available or outdated
+      } else {
+        // some other error happened
+      }
+    }
+  };
+
+  const loginWithFacebook = () => {
+    LoginManager.logInWithPermissions(["public_profile", "email"]).then(
+      function(result) {
+        if (result.isCancelled) {
+          console.log("==> Login cancelled");
+        } else  {
+          console.log(
+            "==> Login success with permissions: " +
+              result.grantedPermissions.toString()
+          );
+          AccessToken.getCurrentAccessToken().then(
+            (data) => {
+              console.log(data.accessToken.toString())
+            }
+          )
+          navigation.navigate('TabView')
+        }
+     
+       },
+       function(error) {
+        console.log("==> Login fail with error: " + error);
+       }
+     );
   }
   return (
     <ImageBackground style={styles.container} source={require('../../assets/b1.png')}>
@@ -86,11 +132,11 @@ const Login = ({ navigation }) => {
           </TouchableOpacity>
       }
 
-      <TouchableOpacity onPress={() => navigation.navigate('Home')} style={{ position: 'absolute', top: '65%', left: 10, width: '95%', justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#055EEE', borderRadius: 22, marginTop: 48, flexDirection: 'row', zIndex: 100 }}>
+      <TouchableOpacity onPress={() => loginWithFacebook()} style={{ position: 'absolute', top: '65%', left: 10, width: '95%', justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#055EEE', borderRadius: 22, marginTop: 48, flexDirection: 'row', zIndex: 100 }}>
         <Icon name="facebook-square" size={19} color="white" />
         <Text style={{ color: '#FFFFFF', fontSize: 15, paddingLeft: 20 }}>Đăng nhập với Facebook</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={{ justifyContent: 'space-between', flexDirection: 'row', position: 'absolute', top: '75%', left: 10, width: '95%', justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#055EEE', borderRadius: 22, marginTop: 48, flexDirection: 'row', zIndex: 100 }}>
+      <TouchableOpacity onPress={signInok} style={{ justifyContent: 'space-between', flexDirection: 'row', position: 'absolute', top: '75%', left: 10, width: '95%', justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#055EEE', borderRadius: 22, marginTop: 48, flexDirection: 'row', zIndex: 100 }}>
         <View style={{ flex: 1.4 }}>
           <Image style={{
             width: '100%', height: '100%',
