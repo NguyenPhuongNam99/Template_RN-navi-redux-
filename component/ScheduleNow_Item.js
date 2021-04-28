@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 13,
         height: 250,
         marginHorizontal: 15,
-        marginVertical: 15
+        marginVertical: 10
 
     },
     top: {

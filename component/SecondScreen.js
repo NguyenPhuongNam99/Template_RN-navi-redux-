@@ -14,6 +14,7 @@ import {
 const SecondScreen = () => {
     return (
         <View style={styles.container}>
+            
              <ImageBackground source={require('../assets/b1.png')} style={styles.b1}>
              <View>
                  <Image style={styles.imagePO} source={require('../assets/b2.png')}/>

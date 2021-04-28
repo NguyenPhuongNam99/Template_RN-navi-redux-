@@ -14,6 +14,7 @@ import {name as appName} from './app.json';
 import UpdateProfile from './src/UpdateProfile'
 // import Home from './src/Home';
 // import FirstScreen from './component/FirstScreen';
+import BookScreen from './src/BookScreen'
 import SecondScreen from './component/SecondScreen';
 import ConfirmOTP from './component/ConfirmOTP'
 import Home from './component/Home'
@@ -67,4 +68,5 @@ import DetailVisit from './component/AllSchedule/DetailVisit'
 import PeopleJoin from './component/ScreenSuggest/PeopleJoin'
 import DetailSchedule from './component/AllSchedule/DetailSchedule'
 import TimeMySchedule from './component/MySchedule/TimeMySchedule'
+import Combo from './component/Combo'
 AppRegistry.registerComponent(appName, () =>App);

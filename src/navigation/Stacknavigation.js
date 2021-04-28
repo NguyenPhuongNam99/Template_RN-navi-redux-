@@ -59,6 +59,7 @@ import TabView from '../../component/TabView'
 import TimeMySchedule from '../../component/MySchedule/TimeMySchedule'
 import DetailSchedule from '../../component/AllSchedule/DetailSchedule'
 import MyScheduleGo from '../../component/MySchedule/MyScheduleGo'
+import Combo from '../../component/Combo'
 const Stack = createStackNavigator();
 
 const Stacknavigation = () => {
@@ -101,9 +102,11 @@ const Stacknavigation = () => {
       <Stack.Screen name="ScreenInterested" component={ScreenInterested}  options={{headerShown: false}}/>
       <Stack.Screen name="AllShedule" component={AllShedule}  options={{headerShown: false}}/>
       <Stack.Screen name="OverView" component={OverView}  options={{headerShown: false}}/>
-      {/* <Stack.Screen name="OverView_Plan" component={OverView_Plan}  options={{headerShown: false}}/>
+      <Stack.Screen name="OverView_Plan" component={OverView_Plan}  options={{headerShown: false}}/>
       <Stack.Screen name="OverViewHotel" component={OverViewHotel}  options={{headerShown: false}}/>
-      <Stack.Screen name="OverViewPlant" component={OverViewPlant}  options={{headerShown: false}}/> */}
+      <Stack.Screen name="OverViewPlant" component={OverViewPlant}  options={{headerShown: false}}/>
+      <Stack.Screen name="OverView_Visit" component={OverView_Visit}  options={{headerShown: false}}/>
+      <Stack.Screen name="DetailVisit" component={DetailVisit}  options={{headerShown: false}}/>
       <Stack.Screen name="Profile" component={Profile}  options={{headerShown: false}} />
       <Stack.Screen name="Favourite" component={Favourite}  options={{headerShown: false}}/>
       <Stack.Screen name="Setting" component={Setting}  options={{headerShown: false}}/>
@@ -112,8 +115,7 @@ const Stacknavigation = () => {
       <Stack.Screen name="MyProfile" component={MyProfile}  options={{headerShown: false}}/>
       <Stack.Screen name="Follow" component={Follow}  options={{headerShown: false}}/>
       <Stack.Screen name="UpdateInfo" component={UpdateInfo}  options={{headerShown: false}}/>
-      <Stack.Screen name="DetailVisit" component={DetailVisit}  options={{headerShown: false}}/>
-      <Stack.Screen name="OverView_Visit" component={OverView_Visit}  options={{headerShown: false}}/>
+      <Stack.Screen name="Combo" component={Combo}  options={{headerShown: false}}/>
       <Stack.Screen name="PeopleJoin" component={PeopleJoin}  options={{headerShown: false}}/>
       <Stack.Screen name="TabView" component={TabView}  options={{headerShown: false}}/>
       <Stack.Screen name="DetailSchedule" component={DetailSchedule}  options={{headerShown: false}}/>

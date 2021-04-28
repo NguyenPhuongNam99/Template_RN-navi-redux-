@@ -1,19 +1,12 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, FlatList, StyleSheet } from 'react-native'
 import {OverView_VisitData} from '../../Data/OverView_VisitData'
+import OverView_VIsit_Item from './OverView_VIsit_Item'
 const OverView_Visit = ({navigation}) => {
-    const checknavigation =()=>{
-        navigation.navigate('DetailVisit');
+    const check =()=>{
+        navigation.navigate('DetailVisit')
     }
-    const OverView_Visit_Item = ({ item ,checknavigation}) => {
-       return(
-        <TouchableOpacity style={styles.blockVisit} onPress={checknavigation} >
-        <Text style={styles.titleVisit}>{item.tilte}</Text>
-        <Text style={styles.timerVisit}>{item.timer}</Text>
-        <Text style={styles.PriceVisit}>{item.price}</Text>
-    </TouchableOpacity>
-       )
-    }
+
     return (
         <View style={styles.container}>
             <View style={{ marginBottom: 50 }}>
@@ -21,7 +14,7 @@ const OverView_Visit = ({navigation}) => {
                     data={OverView_VisitData}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) =>
-                        <OverView_Visit_Item item={item}  checknavigation ={checknavigation}/>
+                        <OverView_VIsit_Item item={item}  check ={check}/>
                 }
                 />
             </View>

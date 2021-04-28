@@ -89,12 +89,12 @@ const TabView = () => {
         <View style={{ position: "absolute", alignItems: "center" }}>
             <TouchableOpacity style={{ position: "absolute", left: thermometerX, top: thermometerY  ,zIndex:100}}>
                 <Animated.View >
-                    <View style={styles.secondaryButton}>
+                    <TouchableOpacity style={styles.secondaryButton}>
                         <TouchableOpacity style={{ zIndex:100}} onPress={() => navigation.navigate('Profile')}>
                             <Image source={require('../assets/tao.png')} />
                         </TouchableOpacity>
                         <Text style={{ width: 90, fontSize: 13, textAlign: 'center', color: '#FFFFFF' }}>Tạo lịch trình</Text>
-                    </View>
+                    </TouchableOpacity>
                 </Animated.View>
             </TouchableOpacity>
 
@@ -133,17 +133,9 @@ const styles = StyleSheet.create({
     button: {
         alignItems: "center",
         justifyContent: "center",
-
         borderRadius: 36,
-        // backgroundColor: "#7F58FF",
         position: "absolute",
         marginTop: -50,
-        // shadowColor: "#FFFFFF",
-        // shadowRadius: 5,
-        // shadowOffset: { height: 7 },
-        // shadowOpacity: 0.3,
-        // borderWidth: 3,
-        // borderColor: "#FFFFFF" 
         zIndex:100
     },
     secondaryButton: {
@@ -151,9 +143,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         width: 48,
-
+        zIndex:1000,
         borderRadius: 24,
-
         left: 2,
         top: 11.2
     }
