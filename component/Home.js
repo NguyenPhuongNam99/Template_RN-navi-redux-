@@ -219,12 +219,16 @@ const Home = ({ navigation }) => {
 
                     </View>
                     <View style={styles.header_title}>
+                        <View style={{width:'45%'}}>
                         <TouchableOpacity style={styles.touchable} onPress={()=>navigation.navigate('ScreenSuggest')}>
                             <Text style={styles.touchable_title}>Xem gợi ý </Text>
                         </TouchableOpacity>
+                        </View>
+                        <View style={{width:'45%'}}>
                         <TouchableOpacity style={styles.touchable} onPress={()=>navigation.navigate('CreateSchedule')}>
                             <Text style={styles.touchable_title}>Tạo lịch trình </Text>
                         </TouchableOpacity>
+                        </View>
                     </View>
 
                     {/* khuyến mại */}
@@ -395,18 +399,20 @@ const styles = StyleSheet.create({
     },
     header_title: {
         flexDirection: 'row',
-        marginTop: 45,
-        width:'100%',
+        marginTop: 30,
+        justifyContent:'space-around',
         height:30,
+        marginHorizontal:10
       
     },
     touchable: {
         backgroundColor: '#FF5F24',
-       marginHorizontal:10,
+       
         height: 25,
         borderRadius: 5,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        width:'100%'
     },
     touchable_title: {
         color: '#FFFFFF',

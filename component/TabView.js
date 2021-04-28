@@ -11,6 +11,7 @@ const TabView = () => {
     const [buttonSize, setButtonSize] = useState(new Animated.Value(1));
     const navigation = useNavigation();
 
+
     const handlePress = () => {
         Animated.sequence([
             Animated.timing(buttonSize, {
@@ -87,34 +88,44 @@ const TabView = () => {
 
     return (
         <View style={{ position: "absolute", alignItems: "center" }}>
-            <TouchableOpacity style={{ position: "absolute", left: thermometerX, top: thermometerY  ,zIndex:100}}>
-                <Animated.View >
-                    <TouchableOpacity style={styles.secondaryButton}>
-                        <TouchableOpacity style={{ zIndex:100}} onPress={() => navigation.navigate('Profile')}>
-                            <Image source={require('../assets/tao.png')} />
-                        </TouchableOpacity>
-                        <Text style={{ width: 90, fontSize: 13, textAlign: 'center', color: '#FFFFFF' }}>Tạo lịch trình</Text>
-                    </TouchableOpacity>
-                </Animated.View>
-            </TouchableOpacity>
 
-            <Animated.View style={{ position: "absolute", left: timeX, top: timeY ,zIndex:100}}>
+            <Animated.View style={{ position: "absolute", left: thermometerX, top: thermometerY, zIndex: 100 }}>
+                <TouchableOpacity onPress={() => navigation.navigate('Login')} style={{backgroundColor:'green', width: 80, height: 50, justifyContent: 'space-between', alignItems: 'center' }} >
+                    <View style={styles.secondaryButton} >
+
+                        <Image source={require('../assets/tao.png')} />
+
+                     
+                    </View>
+                    <Text style={{color: 'white', fontSize: 12, position: 'absolute', bottom : -20, left: 0, zIndex: 2, textAlign: 'center'}}>Tạo lịch trình</Text>
+                </TouchableOpacity>
+            </Animated.View>
+
+
+            <Animated.View style={{ position: "absolute", left: timeX, top: timeY, zIndex: 100 }}>
+            <TouchableOpacity onPress={() => navigation.navigate('Login')} style={{ width: 80, height: 50, justifyContent: 'space-between', alignItems: 'center' }} >
                 <View style={styles.secondaryButton}>
                     <Image source={require('../assets/goiy.png')} />
-                    <Text style={{ width: 90, fontSize: 13, textAlign: 'center', color: '#FFFFFF' }}>Gợi ý</Text>
                 </View>
+                <Text style={{color: 'white', fontSize: 12, position: 'absolute', bottom : -20, left: 0, zIndex: 2, textAlign: 'center'}}>Tạo lịch trình</Text>
+            </TouchableOpacity>
             </Animated.View>
-            <Animated.View style={{ position: "absolute", left: timeXO, top: timeYO ,zIndex:100 }}>
+            <Animated.View style={{ position: "absolute", left: timeXO, top: timeYO, zIndex: 100 }}>
+            <TouchableOpacity onPress={() => navigation.navigate('Login')} style={{ width: 80, height: 50, justifyContent: 'space-between', alignItems: 'center' }} >
                 <View style={styles.secondaryButton}>
                     <Image source={require('../assets/goiy.png')} />
-                    <Text style={{ width: 90, fontSize: 13, textAlign: 'center', color: '#FFFFFF' }}>Gợi ý</Text>
+
                 </View>
+                <Text style={{color: 'white', fontSize: 12, position: 'absolute', bottom : -20, left: 0, zIndex: 2, textAlign: 'center'}}>Tạo lịch trình</Text>
+                </TouchableOpacity>
             </Animated.View>
-            <Animated.View style={{ position: "absolute", left: pulseX, top: pulseY ,zIndex:100 }}>
+            <Animated.View style={{ position: "absolute", left: pulseX, top: pulseY, zIndex: 100 }}>
+            <TouchableOpacity onPress={() => navigation.navigate('Login')} style={{ width: 80, height: 50, justifyContent: 'space-between', alignItems: 'center' }} >
                 <View style={styles.secondaryButton}>
                     <Image source={require('../assets/danhgia.png')} />
-                    <Text style={{ width: 90, fontSize: 13, textAlign: 'center', color: '#FFFFFF' }}>Đánh giá</Text>
                 </View>
+                 <Text style={{color: 'white', fontSize: 12, position: 'absolute', bottom : -20, left: 0, zIndex: 2, textAlign: 'center'}}>Tạo lịch trình</Text>
+                </TouchableOpacity>
             </Animated.View>
             <Animated.View style={[styles.button, sizeStyle]}>
                 {/* underlayColor="#7F58FF" */}
@@ -136,14 +147,14 @@ const styles = StyleSheet.create({
         borderRadius: 36,
         position: "absolute",
         marginTop: -50,
-        zIndex:100
+        zIndex: 100
     },
     secondaryButton: {
         position: "absolute",
         alignItems: "center",
         justifyContent: "center",
         width: 48,
-        zIndex:1000,
+        zIndex: 1000,
         borderRadius: 24,
         left: 2,
         top: 11.2
