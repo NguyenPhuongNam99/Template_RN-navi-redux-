@@ -110,7 +110,7 @@ const LocationDetail = ({navigation}) => {
                     </View>
 
                 </View>
-                <View style={{ height: 120, marginTop: 170 }}>
+                <View style={{ height: 120, marginTop: 190 }}>
                     <Image source={require('../../assets/map1.png')} style={{ height: '100%', width: '100%' }} />
                 </View>
 

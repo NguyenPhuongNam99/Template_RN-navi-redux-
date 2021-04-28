@@ -219,14 +219,19 @@ const Home = ({navigation}) => {
                     </View>
 
                 </View>
-                <View style={styles.header_title}>
-                    <TouchableOpacity style={styles.touchable}>
-                        <Text style={styles.touchable_title}>Xem gợi ý </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.touchable}>
-                        <Text style={styles.touchable_title}>Tạo lịch trình </Text>
-                    </TouchableOpacity>
-                </View>
+                    <View style={styles.header_title}>
+                        <View style={{width:'50%'}}>
+                            <TouchableOpacity style={styles.touchable}>
+                                <Text style={styles.touchable_title}>Xem gợi ý </Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{width:'50%'}}>
+                            <TouchableOpacity style={styles.touchable}>
+                                <Text style={styles.touchable_title}>Tạo lịch trình </Text>
+                            </TouchableOpacity>
+                        </View>
+
+                    </View>
 
                 {/* khuyến mại */}
                 <View style={styles.Discount}>
@@ -357,7 +362,7 @@ const styles = StyleSheet.create({
 
     }, header_bottom: {
         position: 'absolute',
-        top: 10, left: 0,
+        top: 1, left: 0,
         paddingHorizontal: 14
     },
     header: {
@@ -395,11 +400,13 @@ const styles = StyleSheet.create({
     header_title: {
         flexDirection: 'row',
         marginTop: 45,
-        justifyContent: 'space-evenly'
+        width:'100%',
+        height:30,
+      
     },
     touchable: {
         backgroundColor: '#FF5F24',
-        width: 178,
+       marginHorizontal:10,
         height: 25,
         borderRadius: 5,
         justifyContent: 'center',

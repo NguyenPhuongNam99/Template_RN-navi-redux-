@@ -86,7 +86,13 @@ const LocationDetail2 = ({ navigation }) => {
                         />
                     </View>
                     <View style={styles.image_block}>
-                        <View style={styles.image_block1}>
+                        <View style={{flex:1,backgroundColor:'green'}}>
+                        </View>
+                        <View style={{flex:1,backgroundColor:'blue'}}>
+                        </View>
+                        <View style={{flex:1,backgroundColor:'orange'}}>
+                        </View>
+                        {/* <View style={styles.image_block1}>
                             <Image
                                 style={styles.image_blkock2}
                                 source={require('../../assets/lson1.jpg')}
@@ -97,8 +103,8 @@ const LocationDetail2 = ({ navigation }) => {
                                 style={styles.image_blkock2}
                                 source={require('../../assets/lson2.jpg')}
                             />
-                        </View>
-                        <View style={styles.image_block1}>
+                        </View> */}
+                        {/* <View style={styles.image_block1}>
                             <Image
                                 style={styles.image_blkock2}
                                 source={require('../../assets/lson3.jpg')}
@@ -111,7 +117,7 @@ const LocationDetail2 = ({ navigation }) => {
                                     source={require('../../assets/sum.png')} />
                             </View>
 
-                        </View>
+                        </View> */}
                     </View>
 
                     <View style={styles.headerText}>
@@ -268,7 +274,9 @@ const styles = StyleSheet.create({
         width: '100%', height: '100%'
     },
     image_block: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        height:80,
+        justifyContent:'space-around'
     },
     headerText: {
         marginHorizontal: 16,
