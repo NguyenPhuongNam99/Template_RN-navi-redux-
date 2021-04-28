@@ -5,7 +5,7 @@ import { scheduleData2, data } from '../../Data/OverViewData'
 import OverView_Item from './OverView_Item'
 import OverView_Plan from './OverView_Plan'
 import OverViewHotel from './OverViewHotel'
-import {OverView_VisitData} from '../../Data/OverView_VisitData'
+import { OverView_VisitData } from '../../Data/OverView_VisitData'
 import {
     responsiveHeight,
     responsiveWidth,
@@ -15,7 +15,7 @@ import {
 } from "react-native-responsive-dimensions";
 import OverViewPlant from './OverViewPlant'
 import OverView_Visit from './OverView_Visit'
-const OverView = ({navigation}) => {
+const OverView = ({ navigation }) => {
 
     const dispatch = useDispatch();
     const statusOver = useSelector(state => state.statusOver)
@@ -47,14 +47,11 @@ const OverView = ({navigation}) => {
             return { backgroundColor: '#ECF1FF', borderRadius: 5 }
         }
     }
-    const navigateDetailSchedule = ()=>{
+    const navigateDetailSchedule = () => {
         navigation.navigate('DetailSchedule')
         console.log('da kichj')
     }
     return (
-
-
-
         <View style={styles.container}>
             <ScrollView vertical={true} nestedScrollEnabled={true}
                 contentContainerStyle={{
@@ -71,8 +68,8 @@ const OverView = ({navigation}) => {
                         <Image style={styles.avatar} source={require('../../assets/nam.jpg')} />
                     </View>
                 </View>
-                <TouchableOpacity onPress={()=>navigation.goBack()} style={{position:'absolute',top:'2%',left:15,zIndex:1000}}>
-                    <Image style={{width:9,height:12}} source={require('../../assets/back1.png')}/>
+                <TouchableOpacity onPress={() => navigation.goBack()} style={{ position: 'absolute', top: '2%', left: 15, zIndex: 1000 }}>
+                    <Image style={{ width: 9, height: 12 }} source={require('../../assets/back1.png')} />
                 </TouchableOpacity>
 
                 <View style={{ flex: 1 }}>
@@ -92,24 +89,15 @@ const OverView = ({navigation}) => {
                         }
                     </View>
 
-                   {
-                        statusOver ==='SCHEDULE' ? <OverView_Plan navigateDetailSchedule={navigateDetailSchedule}/> 
-                        : statusOver === 'AIRPLANE' ? <OverViewPlant  /> 
-                        : statusOver ==='HOTEL'?  <OverViewHotel />
-                        : statusOver === 'VISIT' ? <OverView_Visit />
-                        : null
-                    } 
-                
+                    {
+                        statusOver === 'SCHEDULE' ? <OverView_Plan navigateDetailSchedule={navigateDetailSchedule} />
+                            : statusOver === 'AIRPLANE' ? <OverViewPlant />
+                                : statusOver === 'HOTEL' ? <OverViewHotel />
+                                    : statusOver === 'VISIT' ? <OverView_Visit />
+                                        : null
+                    }
 
-      
-
-                  
-                      
                 </View>
-
-              
-
-
 
             </ScrollView>
         </View>
@@ -203,10 +191,5 @@ const styles = StyleSheet.create({
         color: '#FFFFFF'
     },
 
-
-    ///khách sạn 
-  
-    
-   
 })
 export default OverView
