@@ -7,6 +7,7 @@ import MultipleDetail from '../MultipleDetail'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useSelector,useDispatch} from 'react-redux'
 import {Discovery} from '../../Data/LocationPopular_Data'
+
 const LocationDetail = ({navigation}) => {
     const dispatch = useDispatch();
     const back =()=>{

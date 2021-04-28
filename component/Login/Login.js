@@ -115,7 +115,7 @@ const Login = ({ navigation }) => {
         <View style={{ paddingTop: 15 }}>
           <TextInput keyboardType="numeric"
             onChangeText={(text1) => validateten(text1)}
-            style={{ paddingLeft: '40%', borderRadius: 28, width: '100%', borderWidth: 1, zIndex: 100, backgroundColor: 'rgba(0, 0, 0, 0.5)' }} />
+            style={{ paddingLeft: '40%', borderRadius: 22, width: '100%', borderWidth: 1, zIndex: 100, backgroundColor: 'rgba(0, 0, 0, 0.5)' }} />
 
         </View>
 
@@ -124,10 +124,10 @@ const Login = ({ navigation }) => {
 
       {
         phone && checklogin ?
-          <TouchableOpacity onPress={() => navigation.navigate('ConfirmOTP')} style={{ zIndex: 1000, position: 'absolute', top: '45%', left: 10, width: '94%', justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#FF5F24', borderRadius: 22, marginTop: 48 }}>
+          <TouchableOpacity onPress={() => navigation.navigate('ConfirmOTP')} style={{ width: '92%',marginLeft:20,zIndex: 1000, position: 'absolute', top: '45%', justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#FF5F24', borderRadius: 22, marginTop: 48 }}>
             <Text style={{ color: 'red', fontSize: 20, fontWeight: 'bold', color: '#FFFFFF' }}>OK</Text>
           </TouchableOpacity>
-          : <TouchableOpacity style={{ position: 'absolute', top: '45%', left: 10, width: '94%', opacity: 0.9, justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#FF5F24', borderRadius: 22, marginTop: 48 }}>
+          : <TouchableOpacity style={{ position: 'absolute', top: '45%',  width: '92%', opacity: 0.9,marginLeft:12, justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#FF5F24', borderRadius: 22, marginTop: 48 }}>
             <Text style={{ color: 'red', fontSize: 20, fontWeight: 'bold', color: '#FFFFFF' }}>OK</Text>
           </TouchableOpacity>
       }
