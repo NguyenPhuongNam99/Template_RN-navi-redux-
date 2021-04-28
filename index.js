@@ -69,4 +69,4 @@ import PeopleJoin from './component/ScreenSuggest/PeopleJoin'
 import DetailSchedule from './component/AllSchedule/DetailSchedule'
 import TimeMySchedule from './component/MySchedule/TimeMySchedule'
 import Combo from './component/Combo'
-AppRegistry.registerComponent(appName, () =>BookScreen);
+AppRegistry.registerComponent(appName, () =>App);
