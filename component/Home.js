@@ -5,6 +5,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import HotelResort_Header from '../component/LocationPopular/HotelResort_Header'
 import { useDispatch } from 'react-redux'
 import { data, voucherdata, sheduleNowData, Desdata, Expe, DiemDen, Hoteldata } from '../Data/HomeData'
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+
 const Home = ({ navigation }) => {
     //data icon Top
     const dispatch = useDispatch();
@@ -190,14 +192,14 @@ const Home = ({ navigation }) => {
         <View>
             <ScrollView>
                 <View style={styles.container}>
-                    <Image style={styles.image} source={require('../assets/home.png')} />
-                    <View style={styles.header_bottom}>
-                        <Text style={styles.header}>Khám Phá</Text>
+                    {/* <Image style={styles.image} source={require('../assets/home.png')} /> */}
+                    {/* <View style={styles.header_bottom}> */}
+                        {/* <Text style={styles.header}>Khám Phá</Text>
 
                         <Text style={styles.shedule}>
                             Lên lịch trình, đặt vé máy bay, khách sạn, tìm kiếm các tour lịch và các hoạt động vui chơi giải trí
-                 </Text>
-                        <FlatList
+                 </Text> */}
+                        {/* <FlatList
                             horizontal={true}
                             showsHorizontalScrollIndicator={false}
                             data={data}
@@ -205,8 +207,8 @@ const Home = ({ navigation }) => {
                             renderItem={({ item }) =>
                                 <Item item={item} />
                             }
-                        />
-                        <View>
+                        /> */}
+                        {/* <View>
 
                             <TextInput
                                 style={styles.input}
@@ -215,19 +217,58 @@ const Home = ({ navigation }) => {
 
                             />
                             <Image style={{ position: 'absolute', top: 10, left: 10, zIndex: 100 }} source={require('../assets/search.png')} />
-                        </View>
+                        </View> */}
 
-                    </View>
+                    {/* </View> */}
+                    <View style={styles.topokk}>
+        <Image style={{ width: '100%', height: '100%' }} source={require('../assets/a.png')} />
+        <View style={{ position: 'absolute', top: verticalScale(20), paddingHorizontal: moderateScale(15) }}>
+          <Text style={{ color: '#FFFFFF', fontSize: 18, fontWeight: 'bold' }}>Khám Phá</Text>
+          <Text style={{ color: '#FFFFFF', fontSize: 14, fontWeight: 'normal' }}>Lên lịch trình, đặt vé máy bay, khách sạn, tìm kiếm
+          các tour lịch và các hoạt động vui chơi giải trí
+          </Text>
+        </View>
+        <View style={{ position: 'absolute', top: verticalScale(80), }}>
+          <FlatList
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            data={data}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) =>
+              <Item item={item} />
+            }
+          />
+        
+         
+
+        
+
+        </View>
+        <View style={{position:'absolute',bottom:verticalScale(-20),width:'100%'}}>
+            <View style={{marginHorizontal:16}}>
+                <TextInput
+              style={styles.input}
+              placeholder='Bạn muốn đi đâu ?'
+              placeholderTextColor='#B6B6B6'
+
+            />
+            <Image style={{ position: 'absolute', top: 10, left: 10, zIndex: 100 }} source={require('../assets/search.png')} />
+            </View>
+          
+          </View>
+          
+
+      </View>
                     <View style={styles.header_title}>
-                        <View style={{width:'45%'}}>
-                        <TouchableOpacity style={styles.touchable} onPress={()=>navigation.navigate('ScreenSuggest')}>
-                            <Text style={styles.touchable_title}>Xem gợi ý </Text>
-                        </TouchableOpacity>
+                        <View style={{ width: '45%' }}>
+                            <TouchableOpacity style={styles.touchable} onPress={() => navigation.navigate('ScreenSuggest')}>
+                                <Text style={styles.touchable_title}>Xem gợi ý </Text>
+                            </TouchableOpacity>
                         </View>
-                        <View style={{width:'45%'}}>
-                        <TouchableOpacity style={styles.touchable} onPress={()=>navigation.navigate('CreateSchedule')}>
-                            <Text style={styles.touchable_title}>Tạo lịch trình </Text>
-                        </TouchableOpacity>
+                        <View style={{ width: '45%' }}>
+                            <TouchableOpacity style={styles.touchable} onPress={() => navigation.navigate('CreateSchedule')}>
+                                <Text style={styles.touchable_title}>Tạo lịch trình </Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
 
@@ -400,19 +441,19 @@ const styles = StyleSheet.create({
     header_title: {
         flexDirection: 'row',
         marginTop: 30,
-        justifyContent:'space-around',
-        height:30,
-        marginHorizontal:10
-      
+        justifyContent: 'space-around',
+        height: 30,
+        marginHorizontal: 10
+
     },
     touchable: {
         backgroundColor: '#FF5F24',
-       
+
         height: 25,
         borderRadius: 5,
         justifyContent: 'center',
         alignItems: 'center',
-        width:'100%'
+        width: '100%'
     },
     touchable_title: {
         color: '#FFFFFF',
@@ -470,6 +511,23 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         marginHorizontal: 16
     }
+    ,
+    topokk: {
+    height: verticalScale(213),
+    backgroundColor: 'green'
+  },
+  block: {
+    height: verticalScale(104),
+    marginTop: verticalScale(50),
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+
+  },
+  child: {
+    height: verticalScale(104),
+    backgroundColor: 'orange',
+    width: scale(104)
+  },
 })
 export default Home
 

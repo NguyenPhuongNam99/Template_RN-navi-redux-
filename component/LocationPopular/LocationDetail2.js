@@ -2,6 +2,9 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, ScrollView, FlatList, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useSelector,useDispatch} from 'react-redux'
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+
+
 const LocationDetail2 = ({ navigation }) => {
     const discovery = useSelector(state=>state.discovery)
     const Destination = ({ Destination_item }) => {
@@ -86,13 +89,13 @@ const LocationDetail2 = ({ navigation }) => {
                         />
                     </View>
                     <View style={styles.image_block}>
-                        <View style={{flex:1,backgroundColor:'green'}}>
+                        {/* <View style={{flex:1,backgroundColor:'green'}}>
                         </View>
                         <View style={{flex:1,backgroundColor:'blue'}}>
                         </View>
                         <View style={{flex:1,backgroundColor:'orange'}}>
-                        </View>
-                        {/* <View style={styles.image_block1}>
+                        </View> */}
+                        <View style={styles.image_block1}>
                             <Image
                                 style={styles.image_blkock2}
                                 source={require('../../assets/lson1.jpg')}
@@ -103,21 +106,21 @@ const LocationDetail2 = ({ navigation }) => {
                                 style={styles.image_blkock2}
                                 source={require('../../assets/lson2.jpg')}
                             />
-                        </View> */}
-                        {/* <View style={styles.image_block1}>
+                        </View>
+                        <View style={styles.image_block1}>
                             <Image
                                 style={styles.image_blkock2}
                                 source={require('../../assets/lson3.jpg')}
                             />
 
                             <View style={{ position: 'absolute', top: 0, left: 0, backgroundColor: 'rgba(0, 0, 0, 0.4)', width: '100%', height: '100%' }} />
-                            <View style={{ position: 'absolute', top: 50, left: '42%', zIndex: 100 }}>
+                            <View style={{ position: 'absolute', top: '48%', left: '42%', zIndex: 100 }}>
                                 <Image
 
                                     source={require('../../assets/sum.png')} />
                             </View>
 
-                        </View> */}
+                        </View>
                     </View>
 
                     <View style={styles.headerText}>
@@ -266,8 +269,8 @@ const styles = StyleSheet.create({
 
     },
     image_block1: {
-        width: 104, height: 104,
-        marginHorizontal: 16,
+        width:scale(104), height:verticalScale(104) ,
+      
         marginVertical: 16
     },
     image_blkock2: {
@@ -276,7 +279,8 @@ const styles = StyleSheet.create({
     image_block: {
         flexDirection: 'row',
         height:80,
-        justifyContent:'space-around'
+        justifyContent:'space-evenly',
+        marginBottom:moderateScale(45)
     },
     headerText: {
         marginHorizontal: 16,

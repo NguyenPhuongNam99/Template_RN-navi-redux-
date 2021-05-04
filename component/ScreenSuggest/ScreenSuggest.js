@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, Image, TouchableOpacity, FlatList, ScrollView, Modal,Alert} from 'react-native'
+import { View, Text, StyleSheet, TextInput, Image, TouchableOpacity, FlatList, ScrollView,Alert} from 'react-native'
 import Header from '../Header'
 import { ScreenSuggestData } from '../../Data/ScreenSuggest_Data';
 import { useSelector, useDispatch } from 'react-redux'
@@ -7,6 +7,8 @@ import { Checkbox } from 'react-native-paper';
 import CalendarPicker from 'react-native-calendar-picker';
 import moment from 'moment';
 import CheckBox from '@react-native-community/checkbox';
+import Modal from 'react-native-modal';
+
 const ScreenSuggest = ({ navigation }) => {
     const [onSelect,setOnSelect] = useState(false);
     // const checkSelect = (item)=>{
@@ -174,14 +176,11 @@ const ScreenSuggest = ({ navigation }) => {
                             animationType="fade"
                             transparent={true}
                             visible={isShowCalendar}
+                            onBackdropPress={() => setModalVisible(false)}
                             onRequestClose={() => {
                                 Alert.alert('Modal has been closed.');
                             }}>
-                            <View style={{
-                                flex: 1,
-                                paddingHorizontal: 13, marginTop: 70, backgroundColor: 'rgba(0,0,0,0.2)'
-
-                            }}>
+                            <View >
                                 <View style={{ backgroundColor: '#FFFFFF', borderRadius: 9, height: 380 }}>
                                     <CalendarPicker
                                         onDateChange={onDateChange}
@@ -288,7 +287,7 @@ const ScreenSuggest = ({ navigation }) => {
                                     placeholder="Thời gian"
                                     underlineColorAndroid="transparent"
                                     placeholderTextColor='#989898'
-                                    value={startdateuse && endDateuse ? startdateuse + ' / ' + endDateuse : null}
+                                    value={startdateuse && endDateuse && startDate && endDateuse ? startdateuse + ' / ' + endDateuse : null}
                                 />
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', borderBottomWidth: 0.5, borderBottomColor: '#000000', marginHorizontal: 15, marginTop: 16 }}>
