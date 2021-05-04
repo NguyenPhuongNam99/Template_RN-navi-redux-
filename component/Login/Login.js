@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { ScrolView, StyleSheet, View, Text, Image, TouchableOpacity, TextInput, ImageBackground, Dimensions } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Picker } from '@react-native-picker/picker';
-import { AccessToken, LoginManager  } from 'react-native-fbsdk-next';
+import { AccessToken, LoginManager } from 'react-native-fbsdk-next';
 import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 const Login = ({ navigation }) => {
   const [selectedValue, setSelectedValue] = useState();
@@ -29,12 +30,12 @@ const Login = ({ navigation }) => {
 
     }
   }
-  
- const signInok = async () => {
+
+  const signInok = async () => {
     try {
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
-      setloggedIn( userInfo );
+      setloggedIn(userInfo);
     } catch (error) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         // user cancelled the login flow
@@ -50,13 +51,13 @@ const Login = ({ navigation }) => {
 
   const loginWithFacebook = () => {
     LoginManager.logInWithPermissions(["public_profile", "email"]).then(
-      function(result) {
+      function (result) {
         if (result.isCancelled) {
           console.log("==> Login cancelled");
-        } else  {
+        } else {
           console.log(
             "==> Login success with permissions: " +
-              result.grantedPermissions.toString()
+            result.grantedPermissions.toString()
           );
           AccessToken.getCurrentAccessToken().then(
             (data) => {
@@ -65,12 +66,12 @@ const Login = ({ navigation }) => {
           )
           navigation.navigate('TabView')
         }
-     
-       },
-       function(error) {
+
+      },
+      function (error) {
         console.log("==> Login fail with error: " + error);
-       }
-     );
+      }
+    );
   }
   return (
     <ImageBackground style={styles.container} source={require('../../assets/b1.png')}>
@@ -84,23 +85,10 @@ const Login = ({ navigation }) => {
         <Image style={{ zIndex: 1000, marginTop: 10, marginLeft: 15 }} source={require('../../assets/ok.png')} />
 
       </View>
-      <View style={{ position: 'absolute', top: '40%', left: 8, marginHorizontal: 15, width: '89%' }}>
+      <View style={{ position: 'absolute', top: '40%', left: 0, width: scale(320), height: verticalScale(50),marginHorizontal:16,justifyContent:'center'}}>
         <Image style={{ position: 'absolute', top: '44%', left: 10, zIndex: 1000 }} source={require('../../assets/flag.png')} />
         <View style={{ position: 'absolute', top: '53%', left: '15%', zIndex: 1000, flexDirection: 'row', alignItems: 'flex-start' }}>
-          {/* <Picker
-            mode="dropdown"
-            style={{
-              height: 50,
-              width: 120,
-              color: 'white',
-            }}
-            itemStyle={{ backgroundColor: "grey", color: "blue", fontSize: 10 }}
 
-            onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
-          >
-            <Picker.Item label="+84" value="+84" />
-            <Picker.Item label="+64" value="+64" />
-          </Picker> */}
           <Image source={require('../../assets/Shape.png')} />
           <Text style={{ position: 'absolute', top: -6, left: 25, color: '#FFFFFF' }}>+84</Text>
         </View>
@@ -115,7 +103,7 @@ const Login = ({ navigation }) => {
         <View style={{ paddingTop: 15 }}>
           <TextInput keyboardType="numeric"
             onChangeText={(text1) => validateten(text1)}
-            style={{ paddingLeft: '40%', borderRadius: 22, width: '100%', borderWidth: 1, zIndex: 100, backgroundColor: 'rgba(0, 0, 0, 0.5)' }} />
+            style={{ paddingLeft: '40%', borderRadius: 22, borderWidth: 1, zIndex: 100, backgroundColor: 'rgba(0, 0, 0, 0.5)', height: verticalScale(50) }} />
 
         </View>
 
@@ -124,19 +112,19 @@ const Login = ({ navigation }) => {
 
       {
         phone && checklogin ?
-          <TouchableOpacity onPress={() => navigation.navigate('ConfirmOTP')} style={{ width: '92%',marginLeft:20,zIndex: 1000, position: 'absolute', top: '45%', justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#FF5F24', borderRadius: 22, marginTop: 48 }}>
+          <TouchableOpacity onPress={() => navigation.navigate('ConfirmOTP')} style={{width: scale(320), marginLeft: 20, zIndex: 1000, position: 'absolute', top: '45%', justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#FF5F24', borderRadius: 22, marginTop: 48 }}>
             <Text style={{ color: 'red', fontSize: 20, fontWeight: 'bold', color: '#FFFFFF' }}>OK</Text>
           </TouchableOpacity>
-          : <TouchableOpacity style={{ position: 'absolute', top: '45%',  width: '92%', opacity: 0.9,marginLeft:12, justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#FF5F24', borderRadius: 22, marginTop: 48 }}>
+          : <TouchableOpacity style={{ position: 'absolute', top: '45%', width: scale(320),opacity: 0.9, marginLeft: 20, justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#FF5F24', borderRadius: 22, marginTop: 48 }}>
             <Text style={{ color: 'red', fontSize: 20, fontWeight: 'bold', color: '#FFFFFF' }}>OK</Text>
           </TouchableOpacity>
       }
 
-      <TouchableOpacity onPress={() => loginWithFacebook()} style={{ position: 'absolute', top: '65%', left: 10, width: '95%', justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#055EEE', borderRadius: 22, marginTop: 48, flexDirection: 'row', zIndex: 100 }}>
+      <TouchableOpacity onPress={() => loginWithFacebook()} style={{ position: 'absolute', top: '65%', left: 0, width: scale(320),marginHorizontal:16, justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#055EEE', borderRadius: 22, marginTop: 48, flexDirection: 'row', zIndex: 100 }}>
         <Icon name="facebook-square" size={19} color="white" />
         <Text style={{ color: '#FFFFFF', fontSize: 15, paddingLeft: 20 }}>Đăng nhập với Facebook</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={signInok} style={{ justifyContent: 'space-between', flexDirection: 'row', position: 'absolute', top: '75%', left: 10, width: '95%', justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#055EEE', borderRadius: 22, marginTop: 48, flexDirection: 'row', zIndex: 100 }}>
+      <TouchableOpacity onPress={signInok} style={{ justifyContent: 'space-between', flexDirection: 'row', position: 'absolute', top: '75%',marginHorizontal:16, left: 0, width: scale(320), justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#055EEE', borderRadius: 22, marginTop: 48, flexDirection: 'row', zIndex: 100 }}>
         <View style={{ flex: 1.4 }}>
           <Image style={{
             width: '100%', height: '100%',
@@ -145,7 +133,7 @@ const Login = ({ navigation }) => {
           }} source={require('../../assets/gg.png')} />
         </View>
         <View style={{ flex: 8.6 }}>
-          <Text style={{ alignSelf: 'center', color: '#FFFFFF', fontSize: 15,position:'absolute',left:'20%',top:'-21%' }}>Đăng nhập với Google</Text>
+          <Text style={{ alignSelf: 'center', color: '#FFFFFF', fontSize: 15, position: 'absolute', left: '20%', top: '-21%' }}>Đăng nhập với Google</Text>
         </View>
       </TouchableOpacity>
 

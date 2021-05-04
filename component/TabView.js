@@ -90,7 +90,7 @@ const TabView = () => {
         <View style={{ position: "absolute", alignItems: "center" }}>
 
             <Animated.View style={{ position: "absolute", left: thermometerX, top: thermometerY, zIndex: 100 }}>
-                <TouchableOpacity onPress={() => navigation.navigate('Login')} style={{backgroundColor:'green', width: 80, height: 50, justifyContent: 'space-between', alignItems: 'center' }} >
+                <TouchableOpacity onPress={() => navigation.navigate('Login')} style={{width: 80, height: 50, justifyContent: 'space-between', alignItems: 'center' }} >
                     <View style={styles.secondaryButton} >
 
                         <Image source={require('../assets/tao.png')} />
