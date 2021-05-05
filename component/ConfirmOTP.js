@@ -8,6 +8,7 @@ import {
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
 // import OTPInputView from '@twotalltotems/react-native-otp-input'
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 const styles = StyleSheet.create({
   root: {flex: 1, padding: 20,backgroundColor:'#E5E5E5'},
@@ -71,7 +72,7 @@ const ConfirmOTP = ({navigation}) => {
         )}
       />
       <View style={{ flex: 1 }}>
-        <TouchableOpacity onPress={() => navigation.navigate('UpdateProfile')} style={{ zIndex: 1000, position: 'absolute', width: '100%', top: '45%', left: 0, justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#FF5F24', borderRadius: 22, marginTop: 48 }}>
+        <TouchableOpacity onPress={() => navigation.navigate('UpdateProfile')} style={{ zIndex: 1000, position: 'absolute', width: '100%', top: '45%', left: 0, justifyContent: 'center', alignItems: 'center', height:verticalScale(45), backgroundColor: '#FF5F24', borderRadius: 22, marginTop: moderateScale(47) }}>
           <Text style={{ color: 'red', fontSize: 20, fontWeight: 'bold', color: '#FFFFFF' }}>OK</Text>
         </TouchableOpacity>
       </View>

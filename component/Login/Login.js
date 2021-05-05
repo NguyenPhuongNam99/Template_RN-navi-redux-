@@ -5,7 +5,7 @@ import { Picker } from '@react-native-picker/picker';
 import { AccessToken, LoginManager } from 'react-native-fbsdk-next';
 import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
-
+import {useSelector,useDispatch} from 'react-redux'
 const Login = ({ navigation }) => {
   const [selectedValue, setSelectedValue] = useState();
   const [text, onChangeText] = React.useState(null);
@@ -14,7 +14,7 @@ const Login = ({ navigation }) => {
   const [userInfo, setuserInfo] = useState([]);
   const [checklogin, setChecklogin] = useState(false);
   const [phone, setPhone] = useState('')
-
+  const dispatch = useDispatch();
   const validateten = (text1) => {
     let reg = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
     if (reg.test(text1) === false) {
@@ -31,6 +31,11 @@ const Login = ({ navigation }) => {
     }
   }
 
+  const check = ()=>{
+    dispatch({type:'ADDLOGIN',valueLogin:phone})
+    navigation.navigate('ConfirmOTP')
+    console.log('ddda login',phone)
+  }
   const signInok = async () => {
     try {
       await GoogleSignin.hasPlayServices();
@@ -112,7 +117,7 @@ const Login = ({ navigation }) => {
 
       {
         phone && checklogin ?
-          <TouchableOpacity onPress={() => navigation.navigate('ConfirmOTP')} style={{width: scale(320), marginLeft: 20, zIndex: 1000, position: 'absolute', top: '45%', justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#FF5F24', borderRadius: 22, marginTop: 48 }}>
+          <TouchableOpacity onPress={check} style={{width: scale(320), marginLeft: 20, zIndex: 1000, position: 'absolute', top: '45%', justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#FF5F24', borderRadius: 22, marginTop: 48 }}>
             <Text style={{ color: 'red', fontSize: 20, fontWeight: 'bold', color: '#FFFFFF' }}>OK</Text>
           </TouchableOpacity>
           : <TouchableOpacity style={{ position: 'absolute', top: '45%', width: scale(320),opacity: 0.9, marginLeft: 20, justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#FF5F24', borderRadius: 22, marginTop: 48 }}>

@@ -2,13 +2,13 @@ import React from 'react';
 import { useState } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity ,Button} from 'react-native';
 import Modal from 'react-native-modal';
-
+import {useDispatch,useSelector} from 'react-redux'
 const UpdateProfile = ({navigation}) => {
     const [checkHoten, setCheckhoten] = useState(false);
     const [hoten,setHoten] = useState('')
     const [checkten, setCheckten] = useState(false);
     const [ten,setTen] = useState('')
-
+    const valueLogin = useSelector(state=>state.valueLogin)
     const [isModalVisible, setModalVisible] = useState(false);
   
   const toggleModal = () => {
@@ -120,7 +120,7 @@ const UpdateProfile = ({navigation}) => {
             <View>
                 <TextInput
                     style={styles.input}
-                    
+                    value={valueLogin}
                 />
             </View>
             {

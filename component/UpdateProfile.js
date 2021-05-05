@@ -3,13 +3,13 @@ import { useState } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity ,Button} from 'react-native';
 import Modal from 'react-native-modal';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
-
+import {useDispatch,useSelector} from 'react-redux'
 const UpdateProfile = ({navigation}) => {
     const [checkHoten, setCheckhoten] = useState(false);
     const [hoten,setHoten] = useState('')
     const [checkten, setCheckten] = useState(false);
     const [ten,setTen] = useState('')
-
+    const valueLogin = useSelector(state=>state.valueLogin)
     const [isModalVisible, setModalVisible] = useState(false);
   
   const toggleModal = () => {
@@ -97,7 +97,7 @@ const UpdateProfile = ({navigation}) => {
                 source={require('../assets/arrow-left.png')}
                 
             />
-            <Text style={styles.title}>Cập nhật thông tin </Text>
+            <Text style={styles.title}>Cập nhật thông tin8788 {valueLogin} </Text>
             <View style={styles.input_header}>
                 <TextInput
                     style={styles.input}
@@ -118,7 +118,7 @@ const UpdateProfile = ({navigation}) => {
             <View>
                 <TextInput
                     style={styles.input}
-                    
+                    value={valueLogin}
                 />
             </View>
             {
