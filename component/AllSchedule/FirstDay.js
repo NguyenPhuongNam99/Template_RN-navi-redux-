@@ -21,17 +21,20 @@ const FirstDay = ({navigation}) => {
         dispatch({type:'DELETE_ITEM',id_delete})
         setModalVisible(!modalVisible)
     }
+    const hideModal = () => setModalVisible(false);
     return (
 
         <View style={styles.container}>
             <Modal
-                animationType="slide"
+                onDismiss={hideModal}
+                backdropOpacity={0.3}
+                // animationType="slide"
                 transparent={true}
                 visible={modalVisible}
-                onRequestClose={() => {
-                    Alert.alert("Modal has been closed.");
-                    setModalVisible(!modalVisible);
-                }}
+                // onRequestClose={() => {
+                //     Alert.alert("Modal has been closed.");
+                //     setModalVisible(!modalVisible);
+                // }}
             >
                 <View style={{
                     flex: 1,
@@ -55,13 +58,7 @@ const FirstDay = ({navigation}) => {
                                 
                             </TouchableOpacity>
                         </View>
-                        {/* <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <TouchableOpacity onPress={() =>
-                                setModalVisible(!modalVisible)}>
-                                <Text style={{ fontSize: 14, color: '#9A9A9A', fontWeight: 'bold' }}>Cancel</Text>
-                            </TouchableOpacity>
-
-                        </View> */}
+                       
                     </View>
 
                 </View>

@@ -7,7 +7,7 @@ import { Checkbox } from 'react-native-paper';
 import CalendarPicker from 'react-native-calendar-picker';
 import moment from 'moment';
 import CheckBox from '@react-native-community/checkbox';
-import Modal from 'react-native-modal';
+import { Modal} from 'react-native-paper';
 
 const ScreenSuggest = ({ navigation }) => {
     const [onSelect,setOnSelect] = useState(false);
@@ -143,7 +143,8 @@ const ScreenSuggest = ({ navigation }) => {
             return null
         }
     }
-
+    const hideModal = () => setIsShowCalendar(false);
+    const hideM = ()=>setModalVisible(false)
     return (
         <ScrollView>
             <View style={styles.conatiner}>
@@ -172,71 +173,7 @@ const ScreenSuggest = ({ navigation }) => {
                         </TouchableOpacity>
                     </View>
                     <View>
-                        <Modal
-                            animationType="fade"
-                            transparent={true}
-                            visible={isShowCalendar}
-                            onBackdropPress={() => setModalVisible(false)}
-                            onRequestClose={() => {
-                                Alert.alert('Modal has been closed.');
-                            }}>
-                            <View >
-                                <View style={{ backgroundColor: '#FFFFFF', borderRadius: 9, height: 380 }}>
-                                    <CalendarPicker
-                                        onDateChange={onDateChange}
-                                        startFromMonday={true}
-                                        allowRangeSelection={true}
-                                        minDate={minDate}
-                                        maxDate={maxDate}
-
-                                        visible={isShowCalendar}
-                                        todayBackgroundColor="#EEDFF2" selectedDayColor="#7300e6"
-                                        weekdays={['Th 2', 'Th 3', 'Th 4', 'Th 5', 'Th 6', 'Th 7', 'CN']}
-                                        months={['Tháng 1,', 'Tháng 2,', 'Tháng 3,', 'Tháng 4,', 'Tháng 5,', 'Tháng 6,', 'Tháng 7,', 'Tháng 8,', 'Tháng 9,', 'Tháng 10,', 'Tháng 11,', 'Tháng 12,']}
-                                        selectedDayTextColor="#FFFFFF"
-                                        selectedRangeStartStyle={{ backgroundColor: '#F8530D' }}
-                                        selectedRangeEndStyle={{ backgroundColor: '#F8530D'}}
-                                        selectedRangeStyle={{ backgroundColor: '#FCDAD5', opacity: 1 }}
-                                        previousTitle='<'
-                                        nextTitle='>'
-                                        customDatesStyles='YYYY-MM'
-                                        todayTextStyle={{
-                                            color: '#BE52F2',
-
-                                        }}
-                                        dayLabelsWrapper={{
-                                            borderTopWidth: 0,
-                                            borderWidth: 0,
-                                            borderBottomWidth: 0,
-
-                                            borderRadius: 0,
-                                            color: 'green'
-                                        }}
-                                        // customDatesStyles={customDatesStylesCallback}
-                                        customDayHeaderStyles={customDayHeaderStylesCallback}
-                                        textStyle={{
-                                            fontSize: 14,
-                                            color: '#000000',
-                                        }}
-                                        nextTitleStyle={{ backgroundColor: '#FFFFFF', marginRight: 16, borderRadius: 2, paddingLeft: 10, paddingRight: 10 }}
-                                        previousTitleStyle={{ backgroundColor: '#FFFFFF', marginLeft: 16, borderRadius: 2, paddingLeft: 7, paddingRight: 10 }}
-                                    />
-
-
-                                    <View>
-                                        <View >
-
-                                            {/* onPress={Done} */}
-                                            <TouchableOpacity style={{ alignItems: 'flex-end', marginRight: 33 }} onPress={Done}>
-                                                <Text style={{ color: '#8B3BFF', fontSize: 14, fontWeight: '500' }}>Ok</Text>
-                                            </TouchableOpacity>
-                                        </View>
-                                    </View>
-
-                                </View>
-                            </View>
-                        </Modal>
-
+                        
 
                         <FlatList
                             style={{ marginTop: 16 }}
@@ -315,13 +252,9 @@ const ScreenSuggest = ({ navigation }) => {
 
 
                     <Modal
-                        animationType="slide"
-                        transparent={true}
+                       onDismiss={hideM}
                         visible={modalVisible}
-                        onRequestClose={() => {
-                            Alert.alert("Modal has been closed.");
-                            setModalVisible(!modalVisible);
-                        }}
+                        
                     >
                 <View style={{
                     flex: 1,
@@ -371,6 +304,70 @@ const ScreenSuggest = ({ navigation }) => {
                         <Text style={{ color: '#FFFFFF', fontSize: 14 }}>Xem gợi ý</Text>
                     </TouchableOpacity>
                 </View>
+
+
+                <Modal
+                            // animationType="fade"
+                            // transparent={true}
+                            visible={isShowCalendar}
+                            onDismiss={hideModal}
+                          >
+                            <View >
+                                <View style={{ backgroundColor: '#FFFFFF', borderRadius: 9, height: 380 }}>
+                                    <CalendarPicker
+                                        onDateChange={onDateChange}
+                                        startFromMonday={true}
+                                        allowRangeSelection={true}
+                                        minDate={minDate}
+                                        maxDate={maxDate}
+
+                                        visible={isShowCalendar}
+                                        todayBackgroundColor="#EEDFF2" selectedDayColor="#7300e6"
+                                        weekdays={['Th 2', 'Th 3', 'Th 4', 'Th 5', 'Th 6', 'Th 7', 'CN']}
+                                        months={['Tháng 1,', 'Tháng 2,', 'Tháng 3,', 'Tháng 4,', 'Tháng 5,', 'Tháng 6,', 'Tháng 7,', 'Tháng 8,', 'Tháng 9,', 'Tháng 10,', 'Tháng 11,', 'Tháng 12,']}
+                                        selectedDayTextColor="#FFFFFF"
+                                        selectedRangeStartStyle={{ backgroundColor: '#F8530D' }}
+                                        selectedRangeEndStyle={{ backgroundColor: '#F8530D'}}
+                                        selectedRangeStyle={{ backgroundColor: '#FCDAD5', opacity: 1 }}
+                                        previousTitle='<'
+                                        nextTitle='>'
+                                        customDatesStyles='YYYY-MM'
+                                        todayTextStyle={{
+                                            color: '#BE52F2',
+
+                                        }}
+                                        dayLabelsWrapper={{
+                                            borderTopWidth: 0,
+                                            borderWidth: 0,
+                                            borderBottomWidth: 0,
+
+                                            borderRadius: 0,
+                                            color: 'green'
+                                        }}
+                                        // customDatesStyles={customDatesStylesCallback}
+                                        customDayHeaderStyles={customDayHeaderStylesCallback}
+                                        textStyle={{
+                                            fontSize: 14,
+                                            color: '#000000',
+                                        }}
+                                        nextTitleStyle={{ backgroundColor: '#FFFFFF', marginRight: 16, borderRadius: 2, paddingLeft: 10, paddingRight: 10 }}
+                                        previousTitleStyle={{ backgroundColor: '#FFFFFF', marginLeft: 16, borderRadius: 2, paddingLeft: 7, paddingRight: 10 }}
+                                    />
+
+
+                                    <View>
+                                        <View >
+
+                                            {/* onPress={Done} */}
+                                            <TouchableOpacity style={{ alignItems: 'flex-end', marginRight: 33 }} onPress={Done}>
+                                                <Text style={{ color: '#8B3BFF', fontSize: 14, fontWeight: '500' }}>Ok</Text>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </View>
+
+                                </View>
+                            </View>
+                        </Modal>
 
             </View>
         </ScrollView>

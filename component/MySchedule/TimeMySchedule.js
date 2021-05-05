@@ -2,10 +2,32 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native'
 import Header from '../Header'
 import { TimeMySchedule_Data } from '../../Data/TimeMySchedule_Data'
+import { color } from 'react-native-reanimated';
 const TimeMySchedule = ({ navigation }) => {
     const goback = () => {
         navigation.goBack()
     }
+    const getBackground =(id)=>{
+        let color;
+        if(id==3){
+             color='#FFB498'
+        }
+       
+        else if(id>3 || id <3){
+            color='#A0A0A0'
+        }
+
+       return color;
+    }
+    // const getbackGroundItem =(id)=>{
+    //     let color;
+    //     if(id==8){
+    //         return color='#FFB498'
+    //     }
+    //     else{
+    //         return color='#A0A0A0'
+    //     }
+    // }
     return (
         <View style={styles.container}>
             <Header Name='Lịch trình đang đi' back={goback} />
@@ -15,31 +37,32 @@ const TimeMySchedule = ({ navigation }) => {
                         TimeMySchedule_Data.map((item) => {
                             return (
                                 <View >
-                                    <Text style={{ fontSize: 14, color: '#A0A0A0', fontWeight: 'bold', marginLeft: 20 }}>{item.ngay}</Text>
+                                    <Text style={{ fontSize: 14, color:getBackground(item.id), fontWeight: 'bold', marginLeft: 20 }}>{item.ngay}</Text>
                                     <Text style={{ color: '#A0A0A0', fontSize: 12, marginLeft: 20, marginTop: 13, paddingBottom: 8 }}>{item.timer}</Text>
                                     <View >
                                         {
                                             item.thongtin.map((val, index) => {
+                                            
                                                 return (
                                                     <View style={styles.blockBottom}>
                                                         <View style={styles.left}>
-                                                            <Text style={styles.text}>{index + 1}</Text>
+                                                            <Text style={[styles.text,{backgroundColor:getBackground(item.id)}]}>{index + 1}</Text>
                                                             {
-                                                                index + 1 == item.thongtin.length ? <View /> : <View style={styles.textBottom}></View>
+                                                                index + 1 == item.thongtin.length ? <View /> : <View style={[styles.textBottom,{color:getBackground(item.id)}]}></View>
                                                             }
 
                                                             {
                                                                 val.minute ?
-                                                                    <Text style={{ color: '#A0A0A0', fontSize: 12 }}>{val.minute}</Text>
+                                                                    <Text style={{  fontSize: 12,color:getBackground(item.id) }}>{val.minute}</Text>
                                                                     : null
                                                             }
 
                                                         </View>
                                                         <View style={styles.center}>
-                                                            <Text style={{ color: '#A0A0A0' }}>{val.title}</Text>
+                                                            <Text style={{ color:getBackground(item.id)  }}>{val.title}</Text>
                                                             {
                                                                 val.text ?
-                                                                    <Text style={{ color: '#A0A0A0', fontSize: 12, paddingTop: 16 }}>{val.text}</Text>
+                                                                    <Text style={{ color:getBackground(item.id), fontSize: 12, paddingTop: 16 }}>{val.text}</Text>
                                                                     :
                                                                     null
                                                             }
@@ -48,7 +71,7 @@ const TimeMySchedule = ({ navigation }) => {
                                                         {
                                                             val.star ?
                                                                 <View style={styles.right}>
-                                                                    <Text style={{ fontSize: 13 }}>10</Text>
+                                                                    <Text style={{ fontSize: 13 }}>10 </Text>
                                                                     <Image source={require('../../assets/star2.png')} />
                                                                 </View>
                                                                 :
@@ -156,7 +179,7 @@ const styles = StyleSheet.create({
     text: {
         width: 15,
         height: 15,
-        backgroundColor: 'black',
+        // backgroundColor: 'black',
         borderRadius: 20,
         color: '#FFFFFF',
         alignSelf: 'center',

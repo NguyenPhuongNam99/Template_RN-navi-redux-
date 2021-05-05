@@ -7,7 +7,7 @@ const ScheduleNow_Item = ({ Item,ScheduleNowNavigation ,check}) => {
     const item_tym = useSelector(state=>state.item_tym)
     const setCheck =(item)=>{
         setImageState(!imageState)
-        if(imageState === true){
+        if(imageState == true){
 
             dispatch({type:'ADD_TYM',item_tym:item})
             console.log("item tym la",item)
