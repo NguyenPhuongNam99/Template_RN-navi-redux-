@@ -12,9 +12,6 @@ const Follow = ({ navigation }) => {
 
 
             <View style={styles.block}>
-
-
-
                 <FlatList
                     data={Followdata}
                     keyExtractor={(item) => item.id.toString()}

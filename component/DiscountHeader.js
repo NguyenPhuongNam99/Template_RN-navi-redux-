@@ -21,7 +21,6 @@ const DiscountHeader = ({navigation}) => {
                         <View style={{flexDirection:'row',fontSize:12}}>
                         <Text style={{color:'#575757'}}>{Item.time}</Text>
                         <Text >{Item.timer}</Text>
-
                         </View>
                 </View>
               

@@ -266,7 +266,7 @@ const styles = StyleSheet.create({
 
     },
     image_block1: {
-        width: 104, height: 104,
+        width:scale(104) , height: 104,
         marginHorizontal: 16,
         marginVertical: 16
     },
