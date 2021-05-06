@@ -9,8 +9,11 @@ import {
     Text,
     useColorScheme,
     View,
-    Image
+    Image,Dimensions
 } from 'react-native';
+
+  import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+
 const FirstScreen = ({navigation}) => {
    
     //   useEffect(()=>{
@@ -29,17 +32,17 @@ const FirstScreen = ({navigation}) => {
                 <View style={styles.header}>
                     <View  style={styles.tinyLogo}>
                         <Image
-                      
+                      style={{width:'100%',height:'100%' }}
                         source={require('../assets/logo.png')}
                         resizeMode='center'
                     />
-                    <Image
+                  
+                    </View>
+                      <Image
                         style={styles.header_title}
                         source={require('../assets/ok.png')}
                         resizeMode='contain'
                     />
-                    </View>
-                    
                     
                     <Image
                         style={styles.map}
@@ -86,15 +89,15 @@ const styles = StyleSheet.create({
     },
     tinyLogo: {
         position: 'absolute',
-        top: '-4%',
-        left: '35%',
-        width: '80%'
+        top: '8%',
+        left: '39%',
+        width:scale(76),height:verticalScale(99) 
 
     },
     header_title: {
      position:'absolute',
-     top:'83%',
-     left:'10%'
+     top:Dimensions.get('window').width < 400 ? verticalScale(155) :verticalScale(130),
+     left:Dimensions.get('window').width < 400 ? '40%':'42%'
 
     },
     map: {

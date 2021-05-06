@@ -60,6 +60,7 @@ import TimeMySchedule from '../../component/MySchedule/TimeMySchedule'
 import DetailSchedule from '../../component/AllSchedule/DetailSchedule'
 import MyScheduleGo from '../../component/MySchedule/MyScheduleGo'
 import Combo from '../../component/Combo'
+import BookScreen from "../BookScreen";
 const Stack = createStackNavigator();
 
 const Stacknavigation = () => {
@@ -73,6 +74,8 @@ const Stacknavigation = () => {
       <Stack.Screen name="Login" component={Login}  options={{headerShown: false}} />
       <Stack.Screen name="TabNavigation" component={TabNavigation}  options={{headerShown: false}} />
       <Stack.Screen name="ConfirmOTP" component={ConfirmOTP}  options={{headerShown: false}} />
+      <Stack.Screen name="BookScreen" component={BookScreen}  options={{headerShown: false}} />
+
       <Stack.Screen name="UpdateProfile" component={UpdateProfile}  options={{headerShown: false}}/>
 
       <Stack.Screen name="Home" component={Home}  options={{headerShown: false}} />

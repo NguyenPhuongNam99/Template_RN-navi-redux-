@@ -6,7 +6,11 @@ import HotelResort_Header from '../component/LocationPopular/HotelResort_Header'
 import { useDispatch } from 'react-redux'
 import { data, voucherdata, sheduleNowData, Desdata, Expe, DiemDen, Hoteldata } from '../Data/HomeData'
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
-
+import {
+    responsiveHeight,
+    responsiveWidth,
+    responsiveFontSize
+  } from "react-native-responsive-dimensions";
 const Home = ({ navigation }) => {
     //data icon Top
     const dispatch = useDispatch();
@@ -192,39 +196,12 @@ const Home = ({ navigation }) => {
         <View>
             <ScrollView>
                 <View style={styles.container}>
-                    {/* <Image style={styles.image} source={require('../assets/home.png')} /> */}
-                    {/* <View style={styles.header_bottom}> */}
-                        {/* <Text style={styles.header}>Khám Phá</Text>
-
-                        <Text style={styles.shedule}>
-                            Lên lịch trình, đặt vé máy bay, khách sạn, tìm kiếm các tour lịch và các hoạt động vui chơi giải trí
-                 </Text> */}
-                        {/* <FlatList
-                            horizontal={true}
-                            showsHorizontalScrollIndicator={false}
-                            data={data}
-                            keyExtractor={(item) => item.id.toString()}
-                            renderItem={({ item }) =>
-                                <Item item={item} />
-                            }
-                        /> */}
-                        {/* <View>
-
-                            <TextInput
-                                style={styles.input}
-                                placeholder='Bạn muốn đi đâu ?'
-                                placeholderTextColor='#B6B6B6'
-
-                            />
-                            <Image style={{ position: 'absolute', top: 10, left: 10, zIndex: 100 }} source={require('../assets/search.png')} />
-                        </View> */}
-
-                    {/* </View> */}
+                   
                     <View style={styles.topokk}>
         <Image style={{ width: '100%', height: '100%' }} source={require('../assets/a.png')} />
         <View style={{ position: 'absolute', top: verticalScale(20), paddingHorizontal: moderateScale(15) }}>
           <Text style={{ color: '#FFFFFF', fontSize: 18, fontWeight: 'bold' }}>Khám Phá</Text>
-          <Text style={{ color: '#FFFFFF', fontSize: 14, fontWeight: 'normal' }}>Lên lịch trình, đặt vé máy bay, khách sạn, tìm kiếm
+          <Text style={{ color: '#FFFFFF', fontSize: responsiveFontSize(2), fontWeight: 'normal' }}>Lên lịch trình, đặt vé máy bay, khách sạn, tìm kiếm
           các tour lịch và các hoạt động vui chơi giải trí
           </Text>
         </View>
@@ -244,7 +221,7 @@ const Home = ({ navigation }) => {
         
 
         </View>
-        <View style={{position:'absolute',bottom:verticalScale(-20),width:'100%'}}>
+        <View style={{position:'absolute',bottom:verticalScale(-19),width:'100%'}}>
             <View style={{marginHorizontal:16}}>
                 <TextInput
               style={styles.input}
