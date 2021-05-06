@@ -52,7 +52,10 @@ const Home = ({ navigation }) => {
         return (
             <TouchableOpacity onPress={() => check(item.id)}>
                 <View style={{ flexDirection: 'column', paddingHorizontal: 11, paddingTop: 29 }}>
-                    <Image style={{ width: 35, height: 35, marginBottom: 6, marginHorizontal: 4 }} resizeMode='cover' source={item.img} />
+                    <View style={{width:scale(35), height:verticalScale(35)}}>
+                        <Image style={{ width:'100%', height:'100%', marginBottom: 6, marginHorizontal: 4 }} resizeMode='contain' source={item.img} />
+
+                    </View>
                     <Text style={{ color: '#FFFFFF', fontSize: 12, fontWeight: '500', lineHeight: 14 }}>{item.title}</Text>
                 </View>
             </TouchableOpacity>
@@ -200,7 +203,7 @@ const Home = ({ navigation }) => {
                     <View style={styles.topokk}>
         <Image style={{ width: '100%', height: '100%' }} source={require('../assets/a.png')} />
         <View style={{ position: 'absolute', top: verticalScale(20), paddingHorizontal: moderateScale(15) }}>
-          <Text style={{ color: '#FFFFFF', fontSize: 18, fontWeight: 'bold' }}>Khám Phá</Text>
+          <Text style={{ color: '#FFFFFF', fontSize: responsiveFontSize(2), fontWeight: 'bold' }}>Khám Phá</Text>
           <Text style={{ color: '#FFFFFF', fontSize: responsiveFontSize(2), fontWeight: 'normal' }}>Lên lịch trình, đặt vé máy bay, khách sạn, tìm kiếm
           các tour lịch và các hoạt động vui chơi giải trí
           </Text>

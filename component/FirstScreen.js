@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     },
     header_title: {
      position:'absolute',
-     top:Dimensions.get('window').width < 400 ? verticalScale(155) :verticalScale(130),
+     top:Dimensions.get('window').width < 400 ? verticalScale(155) :verticalScale(140),
      left:Dimensions.get('window').width < 400 ? '40%':'42%'
 
     },
