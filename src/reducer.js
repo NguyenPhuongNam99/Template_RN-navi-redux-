@@ -119,6 +119,12 @@ const reducer =(state = inital,action)=>{
                 item_tym:[...state.item_tym,action.item_tym]
             }
         }
+        case 'ADDLOGIN':{
+            return {
+                ...state,
+                valueLogin :action.valueLogin
+            }
+        }
         default :
             return state;
     }

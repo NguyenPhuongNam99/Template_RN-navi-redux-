@@ -23,7 +23,9 @@ import Profile from '../../component/Profile/Profile'
 // import App2 from '../../src/navigation/Stacknavigation'
 import Notification from '../../component/Notification'
 import App1 from '../../src/navigation/Stacknavigation'
-
+const hello = () => {
+  return null
+}
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigation() {
@@ -53,20 +55,20 @@ export default function TabNavigation() {
        }} 
        component={TabView}
        /> */}
-        <Tab.Screen name="TabVoucher"
+        <Tab.Screen name="TabVoucher3"
          options={{
           tabBarIcon:({focused})=> focused ? <Image source={require('../../assets/ac1.png')} /> :      <Icon name="briefcase" size={19} color="#9A9A9A" />
         }}
         component={TabVoucher} />
-        
-        <Tab.Screen name="ScheduleHeader"
+         <Tab.Screen name="Botton5" component={hello}  options ={{tabBarOnPress: () => {} ,tabBarIcon : () =>   <TabView/>, tabBarLabel: ''}} />
+        {/* <Tab.Screen name="ScheduleHeader"
         //  options={{
         //   tabBarIcon: <TabView />
         
         // }}
 
         options ={{tabBarOnPress: () => {} ,tabBarIcon : () =>   <TabView/>, tabBarLabel: ''}}
-        component={ScheduleHeader} />
+        component={ScheduleHeader} /> */}
 
         <Tab.Screen name="Notification" 
          options={{

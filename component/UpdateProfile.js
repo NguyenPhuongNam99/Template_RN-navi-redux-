@@ -2,13 +2,14 @@ import React from 'react';
 import { useState } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity ,Button} from 'react-native';
 import Modal from 'react-native-modal';
-
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import {useDispatch,useSelector} from 'react-redux'
 const UpdateProfile = ({navigation}) => {
     const [checkHoten, setCheckhoten] = useState(false);
     const [hoten,setHoten] = useState('')
     const [checkten, setCheckten] = useState(false);
     const [ten,setTen] = useState('')
-
+    const valueLogin = useSelector(state=>state.valueLogin)
     const [isModalVisible, setModalVisible] = useState(false);
   
   const toggleModal = () => {
@@ -96,7 +97,7 @@ const UpdateProfile = ({navigation}) => {
                 source={require('../assets/arrow-left.png')}
                 
             />
-            <Text style={styles.title}>Cập nhật thông tin </Text>
+            <Text style={styles.title}>Cập nhật thông tin8788 {valueLogin} </Text>
             <View style={styles.input_header}>
                 <TextInput
                     style={styles.input}
@@ -117,7 +118,7 @@ const UpdateProfile = ({navigation}) => {
             <View>
                 <TextInput
                     style={styles.input}
-                    
+                    value={valueLogin}
                 />
             </View>
             {
@@ -170,18 +171,20 @@ const styles = StyleSheet.create({
           alignItems:'center',
           backgroundColor:'#FF5F24',
           borderRadius:22,
-          marginHorizontal:20,
-          height:48,
-          marginTop:133
+          marginHorizontal:16,
+          height:45,
+          marginTop:133,
+          width:scale(320)
       },
       touchable1:{
         justifyContent:'center',
         alignItems:'center',
         backgroundColor:'#FBD7CA',
         borderRadius:22,
-        marginHorizontal:20,
+        marginHorizontal:16,
         height:48,
-        marginTop:133
+        marginTop:133,
+        width:scale(320)
     },
       footer:{
           color:'#565656',

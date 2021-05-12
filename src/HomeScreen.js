@@ -59,7 +59,7 @@ const HomeScreen = () => {
 
 
 
-      <View style={styles.block}>
+      {/* <View style={styles.block}>
         <View style={styles.child}>
           <Image style={{ width: '100%', height: '100%' }} resizeMode='stretch' source={require('../assets/anh2.jpg')} />
         </View>
@@ -69,7 +69,7 @@ const HomeScreen = () => {
         <View style={styles.child}>
           <Image style={{ width: '100%', height: '100%' }} resizeMode='stretch' source={require('../assets/anh2.jpg')} />
         </View>
-      </View>
+      </View> */}
     </View>
   );
 };

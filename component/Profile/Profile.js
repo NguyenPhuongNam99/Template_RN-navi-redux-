@@ -66,13 +66,7 @@ const Profile = ({ navigation }) => {
             </View>
             <Modal
             visible={visible} onDismiss={hideModal}
-                // animationType="slide"
-                // transparent={true}
-                // visible={modalVisible}
-                // onRequestClose={() => {
-                //     Alert.alert("Modal has been closed.");
-                //     setModalVisible(!modalVisible);
-                // }}
+                
             >
            <View style={{alignItems:'center',justifyContent:'flex-end',margin:50,height:210,paddingVertical:10}}>
                 <View style={styles.modalView}>
