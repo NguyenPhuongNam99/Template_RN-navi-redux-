@@ -12,6 +12,8 @@ import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import com.airbnb.android.react.maps.MapsPackage;
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
@@ -30,7 +32,12 @@ public class MainApplication extends Application implements ReactApplication {
           // packages.add(new SajjadBlurOverlayPackage());
           return packages;
         }
-
+  // protected List<ReactPackage> getPackages() {
+  //       return Arrays.<ReactPackage>asList(
+  //               new MainReactPackage(),
+  //               new MapsPackage()
+  //       );
+  //   }
         @Override
         protected String getJSMainModuleName() {
           return "index";

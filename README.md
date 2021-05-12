@@ -44,3 +44,14 @@ dependencies {
  vào APP/Build.gradle xem các phần version có giống với version gợi ý ko ==>như trên thì lỗi thông báo nên dùng version 25.0.0  
  (Bonus thêm là vào Android Studio xóa wipe Data của Máy điện thoại )
 link youtube : https://www.youtube.com/watch?v=Tx6jt5L1Vq0
+
+
+
+
+
+
+5 INSTALL REACT-NATIVE-MAPS:
+https://www.youtube.com/watch?v=4qq0GQPkfjI
+A littile create key API :
+   =>Mobile App key :https://www.youtube.com/watch?v=rv5JMRfoayI
+   

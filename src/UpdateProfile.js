@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity ,Button} from 'react-native';
 import Modal from 'react-native-modal';
 import {useDispatch,useSelector} from 'react-redux'
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+
 const UpdateProfile = ({navigation}) => {
     const [checkHoten, setCheckhoten] = useState(false);
     const [hoten,setHoten] = useState('')
@@ -180,7 +182,7 @@ const styles = StyleSheet.create({
           borderRadius:22,
           marginHorizontal:20,
           height:48,
-          marginTop:133
+          marginTop:moderateScale(100)
       },
       touchable1:{
         justifyContent:'center',

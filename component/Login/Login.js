@@ -33,7 +33,7 @@ const Login = ({ navigation }) => {
 
   const check = ()=>{
     dispatch({type:'ADDLOGIN',valueLogin:phone})
-    navigation.navigate('ConfirmOTP')
+    navigation.navigate('BookScreen')
     console.log('ddda login',phone)
   }
   const signInok = async () => {
@@ -84,10 +84,13 @@ const Login = ({ navigation }) => {
       <Image style={styles.image} source={require('../../assets/b2.png')} />
       <View style={{
         position: 'absolute',
-        top: '5%', left: '37%', zIndex: 1000
+        top: '5%', left: '36%', zIndex: 1000
       }}>
-        <Image style={styles.position} source={require('../../assets/logo.png')} />
-        <Image style={{ zIndex: 1000, marginTop: 10, marginLeft: 15 }} source={require('../../assets/ok.png')} />
+        <View style={styles.positionok}>
+          <Image style={{ width: '100%', height: '100%' }} resizeMode='contain' source={require('../../assets/logo.png')} />
+
+        </View>
+        <Image style={{ zIndex: 1000, marginTop: 10, marginLeft: 25 }} source={require('../../assets/ok.png')} />
 
       </View>
       <View style={{ position: 'absolute', top: '40%', left: 0, width: scale(320), height: verticalScale(50),marginHorizontal:16,justifyContent:'center'}}>
@@ -156,9 +159,9 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%', zIndex: 100
   },
-  position: {
-    width: 130,
-    height: 169
+  positionok: {
+    width:scale(132) ,
+    height:verticalScale(170) 
   }
 })
 export default Login;
