@@ -76,7 +76,7 @@ const Location =({navigation})=>{
                     onChangeText={(text)=>searchBar(text)}
                 />
                 <TouchableOpacity onPress={createTwoButtonAlert}>
-                    <Text style={{color:'#828282',fontSize:12}}>Hủy</Text>
+                    <Text style={{color:'#828282',fontSize:12}}>Hủy g</Text>
                 </TouchableOpacity>
             </View>
             <View>
