@@ -3,7 +3,7 @@ import { ScrolView, StyleSheet, View, Text, Image, TouchableOpacity, TextInput, 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Picker } from '@react-native-picker/picker';
 import { AccessToken, LoginManager } from 'react-native-fbsdk-next';
-import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
+// import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import {useSelector,useDispatch} from 'react-redux'
 const Login = ({ navigation }) => {
