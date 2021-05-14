@@ -94,4 +94,10 @@ tạo sha1
 keytool -list -v -keystore D:\Template_RN-navi-redux-\android\app\mykey.keystore -alias key0 -storepass android -keypass android
 
 
+lưu ý packed name trong firebase phải trùng với packed name trong project của mình
+![image](https://user-images.githubusercontent.com/73121884/118305871-c8553c00-b512-11eb-9a2b-e9f5856c126e.png)
+![image](https://user-images.githubusercontent.com/73121884/118305911-d4d99480-b512-11eb-8d64-c66b0c878b6a.png)
+
+
+
    
