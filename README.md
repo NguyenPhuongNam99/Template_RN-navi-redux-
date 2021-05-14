@@ -36,6 +36,15 @@ dependencies {
               +)Kiểm tra trong ANDROID STUDIO đã cài NDK chưa ? ==>nếu chưa thì install ===>bản mặc định của nó ( hiển thị khi build project lỗi )==>tìm rồi install
               +)vào code tìm app/build.gradle : search NDK version : chỉnh sửa giống với version đã install ở android studio
               
+ Vào android/build.gradlew :
+ ![image](https://user-images.githubusercontent.com/73121884/118256681-f5d0c400-b4d7-11eb-85f8-62bfdd789c37.png)
+project có ndkVersion :...... ===>tìm version này trong android studio và thiết lập 
+
+![image](https://user-images.githubusercontent.com/73121884/118256847-2153ae80-b4d8-11eb-881a-b2abb1992cdf.png)
+==>nhìn version trong project React native của mình và thiết lập version đó trong android studio
+              
+              
+              
  4 Lỗi khi build Project
  ERROR : The specified Android SDK Build Tools version (25.0.0) is ignored, as it is below the minimum supported version (29.0.2) for Android Gradle Plugin 4.0.1.
  ==>Lỗi phiên bản SDK khi build 
