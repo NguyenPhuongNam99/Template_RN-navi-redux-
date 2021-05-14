@@ -69,3 +69,29 @@ A littile create key API :
    ( khi đã cài thư viện ANDROID SDK TRÊN MOBILE CỦA CONSOLE.CLOUD.GOOGLE)
    Mọi cài đặt thì xem trong video 
    
+   
+   
+   6 Developer error when Login google signin with firebase
+   https://stackoverflow.com/questions/54417232/react-native-google-signin-gives-developer-error
+   cd android ===> keytool -exportcert -keystore app/debug.keystore -list -v ===>tạo ra key mới 
+   và xóa bỏ chỗ config
+   ![image](https://user-images.githubusercontent.com/73121884/118304399-d6a25880-b510-11eb-95a6-d4a595f5fc71.png)
+
+
+ `
+ 
+ 7 Cách cài đặt google login
+ ==?them path C:\Program Files\Java\jdk1.8.0_281\bin ==>enviroment  ===>để chạy keytool ko bị lỗi 
+ 
+ ==>tạo keystore rồi mới tạo sha1 key 
+ tạo keystore
+https://reactnative.dev/docs/signed-apk-android
+
+
+ 
+
+tạo sha1
+keytool -list -v -keystore D:\Template_RN-navi-redux-\android\app\mykey.keystore -alias key0 -storepass android -keypass android
+
+
+   
