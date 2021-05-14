@@ -36,6 +36,15 @@ dependencies {
               +)Kiểm tra trong ANDROID STUDIO đã cài NDK chưa ? ==>nếu chưa thì install ===>bản mặc định của nó ( hiển thị khi build project lỗi )==>tìm rồi install
               +)vào code tìm app/build.gradle : search NDK version : chỉnh sửa giống với version đã install ở android studio
               
+ Vào android/build.gradlew :
+ ![image](https://user-images.githubusercontent.com/73121884/118256681-f5d0c400-b4d7-11eb-85f8-62bfdd789c37.png)
+project có ndkVersion :...... ===>tìm version này trong android studio và thiết lập 
+
+![image](https://user-images.githubusercontent.com/73121884/118256847-2153ae80-b4d8-11eb-881a-b2abb1992cdf.png)
+==>nhìn version trong project React native của mình và thiết lập version đó trong android studio
+              
+              
+              
  4 Lỗi khi build Project
  ERROR : The specified Android SDK Build Tools version (25.0.0) is ignored, as it is below the minimum supported version (29.0.2) for Android Gradle Plugin 4.0.1.
  ==>Lỗi phiên bản SDK khi build 
@@ -59,4 +68,36 @@ A littile create key API :
    ![image](https://user-images.githubusercontent.com/73121884/118014763-be4e0480-b37d-11eb-8318-a4c03ee8054b.png)
    ( khi đã cài thư viện ANDROID SDK TRÊN MOBILE CỦA CONSOLE.CLOUD.GOOGLE)
    Mọi cài đặt thì xem trong video 
+   
+   
+   
+   6 Developer error when Login google signin with firebase
+   https://stackoverflow.com/questions/54417232/react-native-google-signin-gives-developer-error
+   cd android ===> keytool -exportcert -keystore app/debug.keystore -list -v ===>tạo ra key mới 
+   và xóa bỏ chỗ config
+   ![image](https://user-images.githubusercontent.com/73121884/118304399-d6a25880-b510-11eb-95a6-d4a595f5fc71.png)
+
+
+ `
+ 
+ 7 Cách cài đặt google login
+ ==?them path C:\Program Files\Java\jdk1.8.0_281\bin ==>enviroment  ===>để chạy keytool ko bị lỗi 
+ 
+ ==>tạo keystore rồi mới tạo sha1 key 
+ tạo keystore
+https://reactnative.dev/docs/signed-apk-android
+
+
+ 
+
+tạo sha1
+keytool -list -v -keystore D:\Template_RN-navi-redux-\android\app\mykey.keystore -alias key0 -storepass android -keypass android
+
+
+lưu ý packed name trong firebase phải trùng với packed name trong project của mình
+![image](https://user-images.githubusercontent.com/73121884/118305871-c8553c00-b512-11eb-9a2b-e9f5856c126e.png)
+![image](https://user-images.githubusercontent.com/73121884/118305911-d4d99480-b512-11eb-8d64-c66b0c878b6a.png)
+
+
+
    
