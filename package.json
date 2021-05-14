@@ -26,6 +26,7 @@
     "react-native-blur-overlay": "^1.0.7",
     "react-native-calendar-picker": "^7.1.1",
     "react-native-camera": "^3.43.0",
+    "react-native-circular-action-menu": "^0.5.0",
     "react-native-communications": "^2.2.1",
     "react-native-confirmation-code-field": "^6.5.1",
     "react-native-contacts": "^6.0.5",

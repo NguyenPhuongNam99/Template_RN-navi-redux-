@@ -234,11 +234,11 @@ const HomeScreen = () => {
     // Initial configuration
     GoogleSignin.configure({
       // Mandatory method to call before calling signIn()
-      scopes: [],
-      // Repleace with your webClientId
-      // Generated from Firebase console
-      webClientId: '14036446631-da7qus8k46shnqb8ghi4tk7s3fulag29.apps.googleusercontent.com',
-      offlineAccess:true
+      // scopes: [],
+      // // Repleace with your webClientId
+      // // Generated from Firebase console
+      // webClientId: '14036446631-k3k5f8ga4qge67na5dnihrhb8etgijib.apps.googleusercontent.com',
+      // offlineAccess:true
     });
     // Check if user is already signed in
     _isSignedIn();

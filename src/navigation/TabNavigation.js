@@ -60,7 +60,7 @@ export default function TabNavigation() {
           tabBarIcon:({focused})=> focused ? <Image source={require('../../assets/ac1.png')} /> :      <Icon name="briefcase" size={19} color="#9A9A9A" />
         }}
         component={TabVoucher} />
-         <Tab.Screen name="Botton5" component={hello}  options ={{tabBarOnPress: () => {} ,tabBarIcon : () =>   <TabView/>, tabBarLabel: ''}} />
+         <Tab.Screen name="Botton5" component={hello}  options ={{tabBarOnPress: () => {} ,tabBarIcon : () =>   <TabView/>, tabBarLabel: 'ghgh'}} />
         {/* <Tab.Screen name="ScheduleHeader"
         //  options={{
         //   tabBarIcon: <TabView />

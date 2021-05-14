@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import { ScrolView, StyleSheet, View, Text, Image, TouchableOpacity, TextInput, ImageBackground, Dimensions } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Picker } from '@react-native-picker/picker';
@@ -6,12 +6,19 @@ import { AccessToken, LoginManager } from 'react-native-fbsdk-next';
 // import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import {useSelector,useDispatch} from 'react-redux'
+import {
+  GoogleSignin,
+  GoogleSigninButton,
+  statusCodes,
+} from '@react-native-community/google-signin';
 const Login = ({ navigation }) => {
+  const [userInfo, setUserInfo] = useState(null);
+  const [gettingLoginStatus, setGettingLoginStatus] = useState(true);
   const [selectedValue, setSelectedValue] = useState();
   const [text, onChangeText] = React.useState(null);
   // /(84|0[3|5|7|8|9])+([0-9]{8})\b/
   const [loggedIn, setloggedIn] = useState(false);
-  const [userInfo, setuserInfo] = useState([]);
+  // const [userInfo, setuserInfo] = useState([]);
   const [checklogin, setChecklogin] = useState(false);
   const [phone, setPhone] = useState('')
   const dispatch = useDispatch();
@@ -30,29 +37,52 @@ const Login = ({ navigation }) => {
 
     }
   }
-
+  useEffect(() => {
+    // Initial configuration
+    GoogleSignin.configure({
+      // Mandatory method to call before calling signIn()
+      // scopes: [],
+      // // Repleace with your webClientId
+      // // Generated from Firebase console
+      // webClientId: '14036446631-k3k5f8ga4qge67na5dnihrhb8etgijib.apps.googleusercontent.com',
+      // offlineAccess:true
+    });
+    // Check if user is already signed in
+    // _isSignedIn();
+  }, []);
+  const _signIn = async () => {
+    // It will prompt google Signin Widget
+    try {
+      await GoogleSignin.hasPlayServices({
+        // Check if device has Google Play Services installed
+        // Always resolves to true on iOS
+        showPlayServicesUpdateDialog: true,
+      });
+      const userInfo = await GoogleSignin.signIn();
+      console.log('User Info --> ', userInfo);
+      setUserInfo(userInfo);
+      navigation.navigate('TabNavigation')
+    } catch (error) {
+      console.log('Message', JSON.stringify(error));
+      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+        alert('User Cancelled the Login Flow');
+      } else if (error.code === statusCodes.IN_PROGRESS) {
+        alert('Signing In');
+      } else if (
+          error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE
+        ) {
+        alert('Play Services Not Available or Outdated');
+      } else {
+        alert(error.message);
+      }
+    }
+  };
   const check = ()=>{
     dispatch({type:'ADDLOGIN',valueLogin:phone})
     navigation.navigate('BookScreen')
     console.log('ddda login',phone)
   }
-  const signInok = async () => {
-    try {
-      await GoogleSignin.hasPlayServices();
-      const userInfo = await GoogleSignin.signIn();
-      setloggedIn(userInfo);
-    } catch (error) {
-      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-        // user cancelled the login flow
-      } else if (error.code === statusCodes.IN_PROGRESS) {
-        // operation (e.g. sign in) is in progress already
-      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-        // play services not available or outdated
-      } else {
-        // some other error happened
-      }
-    }
-  };
+ 
 
   const loginWithFacebook = () => {
     LoginManager.logInWithPermissions(["public_profile", "email"]).then(
@@ -69,7 +99,7 @@ const Login = ({ navigation }) => {
               console.log(data.accessToken.toString())
             }
           )
-          navigation.navigate('TabView')
+          navigation.navigate('TabNavigation')
         }
 
       },
@@ -132,7 +162,7 @@ const Login = ({ navigation }) => {
         <Icon name="facebook-square" size={19} color="white" />
         <Text style={{ color: '#FFFFFF', fontSize: 15, paddingLeft: 20 }}>Đăng nhập với Facebook</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={signInok} style={{ justifyContent: 'space-between', flexDirection: 'row', position: 'absolute', top: '75%',marginHorizontal:16, left: 0, width: scale(320), justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#055EEE', borderRadius: 22, marginTop: 48, flexDirection: 'row', zIndex: 100 }}>
+      <TouchableOpacity  onPress={_signIn} style={{ justifyContent: 'space-between', flexDirection: 'row', position: 'absolute', top: '75%',marginHorizontal:16, left: 0, width: scale(320), justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#055EEE', borderRadius: 22, marginTop: 48, flexDirection: 'row', zIndex: 100 }}>
         <View style={{ flex: 1.4 }}>
           <Image style={{
             width: '100%', height: '100%',
@@ -143,6 +173,12 @@ const Login = ({ navigation }) => {
         <View style={{ flex: 8.6 }}>
           <Text style={{ alignSelf: 'center', color: '#FFFFFF', fontSize: 15, position: 'absolute', left: '20%', top: '-21%' }}>Đăng nhập với Google</Text>
         </View>
+         {/* <GoogleSigninButton
+                style={{width: 312, height: 48}}
+                size={GoogleSigninButton.Size.Wide}
+                color={GoogleSigninButton.Color.Light}
+               
+              /> */}
       </TouchableOpacity>
 
 

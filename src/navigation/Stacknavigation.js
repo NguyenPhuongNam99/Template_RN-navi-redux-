@@ -70,7 +70,7 @@ const Stacknavigation = () => {
       {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
       {/* <Stack.Screen name="BookScreen" component={BookScreen} /> */}
       {/* <Stack.Screen name="FirstScreen" component={FirstScreen}  options={{headerShown: false}}/> */}
-      {/* <Stack.Screen name="SecondScreen" component={SecondScreen}  options={{headerShown: false}} /> */} 
+      {/* <Stack.Screen name="SecondScreen" component={SecondScreen}  options={{headerShown: false}} />  */}
       <Stack.Screen name="Login" component={Login}  options={{headerShown: false}} />
       <Stack.Screen name="TabNavigation" component={TabNavigation}  options={{headerShown: false}} />
       <Stack.Screen name="ConfirmOTP" component={ConfirmOTP}  options={{headerShown: false}} />
