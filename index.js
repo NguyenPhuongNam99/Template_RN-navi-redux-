@@ -25,7 +25,7 @@ import Re from './component/Re';
 import Viewok from './component/Viewok'
 import Destionation12 from './component/Destionation12'
 import DetailDiscount from './component/DetailDiscount'
-import ScheduleAll from './component/ScheduleAll'
+// import ScheduleAll from './component/ScheduleAll'
 import LocationPopular from './component/LocationPopular/LocationPopular'
 import LocationDetail from './component/LocationPopular/LocationDetail'
 import RestaurantDetail from './component/LocationPopular/RestaurantDetail'
