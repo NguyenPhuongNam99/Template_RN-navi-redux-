@@ -1,11 +1,11 @@
-import React, { useState ,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { ScrolView, StyleSheet, View, Text, Image, TouchableOpacity, TextInput, ImageBackground, Dimensions } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Picker } from '@react-native-picker/picker';
 import { AccessToken, LoginManager } from 'react-native-fbsdk-next';
 // import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
-import {useSelector,useDispatch} from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import {
   GoogleSignin,
   GoogleSigninButton,
@@ -69,20 +69,20 @@ const Login = ({ navigation }) => {
       } else if (error.code === statusCodes.IN_PROGRESS) {
         alert('Signing In');
       } else if (
-          error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE
-        ) {
+        error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE
+      ) {
         alert('Play Services Not Available or Outdated');
       } else {
         alert(error.message);
       }
     }
   };
-  const check = ()=>{
-    dispatch({type:'ADDLOGIN',valueLogin:phone})
+  const check = () => {
+    dispatch({ type: 'ADDLOGIN', valueLogin: phone })
     navigation.navigate('BookScreen')
-    console.log('ddda login',phone)
+    console.log('ddda login', phone)
   }
- 
+
 
   const loginWithFacebook = () => {
     LoginManager.logInWithPermissions(["public_profile", "email"]).then(
@@ -114,7 +114,7 @@ const Login = ({ navigation }) => {
       <Image style={styles.image} source={require('../../assets/b2.png')} />
       <View style={{
         position: 'absolute',
-        top: '5%', left: '36%', zIndex: 1000
+        top: '5%', left: '30%', zIndex: 1000
       }}>
         <View style={styles.positionok}>
           <Image style={{ width: '100%', height: '100%' }} resizeMode='contain' source={require('../../assets/logo.png')} />
@@ -123,7 +123,7 @@ const Login = ({ navigation }) => {
         <Image style={{ zIndex: 1000, marginTop: 10, marginLeft: 25 }} source={require('../../assets/ok.png')} />
 
       </View>
-      <View style={{ position: 'absolute', top: '40%', left: 0, width: scale(320), height: verticalScale(50),marginHorizontal:16,justifyContent:'center'}}>
+      <View style={{ position: 'absolute', top: '40%', left: 0, width: scale(320), height: verticalScale(50), marginHorizontal: 16, justifyContent: 'center' }}>
         <Image style={{ position: 'absolute', top: '44%', left: 10, zIndex: 1000 }} source={require('../../assets/flag.png')} />
         <View style={{ position: 'absolute', top: '53%', left: '15%', zIndex: 1000, flexDirection: 'row', alignItems: 'flex-start' }}>
 
@@ -150,19 +150,19 @@ const Login = ({ navigation }) => {
 
       {
         phone && checklogin ?
-          <TouchableOpacity onPress={check} style={{width: scale(320), marginLeft: 20, zIndex: 1000, position: 'absolute', top: '45%', justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#FF5F24', borderRadius: 22, marginTop: 48 }}>
+          <TouchableOpacity onPress={check} style={{ width: scale(320), marginLeft: 20, zIndex: 1000, position: 'absolute', top: '45%', justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#FF5F24', borderRadius: 22, marginTop: 48 }}>
             <Text style={{ color: 'red', fontSize: 20, fontWeight: 'bold', color: '#FFFFFF' }}>OK</Text>
           </TouchableOpacity>
-          : <TouchableOpacity style={{ position: 'absolute', top: '45%', width: scale(320),opacity: 0.9, marginLeft: 20, justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#FF5F24', borderRadius: 22, marginTop: 48 }}>
+          : <TouchableOpacity style={{ position: 'absolute', top: '45%', width: scale(320), opacity: 0.9, marginLeft: 20, justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#FF5F24', borderRadius: 22, marginTop: 48 }}>
             <Text style={{ color: 'red', fontSize: 20, fontWeight: 'bold', color: '#FFFFFF' }}>OK</Text>
           </TouchableOpacity>
       }
 
-      <TouchableOpacity onPress={() => loginWithFacebook()} style={{ position: 'absolute', top: '65%', left: 0, width: scale(320),marginHorizontal:16, justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#055EEE', borderRadius: 22, marginTop: 48, flexDirection: 'row', zIndex: 100 }}>
+      <TouchableOpacity onPress={() => loginWithFacebook()} style={{ position: 'absolute', top: '65%', left: 0, width: scale(320), marginHorizontal: 16, justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#055EEE', borderRadius: 22, marginTop: 48, flexDirection: 'row', zIndex: 100 }}>
         <Icon name="facebook-square" size={19} color="white" />
         <Text style={{ color: '#FFFFFF', fontSize: 15, paddingLeft: 20 }}>Đăng nhập với Facebook</Text>
       </TouchableOpacity>
-      <TouchableOpacity  onPress={_signIn} style={{ justifyContent: 'space-between', flexDirection: 'row', position: 'absolute', top: '75%',marginHorizontal:16, left: 0, width: scale(320), justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#055EEE', borderRadius: 22, marginTop: 48, flexDirection: 'row', zIndex: 100 }}>
+      <TouchableOpacity onPress={_signIn} style={{ justifyContent: 'space-between', flexDirection: 'row', position: 'absolute', top: '75%', marginHorizontal: 16, left: 0, width: scale(320), justifyContent: 'center', alignItems: 'center', height: 45, backgroundColor: '#055EEE', borderRadius: 22, marginTop: 48, flexDirection: 'row', zIndex: 100 }}>
         <View style={{ flex: 1.4 }}>
           <Image style={{
             width: '100%', height: '100%',
@@ -173,7 +173,7 @@ const Login = ({ navigation }) => {
         <View style={{ flex: 8.6 }}>
           <Text style={{ alignSelf: 'center', color: '#FFFFFF', fontSize: 15, position: 'absolute', left: '20%', top: '-21%' }}>Đăng nhập với Google</Text>
         </View>
-         {/* <GoogleSigninButton
+        {/* <GoogleSigninButton
                 style={{width: 312, height: 48}}
                 size={GoogleSigninButton.Size.Wide}
                 color={GoogleSigninButton.Color.Light}
@@ -196,8 +196,8 @@ const styles = StyleSheet.create({
     height: '100%', zIndex: 100
   },
   positionok: {
-    width:scale(132) ,
-    height:verticalScale(170) 
+    width: scale(132),
+    height: verticalScale(170)
   }
 })
 export default Login;

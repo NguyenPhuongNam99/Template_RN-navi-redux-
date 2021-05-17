@@ -1,6 +1,8 @@
 import React from 'react';
-import {View,Text,Image,TouchableOpacity,CheckBox,StyleSheet,FlatList,ScrollView} from 'react-native'
+import {View,Text,Image,TouchableOpacity,StyleSheet,FlatList,ScrollView} from 'react-native'
 import { ScreenSuggestData } from '../../Data/ScreenSuggest_Data';
+import CheckBox from '@react-native-community/checkbox';
+
 const ScreenInterested =({navigation})=>{
     return(
         <ScrollView>
