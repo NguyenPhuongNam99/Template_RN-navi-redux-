@@ -79,14 +79,28 @@ const OverView = ({ navigation }) => {
                     </View>
 
                     <View style={styles.option}>
-                        {
+                        {/* {
                             data.map((item) => (
-                                <TouchableOpacity key={item.id} onPress={() => dispatchdata(item.name)} style={[styles.touchable, getStyle(item.name)]}>
+                                <ScrollView>
+                                    
+                                </ScrollView>
+                              
+                            )
+                            )
+                        } */}
+                        <FlatList 
+                            data={data}
+                            showsHorizontalScrollIndicator={false}
+                            horizontal={true}
+                            keyExtractor={(item)=>item.id.toString()}
+                            renderItem={({item})=>{
+                                return(
+                                      <TouchableOpacity key={item.id} onPress={() => dispatchdata(item.name)} style={[styles.touchable, getStyle(item.name)]}>
                                     <Text>{item.title}</Text>
                                 </TouchableOpacity>
-                            )
-                            )
-                        }
+                                )
+                            }}
+                            />
                     </View>
 
                     {
@@ -154,7 +168,8 @@ const styles = StyleSheet.create({
         height: 30,
         // backgroundColor:'#FF5F24',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginLeft:15
     },
 
     //body

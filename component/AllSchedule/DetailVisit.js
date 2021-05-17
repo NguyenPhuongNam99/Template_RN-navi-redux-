@@ -1,7 +1,9 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView, FlatList } from 'react-native'
-import { Desdata,Hoteldata } from '../../Data/HomeData'
+import { Desdata, Hoteldata } from '../../Data/HomeData'
 import Header from '../Header'
+import { scale, verticalScale, moderateScale ,ScaledSheet} from 'react-native-size-matters';
+
 const DetailVisit = ({ navigation }) => {
     const goback = () => {
         navigation.goBack()
@@ -25,13 +27,13 @@ const DetailVisit = ({ navigation }) => {
 
                     </View>
                     <Text style={{ fontSize: 14, color: '#000000', fontWeight: '500', marginHorizontal: 11 }}>{HotelItem.name}</Text>
-                    <View style={{ flexDirection: 'row' ,marginHorizontal:10,marginVertical:2}}>
+                    <View style={{ flexDirection: 'row', marginHorizontal: 10, marginVertical: 2 }}>
                         <Image style={{ width: 12, height: 14, borderRadius: 14 }}
 
                             source={HotelItem.location} />
-                        <Text style={{paddingHorizontal:10,fontSize:10,fontWeight:'normal',color:'#3076FE'}}>{HotelItem.des}</Text>
+                        <Text style={{ paddingHorizontal: 10, fontSize: 10, fontWeight: 'normal', color: '#3076FE' }}>{HotelItem.des}</Text>
                     </View>
-                    <Text style={{ fontSize: 12, color: '#FF2424', fontWeight: '500', marginHorizontal: 13}}>{HotelItem.price}</Text>
+                    <Text style={{ fontSize: 12, color: '#FF2424', fontWeight: '500', marginHorizontal: 13 }}>{HotelItem.price}</Text>
 
                 </View>
 
@@ -66,11 +68,25 @@ const DetailVisit = ({ navigation }) => {
                     <Image style={styles.imagelocation} source={require('../../assets/locationblack.png')} />
                     <Text>Phú Kim ,Thạch Thất , Hà Nội</Text>
                 </View>
-                <View style={styles.text}>
-                    <Text style={styles.textbody}>
-                        Nằm dưới chân núi Phương Mai thuộc xã Nhơn Lý, cách thành phố Quy Nhơn 25km về phía Đông Bắc, bãi Kỳ Co hiện lên như một bức tranh tuyệt đẹp động lòng người. Không chỉ hấp dẫn với bãi tắm hoang sơ ít dấu chân người mà Kỳ Co còn là điểm thưởng thức hải sản tươi ngon nữa. Để đến được bãi tắm xinh đẹp này, bạn di chuyển ra Quy Nhơn theo nhiều cách khác nhau. Bạn có thể đặt vé máy bay, đi tàu hỏa  với giá vé dao động từ 500k - 800k hoặc đi xe khách với giá vé từ 350k-400k. Từ Quy Nhơn bạn có thể thuê xe máy (khoảng 120k/ngày) hoặc bắt taxi đến Eo Gió (khoảng 250k). Sau đó từ Eo Gió thuê canô hoặc ghe ra Kỳ Co. Ghe thường đậu cách bờ khoảng 100m, bạn sẽ được đưa vào bờ bằng những chiếc thuyền thúng dễ thương.  Nếu muốn thưởng thức những món hải sản đặc trưng của vùng biển, các bạn có thể đặt món rồi nhờ người dân ở đây chế biến luôn. Hải sản ở đây “bao tươi’ nên rất ngon, ra đây không thưởng thức là tiếc lắm nha mấy bạn. Tính chi phí cho việc đi nghe ra bãi Kỳ Co với thưởng thức hải sản chỉ tầm 300k/người thôi nhé!
+                <View style={scaleSheet.text}>
+                    <View style={{marginVertical:10,width:'100%',height:'100%'}}>
+                         <Text style={scaleSheet.textBody}>
+                        Nằm dưới chân núi Phương Mai thuộc xã Nhơn Lý, cách thành phố Quy Nhơn 25km về phía Đông Bắc,
+                         bãi Kỳ Co hiện lên như một bức tranh tuyệt đẹp động lòng người. Không chỉ hấp dẫn với bãi 
+                         tắm hoang sơ ít dấu chân người mà Kỳ Co còn là điểm thưởng thức hải sản tươi ngon nữa. 
+                         Để đến được bãi tắm xinh đẹp này, bạn di chuyển ra Quy Nhơn theo nhiều cách khác nhau. 
+                         Bạn có thể đặt vé máy bay, đi tàu hỏa  với giá vé dao động từ 500k - 800k hoặc đi xe 
+                         khách với giá vé từ 350k-400k. Từ Quy Nhơn bạn có thể thuê xe máy (khoảng 120k/ngày) 
+                         hoặc bắt taxi đến Eo Gió (khoảng 250k). Sau đó từ Eo Gió thuê canô hoặc ghe ra Kỳ Co.
+                        Ghe thường đậu cách bờ khoảng 100m, bạn sẽ được đưa vào bờ bằng những chiếc thuyền thúng 
+                        dễ thương.  Nếu muốn thưởng thức những món hải sản đặc trưng của vùng biển, các bạn có 
+                        thể đặt món rồi nhờ người dân ở đây chế biến luôn. Hải sản ở đây “bao tươi’ nên rất ngon, 
+                        ra đây không thưởng thức là tiếc lắm nha mấy bạn. Tính chi phí cho việc đi nghe ra bãi Kỳ 
+                        Co với thưởng thức hải sản chỉ tầm 300k/người thôi nhé!
 
-                </Text>
+                        </Text>
+                    </View>
+                   
                 </View>
                 <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Địa điểm phổ biến</Text>
@@ -109,7 +125,7 @@ const DetailVisit = ({ navigation }) => {
                     />
                 </View>
 
-                <View style={styles.Discount}>
+                 <View style={styles.Discount}>
                     <Text style={styles.discount_title}>Khách sạn & Resort</Text>
                     <TouchableOpacity>
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
@@ -125,7 +141,7 @@ const DetailVisit = ({ navigation }) => {
                             <Hotel HotelItem={item} />
                         }
                     />
-                </View>
+                </View> 
             </View>
         </ScrollView>
     )
@@ -136,7 +152,7 @@ const styles = StyleSheet.create({
     },
     imgaHeader: {
         height: 155,
-
+        marginTop:10
     },
     imageavatar: {
         width: '100%',
@@ -187,18 +203,18 @@ const styles = StyleSheet.create({
         marginRight: 10
     },
     text: {
-        height: 305,
+        height: verticalScale(305),
         backgroundColor: '#FFFFFF',
         marginTop: 20,
         paddingHorizontal: 15,
-
+        marginBottom:200
 
     },
     textbody: {
         fontSize: 12,
         color: '#000000',
         lineHeight: 18,
-        paddingTop: 15
+        // paddingTop: 15
     },
     Discount: {
         flexDirection: 'row',
@@ -219,5 +235,20 @@ const styles = StyleSheet.create({
         lineHeight: 14,
         fontWeight: 'normal'
     },
+})
+const scaleSheet = ScaledSheet.create({
+    text: {
+        height: verticalScale(305),
+        backgroundColor: '#FFFFFF',
+        marginTop: 20,
+        paddingHorizontal: 15,
+      
+    },
+    textBody:{
+        fontSize:'10@ms0.3',
+        color:'green',
+        lineHeight: scale(14),
+        // paddingT 15
+    }
 })
 export default DetailVisit

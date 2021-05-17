@@ -5,6 +5,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { restaurant } from '../../HotelData'
 import MultipleDetail from '../MultipleDetail'
 import {useSelector,useDispatch} from 'react-redux'
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+
 const Hotel = ({ navigation }) => {
     // const dispatch = useDispatch();
     // const item = useSelector(state=>state.chitietkm)
@@ -78,18 +80,18 @@ const Hotel = ({ navigation }) => {
                     />
                 </View>
 
-                <View style={{ flexDirection: 'row' }}>
+                <View style={{ flexDirection: 'row',justifyContent:'space-evenly' }}>
                     <View style={styles.block_image}>
-                        <Image source={require('../../assets/tp1.png')} />
+                        <Image style={styles.image_eat} source={require('../../assets/tp1.png')} />
                     </View>
                     <View style={styles.block_image}>
-                        <Image source={require('../../assets/tp2.png')} />
+                        <Image style={styles.image_eat}  source={require('../../assets/tp2.png')} />
                     </View>
                     <View style={styles.block_image}>
-                        <Image source={require('../../assets/tp3.png')} />
-                        <View style={{ position: 'absolute', top: 0, left: 0, height: 104, backgroundColor: 'rgba(0, 0, 0, 0.4)', width: '100%' }} />
+                        <Image style={styles.image_eat} source={require('../../assets/tp3.png')} />
+                        <View style={{ position: 'absolute', top: 0, left: 0, height:verticalScale(104), backgroundColor: 'rgba(0, 0, 0, 0.4)', width: '100%' }} />
                         <View>
-                            <Image style={{ position: 'absolute', top: -60, left: '40%', width: 17, height: 17 }} source={require('../../assets/sum.png')} />
+                            <Image style={{ position: 'absolute', top: -50, left: '40%', width: 17, height: 17 }} source={require('../../assets/sum.png')} />
                         </View>
 
                     </View>
@@ -217,13 +219,13 @@ const styles = StyleSheet.create({
         resizeMode: 'cover'
     },
     block_image: {
-        height: 104,
-        marginHorizontal: 16,
+        height:verticalScale(104),
+        width:scale(104),
         marginVertical: 16
     },
     image_eat: {
-        // width:'100%',
-        // height:'100%'
+        width:'100%',
+        height:'100%'
 
     },
     text_header: {

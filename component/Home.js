@@ -367,10 +367,13 @@ const Home = ({ navigation }) => {
 
                 </View>
             </ScrollView>
-            <Image style={{
-                position: 'absolute',
-                bottom: 0, right: 0, zIndex: 1000
+            <View style={{width:scale(50),height:verticalScale(50) ,position: 'absolute',
+                bottom:verticalScale(50) , right:verticalScale(48),}}>
+                 <Image style={{
+               zIndex: 1000
             }} source={require('../assets/e.png')} />
+            </View>
+           
         </View>
     )
 }
@@ -401,7 +404,7 @@ const styles = StyleSheet.create({
         paddingTop: 4
     },
     input: {
-        height: 40,
+        height: verticalScale(40),
         // width:358,
         marginTop: 7,
         borderWidth: 1,

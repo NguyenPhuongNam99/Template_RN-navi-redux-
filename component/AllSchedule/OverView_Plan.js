@@ -52,7 +52,10 @@ const OverView_Plan = ({navigateDetailSchedule}) => {
             <View style={[styles.Infomember, { marginTop: 20 }]}>
                 <Text style={styles.titleHeader}>Vé thăm quan</Text>
                 <View style={styles.infoBlock}>
-                    <Image style={styles.icon} source={require('../../assets/v34.png')} />
+                    <View style={styles.icon}>
+                       <Image source={require('../../assets/v34.png')} />
+
+                    </View>
                     <View>
                         <Text style={styles.infotitle}>Vé vào</Text>
                         <Text>12 vé, 6 địa điểm</Text>
