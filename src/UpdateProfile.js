@@ -12,7 +12,8 @@ const UpdateProfile = ({navigation}) => {
     const [ten,setTen] = useState('')
     const valueLogin = useSelector(state=>state.valueLogin)
     const [isModalVisible, setModalVisible] = useState(false);
-    const [color,setColor] = useState('green')
+    const [color,setColor] = useState('#E0E0E0')
+    const [colo2,setColor2] = useState('#E0E0E0')
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };
@@ -104,20 +105,22 @@ const UpdateProfile = ({navigation}) => {
             <Text style={styles.title}>Cập nhật thông tin </Text>
             <View style={styles.input_header}>
                 <TextInput
-                    style={[styles.input,{backgroundColor:color}]}
+                    style={[styles.input,{borderBottomColor:color}]}
                     placeholder='Họ'
                     onChangeText={(text1) => validateHoten(text1)}
                     value={hoten}
-                    onFocus={()=>setColor('yellow')}
+                    onFocus={()=>setColor('#F17A4F')}
+                    onBlur={()=>setColor('#E0E0E0')}
                 />
             </View>
             <View>
                 <TextInput
-                    style={styles.input}
+                    style={[styles.input,{borderBottomColor:colo2}]}
                     placeholder='Tên'
                     onChangeText={(text1) => validateten(text1)}
                     value={ten}
-
+                    onFocus={()=>setColor2('#F17A4F')}
+                    onBlur={()=>setColor('#E0E0E0')}
                 />
             </View>
             <View>
@@ -173,7 +176,7 @@ const styles = StyleSheet.create({
     input: {
         height: 40,
         margin: 12,
-        borderBottomWidth: 1,
+        borderBottomWidth: 2,
         borderBottomColor:'#E0E0E0'
       },
       touchable:{

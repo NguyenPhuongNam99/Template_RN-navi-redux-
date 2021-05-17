@@ -19,7 +19,7 @@ const EvaluationSchedule = ({navigation}) => {
           onPress: () => console.log("Cancel Pressed"),
           style: "cancel"
         },
-        { text: "Yes", onPress: () => navigation.navigate('Home') }
+        { text: "Yes", onPress: () => navigation.navigate('TabNavigation') }
       ]
     );
     
