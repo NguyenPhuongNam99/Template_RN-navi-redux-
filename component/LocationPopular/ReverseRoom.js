@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet,ScrollView,Alert } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet,ScrollView,Alert ,SafeAreaView} from 'react-native';
 import Header from '../Header'
 import {useSelector,useDispatch} from 'react-redux'
 const ReverseRoom = ({ navigation }) => {
@@ -23,6 +23,7 @@ const ReverseRoom = ({ navigation }) => {
     );
 
     return (
+        <SafeAreaView style={{flex:1}}>
         <ScrollView>
         <View style={styles.container}>
             <Header Name='Đặt phòng' back={goback} />
@@ -67,7 +68,7 @@ const ReverseRoom = ({ navigation }) => {
         </View>
         </ScrollView>
 
-
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

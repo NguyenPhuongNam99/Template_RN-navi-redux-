@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet, FlatList } from 'react-native'
+import { View, Text, Image, TouchableOpacity, StyleSheet, FlatList ,SafeAreaView} from 'react-native'
 import Header from '../Header';
 import { Followdata } from '../../Data/FollowData'
 const Follow = ({ navigation }) => {
@@ -7,6 +7,7 @@ const Follow = ({ navigation }) => {
         navigation.goBack()
     }
     return (
+        <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
             <Header Name='Người theo dõi' back={goback} />
 
@@ -37,6 +38,7 @@ const Follow = ({ navigation }) => {
                 />
             </View>
         </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

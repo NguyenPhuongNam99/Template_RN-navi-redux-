@@ -1,5 +1,5 @@
 import React ,{useState} from 'react';
-import {View,Text,StyleSheet, TextInput, FlatList,Image,Alert} from 'react-native';
+import {View,Text,StyleSheet, TextInput, FlatList,Image,Alert,SafeAreaView} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {LocationSchedule} from '../../Data/LocationData'
@@ -61,6 +61,7 @@ const Location =({navigation})=>{
         }
     }
     return(
+        <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
             <View style={styles.header}>
                 <TouchableOpacity>
@@ -92,6 +93,7 @@ const Location =({navigation})=>{
         
             </View>
         </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

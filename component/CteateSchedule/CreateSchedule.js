@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { View, Text, StyleSheet, TextInput, Image,Switch,Modal,Alert } from 'react-native'
+import { View, Text, StyleSheet, TextInput, Image,Switch,Modal,Alert,SafeAreaView } from 'react-native'
 import Header from '../Header'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -64,6 +64,7 @@ const CreateSchedule = ({ navigation }) => {
         }
     }
     return (
+        <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
             <Header Name='Tạo lịch trình' back={goback} />
             <Modal
@@ -214,9 +215,8 @@ const CreateSchedule = ({ navigation }) => {
                     <Text style={{ color: '#FFFFFF', fontSize: 14, fontWeight: '600' }}>Tạo lịch trình</Text>
                 </TouchableOpacity>
             </View>
-
-
         </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

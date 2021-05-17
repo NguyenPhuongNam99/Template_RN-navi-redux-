@@ -1,11 +1,12 @@
 import React from 'react';
-import {View,Text,StyleSheet,ScrollView} from 'react-native'
+import {View,Text,StyleSheet,ScrollView,SafeAreaView} from 'react-native'
 import Header from '../Header'
 const TermOfUse =({navigation})=>{
     const goback =()=>{
         navigation.goBack()
     }
     return(
+        <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
             <Header Name ='Điều khoản sử dụng' back={goback}/>
             <ScrollView>
@@ -56,6 +57,7 @@ const TermOfUse =({navigation})=>{
             </View>
             </ScrollView>
         </View>
+        </SafeAreaView>
     )
 }
 const styles= StyleSheet.create({

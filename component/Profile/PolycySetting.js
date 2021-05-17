@@ -1,11 +1,12 @@
 import React from 'react';
-import {View,Text,Image,StyleSheet,ScrollView} from 'react-native'
+import {View,Text,Image,StyleSheet,ScrollView,SafeAreaView} from 'react-native'
 import Header from '../Header'
 const PolycySetting =({navigation})=>{
     const goback =()=>{
         navigation.goBack();
     }
     return(
+        <SafeAreaView style={{flex:1}}>
         <View style={styles.container} >
             <Header Name ='Chính sách bảo mật' back ={goback}/>
             <ScrollView>
@@ -51,6 +52,7 @@ const PolycySetting =({navigation})=>{
             </View>
             </ScrollView>
         </View>
+        </SafeAreaView>
     )
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
+import { View, Text, StyleSheet, Image, FlatList,SafeAreaView } from 'react-native';
 import Header from '../component/Header';
 import { Destionation } from '../Data/Destination1_Data'
 const Destination12 = ({navigation}) => {
@@ -7,6 +7,7 @@ const Destination12 = ({navigation}) => {
         navigation.goBack();
     }
     return (
+        <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
             <Header Name='Trải nghiệm nổi bật' back ={goback} />
             <View style={styles.block}>
@@ -33,6 +34,7 @@ const Destination12 = ({navigation}) => {
                 />
             </View>
         </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

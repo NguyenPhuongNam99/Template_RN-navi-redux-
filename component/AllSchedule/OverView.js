@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Image, TouchableOpacity, FlatList, StyleSheet, ScrollView, Dimensions } from 'react-native'
+import { View, Text, Image, TouchableOpacity, FlatList, StyleSheet, ScrollView, Dimensions,SafeAreaView } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { scheduleData2, data } from '../../Data/OverViewData'
 import OverView_Item from './OverView_Item'
@@ -52,6 +52,7 @@ const OverView = ({ navigation }) => {
         console.log('da kichj')
     }
     return (
+        <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
             <ScrollView vertical={true} nestedScrollEnabled={true}
                 contentContainerStyle={{
@@ -115,6 +116,7 @@ const OverView = ({ navigation }) => {
 
             </ScrollView>
         </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

@@ -1,18 +1,13 @@
 import React from 'react';
-import {View,Text,StyleSheet,Image,TouchableOpacity} from 'react-native'
+import {View,Text,StyleSheet,Image,TouchableOpacity,SafeAreaView} from 'react-native'
 import Header from '../Header'
 const SelectRoom =({Item,check,pass})=>{
     const goback=()=>{
         navigation.goBack()
     }
     return(
+        <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
-            {/* <Header Name='Chọn Phòng' back ={goback}/>
-
-            <View style={styles.title}>
-                <Text style={styles.text}>Gía hiển thị/1 phòng/1 đêm</Text>
-            </View> */}
-
             <View style={styles.block}>
                 <View style={styles.image}>
                     <Image style={styles.imageRoom} source={Item.image} />
@@ -49,6 +44,7 @@ const SelectRoom =({Item,check,pass})=>{
                 </View>
             </View>
         </View>
+        </SafeAreaView>
     )
 }
 const styles= StyleSheet.create({

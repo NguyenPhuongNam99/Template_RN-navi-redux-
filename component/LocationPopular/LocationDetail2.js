@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, ScrollView, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView, FlatList, TouchableOpacity,SafeAreaView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useSelector,useDispatch} from 'react-redux'
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
@@ -54,20 +54,16 @@ const LocationDetail2 = ({ navigation }) => {
         navigation.goBack()
     }
     return (
+        <SafeAreaView style={{flex:1}}>
         <ScrollView>
             <View style={styles.container}>
                 <View >
                     <View style={styles.top}>
                         <Image style={styles.image} source={discovery.image} />
                     </View>
-                    {/* <TouchableOpacity style={{ position: 'absolute', top: 34, left: 15, width: 40 }} onPress={()=>back()}>
-                        {/* <Image style={{width:6,height:12,}} source={require('../../assets/back11.png')}/> */}
-                        {/* <Icon name="chevron-left" size={12} color="#FFFFFF" />style={{position:'absolute',top:-145,left:16}}
-                    </TouchableOpacity> */} 
-
+                   
                     <TouchableOpacity style={{ position: 'absolute', top: 34, left: 15,zIndex:30 }} onPress={()=>back()}>
                     <Icon name="chevron-left" size={12} color="#FFFFFF" />
-                          {/* <Image style={{width:8,height:10,position:'absolute',top:-145,left:16,zIndex:30}}  source={require('../../assets/back1.png')}/> */}
                     </TouchableOpacity>
                     
                     <View style={styles.block}>
@@ -206,6 +202,7 @@ const LocationDetail2 = ({ navigation }) => {
                 </View>
             </View>
         </ScrollView>
+        </SafeAreaView>
     )
 }
 
@@ -249,13 +246,9 @@ const styles = StyleSheet.create({
 
     },
     position: {
-        // position: 'absolute',
-        // top: 0,
-        // left: 0,
-        // width: '100%',
-        // backgroundColor: 'rgba(0, 0, 0, 0.4)',
+      
         height: 240,
-        // zIndex:100
+      
     },
     map: {
         height: 140,

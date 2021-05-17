@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet, FlatList } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, FlatList, SafeAreaView } from 'react-native';
 import { ScheduleNowData } from '../Data/ScheduleData';
 import ScheduleNow_Item from '../component/ScheduleNow_Item'
 const ScheduleHeader = ({ navigation }) => {
@@ -8,28 +8,30 @@ const ScheduleHeader = ({ navigation }) => {
         navigation.navigate('OverView')
     }
     return (
-        <View style={styles.container}>
-            <View style={styles.header}>
-                <TouchableOpacity onPress={() => navigation.goBack()}>
-                    <Image style={{ width: 8, height: 12, }} source={require('../assets/search1.png')} />
-                </TouchableOpacity>
-                <Text style={styles.header_titlle}>Lịch trình gần đây</Text>
-                <TouchableOpacity>
-                    <Image style={{ width: 12, height: 12, }} source={require('../assets/search2.png')} />
-                </TouchableOpacity>
+        <SafeAreaView style={{ flex: 1 }}>
+            <View style={styles.container}>
+                <View style={styles.header}>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
+                        <Image style={{ width: 8, height: 12, }} source={require('../assets/search1.png')} />
+                    </TouchableOpacity>
+                    <Text style={styles.header_titlle}>Lịch trình gần đây</Text>
+                    <TouchableOpacity>
+                        <Image style={{ width: 12, height: 12, }} source={require('../assets/search2.png')} />
+                    </TouchableOpacity>
+                </View>
+
+                <FlatList
+                    data={ScheduleNowData}
+                    // horizontal={true}
+                    showsHorizontalScrollIndicator={false}
+                    keyExtractor={(item) => item.id.toString()}
+                    renderItem={({ item }) =>
+                        <ScheduleNow_Item Item={item} ScheduleNowNavigation={() => navigation.navigate('OverView')} />
+                    }
+                />
+
             </View>
-
-            <FlatList
-                data={ScheduleNowData}
-                // horizontal={true}
-                showsHorizontalScrollIndicator={false}
-                keyExtractor={(item) => item.id.toString()}
-                renderItem={({ item }) =>
-                    <ScheduleNow_Item Item={item} ScheduleNowNavigation={() => navigation.navigate('OverView')} />
-                }
-            />
-
-        </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

@@ -1,5 +1,5 @@
 import React from 'react'
-import {View,Text,Image,TouchableOpacity,StyleSheet, FlatList} from 'react-native'
+import {View,Text,Image,TouchableOpacity,StyleSheet, FlatList,SafeAreaView} from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 const AllSchedule =()=>{
     const filterStatus = useSelector(state => state.filterStatus)
@@ -71,6 +71,7 @@ const AllSchedule =()=>{
         )
     }
     return(
+        <SafeAreaView style={{flex:1}}>
         <View style={StyleSheet.container}>
              <View style={styles.header}>
                     <TouchableOpacity style={[styles.touchable, getStyle('Primary')]} onPress={() => setAction('Primary')}>
@@ -96,6 +97,7 @@ const AllSchedule =()=>{
             }
             />
         </View>
+        </SafeAreaView>
     )
 }
 const styles= StyleSheet.create({

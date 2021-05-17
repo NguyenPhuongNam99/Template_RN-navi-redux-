@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, FlatList } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity, FlatList,SafeAreaView } from 'react-native'
 import { LocationPopular_Data } from '../../Data/LocationPopular_Data';
 import Header from '../Header';
 const LocationPopular = ({ navigation }) => {
@@ -7,7 +7,7 @@ const LocationPopular = ({ navigation }) => {
         navigation.goBack();
     }
     return (
-
+        <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
             <Header Name='Điểm đến tháng 12' back={goback} />
             <View style={styles.flat}>
@@ -38,6 +38,7 @@ const LocationPopular = ({ navigation }) => {
                 />
             </View>
         </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

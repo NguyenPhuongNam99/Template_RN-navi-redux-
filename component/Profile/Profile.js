@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet ,Pressable,Alert} from 'react-native'
+import { View, Text, Image, TouchableOpacity, StyleSheet ,Pressable,Alert,SafeAreaView} from 'react-native'
 import { Modal, Portal,  Provider } from 'react-native-paper';
 
 const Profile = ({ navigation }) => {
@@ -26,10 +26,9 @@ const Profile = ({ navigation }) => {
     ]
   );
     return (
+        <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
  
-           
-         
             <View style={styles.header}>
                 <Text style={styles.header_title}>Thông tin cá nhân </Text>
             </View>
@@ -103,6 +102,7 @@ const Profile = ({ navigation }) => {
                 </View>
             </Modal>
         </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

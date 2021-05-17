@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, Image, TouchableOpacity, StyleSheet,SafeAreaView } from 'react-native'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import FirstDay from './FirstDay';
 import SecondDay from './SecondDay';
@@ -15,6 +15,7 @@ const DetailSchedule = ({navigation}) => {
    
   
     return (
+        <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
             <View style={styles.header}>
                 <Image style={styles.imageBanner} source={require('../../assets/qn1.jpg')} />
@@ -77,6 +78,7 @@ const DetailSchedule = ({navigation}) => {
                 </Tab.Navigator>
             {/* </NavigationContainer> */}
         </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

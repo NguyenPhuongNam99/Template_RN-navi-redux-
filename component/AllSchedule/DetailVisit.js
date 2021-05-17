@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView, FlatList } from 'react-native'
+import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView, FlatList ,SafeAreaView} from 'react-native'
 import { Desdata, Hoteldata } from '../../Data/HomeData'
 import Header from '../Header'
 import { scale, verticalScale, moderateScale ,ScaledSheet} from 'react-native-size-matters';
@@ -43,6 +43,7 @@ const DetailVisit = ({ navigation }) => {
         )
     }
     return (
+        <SafeAreaView style={{flex:1}}>
         <ScrollView>
             <View style={styles.container}>
                 <Header Name='Chi tiết thăm quan' back={goback} />
@@ -144,6 +145,7 @@ const DetailVisit = ({ navigation }) => {
                 </View> 
             </View>
         </ScrollView>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

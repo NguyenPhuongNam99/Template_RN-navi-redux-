@@ -1,10 +1,11 @@
 import React from 'react';
-import {View,Text,Image,TouchableOpacity,StyleSheet,FlatList,ScrollView} from 'react-native'
+import {View,Text,Image,TouchableOpacity,StyleSheet,FlatList,ScrollView,SafeAreaView} from 'react-native'
 import { ScreenSuggestData } from '../../Data/ScreenSuggest_Data';
 import CheckBox from '@react-native-community/checkbox';
 
 const ScreenInterested =({navigation})=>{
     return(
+        <SafeAreaView style={{flex:1}}>
         <ScrollView>
         <View style={styles.container}>
             <View style={styles.header}>
@@ -45,6 +46,7 @@ const ScreenInterested =({navigation})=>{
             </View>
         </View>
         </ScrollView>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

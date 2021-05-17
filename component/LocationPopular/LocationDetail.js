@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, FlatList, Touchable } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, FlatList, SafeAreaView } from 'react-native';
 import { LocationDetail_Data, LocationDetail_Data2, LocationDetail_Data3, LocationDetail_Data1 } from '../../Data/LocationDetail_Data'
 import LocationItem from '../LocationPopular/LocationItem'
 import { LocationDetail1, RestauRantnear } from '../../HotelData'
@@ -63,6 +63,7 @@ const LocationDetail = ({navigation}) => {
     }
     // require('../../assets/lyson.jpg')
     return (
+        <SafeAreaView style={{flex:1}}>
         <ScrollView style={{ flex: 1 }}>
             <View style={styles.conatiner}>
                 <View style={styles.header}>
@@ -206,6 +207,7 @@ const LocationDetail = ({navigation}) => {
 
             </View>
         </ScrollView>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

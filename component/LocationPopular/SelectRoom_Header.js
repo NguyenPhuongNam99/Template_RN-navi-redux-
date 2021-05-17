@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,Text,Image,Touchable,StyleSheet, FlatList} from 'react-native'
+import {View,Text,Image,Touchable,StyleSheet, FlatList,SafeAreaView} from 'react-native'
 import {Selectroom} from '../../Data/SelectRoom_Data'
 import Header from '../Header';
 import SelectRoom from '../LocationPopular/SelectRoom'
@@ -15,6 +15,7 @@ const SelectRoom_Header =({navigation})=>{
         dispatch({type:'SelectRoom',select:item})
     }
     return(
+        <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
             <Header Name='Chọn Phòng' back ={goback}/>
 
@@ -30,6 +31,7 @@ const SelectRoom_Header =({navigation})=>{
         }
             />
         </View>
+        </SafeAreaView>
     )
 }
 const styles =StyleSheet.create({

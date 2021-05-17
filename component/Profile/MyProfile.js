@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet, FlatList ,ScrollView} from 'react-native'
+import { View, Text, Image, TouchableOpacity, StyleSheet, FlatList ,ScrollView,SafeAreaView} from 'react-native'
 import {ScheduleNowData} from '../../Data/ScheduleData'
 import { ProfileDta } from '../../HotelData'
 import ScheduleNow_Item from '../../component/ScheduleNow_Item'
@@ -19,6 +19,7 @@ const MyProfile = ({ navigation }) => {
         )
     }
     return (
+        <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
             <Header Name='Thông tin cá nhân' back={goback} />
             <ScrollView>
@@ -119,6 +120,7 @@ const MyProfile = ({ navigation }) => {
                     />
             </ScrollView>
         </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

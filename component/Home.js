@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, FlatList, TextInput, ScrollView } from 'react-native';
+import { View, Text, Image, StyleSheet, FlatList, TextInput, ScrollView ,SafeAreaView} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import HotelResort_Header from '../component/LocationPopular/HotelResort_Header'
@@ -196,6 +196,7 @@ const Home = ({ navigation }) => {
         )
     }
     return (
+        <SafeAreaView style={{flex:1}}>
         <View>
             <ScrollView>
                 <View style={styles.container}>
@@ -219,10 +220,6 @@ const Home = ({ navigation }) => {
             }
           />
         
-         
-
-        
-
         </View>
         <View style={{position:'absolute',bottom:verticalScale(-19),width:'100%'}}>
             <View style={{marginHorizontal:16}}>
@@ -375,6 +372,7 @@ const Home = ({ navigation }) => {
             </View>
            
         </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

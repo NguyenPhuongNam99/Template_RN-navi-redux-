@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput,FlatList, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput,FlatList, ScrollView,SafeAreaView } from 'react-native';
 import {Suggest_DestionData,Suggestion_toYou,HomeStay,Suggestion_Double} from '../HotelData'
 import MultipleDetail from './MultipleDetail'
 const Hotel_Icon = ({navigation}) => {
@@ -15,6 +15,7 @@ const Hotel_Icon = ({navigation}) => {
     }
   
     return (
+        <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
             <View style={styles.header}>
                 <TouchableOpacity onPress={()=>navigation.goBack()}>
@@ -111,6 +112,7 @@ const Hotel_Icon = ({navigation}) => {
             </View>
             </ScrollView>
         </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

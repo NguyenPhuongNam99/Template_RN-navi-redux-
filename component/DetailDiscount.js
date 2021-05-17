@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet,TouchableOpacity ,ScrollView} from 'react-native';
+import { View, Text, Image, StyleSheet,TouchableOpacity ,ScrollView,SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useDispatch,useSelector} from 'react-redux'
 const DetailDiscount = ({navigation}) => {
     const banner = useSelector(state=>state.banner)
     return (
+        <SafeAreaView style={{flex:1}}>
         <ScrollView>
         <View style={styles.container}>
             <View style={styles.top}>
@@ -66,6 +67,7 @@ const DetailDiscount = ({navigation}) => {
             </View>
         </View>
         </ScrollView>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

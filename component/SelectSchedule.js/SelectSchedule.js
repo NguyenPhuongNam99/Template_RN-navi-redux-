@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,Text,StyleSheet,FlatList} from 'react-native'
+import {View,Text,StyleSheet,FlatList,SafeAreaView} from 'react-native'
 import Header from '../Header'
 import SelectShedule_item from './SelectShedule_item'
 import {SelectScheduleData} from '../../Data/ScheduleData'
@@ -11,6 +11,7 @@ const SelectSchedule =({navigation})=>{
         navigation.navigate('EvaluationSchedule')
     }
     return(
+        <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
             <Header Name ='Chọn lịch trình'  back ={goback}/>
            
@@ -24,6 +25,7 @@ const SelectSchedule =({navigation})=>{
                         }
                     />
         </View>
+        </SafeAreaView>
     )
 }
 const styles= StyleSheet.create({

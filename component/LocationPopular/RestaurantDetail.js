@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity ,FlatList} from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity ,FlatList,SafeAreaView} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {restaurant} from '../../HotelData'
@@ -40,6 +40,7 @@ const RestaurantDetail = ({navigation}) => {
         navigation.goBack()
     }
     return (
+        <SafeAreaView style={{flex:1}}>
         <ScrollView>
             <View style={styles.coontainer}>
                 <View style={{ height: 240 }}>
@@ -131,6 +132,7 @@ const RestaurantDetail = ({navigation}) => {
 
             </View>
         </ScrollView>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

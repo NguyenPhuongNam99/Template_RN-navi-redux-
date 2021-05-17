@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,Text,Image,TouchableOpacity,StyleSheet,FlatList} from 'react-native'
+import {View,Text,Image,TouchableOpacity,StyleSheet,FlatList,SafeAreaView} from 'react-native'
 import Header from '../Header'
 import {FinishScheduleData} from '../../Data/ScheduleData'
 import Favourite_Item from '../../component/Profile/Favourite_Item'
@@ -11,6 +11,7 @@ const Favourite =({navigation})=>{
         navigation.goBack();
     }
     return(
+        <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
             <Header Name='Yêu thích' back ={goback} />
             {
@@ -29,6 +30,7 @@ const Favourite =({navigation})=>{
             }
             
         </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet, TextInput, FlatList,ScrollView } from 'react-native'
+import { View, Text, Image, TouchableOpacity, StyleSheet, TextInput, FlatList, ScrollView, SafeAreaView } from 'react-native'
 import { Suggest_DestionData, Suggestion_toYou, HomeStay, Suggestion_Double } from '../Data/RestaurantData'
 import { ScheduleNowData } from '../Data/ScheduleData';
 
@@ -17,90 +17,92 @@ const Combo = ({ navigation }) => {
         )
     }
     return (
-        <View style={styles.container}>
-            <View style={styles.header}>
-                <TouchableOpacity onPress={() => navigation.goBack()}>
-                    <Image style={{ width: 8, height: 12, }} source={require('../assets/search1.png')} />
-                </TouchableOpacity>
-                <Text style={styles.header_titlle}>Combo</Text>
-                <TouchableOpacity>
-                    <Image style={{ width: 12, height: 12, }} source={require('../assets/search2.png')} />
-                </TouchableOpacity>
+        <SafeAreaView style={{ flex: 1 }}>
+            <View style={styles.container}>
+                <View style={styles.header}>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
+                        <Image style={{ width: 8, height: 12, }} source={require('../assets/search1.png')} />
+                    </TouchableOpacity>
+                    <Text style={styles.header_titlle}>Combo</Text>
+                    <TouchableOpacity>
+                        <Image style={{ width: 12, height: 12, }} source={require('../assets/search2.png')} />
+                    </TouchableOpacity>
+                </View>
+                <ScrollView>
+                    <View style={styles.body}>
+                        <TextInput
+                            style={styles.input}
+                            placeholder='Bạn muốn đi đâu ?'
+                        />
+                        <View style={styles.Discount}>
+                            <Text style={styles.discount_title}>Điểm đến tháng 12</Text>
+                            <TouchableOpacity>
+                                <Text style={styles.discount_title1}>Xem thêm ></Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                            <FlatList
+                                data={Suggest_DestionData}
+                                horizontal={true}
+                                showsHorizontalScrollIndicator={false}
+                                keyExtractor={(item) => item.id.toString()}
+                                renderItem={({ item }) =>
+                                    <Destination1 Destination1_item={item} />
+                                }
+                            />
+                        </View>
+                        <View style={styles.Discount}>
+                            <Text style={styles.discount_title}>Combo giá rẻ</Text>
+                            <TouchableOpacity>
+                                <Text style={styles.discount_title1}>Xem thêm ></Text>
+                            </TouchableOpacity>
+                        </View>
+                        <FlatList
+                            data={FinishScheduleData}
+                            horizontal={true}
+                            showsHorizontalScrollIndicator={false}
+                            keyExtractor={(item) => item.id.toString()}
+                            renderItem={({ item }) =>
+                                <ScheduleNow_Item Item={item} />
+                            }
+                        />
+
+                        <View style={styles.Discount}>
+                            <Text style={styles.discount_title}>Combo Hà Giang</Text>
+                            <TouchableOpacity>
+                                <Text style={styles.discount_title1}>Xem thêm ></Text>
+                            </TouchableOpacity>
+                        </View>
+                        <FlatList
+                            data={FinishScheduleData}
+                            horizontal={true}
+                            showsHorizontalScrollIndicator={false}
+                            keyExtractor={(item) => item.id.toString()}
+                            renderItem={({ item }) =>
+                                <ScheduleNow_Item Item={item} />
+                            }
+                        />
+
+                        <View style={styles.Discount}>
+                            <Text style={styles.discount_title}>Combo Huế</Text>
+                            <TouchableOpacity>
+                                <Text style={styles.discount_title1}>Xem thêm ></Text>
+                            </TouchableOpacity>
+                        </View>
+                        <FlatList
+                            data={FinishScheduleData}
+                            horizontal={true}
+                            showsHorizontalScrollIndicator={false}
+                            keyExtractor={(item) => item.id.toString()}
+                            renderItem={({ item }) =>
+                                <ScheduleNow_Item Item={item} />
+                            }
+                        />
+
+                    </View>
+                </ScrollView>
             </View>
-        <ScrollView>
-            <View style={styles.body}>
-                <TextInput
-                    style={styles.input}
-                    placeholder='Bạn muốn đi đâu ?'
-                />
-                <View style={styles.Discount}>
-                    <Text style={styles.discount_title}>Điểm đến tháng 12</Text>
-                    <TouchableOpacity>
-                        <Text style={styles.discount_title1}>Xem thêm ></Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={{ marginHorizontal: 10, marginTop: 10 }}>
-                    <FlatList
-                        data={Suggest_DestionData}
-                        horizontal={true}
-                        showsHorizontalScrollIndicator={false}
-                        keyExtractor={(item) => item.id.toString()}
-                        renderItem={({ item }) =>
-                            <Destination1 Destination1_item={item} />
-                        }
-                    />
-                </View>
-                <View style={styles.Discount}>
-                    <Text style={styles.discount_title}>Combo giá rẻ</Text>
-                    <TouchableOpacity>
-                        <Text style={styles.discount_title1}>Xem thêm ></Text>
-                    </TouchableOpacity>
-                </View>
-                <FlatList
-                    data={FinishScheduleData}
-                    horizontal={true}
-                    showsHorizontalScrollIndicator={false}
-                    keyExtractor={(item) => item.id.toString()}
-                    renderItem={({ item }) =>
-                        <ScheduleNow_Item Item={item} />
-                    }
-                />
-
-                <View style={styles.Discount}>
-                    <Text style={styles.discount_title}>Combo Hà Giang</Text>
-                    <TouchableOpacity>
-                        <Text style={styles.discount_title1}>Xem thêm ></Text>
-                    </TouchableOpacity>
-                </View>
-                <FlatList
-                    data={FinishScheduleData}
-                    horizontal={true}
-                    showsHorizontalScrollIndicator={false}
-                    keyExtractor={(item) => item.id.toString()}
-                    renderItem={({ item }) =>
-                        <ScheduleNow_Item Item={item} />
-                    }
-                />
-
-                <View style={styles.Discount}>
-                    <Text style={styles.discount_title}>Combo Huế</Text>
-                    <TouchableOpacity>
-                        <Text style={styles.discount_title1}>Xem thêm ></Text>
-                    </TouchableOpacity>
-                </View>
-                <FlatList
-                    data={FinishScheduleData}
-                    horizontal={true}
-                    showsHorizontalScrollIndicator={false}
-                    keyExtractor={(item) => item.id.toString()}
-                    renderItem={({ item }) =>
-                        <ScheduleNow_Item Item={item} />
-                    }
-                />
-
-            </View>
-            </ScrollView>
-        </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

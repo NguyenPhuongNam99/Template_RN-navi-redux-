@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,Text,Image,TouchableOpacity,StyleSheet} from 'react-native'
+import {View,Text,Image,TouchableOpacity,StyleSheet,SafeAreaView} from 'react-native'
 import Header from '../Header'
 
 const Setting =({navigation})=>{
@@ -7,10 +7,9 @@ const Setting =({navigation})=>{
         navigation.goBack();
     }
     return(
+        <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
-            {/* <View style={styles.header}>
-                <Text style={styles.header_title}>Cài đặt </Text>
-            </View> */}
+         
              <Header Name='Cài đặt' back ={goback} />
             <View style={styles.block_tab}>
                 <TouchableOpacity style={styles.block}>
@@ -33,6 +32,7 @@ const Setting =({navigation})=>{
 
             </View>
         </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({

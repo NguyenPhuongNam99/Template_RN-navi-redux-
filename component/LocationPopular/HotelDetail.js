@@ -47,21 +47,7 @@ const HotelDetail = () => {
                     <Image style={styles.imageMap} source={require('../../assets/map6.png')} />
                 </View>
 
-                {/* <View style={styles.Top}>
-                    <View style={styles.block}>
-                        <Image style={{ width: '100%', height: '100%' }} source={require('../../assets/ks3.jpg')} />
-                    </View>
-                    <View style={styles.block1}>
-                        <Image style={{ width: '100%', height: '100%' }} source={require('../../assets/ks6.jpg')} />
-                    </View>
-                    <View style={styles.block2}>
-                        <Image style={{ width: '100%', height: '100%' }} source={require('../../assets/ks21.jpg')} />
-                        <View style={styles.opcaity} />
-                        <Image style={styles.sum} source={require('../../assets/sum.png')} />
-                        
-                    </View>
-                </View> */}
-
+               
                 <TouchableOpacity style={styles.touchable}>
                     <Text style={styles.textTouchable}>Chọn phòng</Text>
                 </TouchableOpacity>

@@ -1,8 +1,9 @@
 import React from 'react'
-import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, Image, TouchableOpacity, StyleSheet,SafeAreaView } from 'react-native'
 import DetailVisit from './DetailVisit'
 const OverViewHotel = ({navigation}) => {
     return (
+        <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
             <View style={styles.blockHotel}>
                 <Text style={styles.TitleHotel}>Khách sạn Phương Đông</Text>
@@ -36,6 +37,7 @@ const OverViewHotel = ({navigation}) => {
 
             </View>
         </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({
