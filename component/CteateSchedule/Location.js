@@ -7,6 +7,7 @@ import {useDispatch,useSelector} from 'react-redux'
 import { text } from 'react-native-communications';
 const Location =({navigation})=>{
     const [data,setData] = useState(LocationSchedule)
+    const statusAction = useSelector(state=>state.statusAction)
     const [search,setSearch] = useState('')
     const dispatch = useDispatch();
     const createTwoButtonAlert = () =>
@@ -23,17 +24,27 @@ const Location =({navigation})=>{
       ]
     );
     const check =(item)=>{
-        dispatch({type:'ADDLOCATIOON',item:item})
-        navigation.navigate('ScreenSuggest')
+        
+        if(statusAction==='Action1'){
+                dispatch({type:'ADDLOCATIOON',item:item})
+                console.log('xong action1')
+                navigation.navigate('ScreenSuggest')
+        }
+        if(statusAction ==='Action2'){
+              dispatch({type:'ADDDESTINATION',adddestination:item})
+              console.log('xong action2')
+              navigation.navigate('ScreenSuggest')
+        }
     }
-    const pass =(item2 )=>{
-        dispatch({type:'ADDDESTINATION',adddestination:item2})
-    }
+    // const pass =(item2 )=>{
+      
+    // }
     const LocationDetail =({Item,check,pass})=>{
 
         const xuly =()=>{
             check && check();
             pass && pass();
+            
         }
         return(
             <TouchableOpacity style={styles.block} onPress={xuly} >
@@ -86,7 +97,7 @@ const Location =({navigation})=>{
                     keyExtractor={(item)=>item.id.toString()}
                     renderItem={({item})=>{
                         return(
-                        <LocationDetail  Item={item} check ={()=>check(item)} pass={()=>pass(item)}/>
+                        <LocationDetail  Item={item} check ={()=>check(item)} />
                         )
                     }}
                 />

@@ -18,6 +18,7 @@ const ScreenSuggest = ({ navigation }) => {
     const priceItem = useSelector(state => state.priceItem)
     const addlocation = useSelector(state => state.addlocation)
     const adddestination = useSelector(state => state.adddestination)
+    const statusAction = useSelector(state=>state.statusAction)
     const goback = () => {
         navigation.goBack()
     }
@@ -131,6 +132,14 @@ const ScreenSuggest = ({ navigation }) => {
             return null
         }
     }
+    const locationAction1 = ()=>{
+        dispatch({type:'ACTION1'})
+        navigation.navigate('Location')
+    }
+    const locationAction2 = ()=>{
+        dispatch({type:'ACTION2'})
+        navigation.navigate('Location')
+    }
     const hideModal = () => setIsShowCalendar(false);
     const hideM = () => setModalVisible(false)
     return (
@@ -187,23 +196,23 @@ const ScreenSuggest = ({ navigation }) => {
                             />
 
                             <View style={{ marginBottom: 20 }}>
-                                <TouchableOpacity onPress={() => navigation.navigate('Location')} style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', borderBottomWidth: 0.5, borderBottomColor: '#000000', marginHorizontal: 15, marginTop: 16 }}>
+                                <TouchableOpacity onPress={locationAction1} style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', borderBottomWidth: 0.5, borderBottomColor: '#000000', marginHorizontal: 15, marginTop: 16 }}>
                                     <Image source={require('../../assets/pin1.png')} />
                                     <TextInput style={{ flex: 1 }}
                                         placeholder="Xuất phát"
                                         underlineColorAndroid="transparent"
                                         placeholderTextColor='#989898'
-                                        value={addlocation ? addlocation.location : null}
+                                        value={addlocation &&statusAction ? addlocation.location : null}
 
                                     />
                                 </TouchableOpacity>
-                                <TouchableOpacity onPress={() => navigation.navigate('Location')} style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', borderBottomWidth: 0.5, borderBottomColor: '#000000', marginHorizontal: 15, marginTop: 16 }}>
+                                <TouchableOpacity onPress={locationAction2} style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', borderBottomWidth: 0.5, borderBottomColor: '#000000', marginHorizontal: 15, marginTop: 16 }}>
                                     <Image source={require('../../assets/pin2.png')} />
                                     <TextInput style={{ flex: 1 }}
                                         placeholder="Đích đến"
                                         underlineColorAndroid="transparent"
                                         placeholderTextColor='#989898'
-                                        value={adddestination ? adddestination.location : null}
+                                        value={adddestination &&statusAction ? adddestination.location : null}
 
                                     />
                                 </TouchableOpacity>
