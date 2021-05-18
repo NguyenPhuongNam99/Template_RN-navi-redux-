@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, FlatList, StyleSheet } from 'react-native'
+import { View, Text, Image, TouchableOpacity, FlatList, StyleSheet,LogBox } from 'react-native'
 import {OverView_VisitData} from '../../Data/OverView_VisitData'
 import OverView_VIsit_Item from './OverView_VIsit_Item'
 import { useNavigation } from '@react-navigation/native';
-
+LogBox.ignoreAllLogs();
 const OverView_Visit = () => {
     const navigation = useNavigation();
     const check =()=>{

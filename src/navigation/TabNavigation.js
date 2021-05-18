@@ -48,36 +48,22 @@ export default function TabNavigation() {
         }} 
         component={Home}
         />
-         {/* <Tab.Screen name="TabView"
-       
-       options={{
-         tabBarIcon:()=><Icon name="search" size={19} color="#9A9A9A" />
-       }} 
-       component={TabView}
-       /> */}
+      
         <Tab.Screen name="TabVoucher3"
          options={{
-          tabBarIcon:({focused})=> focused ? <Image source={require('../../assets/ac1.png')} /> :      <Icon name="briefcase" size={19} color="#9A9A9A" />
+          tabBarIcon:({focused})=> focused ? <Image source={require('../../assets/ac1.png')} /> :     <Image source={require('../../assets/ac46.png')} />
         }}
         component={TabVoucher} />
          <Tab.Screen name="Botton5" component={hello}  options ={{tabBarOnPress: () => {} ,tabBarIcon : () =>   <TabView/>, tabBarLabel: 'ghgh'}} />
-        {/* <Tab.Screen name="ScheduleHeader"
-        //  options={{
-        //   tabBarIcon: <TabView />
-        
-        // }}
-
-        options ={{tabBarOnPress: () => {} ,tabBarIcon : () =>   <TabView/>, tabBarLabel: ''}}
-        component={ScheduleHeader} /> */}
-
+       
         <Tab.Screen name="Notification" 
          options={{
-          tabBarIcon:({focused})=>focused ? <Image source={require('../../assets/ac4.png')} /> : <Icon name="bell" size={19} color="#9A9A9A" />
+          tabBarIcon:({focused})=>focused ? <Image source={require('../../assets/ac4.png')} /> : <Image source={require('../../assets/chuong.png')} />
         }}
         component={Notification} />
         <Tab.Screen name="Profile"
           options={{
-            tabBarIcon:({focused})=>focused ? <Image source={require('../../assets/ac3.png')} /> : <Icon name="user" size={19} color="#9A9A9A" />
+            tabBarIcon:({focused})=>focused ? <Image source={require('../../assets/ac3.png')} /> : <Image source={require('../../assets/ac45.png')} />
           }}
         component={Profile} />
 

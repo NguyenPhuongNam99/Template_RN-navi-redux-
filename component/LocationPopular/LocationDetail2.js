@@ -18,8 +18,6 @@ const LocationDetail2 = ({ navigation }) => {
         )
     }
 
-
-
     const Desdata = [
         {
             id: 1,

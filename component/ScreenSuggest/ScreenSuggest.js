@@ -8,6 +8,7 @@ import CalendarPicker from 'react-native-calendar-picker';
 import moment from 'moment';
 import CheckBox from '@react-native-community/checkbox';
 import { Modal } from 'react-native-paper';
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 const ScreenSuggest = ({ navigation }) => {
     const [onSelect, setOnSelect] = useState(false);
@@ -133,7 +134,7 @@ const ScreenSuggest = ({ navigation }) => {
     const hideModal = () => setIsShowCalendar(false);
     const hideM = () => setModalVisible(false)
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: '#E5E5E5' }}>
             <ScrollView>
                 <View style={styles.conatiner}>
                     <Header Name='Xem gợi ý' back={goback} />
@@ -237,131 +238,132 @@ const ScreenSuggest = ({ navigation }) => {
 
 
                     </View>
-
-
-
                     <View >
                         <TouchableOpacity style={{ flex: 1, justifyContent: 'center', alignItems: 'center', height: 35, backgroundColor: '#FF5F24', borderRadius: 5, marginHorizontal: 15 }}>
                             <Text style={{ color: '#FFFFFF', fontSize: 14 }}>Xem gợi ý</Text>
                         </TouchableOpacity>
                     </View>
-
-                    <Modal
-
-                        visible={modalVisible}
-
-                    >
-                        <View style={{
-                            // flex: 1,
-                            justifyContent: "center",
-                            alignItems: "center"
-
-
-                        }}>
-
-                            <View style={{
-                                marginHorizontal: 10, backgroundColor: '#FFFFFF',
-                                height: 294, width: 264, paddingHorizontal: 16, borderRadius: 10
-                            }}>
-                                <Text style={{ fontSize: 16, fontWeight: 'bold', paddingTop: 16 }}>Chọn ngân sách</Text>
-                                <View style={{ paddingTop: 25 }}>
-
-                                    {dataprice.map((item) => {
-                                        return (
-                                            <TouchableOpacity onPress={() => setOnSelect(item.price)}>
-                                                <Text style={styles.item}>{item.price}</Text>
-                                            </TouchableOpacity>
-                                        )
-                                    })}
-
-                                    <TextInput placeholder='chon so khac' onChangeText={(item) => setOnSelect(item)} />
-                                </View>
-                                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                    <TouchableOpacity onPress={() => {
-                                        setModalVisible(!modalVisible),
-                                            setOnSelect('')
-                                    }}>
-                                        <Text style={{ fontSize: 14, color: '#9A9A9A', fontWeight: 'bold' }}>Cancel</Text>
-                                    </TouchableOpacity>
-                                    <TouchableOpacity onPress={() => {
-                                        setModalVisible(!modalVisible),
-                                            dispatch({ type: 'ADDPRICE', priceItem: onSelect })
-                                    }
-                                    } >
-
-
-                                        <Text style={{ fontSize: 14, color: '#FF5F24', fontWeight: 'bold' }}>Ok</Text>
-                                    </TouchableOpacity>
-                                </View>
-                            </View>
-
-                        </View>
-                    </Modal>
-                    <Modal
-                        // animationType="fade"
-                        // transparent={true}
-                        visible={isShowCalendar}
-                        onDismiss={hideModal}
-                    >
-                        <View >
-                            <View style={{ backgroundColor: '#FFFFFF', borderRadius: 9, height: 380 }}>
-                                <CalendarPicker
-                                    onDateChange={onDateChange}
-                                    startFromMonday={true}
-                                    allowRangeSelection={true}
-                                    minDate={minDate}
-                                    maxDate={maxDate}
-
-                                    visible={isShowCalendar}
-                                    todayBackgroundColor="#EEDFF2" selectedDayColor="#7300e6"
-                                    weekdays={['Th 2', 'Th 3', 'Th 4', 'Th 5', 'Th 6', 'Th 7', 'CN']}
-                                    months={['Tháng 1,', 'Tháng 2,', 'Tháng 3,', 'Tháng 4,', 'Tháng 5,', 'Tháng 6,', 'Tháng 7,', 'Tháng 8,', 'Tháng 9,', 'Tháng 10,', 'Tháng 11,', 'Tháng 12,']}
-                                    selectedDayTextColor="#FFFFFF"
-                                    selectedRangeStartStyle={{ backgroundColor: '#F8530D' }}
-                                    selectedRangeEndStyle={{ backgroundColor: '#F8530D' }}
-                                    selectedRangeStyle={{ backgroundColor: '#FCDAD5', opacity: 1 }}
-                                    previousTitle='<'
-                                    nextTitle='>'
-                                    customDatesStyles='YYYY-MM'
-                                    todayTextStyle={{
-                                        color: '#BE52F2',
-
-                                    }}
-                                    dayLabelsWrapper={{
-                                        borderTopWidth: 0,
-                                        borderWidth: 0,
-                                        borderBottomWidth: 0,
-
-                                        borderRadius: 0,
-                                        color: 'green'
-                                    }}
-                                    // customDatesStyles={customDatesStylesCallback}
-                                    customDayHeaderStyles={customDayHeaderStylesCallback}
-                                    textStyle={{
-                                        fontSize: 14,
-                                        color: '#000000',
-                                    }}
-                                    nextTitleStyle={{ backgroundColor: '#FFFFFF', marginRight: 16, borderRadius: 2, paddingLeft: 10, paddingRight: 10 }}
-                                    previousTitleStyle={{ backgroundColor: '#FFFFFF', marginLeft: 16, borderRadius: 2, paddingLeft: 7, paddingRight: 10 }}
-                                />
-
-
-                                <View>
-                                    <View >
-
-                                        {/* onPress={Done} */}
-                                        <TouchableOpacity style={{ alignItems: 'flex-end', marginRight: 33 }} onPress={Done}>
-                                            <Text style={{ color: '#8B3BFF', fontSize: 14, fontWeight: '500' }}>Ok</Text>
-                                        </TouchableOpacity>
-                                    </View>
-                                </View>
-
-                            </View>
-                        </View>
-                    </Modal>
-
                 </View>
-            </ScrollView>
+
+                </ScrollView>
+
+
+                <Modal
+
+                    visible={modalVisible}
+
+                >
+                    <View style={{
+                        // flex: 1,
+                        justifyContent: "center",
+                        alignItems: "center"
+
+
+                    }}>
+
+                        <View style={{
+                            marginHorizontal: 10, backgroundColor: '#FFFFFF',
+                            height: 294, width: 264, paddingHorizontal: 16, borderRadius: 10
+                        }}>
+                            <Text style={{ fontSize: 16, fontWeight: 'bold', paddingTop: 16 }}>Chọn ngân sách</Text>
+                            <View style={{ paddingTop: 25 }}>
+
+                                {dataprice.map((item) => {
+                                    return (
+                                        <TouchableOpacity onPress={() => setOnSelect(item.price)}>
+                                            <Text style={styles.item}>{item.price}</Text>
+                                        </TouchableOpacity>
+                                    )
+                                })}
+
+                                <TextInput placeholder='chon so khac' onChangeText={(item) => setOnSelect(item)} />
+                            </View>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                <TouchableOpacity onPress={() => {
+                                    setModalVisible(!modalVisible),
+                                        setOnSelect('')
+                                }}>
+                                    <Text style={{ fontSize: 14, color: '#9A9A9A', fontWeight: 'bold' }}>Cancel</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={() => {
+                                    setModalVisible(!modalVisible),
+                                        dispatch({ type: 'ADDPRICE', priceItem: onSelect })
+                                }
+                                } >
+
+
+                                    <Text style={{ fontSize: 14, color: '#FF5F24', fontWeight: 'bold' }}>Ok</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+
+                    </View>
+                </Modal>
+                <Modal
+                    // animationType="fade"
+                    // transparent={true}
+                    visible={isShowCalendar}
+                    onDismiss={hideModal}
+                >
+                    <View >
+                        <View style={{ backgroundColor: '#FFFFFF', borderRadius: 9, height: 380,marginHorizontal:moderateScale(15) }}>
+                            <CalendarPicker
+                                onDateChange={onDateChange}
+                                startFromMonday={true}
+                                allowRangeSelection={true}
+                                minDate={minDate}
+                                maxDate={maxDate}
+
+                                visible={isShowCalendar}
+                                todayBackgroundColor="#EEDFF2" selectedDayColor="#7300e6"
+                                weekdays={['Th 2', 'Th 3', 'Th 4', 'Th 5', 'Th 6', 'Th 7', 'CN']}
+                                months={['Tháng 1,', 'Tháng 2,', 'Tháng 3,', 'Tháng 4,', 'Tháng 5,', 'Tháng 6,', 'Tháng 7,', 'Tháng 8,', 'Tháng 9,', 'Tháng 10,', 'Tháng 11,', 'Tháng 12,']}
+                                selectedDayTextColor="#FFFFFF"
+                                selectedRangeStartStyle={{ backgroundColor: '#F8530D' }}
+                                selectedRangeEndStyle={{ backgroundColor: '#F8530D' }}
+                                selectedRangeStyle={{ backgroundColor: '#FCDAD5', opacity: 1 }}
+                                previousTitle='<'
+                                nextTitle='>'
+                                customDatesStyles='YYYY-MM'
+                                todayTextStyle={{
+                                    color: '#BE52F2',
+
+                                }}
+                                dayLabelsWrapper={{
+                                    borderTopWidth: 0,
+                                    borderWidth: 0,
+                                    borderBottomWidth: 0,
+
+                                    borderRadius: 0,
+                                    color: 'green'
+                                }}
+                                // customDatesStyles={customDatesStylesCallback}
+                                customDayHeaderStyles={customDayHeaderStylesCallback}
+                                textStyle={{
+                                    fontSize: 14,
+                                    color: '#000000',
+                                }}
+                                nextTitleStyle={{ backgroundColor: '#FFFFFF', marginRight: 16, borderRadius: 2, paddingLeft: 10, paddingRight: 10 }}
+                                previousTitleStyle={{ backgroundColor: '#FFFFFF', marginLeft: 16, borderRadius: 2, paddingLeft: 7, paddingRight: 10 }}
+                            />
+
+
+                            <View>
+                                <View >
+
+                                    {/* onPress={Done} */}
+                                    <TouchableOpacity style={{ alignItems: 'flex-end', marginRight: 33 }} onPress={Done}>
+                                        <Text style={{ color: '#8B3BFF', fontSize: 14, fontWeight: '500' }}>Ok</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            </View>
+
+                        </View>
+                    </View>
+                </Modal>
+
+
+            
         </SafeAreaView>
     )
 }

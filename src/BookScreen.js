@@ -25,7 +25,7 @@ const BookScreen = ({navigation}) => {
       }
       if(count ==0 && setRight4 == false){
         Alert.alert(
-          "Thời gian OTP nhập kết thúc.",
+          "Thời gian OTP nhập kết thúc",
           "",
           [
             

@@ -27,7 +27,6 @@ const SelectRoom =({Item,check,pass})=>{
                     <Text style={styles.room}> Còn 5 phòng với giá này !</Text>
                   </View>
                   
-
                     <View style={styles.blockRight}>
                         
                             <Text>
