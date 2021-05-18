@@ -18,7 +18,7 @@ const UpdateProfile = ({navigation}) => {
     setModalVisible(!isModalVisible);
   };
     const validateHoten = (text1) => {
-        let reg = /^[a-zA-Z]{2,40}( [a-zA-Z]{2,40})+$/;
+        let reg =/^(?=.{3,50}$)[a-z]+(?:['_.\s][a-z]+)*$/i;
         if (reg.test(text1) === false) {
             setHoten(text1)
             setCheckhoten(false)
@@ -33,7 +33,7 @@ const UpdateProfile = ({navigation}) => {
         }
     }
     const validateten = (text1) => {
-        let reg = /^[a-zA-Z]{2,40}( [a-zA-Z]{2,40})+$/;
+        let reg = /^(?=.{3,50}$)[a-z]+(?:['_.\s][a-z]+)*$/i;
         if (reg.test(text1) === false) {
             setTen(text1)
             setCheckten(false)
@@ -130,7 +130,7 @@ const UpdateProfile = ({navigation}) => {
                 />
             </View>
             {
-                checkHoten  && checkten?
+                checkHoten && checkten ?
                  <TouchableOpacity style={styles.touchable}  onPress={()=>{navigation.navigate('TabNavigation')}}>
                 <Text style={styles.finishOk}>Hoàn thành</Text>
             </TouchableOpacity>

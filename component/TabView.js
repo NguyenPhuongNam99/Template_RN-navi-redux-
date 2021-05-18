@@ -92,7 +92,7 @@ const TabView = () => {
         <View style={{ position: "absolute", alignItems: "center" }}>
 
             <Animated.View style={{ position: "absolute", left: thermometerX, top: thermometerY, zIndex: 100 }}>
-                <TouchableOpacity onPress={() => navigation.navigate('SelectSchedule')} style={{ width: 80, height: 50, justifyContent: 'space-between', alignItems: 'center' }} >
+                <TouchableOpacity onPress={() => navigation.navigate('Createa2')} style={{ width: 80, height: 50, justifyContent: 'space-between', alignItems: 'center' }} >
                     <View style={styles.secondaryButton} >
                         <Image source={require('../assets/tao.png')} />
                     </View>
@@ -112,7 +112,7 @@ const TabView = () => {
 
             </Animated.View>
             <Animated.View style={{ position: "absolute", left: timeXO, top: timeYO, zIndex: 100 }}>
-                <TouchableOpacity onPress={() => navigation.navigate('Login')} style={{ width: 80, height: 50, justifyContent: 'space-between', alignItems: 'center' }} >
+                <TouchableOpacity onPress={() => navigation.navigate('EvaluationSchedule')} style={{ width: 80, height: 50, justifyContent: 'space-between', alignItems: 'center' }} >
                     <View style={styles.secondaryButton}>
                         <Image source={require('../assets/danhgia.png')} />
 

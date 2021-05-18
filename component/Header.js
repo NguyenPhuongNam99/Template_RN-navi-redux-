@@ -4,8 +4,8 @@ import {View,Text,Image,StyleSheet,TouchableOpacity} from 'react-native';
 const Header =({Name,navigation,back})=>{
     return(
         <View style={styles.header}>
-        <TouchableOpacity onPress={back}>
-            <Image style={{ width: 8, height: 12, }} source={require('../assets/search1.png')} />
+        <TouchableOpacity onPress={back} style={{width: 8, height: 12,}}>
+            <Image  source={require('../assets/search1.png')} />
         </TouchableOpacity>
         <Text style={styles.header_titlle}>{Name}</Text>
         <Text></Text>
@@ -21,7 +21,7 @@ const styles =StyleSheet.create({
         justifyContent: 'space-between',
         backgroundColor: '#FFFFFF',
         // width:375,
-        height: 58,
+        height: 55,
 
         alignItems: 'center',
         paddingHorizontal: 16

@@ -1,5 +1,5 @@
 import React, {  useRef, useState,useEffect } from "react";
-import { Alert, SafeAreaView, StyleSheet, TextInput, View ,Text} from "react-native";
+import { Alert, SafeAreaView, StyleSheet, TextInput, View ,Text,LogBox} from "react-native";
 import { set } from "react-native-reanimated";
 
 const BookScreen = ({navigation}) => {
@@ -7,7 +7,7 @@ const BookScreen = ({navigation}) => {
   const [pin2, setPin2] = React.useState("");
   const [pin3, setPin3] = React.useState("");
   const [pin4, setPin4] = React.useState("");
-  const [count,setCount] = useState(10);
+  const [count,setCount] = useState(30);
   const [setRight1,setSetRight1]= useState(false)
   const [setRight2,setSetRight2]= useState(false)
   const [setRight3,setSetRight3]= useState(false)
@@ -17,7 +17,7 @@ const BookScreen = ({navigation}) => {
   const inputRef2 = useRef();
   const inputRef3 = useRef();
   const inputRef4 = useRef();
-
+  LogBox.ignoreAllLogs();
   useEffect(()=>{
     setTimeout(function(){
       if(count >0){

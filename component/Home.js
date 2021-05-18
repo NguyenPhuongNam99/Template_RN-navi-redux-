@@ -243,7 +243,7 @@ const Home = ({ navigation }) => {
                             </TouchableOpacity>
                         </View>
                         <View style={{ width: '45%' }}>
-                            <TouchableOpacity style={styles.touchable} onPress={() => navigation.navigate('CreateSchedule')}>
+                            <TouchableOpacity style={styles.touchable} onPress={() => navigation.navigate('Createa2')}>
                                 <Text style={styles.touchable_title}>Tạo lịch trình </Text>
                             </TouchableOpacity>
                         </View>
@@ -377,7 +377,8 @@ const Home = ({ navigation }) => {
 }
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        
     },
     image: {
         width: '100%',

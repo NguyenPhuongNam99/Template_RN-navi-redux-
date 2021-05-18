@@ -7,7 +7,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
 
 // import TestChuyenTab from '../TestChuyenTab';
-// import Home from '../../component/Home'
+import Createa2 from '../../component/CteateSchedule/Createa2'
 import Home from '../../component/Home';
 import Hotel_Icon from '../../component/Hotel_Icon'
 import RestaurantIcon from '../../component/RestaurantIcon';
@@ -77,6 +77,7 @@ const Stacknavigation = () => {
       <Stack.Screen name="BookScreen" component={BookScreen}  options={{headerShown: false}} />
 
       <Stack.Screen name="UpdateProfile" component={UpdateProfile}  options={{headerShown: false}}/>
+      <Stack.Screen name="Createa2" component={Createa2}  options={{headerShown: false}}/>
 
       <Stack.Screen name="Home" component={Home}  options={{headerShown: false}} />
    <Stack.Screen name="Hotel_Icon" component={Hotel_Icon}  options={{headerShown: false}}/>
