@@ -134,7 +134,7 @@ const TabView = () => {
                 {/* underlayColor="#7F58FF" */}
                 <TouchableHighlight onPress={handlePress} >
                     <Animated.View style={{ transform: [{ rotate: rotation }] }}>
-                        <Image source={require('../assets/tao2.png')} />
+                        <Image style={{width:39,height:39}} source={require('../assets/tao.png')} />
                     </Animated.View>
                 </TouchableHighlight>
             </Animated.View>
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         borderRadius: 36,
         position: "absolute",
-        marginTop: -50,
+        marginTop: -40,
         zIndex: 100
     },
     secondaryButton: {

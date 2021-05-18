@@ -28,7 +28,7 @@ const EvaluationSchedule = ({ navigation }) => {
             "Bạn có chắc muốn gửi đánh giá !",
             "",
             [
-                { text: "Yes", onPress: () => navigation.navigate('Home') }
+                { text: "Yes", onPress: () => navigation.navigate('TabNavigation') }
             ]
         );
     const image = () => {
