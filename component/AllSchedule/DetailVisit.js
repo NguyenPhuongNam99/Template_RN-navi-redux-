@@ -10,30 +10,30 @@ const DetailVisit = ({ navigation }) => {
     }
     const Destination = ({ Destination_item }) => {
         return (
-            <TouchableOpacity >
-                <Image style={{ width: 150, height: 200, borderRadius: 5, marginHorizontal: 11 }} source={Destination_item.image} />
+            <TouchableOpacity style={{marginLeft:15}}>
+                <Image style={{ width: 150, height: 200, borderRadius: 5 }} source={Destination_item.image} />
                 <Text style={{ position: 'absolute', bottom: 8, left: 19, color: '#FFFFFF', fontSize: 14, fontWeight: '600' }}>{Destination_item.name}</Text>
             </TouchableOpacity>
         )
     }
     const Hotel = ({ HotelItem }) => {
         return (
-            <TouchableOpacity>
-                <Image style={{ width: 160, height: 150, borderRadius: 5, marginHorizontal: 11 }} source={HotelItem.image} />
+            <TouchableOpacity style={{marginLeft:15}}>
+                <Image style={{ width: 160, height: 150, borderRadius: 5 }} source={HotelItem.image} />
                 <View>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 9 }}>
-                        <Text style={{ fontSize: 10, fontWeight: 'normal', color: '#A2A2A2', marginHorizontal: 8 }}>{HotelItem.version}</Text>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                        <Text style={{ fontSize: 10, fontWeight: 'normal', color: '#A2A2A2' }}>{HotelItem.version}</Text>
                         <Image style={{ width: 62, height: 10, borderRadius: 5, marginTop: 4 }} source={HotelItem.comment} />
 
                     </View>
-                    <Text style={{ fontSize: 14, color: '#000000', fontWeight: '500', marginHorizontal: 11 }}>{HotelItem.name}</Text>
-                    <View style={{ flexDirection: 'row', marginHorizontal: 10, marginVertical: 2 }}>
+                    <Text style={{ fontSize: 14, color: '#000000', fontWeight: '500' }}>{HotelItem.name}</Text>
+                    <View style={{ flexDirection: 'row',marginVertical: 2 }}>
                         <Image style={{ width: 12, height: 14, borderRadius: 14 }}
 
                             source={HotelItem.location} />
-                        <Text style={{ paddingHorizontal: 10, fontSize: 10, fontWeight: 'normal', color: '#3076FE' }}>{HotelItem.des}</Text>
+                        <Text style={{  fontSize: 10, fontWeight: 'normal', color: '#3076FE' }}>{HotelItem.des}</Text>
                     </View>
-                    <Text style={{ fontSize: 12, color: '#FF2424', fontWeight: '500', marginHorizontal: 13 }}>{HotelItem.price}</Text>
+                    <Text style={{ fontSize: 12, color: '#FF2424', fontWeight: '500' }}>{HotelItem.price}</Text>
 
                 </View>
 
@@ -95,7 +95,7 @@ const DetailVisit = ({ navigation }) => {
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
-                <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                <View style={{  marginTop: 10 }}>
                     <FlatList
                         data={Desdata}
                         horizontal={true}
@@ -114,7 +114,7 @@ const DetailVisit = ({ navigation }) => {
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
-                <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                <View style={{  marginTop: 10 }}>
                     <FlatList
                         data={Hoteldata}
                         horizontal={true}
@@ -132,7 +132,7 @@ const DetailVisit = ({ navigation }) => {
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
-                <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                <View style={{  marginTop: 10 }}>
                     <FlatList
                         data={Hoteldata}
                         horizontal={true}
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
 
     },
     textbody: {
-        fontSize: 12,
+        fontSize:scale(12),
         color: '#000000',
         lineHeight: 18,
         // paddingTop: 15

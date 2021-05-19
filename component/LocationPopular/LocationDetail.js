@@ -7,6 +7,7 @@ import MultipleDetail from '../MultipleDetail'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useSelector,useDispatch} from 'react-redux'
 import {Discovery} from '../../Data/LocationPopular_Data'
+import { scale, verticalScale } from 'react-native-size-matters';
 
 const LocationDetail = ({navigation}) => {
     const dispatch = useDispatch();
@@ -38,20 +39,23 @@ const LocationDetail = ({navigation}) => {
     }
     const Experient = ({ Experient_item }) => {
         return (
-            <TouchableOpacity onPress={()=>check1(Experient_item)}>
+            <TouchableOpacity onPress={()=>check1(Experient_item)} style={{marginLeft:15}}>
             <View >
                 <View>
-                    <Image style={{ width: 200, height: 200, borderRadius: 5, marginHorizontal: 11 }} source={Experient_item.image} />
+                    <Image style={{ width: 200, height: 200, borderRadius: 5 }} source={Experient_item.image} />
 
                 </View>
                 {/* <Text style={{color:'#FFFFFF',fontSize:14,fontWeight:'600',width:100}}>{Experient_item.name}</Text> */}
-                <View style={{ marginTop: 12, marginHorizontal: 13 }}>
+                <View style={{ marginTop: 12 }}>
 
                     <Text style={{ lineHeight: 17, color: '#000000', fontSize: 14, fontWeight: 'bold', fontStyle: 'normal' }}>{Experient_item.name}</Text>
-                    <View style={{ flexDirection: 'row', marginTop: 4 }}>
-                        <Image style={{ width: 12, height: 14, borderRadius: 14 }}
+                    <View style={{ flexDirection: 'row',alignItems:'center' }}>
+                        <View style={{width:scale(12), height:verticalScale(14) }}>
+                            <Image 
 
                             source={Experient_item.location} />
+                        </View>
+                        
                         <Text style={{ paddingLeft: 4 }}>{Experient_item.des}</Text>
                     </View>
                 </View>
@@ -151,7 +155,7 @@ const LocationDetail = ({navigation}) => {
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
-                <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                <View style={{  marginTop: 10 }}>
                     <FlatList
                         data={LocationDetail1}
                         horizontal={true}
@@ -172,7 +176,7 @@ const LocationDetail = ({navigation}) => {
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
-                <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                <View style={{  marginTop: 10 }}>
                     <FlatList
                         data={RestauRantnear}
                         horizontal={true}
@@ -192,7 +196,7 @@ const LocationDetail = ({navigation}) => {
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
-                <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                <View style={{ marginTop: 10 }}>
                     <FlatList
                         data={Discovery}
                         horizontal={true}

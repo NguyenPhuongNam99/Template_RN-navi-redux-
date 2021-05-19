@@ -62,7 +62,7 @@ const LocationItem = ({ Item }) => {
 const styles=StyleSheet.create({
     block: {
         height: 238,
-        marginHorizontal: 16,
+        marginLeft:15,
         marginTop:10,shadowColor: "#000",
         shadowOffset: {
             width: 0,

@@ -129,7 +129,7 @@ const TabView = () => {
             <Animated.View style={{ position: "absolute", left: pulseX, top: pulseY, zIndex: 100 }}>
                 <TouchableOpacity onPress={dispatchLocation} style={{ width: 80, height: 50, justifyContent: 'space-between', alignItems: 'center' }} >
                     <View style={styles.secondaryButton}>
-                        <Image source={require('../assets/tim22.png')} />
+                        <Image source={require('../assets/se.png')} />
                     </View>
                 </TouchableOpacity>
                 <Text style={{ color: 'white', fontSize: 12, position: 'absolute', bottom: -20, left: 0, zIndex: 2, textAlign: 'center' }}>Tìm quanh đây</Text>

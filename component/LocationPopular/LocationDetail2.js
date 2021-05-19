@@ -9,8 +9,8 @@ const LocationDetail2 = ({ navigation }) => {
     const discovery = useSelector(state=>state.discovery)
     const Destination = ({ Destination_item }) => {
         return (
-            <View>
-                <Image style={{ width: 150, height: 200, borderRadius: 5, marginHorizontal: 11 }} source={Destination_item.image} />
+            <View style={{marginLeft:15}}>
+                <Image style={{ width: 150, height: 200, borderRadius: 5 }} source={Destination_item.image} />
                 <Text style={{ position: 'absolute', bottom: 8, left: 19, color: '#FFFFFF', fontSize: 14, fontWeight: '600' }}>{Destination_item.name}</Text>
             </View>
 
@@ -187,7 +187,7 @@ const LocationDetail2 = ({ navigation }) => {
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
-                <View style={{ marginHorizontal: 10, marginTop: 10, paddingBottom: 20 }}>
+                <View style={{  marginTop: 10, paddingBottom: 20 }}>
                     <FlatList
                         data={Desdata}
                         horizontal={true}
@@ -276,7 +276,7 @@ const styles = StyleSheet.create({
     headerText: {
         marginHorizontal: 16,
         color: '#333333',
-
+        marginTop:verticalScale(10)
     },
     title_header: {
         color: '#000000',

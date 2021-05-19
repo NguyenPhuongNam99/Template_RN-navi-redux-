@@ -123,8 +123,8 @@ const Home = ({ navigation }) => {
 
     const Destination = ({ Destination_item, checkDestination }) => {
         return (
-            <TouchableOpacity onPress={checkDestination}>
-                <Image style={{ width: 150, height: 200, borderRadius: 5, marginHorizontal: 11 }} source={Destination_item.image} />
+            <TouchableOpacity onPress={checkDestination} style={{marginLeft:15}}>
+                <Image style={{ width: 150, height: 200, borderRadius: 5 }} source={Destination_item.image} />
                 <Text style={{ position: 'absolute', bottom: 8, left: 19, color: '#FFFFFF', fontSize: 14, fontWeight: '600' }}>{Destination_item.name}</Text>
             </TouchableOpacity>
 
@@ -136,13 +136,13 @@ const Home = ({ navigation }) => {
 
     const Experient = ({ Experient_item }) => {
         return (
-            <View >
+            <View style={{marginLeft:15}}>
                 <View>
-                    <Image style={{ width: 200, height: 200, borderRadius: 5, marginHorizontal: 11 }} source={Experient_item.image} />
+                    <Image style={{ width: 200, height: 200, borderRadius: 5 }} source={Experient_item.image} />
 
                 </View>
                 {/* <Text style={{color:'#FFFFFF',fontSize:14,fontWeight:'600',width:100}}>{Experient_item.name}</Text> */}
-                <View style={{ marginTop: 12, marginHorizontal: 13 }}>
+                <View style={{ marginTop: 12 }}>
 
                     <Text style={{ fontFamily: 'Roboto-Black', lineHeight: 17, color: '#000000', fontSize: 14, fontWeight: '500', fontStyle: 'normal' }}>{Experient_item.name}</Text>
                     <View style={{ flexDirection: 'row', marginTop: 4 }}>
@@ -160,8 +160,8 @@ const Home = ({ navigation }) => {
     }
     const Destination1 = ({ Destination1_item }) => {
         return (
-            <View>
-                <Image style={{ width: 150, height: 200, borderRadius: 5, marginHorizontal: 11 }} source={Destination1_item.imagedd} />
+            <View style={{marginLeft:15}}>
+                <Image style={{ width: 150, height: 200, borderRadius: 5 }} source={Destination1_item.imagedd} />
                 <Text style={{ position: 'absolute', bottom: 8, left: 19, fontSize: 14, color: '#FFFFFF', fontWeight: '600' }}>{Destination1_item.namedd}</Text>
             </View>
 
@@ -171,22 +171,22 @@ const Home = ({ navigation }) => {
 
     const Hotel = ({ HotelItem, check }) => {
         return (
-            <TouchableOpacity onPress={check}>
-                <Image style={{ width: 160, height: 150, borderRadius: 5, marginHorizontal: 11 }} source={HotelItem.image} />
+            <TouchableOpacity onPress={check} style={{marginLeft:15}}>
+                <Image style={{ width: 160, height: 150, borderRadius: 5, }} source={HotelItem.image} />
                 <View>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 9 }}>
-                        <Text style={{ fontSize: 10, fontWeight: 'normal', color: '#A2A2A2', marginHorizontal: 8 }}>{HotelItem.version}</Text>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
+                        <Text style={{ fontSize: 10, fontWeight: 'normal', color: '#A2A2A2' }}>{HotelItem.version}</Text>
                         <Image style={{ width: 62, height: 10, borderRadius: 5, marginTop: 4 }} source={HotelItem.comment} />
 
                     </View>
-                    <Text style={{ fontSize: 14, color: '#000000', fontWeight: '500', marginHorizontal: 11 }}>{HotelItem.name}</Text>
-                    <View style={{ flexDirection: 'row', marginHorizontal: 10, marginVertical: 2 }}>
+                    <Text style={{ fontSize: 14, color: '#000000', fontWeight: '500'}}>{HotelItem.name}</Text>
+                    <View style={{ flexDirection: 'row', marginVertical: 2 }}>
                         <Image style={{ width: 12, height: 14, borderRadius: 14 }}
 
                             source={HotelItem.location} />
                         <Text style={{ paddingHorizontal: 10, fontSize: 10, fontWeight: 'normal', color: '#3076FE' }}>{HotelItem.des}</Text>
                     </View>
-                    <Text style={{ fontSize: 12, color: '#FF2424', fontWeight: '500', marginHorizontal: 13 }}>{HotelItem.price}</Text>
+                    <Text style={{ fontSize: 12, color: '#FF2424', fontWeight: '500' }}>{HotelItem.price}</Text>
 
                 </View>
 
@@ -292,7 +292,7 @@ const Home = ({ navigation }) => {
                             <Text style={styles.discount_title1}>Xem thêm ></Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                    <View style={{  marginTop: 10 }}>
                         <FlatList
                             data={Desdata}
                             horizontal={true}
@@ -310,7 +310,7 @@ const Home = ({ navigation }) => {
                             <Text style={styles.discount_title1}>Xem thêm ></Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                    <View style={{ marginTop: 10 }}>
                         <FlatList
                             data={Expe}
                             horizontal={true}
@@ -328,7 +328,7 @@ const Home = ({ navigation }) => {
                             <Text style={styles.discount_title1}>Xem thêm ></Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                    <View style={{  marginTop: 10 }}>
                         <FlatList
                             data={DiemDen}
                             horizontal={true}

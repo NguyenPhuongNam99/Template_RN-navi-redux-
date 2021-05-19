@@ -91,7 +91,7 @@ const RestaurantDetail = ({navigation}) => {
                         <Image style={{width:'100%',height:'100%'}} source={require('../../assets/tp3.png')} />
                         <View style={{ position: 'absolute', top: 0, left: 0, height:verticalScale(104), backgroundColor: 'rgba(0, 0, 0, 0.4)', width: '100%' }} />
                         <View>
-                            <Image style={{ position: 'absolute', top: -50, left: '40%', width:scale(17), height: verticalScale(17) }} source={require('../../assets/sum.png')} />
+                            <Image style={{ position: 'absolute', top:scale(-60), left: '40%', width:scale(17), height: verticalScale(17) }} source={require('../../assets/sum.png')} />
                         </View>
 
                     </View>
@@ -117,7 +117,7 @@ const RestaurantDetail = ({navigation}) => {
                         <Text style={styles.discount_title1}>Xem thêm ></Text>
                     </TouchableOpacity>
                 </View>
-                <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                <View style={{  marginTop: 10 }}>
                     <FlatList
                         data={restaurant}
                         horizontal={true}
