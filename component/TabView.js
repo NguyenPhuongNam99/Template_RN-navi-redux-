@@ -5,10 +5,15 @@ import { View, StyleSheet, TouchableHighlight, Animated, Image, Text } from "rea
 // import { TabView } from "react-native-tab-view";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { TouchableOpacity } from 'react-native-gesture-handler'
-
+import {useSelector,useDispatch} from 'react-redux'
 import { useNavigation } from '@react-navigation/native';
 
 const TabView = () => {
+    const dispatch = useDispatch();
+    const dispatchLocation = ()=>{
+        navigation.navigate('Location')
+        dispatch({type:''})
+    }
     const [mode, setMode] = useState(new Animated.Value(0));
     const [buttonSize, setButtonSize] = useState(new Animated.Value(1));
     const navigation = useNavigation();
@@ -112,7 +117,7 @@ const TabView = () => {
 
             </Animated.View>
             <Animated.View style={{ position: "absolute", left: timeXO, top: timeYO, zIndex: 100 }}>
-                <TouchableOpacity onPress={() => navigation.navigate('EvaluationSchedule')} style={{ width: 80, height: 50, justifyContent: 'space-between', alignItems: 'center' }} >
+                <TouchableOpacity onPress={() => navigation.navigate('SelectSchedule')} style={{ width: 80, height: 50, justifyContent: 'space-between', alignItems: 'center' }} >
                     <View style={styles.secondaryButton}>
                         <Image source={require('../assets/danhgia.png')} />
 
@@ -122,7 +127,7 @@ const TabView = () => {
 
             </Animated.View>
             <Animated.View style={{ position: "absolute", left: pulseX, top: pulseY, zIndex: 100 }}>
-                <TouchableOpacity onPress={() => navigation.navigate('Login')} style={{ width: 80, height: 50, justifyContent: 'space-between', alignItems: 'center' }} >
+                <TouchableOpacity onPress={dispatchLocation} style={{ width: 80, height: 50, justifyContent: 'space-between', alignItems: 'center' }} >
                     <View style={styles.secondaryButton}>
                         <Image source={require('../assets/tim22.png')} />
                     </View>
