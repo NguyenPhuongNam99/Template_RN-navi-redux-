@@ -7,7 +7,8 @@ const inital ={
     // peopOld:{name:'người lớn',countOld:2},
     // peopleMidle:{name:'trẻ em',countMidle:0}
     overviewDay:FisrtDay_Data,
-    item_tym:[]
+    item_tym:[],
+    statusAction:''
 }
 const reducer =(state = inital,action)=>{
     switch(action.type){
@@ -123,6 +124,16 @@ const reducer =(state = inital,action)=>{
             return {
                 ...state,
                 valueLogin :action.valueLogin
+            }
+        }
+        case 'ACTION1':{
+            return{
+                ...state,statusAction:'Action1'
+            }
+        }
+        case 'ACTION2':{
+            return{
+                ...state,statusAction:'Action2'
             }
         }
         default :

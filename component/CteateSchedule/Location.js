@@ -5,35 +5,58 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { LocationSchedule } from '../../Data/LocationData'
 import { useDispatch, useSelector } from 'react-redux'
 import { text } from 'react-native-communications';
-const Location = ({ navigation }) => {
-    const [data, setData] = useState(LocationSchedule)
-    const [search, setSearch] = useState('')
+const Location =({navigation})=>{
+    const [data,setData] = useState(LocationSchedule)
+    const statusAction = useSelector(state=>state.statusAction)
+    const [search,setSearch] = useState('')
     const dispatch = useDispatch();
+    const checkCancel =()=>{
+        if(statusAction === 'ActionLocation'){
+            navigation.navigate('TabNavigation')
+        }
+        else{
+            navigation.navigate('ScreenSuggest')
+        }
+    }
     const createTwoButtonAlert = () =>
-        Alert.alert(
-            "Bạn có chắc muốn hủy không",
-            "",
-            [
-                {
-                    text: "No",
-                    onPress: () => console.log("Cancel Pressed"),
-                    style: "cancel"
-                },
-                { text: "Yes", onPress: () => navigation.navigate('ScreenSuggest') }
-            ]
-        );
-    const check = (item) => {
-        dispatch({ type: 'ADDLOCATIOON', item: item })
-        navigation.navigate('ScreenSuggest')
+    Alert.alert(
+      "Bạn có chắc muốn hủy không",
+      "",
+      [
+        {
+          text: "No",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel"
+        },
+        { text: "Yes", onPress: () => checkCancel()}
+      ]
+    );
+    const check =(item)=>{
+        
+        if(statusAction==='Action1'){
+                dispatch({type:'ADDLOCATIOON',item:item})
+                console.log('xong action1')
+                navigation.navigate('ScreenSuggest')
+        }
+        if(statusAction ==='Action2'){
+              dispatch({type:'ADDDESTINATION',adddestination:item})
+              console.log('xong action2')
+              navigation.navigate('ScreenSuggest')
+        }
+        if(statusAction ==='ActionLocation'){
+            dispatch({type:'ADDCLICK_LOCATION',clickLocation:item})
+            navigation.navigate('NearSearch')
+        }
     }
-    const pass = (item2) => {
-        dispatch({ type: 'ADDDESTINATION', adddestination: item2 })
-    }
-    const LocationDetail = ({ Item, check, pass }) => {
+    // const pass =(item2 )=>{
+      
+    // }
+    const LocationDetail =({Item,check,pass})=>{
 
         const xuly = () => {
             check && check();
-            pass && pass();
+          
+            
         }
         return (
             <TouchableOpacity style={styles.block} onPress={xuly} >
@@ -89,7 +112,7 @@ const Location = ({ navigation }) => {
                         keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) => {
                             return (
-                                <LocationDetail Item={item} check={() => check(item)} pass={() => pass(item)} />
+                                <LocationDetail Item={item} check={() => check(item)}  />
                             )
                         }}
                     />
