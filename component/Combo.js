@@ -8,8 +8,8 @@ import ScheduleNow_Item from '../component/ScheduleNow_Item'
 const Combo = ({ navigation }) => {
     const Destination1 = ({ Destination1_item }) => {
         return (
-            <View>
-                <Image style={{ width: 150, height: 200, borderRadius: 5, marginHorizontal: 11 }} source={Destination1_item.image} />
+            <View style={{marginLeft:15}}>
+                <Image style={{ width: 150, height: 200, borderRadius: 5 }} source={Destination1_item.image} />
                 <Text style={{ position: 'absolute', bottom: 8, left: 19, fontSize: 14, color: '#FFFFFF', fontWeight: '600' }}>{Destination1_item.name}</Text>
             </View>
 
@@ -40,7 +40,7 @@ const Combo = ({ navigation }) => {
                                 <Text style={styles.discount_title1}>Xem thêm ></Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                        <View style={{ marginTop: 10 }}>
                             <FlatList
                                 data={Suggest_DestionData}
                                 horizontal={true}
