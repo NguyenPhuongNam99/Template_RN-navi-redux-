@@ -66,6 +66,11 @@ const reducer =(state = inital,action)=>{
                 ...state,adddestination:action.adddestination
             }
         }
+        case 'ADDCLICK_LOCATION':{
+            return{
+                ...state,clickLocation:action.clickLocation
+            }
+        }
         case 'ADDTIME':{
             return {
                 ...state,startDate:action.startDate,endDate:action.endDate
@@ -134,6 +139,11 @@ const reducer =(state = inital,action)=>{
         case 'ACTION2':{
             return{
                 ...state,statusAction:'Action2'
+            }
+        }
+        case 'ACTIONLOCATION':{
+            return{
+                ...state,statusAction:'ActionLocation'
             }
         }
         default :

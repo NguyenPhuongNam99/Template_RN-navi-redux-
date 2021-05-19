@@ -1,15 +1,49 @@
-import React from 'react';
+import React, { useState ,useEffect} from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, SafeAreaView, FlatList, ScrollView } from 'react-native'
 import Header from '../../component/Header'
 import { Suggestion_toYou } from '../../HotelData'
 import MultipleDetail from '../MultipleDetail'
 import { HomeStay } from '../../Data/RestaurantData'
-import {Desdata,sheduleNowData} from '../../Data/HomeData'
+import { Desdata, sheduleNowData } from '../../Data/HomeData'
+import { useSelector, useDispatch } from 'react-redux'
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 const NearSearch = ({ navigation }) => {
     const goback = () => {
         navigation.goBack()
     }
+    const [testData, setTestData] = useState(Suggestion_toYou)
+    const [testDouble, setTestDouble] = useState(false)
+    const clickLocation = useSelector(state => state.clickLocation)
+    const [dataSearch, setDataSearch] = useState(Suggestion_toYou)
+    const [checkData, setCheckData] = useState(true);
+    useEffect(()=>{
+        checkIdentifiled();
+        console.log('hello')
+    },[checkIdentifiled])
+    const checkIdentifiled = () => {
+        const checkuh = Suggestion_toYou.some((item) => {
+            if (item.location2 === clickLocation.location) {
+                return true;
+            }
+        })
+        if (checkuh === true) {
+            // const check2 = Suggestion_toYou.filter((item) => {
+            //     if (item.des === clickLocation) {
+            //         return item
+            //     }
+            // })
+            // setTestData(check2)
+            setTestDouble(true)
+            console.log('da checkuk')
+        }
+        else {
+            // setTestData(Suggestion_toYou)
+            setTestDouble(false)
+        }
+    }
+
+
+
     const Destination = ({ Destination_item }) => {
         return (
             <TouchableOpacity >
@@ -75,24 +109,35 @@ const NearSearch = ({ navigation }) => {
             <ScrollView>
                 <View style={styles.container}>
                     <Header Name='Gợi ý gần đây' back={goback} />
-                    <View style={styles.Discount}>
-                        <Text style={styles.discount_title}>Khách sạn & Resort</Text>
-                        <TouchableOpacity onPress={() => navigation.navigate('DetailDiscount')}>
-                            <Text style={styles.discount_title1}>Xem thêm ></Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={{ marginHorizontal: 10, marginTop: 10 }}>
-                        <FlatList
-                            data={Suggestion_toYou}
-                            horizontal={true}
-                            showsHorizontalScrollIndicator={false}
-                            keyExtractor={(item) => item.id.toString()}
-                            renderItem={({ item }) =>
-                                //Tạo component rồi gọi đến
-                                <MultipleDetail Item={item} />
-                            }
-                        />
-                    </View>
+                    {
+                        testDouble ? 
+                            <View>
+                                <View style={styles.Discount}>
+                                    <Text style={styles.discount_title}>Khách sạn & Resort</Text>
+                                    <TouchableOpacity onPress={() => navigation.navigate('DetailDiscount')}>
+                                        <Text style={styles.discount_title1}>Xem thêm ></Text>
+                                    </TouchableOpacity>
+                                </View>
+                                <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                                    <FlatList
+                                        data={Suggestion_toYou}
+                                        horizontal={true}
+                                        showsHorizontalScrollIndicator={false}
+                                        keyExtractor={(item) => item.id.toString()}
+                                        renderItem={({ item }) =>
+                                            //Tạo component rồi gọi đến
+                                            <MultipleDetail Item={item} />
+                                        }
+                                    />
+                                </View>
+                            </View>
+
+                            :
+                            <View style={{height:180,justifyContent:'center',alignItems:'center'}}>
+                                <Text>Không có dữ liệu</Text>
+                            </View>
+                            
+                    }
 
                     <View style={styles.Discount}>
                         <Text style={styles.discount_title}>Homestay</Text>
@@ -126,7 +171,7 @@ const NearSearch = ({ navigation }) => {
                             showsHorizontalScrollIndicator={false}
                             keyExtractor={(item) => item.id.toString()}
                             renderItem={({ item }) =>
-                                <Destination Destination_item={item}  />
+                                <Destination Destination_item={item} />
                             }
                         />
                     </View>
@@ -184,9 +229,9 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-        backgroundColor:'white',
+        backgroundColor: 'white',
         elevation: 2,
-        marginBottom:20,marginRight:15
+        marginBottom: 20, marginRight: 15
     },
     header_shedule: {
         flexDirection: 'row', marginHorizontal: 4
@@ -210,20 +255,20 @@ const styles = StyleSheet.create({
     }
     ,
     topokk: {
-    height: verticalScale(213),
-    backgroundColor: 'green'
-  },
-  block: {
-    height: verticalScale(104),
-    marginTop: verticalScale(50),
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
+        height: verticalScale(213),
+        backgroundColor: 'green'
+    },
+    block: {
+        height: verticalScale(104),
+        marginTop: verticalScale(50),
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
 
-  },
-  child: {
-    height: verticalScale(104),
-    backgroundColor: 'orange',
-    width: scale(104)
-  },
+    },
+    child: {
+        height: verticalScale(104),
+        backgroundColor: 'orange',
+        width: scale(104)
+    },
 })
 export default NearSearch;

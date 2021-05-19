@@ -12,7 +12,7 @@ const TabView = () => {
     const dispatch = useDispatch();
     const dispatchLocation = ()=>{
         navigation.navigate('Location')
-        dispatch({type:''})
+        dispatch({type:'ACTIONLOCATION'})
     }
     const [mode, setMode] = useState(new Animated.Value(0));
     const [buttonSize, setButtonSize] = useState(new Animated.Value(1));

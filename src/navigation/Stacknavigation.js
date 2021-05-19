@@ -61,16 +61,14 @@ import DetailSchedule from '../../component/AllSchedule/DetailSchedule'
 import MyScheduleGo from '../../component/MySchedule/MyScheduleGo'
 import Combo from '../../component/Combo'
 import BookScreen from "../BookScreen";
+import NearSearch from '../../component/SearchNear/NearSearch'
 const Stack = createStackNavigator();
 
 const Stacknavigation = () => {
   return (
     // <NavigationContainer> 
     <Stack.Navigator >
-      {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
-      {/* <Stack.Screen name="BookScreen" component={BookScreen} /> */}
-      {/* <Stack.Screen name="FirstScreen" component={FirstScreen}  options={{headerShown: false}}/> */}
-      {/* <Stack.Screen name="SecondScreen" component={SecondScreen}  options={{headerShown: false}} />  */}
+  
       <Stack.Screen name="Login" component={Login}  options={{headerShown: false}} />
       <Stack.Screen name="TabNavigation" component={TabNavigation}  options={{headerShown: false}} />
       <Stack.Screen name="ConfirmOTP" component={ConfirmOTP}  options={{headerShown: false}} />
@@ -78,6 +76,7 @@ const Stacknavigation = () => {
 
       <Stack.Screen name="UpdateProfile" component={UpdateProfile}  options={{headerShown: false}}/>
       <Stack.Screen name="Createa2" component={Createa2}  options={{headerShown: false}}/>
+      <Stack.Screen name="NearSearch" component={NearSearch}  options={{headerShown: false}}/>
 
       <Stack.Screen name="Home" component={Home}  options={{headerShown: false}} />
    <Stack.Screen name="Hotel_Icon" component={Hotel_Icon}  options={{headerShown: false}}/>

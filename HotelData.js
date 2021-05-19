@@ -38,7 +38,8 @@ export const Suggestion_toYou =[
         comment: require('./assets/sa.png'),
         location: require('./assets/location.png'),
         des: 'Phước Mỹ , Đà Nẵng',
-        price: '500,000 đ/ đêm'
+        price: '500,000 đ/ đêm',
+        location2:'Hà Nội'
 
     },
     {
@@ -49,7 +50,8 @@ export const Suggestion_toYou =[
         comment: require('./assets/sa.png'),
         location: require('./assets/location.png'),
         des: 'Phước Mỹ , Đà Nẵng',
-        price: '500,000 đ/ đêm'
+        price: '500,000 đ/ đêm',
+        location2:'Đà Nẵng'
 
     },
     {
@@ -60,7 +62,8 @@ export const Suggestion_toYou =[
         comment: require('./assets/sa.png'),
         location: require('./assets/location.png'),
         des: 'Quốc Oai, Hà Nội',
-        price: '1,000,000 đ/ đêm'
+        price: '1,000,000 đ/ đêm',
+        location2:'Hà Giang'
 
     },
     {
@@ -71,7 +74,8 @@ export const Suggestion_toYou =[
         comment: require('./assets/sa.png'),
         location: require('./assets/location.png'),
         des: 'Thạch Thất ,Hà Nội',
-        price: '500,000 đ/ đêm'
+        price: '500,000 đ/ đêm',
+        location2:'Đà Lạt'
 
     },
     {
@@ -82,7 +86,8 @@ export const Suggestion_toYou =[
         comment: require('./assets/sa.png'),
         location: require('./assets/location.png'),
         des: 'Phú Quốc, Kiên Giang',
-        price: '500,000 đ/ đêm'
+        price: '500,000 đ/ đêm',
+        location2:'Lâm Đồng'
 
     },
 ]
