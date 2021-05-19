@@ -146,6 +146,11 @@ const reducer =(state = inital,action)=>{
                 ...state,statusAction:'ActionLocation'
             }
         }
+        case 'NAME_USER':{
+            return{
+                ...state,nameUser:action.nameUser
+            }
+        }
         default :
             return state;
     }

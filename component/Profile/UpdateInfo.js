@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, TextInput, SafeAreaView } from 'react-native'
 import ImagePicker from 'react-native-image-crop-picker';
 
-const UpdateInfo = () => {
+const UpdateInfo = ({navigation}) => {
     const [state, setState] = useState('https://scontent.fhan14-1.fna.fbcdn.net/v/t1.6435-9/83040435_175874177153572_7388585565899194368_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=174925&_nc_ohc=mez_ijK9pdIAX_2jocS&_nc_ht=scontent.fhan14-1.fna&oh=a6f3a3cc4e3ab18aff0eabcd663c14dd&oe=609AFDBA')
     const image = () => {
         ImagePicker.openCamera({
@@ -19,7 +19,7 @@ const UpdateInfo = () => {
             <View style={styles.container}>
                 <View style={styles.header}>
                     <View style={styles.headerTitle}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=>navigation.navigate('Profile')}>
                             <Text>Hủy</Text>
                         </TouchableOpacity>
                         <Text>Sửa thông tin cá nhân</Text>

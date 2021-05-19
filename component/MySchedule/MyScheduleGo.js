@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, FlatList } from 'react-native'
 import { ScheduleGo } from '../../Data/ScheduleData'
 import ScheduleNow_Item from '../../component/ScheduleNow_Item'
+import FinishItem from './FinishItem'
+
 const MyScheduleGo = ({ navigation }) => {
     const check = () => {
         navigation.navigate('TimeMySchedule')
@@ -14,7 +16,7 @@ const MyScheduleGo = ({ navigation }) => {
                 showsHorizontalScrollIndicator={false}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) =>
-                    <ScheduleNow_Item Item={item} check={check} />
+                    <FinishItem Item={item} check={check} />
                 }
             />
         </View>

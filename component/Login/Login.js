@@ -61,6 +61,8 @@ const Login = ({ navigation }) => {
       const userInfo = await GoogleSignin.signIn();
       console.log('User Info --> ', userInfo);
       setUserInfo(userInfo);
+      console.log('hello',userInfo.user.familyName)
+      dispatch({type:'NAME_USER',nameUser:userInfo.user.familyName})
       navigation.navigate('TabNavigation')
     } catch (error) {
       console.log('Message', JSON.stringify(error));

@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text,Image,StyleSheet,FlatList} from 'react-native'
 import {FinishScheduleData} from '../../Data/ScheduleData'
 import ScheduleNow_Item from '../../component/ScheduleNow_Item'
+import FinishItem from './FinishItem'
 const FinishShedule =()=>{
     return(
         <View style={styles.container}>
@@ -11,7 +12,7 @@ const FinishShedule =()=>{
                         showsHorizontalScrollIndicator={false}
                         keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) =>
-                            <ScheduleNow_Item Item={item} />
+                            <FinishItem Item={item} />
                         }
                     />
         </View>

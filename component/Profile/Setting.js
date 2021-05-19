@@ -24,7 +24,7 @@ const Setting =({navigation})=>{
                  
                     <Text style={styles.textTab}>Hướng dẫn thanh toán </Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.block}>
+                <TouchableOpacity style={styles.block} onPress={()=>navigation.navigate('Login')}>
                
                     <Text style={styles.textTab}>Đăng xuất </Text>
                 </TouchableOpacity>

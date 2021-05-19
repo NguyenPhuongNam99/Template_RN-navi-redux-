@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet ,Pressable,Alert,SafeAreaView} from 'react-native'
 import { Modal, Portal,  Provider } from 'react-native-paper';
-
+import {useSelector,useDispatch} from 'react-redux'
 const Profile = ({ navigation }) => {
     const [defaul, setDefault] = useState(2)
     const [maxRating, setMaxrating] = useState([1, 2, 3, 4, 5])
@@ -16,6 +16,7 @@ const Profile = ({ navigation }) => {
   const alert =()=>{
       Alert.alert
   }
+  const nameUser = useSelector(state=>state.nameUser)
   const createTwoButtonAlert = () =>
   Alert.alert(
     "Cảm ơn bạn đã đánh giá",
@@ -34,7 +35,7 @@ const Profile = ({ navigation }) => {
             </View>
             <TouchableOpacity style={styles.block_image} onPress={() => navigation.navigate('MyProfile')}>
                 <Image style={styles.image} source={require('../../assets/nam.jpg')} />
-                <Text style={styles.name}>Nguyễn Phương Nam</Text>
+                <Text style={styles.name}>{nameUser? nameUser: 'Nguyễn Phương Namm'}</Text>
 
             </TouchableOpacity>
             <View style={styles.block_tab}>

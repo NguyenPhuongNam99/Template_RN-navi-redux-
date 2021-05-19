@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import {useSelector,useDispatch} from 'react-redux'
-const ScheduleNow_Item = ({ Item,ScheduleNowNavigation ,check}) => {
+const FinishItem = ({ Item,ScheduleNowNavigation ,check}) => {
     const dispatch = useDispatch()
     const [imageState,setImageState]= useState(false)
     const item_tym = useSelector(state=>state.item_tym)
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
         // paddingTop: 10,
         // paddingBottom: 10,
         height: 250,
-        marginLeft:15,
+        marginHorizontal:15,
         marginVertical: 10
 
     },
@@ -135,45 +135,6 @@ const styles = StyleSheet.create({
         flex: 6,
         flexDirection: 'column'
     }
-    // header_shedule: {
-    //     flexDirection: 'row', 
-    //     marginHorizontal: 10,
 
-    //     marginHorizontal:10
-    //     // width:373,
-    //     // backgroundColor:'green'
-    // },
-    // left1: {
-    //     flex: 1,
-    //     // width:'100%'
-
-    //     // flex:1,backgroundColor:'green'
-    // },
-    // right1: {
-    //     flex: 2,
-    //     // width:199
-
-
-    // },
-    // header_shedule: {
-    //     flexDirection: 'row', marginHorizontal: 4
-    // },
-    // left1: {
-    //     flex: 1,
-
-    // },
-    // right1: {
-    //     flex: 4, marginHorizontal: 14
-
-    // },
-    // schedule_bottom: {
-    //     flexDirection: 'row', marginTop: 5
-    // },
-    // header_title_block: {
-    //     marginTop: 16,
-    //     flexDirection: 'row',
-    //     justifyContent: 'space-between',
-    //     marginHorizontal: 16
-    // }
 })
-export default ScheduleNow_Item
+export default FinishItem

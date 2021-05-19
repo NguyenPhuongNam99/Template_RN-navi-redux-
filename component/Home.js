@@ -470,8 +470,8 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-
-        elevation: 5,
+      
+        elevation: 2,
     },
     header_shedule: {
         flexDirection: 'row', marginHorizontal: 4
