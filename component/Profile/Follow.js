@@ -20,7 +20,7 @@ const Follow = ({ navigation }) => {
                         return (
                             <View style={styles.Follow}>
                                 <View style={styles.BlockImage}>
-                                    <Image style={{ width: 34, height: 34, borderRadius: 17 }} source={{uri:item.image}} />
+                                    <Image style={{ width: 34, height: 34, borderRadius: 17 }} source={item.image} />
                                     <Text style={styles.name}>{item.name}</Text>
                                 </View>
                                 <TouchableOpacity style={styles.touchabe}>

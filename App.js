@@ -149,7 +149,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 // import BookScreen from './src/BookScreen'
 // import { NavigationContainer } from '@react-navigation/native';
 import { NavigationContainer } from "@react-navigation/native";
-import TabNavigation from './src/navigation/TabNavigation'
+// import TabNavigation from './src/navigation/TabNavigation'
 // import BottomTabNavigator from "./navigation/TabNavigator";
 // import TestChuyenTab from '../TestChuyenTab';
 // import Home from '../../component/Home'
@@ -164,8 +164,10 @@ import reducer from './src/reducer';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux'
 import store from './src/store'
-import Stacknavigation from './src/navigation/Stacknavigation'
+// import {StackLogin} from './src/navigation/Stacknavigation'
 import FirstScreen from './component/FirstScreen'
+import StackLogin from './src/navigation/StackLogin'
+import TabNavigation from './src/navigation/TabNavigation'
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -176,7 +178,7 @@ const App = () => {
         setLoading(false);
       }, 3000);
     }, [])
-    return isLoading ? <FirstScreen/> : <Stacknavigation/>;
+    return isLoading ? <FirstScreen/> : <StackLogin />;
   };
   
   return (
@@ -185,7 +187,7 @@ const App = () => {
       <NavigationContainer>
 
        <TabNavi />
-        {/* <Stacknavigation /> */}
+       
       </NavigationContainer>
    </Provider>
 

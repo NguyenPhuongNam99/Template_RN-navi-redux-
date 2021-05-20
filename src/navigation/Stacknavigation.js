@@ -36,7 +36,7 @@ import Hotel from '../../component/LocationPopular/Hotel'
 import ReverseRoom from '../../component/LocationPopular/ReverseRoom'
 import UpdateInfo from '../../component/Profile/UpdateInfo'
 import FirstScreen from '../../component/FirstScreen'
-import UpdateProfile from '../UpdateProfile'
+// import UpdateProfile from '../UpdateProfile'
 import EvaluationSchedule from '../../component/SelectSchedule.js/EvaluationSchedule'
 import SelectSchedule from '../../component/SelectSchedule.js/SelectSchedule'
 import CreateSchedule from '../../component/CteateSchedule/CreateSchedule';
@@ -70,37 +70,48 @@ const Stacknavigation = () => {
     // <NavigationContainer> 
     <Stack.Navigator >
   
-      <Stack.Screen name="Login" component={Login}  options={{headerShown: false}} />
+      {/* <Stack.Screen name="Login" component={Login}  options={{headerShown: false}} />
       <Stack.Screen name="TabNavigation" component={TabNavigation}  options={{headerShown: false}} />
       <Stack.Screen name="ConfirmOTP" component={ConfirmOTP}  options={{headerShown: false}} />
-      <Stack.Screen name="BookScreen" component={BookScreen}  options={{headerShown: false}} />
+      <Stack.Screen name="BookScreen" component={BookScreen}  options={{headerShown: false}} /> */}
 
-      <Stack.Screen name="UpdateProfile" component={UpdateProfile}  options={{headerShown: false}}/>
+      {/* <Stack.Screen name="UpdateProfile" component={UpdateProfile}  options={{headerShown: false}}/> */}  
+      {/* <Stack.Screen name="Hotel_Icon" component={Hotel_Icon}  options={{headerShown: false}}/>
+      <Stack.Screen name="RestaurantIcon" component={RestaurantIcon}  options={{headerShown: false}}/> */}
+        {/* <Stack.Screen name="ScheduleHeader" component={ScheduleHeader}  options={{headerShown: false}}/> */}
+      {/* <Stack.Screen name="DestionationPopular" component={DestionationPopular}  options={{headerShown: false}}/> */}
+    
+      {
+      // {/* <Stack.Screen name="Profile" component={Profile}  options={{headerShown: false}} /> */}
+      // {/* <Stack.Screen name="Favourite" component={Favourite}  options={{headerShown: false}}/> */}
+      // {/* <Stack.Screen name="Setting" component={Setting}  options={{headerShown: false}}/> */}
+
+      //  {/* <Stack.Screen name="MyProfile" component={MyProfile}  options={{headerShown: false}}/> */}
+      // {/* <Stack.Screen name="Follow" component={Follow}  options={{headerShown: false}}/> */}
+      /* <Stack.Screen name="SelectSchedule" component={SelectSchedule}  options={{headerShown: false}}/> */}
+      {/* <Stack.Screen name="Destionation12" component={Destionation12}  options={{headerShown: false}}/> */}
+    {/* <Stack.Screen name="HotelResort_Header" component={HotelResort_Header}  options={{headerShown: false}}/> */}
+      {/* <Stack.Screen name="LocationDetail" component={LocationDetail}  options={{headerShown: false}}/> */}
+      {/* <Stack.Screen name="Destionation12_Head" component={LocationDetail}  options={{headerShown: false}}/> */}
       <Stack.Screen name="Createa2" component={Createa2}  options={{headerShown: false}}/>
       <Stack.Screen name="NearSearch" component={NearSearch}  options={{headerShown: false}}/>
       <Stack.Screen name="Schedule_Item2" component={Schedule_Item2}  options={{headerShown: false}}/>
 
       <Stack.Screen name="Home" component={Home}  options={{headerShown: false}} />
-   <Stack.Screen name="Hotel_Icon" component={Hotel_Icon}  options={{headerShown: false}}/>
-      <Stack.Screen name="RestaurantIcon" component={RestaurantIcon}  options={{headerShown: false}}/>
+ 
       <Stack.Screen name="DiscountHeader" component={DiscountHeader}  options={{headerShown: false}}/>
-      <Stack.Screen name="ScheduleHeader" component={ScheduleHeader}  options={{headerShown: false}}/>
-      <Stack.Screen name="DestionationPopular" component={DestionationPopular}  options={{headerShown: false}}/>
-      <Stack.Screen name="Responsive" component={Responsive}  options={{headerShown: false}}/>
-      <Stack.Screen name="Destionation12" component={Destionation12}  options={{headerShown: false}}/>
       <Stack.Screen name="DetailDiscount" component={DetailDiscount}  options={{headerShown: false}}/>
-      <Stack.Screen name="LocationDetail" component={LocationDetail}  options={{headerShown: false}}/>
-      <Stack.Screen name="Destionation12_Head" component={LocationDetail}  options={{headerShown: false}}/>
+      <Stack.Screen name="Responsive" component={Responsive}  options={{headerShown: false}}/>
       <Stack.Screen name="RestaurantDetail" component={RestaurantDetail}  options={{headerShown: false}}/>
       <Stack.Screen name="MultipleDetail" component={MultipleDetail}  options={{headerShown: false}}/>
       <Stack.Screen name="LocationDetail2" component={LocationDetail2}  options={{headerShown: false}}/>
       <Stack.Screen name="LocationPopular" component={LocationPopular}  options={{headerShown: false}}/>
-      <Stack.Screen name="HotelResort_Header" component={HotelResort_Header}  options={{headerShown: false}}/>
+      
       <Stack.Screen name="SelectRoom_Header" component={SelectRoom_Header}  options={{headerShown: false}}/>
       <Stack.Screen name="Hotel" component={Hotel}  options={{headerShown: false}}/>
       <Stack.Screen name="ReverseRoom" component={ReverseRoom}  options={{headerShown: false}}/>
       <Stack.Screen name="EvaluationSchedule" component={EvaluationSchedule}  options={{headerShown: false}}/>
-      <Stack.Screen name="SelectSchedule" component={SelectSchedule}  options={{headerShown: false}}/>
+      
       <Stack.Screen name="CreateSchedule" component={CreateSchedule}  options={{headerShown: false}}/>
       <Stack.Screen name="ScreenSuggest" component={ScreenSuggest}  options={{headerShown: false}}/>
       <Stack.Screen name="Location" component={Location}  options={{headerShown: false}}/>
@@ -112,13 +123,10 @@ const Stacknavigation = () => {
       <Stack.Screen name="OverViewPlant" component={OverViewPlant}  options={{headerShown: false}}/>
       <Stack.Screen name="OverView_Visit" component={OverView_Visit}  options={{headerShown: false}}/>
       <Stack.Screen name="DetailVisit" component={DetailVisit}  options={{headerShown: false}}/>
-      <Stack.Screen name="Profile" component={Profile}  options={{headerShown: false}} />
-      <Stack.Screen name="Favourite" component={Favourite}  options={{headerShown: false}}/>
-      <Stack.Screen name="Setting" component={Setting}  options={{headerShown: false}}/>
+      
       <Stack.Screen name="PolycySetting" component={PolycySetting}  options={{headerShown: false}}/>
       <Stack.Screen name="TermOfUse" component={TermOfUse}  options={{headerShown: false}}/>
-      <Stack.Screen name="MyProfile" component={MyProfile}  options={{headerShown: false}}/>
-      <Stack.Screen name="Follow" component={Follow}  options={{headerShown: false}}/>
+     
       <Stack.Screen name="UpdateInfo" component={UpdateInfo}  options={{headerShown: false}}/>
       <Stack.Screen name="Combo" component={Combo}  options={{headerShown: false}}/>
       <Stack.Screen name="PeopleJoin" component={PeopleJoin}  options={{headerShown: false}}/>
@@ -133,23 +141,63 @@ const Stacknavigation = () => {
   );
 }
 
-// const App2 =()=>{
-//   return(
-//     <Stack.Navigator >
-//       <Stack.Screen name="Profile" component={Profile}  options={{headerShown: false}} />
-//       <Stack.Screen name="Favourite" component={Favourite}  options={{headerShown: false}}/>
-//       <Stack.Screen name="Setting" component={Setting}  options={{headerShown: false}}/>
-//       <Stack.Screen name="PolycySetting" component={PolycySetting}  options={{headerShown: false}}/>
-//       <Stack.Screen name="TermOfUse" component={TermOfUse}  options={{headerShown: false}}/>
-//       <Stack.Screen name="MyProfile" component={MyProfile}  options={{headerShown: false}}/>
-//       <Stack.Screen name="Follow" component={Follow}  options={{headerShown: false}}/>
-//       <Stack.Screen name="UpdateInfo" component={UpdateInfo}  options={{headerShown: false}}/>
-//       {/* <Stack.Screen name="Home" component={Home}  options={{headerShown: false}}/>
-//       <Stack.Screen name="DiscountHeader" component={DiscountHeader}  options={{headerShown: false}}/> */}
-      
-//     </Stack.Navigator>
-    
-//   )
+
+// const StackLogin =()=>{
+//   <Stack.Navigator>
+//       <Stack.Screen name="Login" component={Login}  options={{headerShown: false}} />
+     
+//       {/* <Stack.Screen name="ConfirmOTP" component={ConfirmOTP}  options={{headerShown: false}} /> */}
+//       <Stack.Screen name="BookScreen" component={BookScreen}  options={{headerShown: false}} />
+//       <Stack.Screen name="UpdateProfile" component={UpdateProfile}  options={{headerShown: false}}/>
+//   </Stack.Navigator>
 // }
+
+const HomeStack = ()=>{
+  return(
+     <Stack.Navigator>
+             <Stack.Screen name="Home" component={Home}  options={{headerShown: false}} />
+
+     {/* <Stack.Screen name="TabNavigation" component={TabNavigation}  options={{headerShown: false}} /> */}
+     <Stack.Screen name="Hotel_Icon" component={Hotel_Icon}  options={{headerShown: false}}/>
+     <Stack.Screen name="RestaurantIcon" component={RestaurantIcon}  options={{headerShown: false}}/>
+     <Stack.Screen name="SelectSchedule" component={SelectSchedule}  options={{headerShown: false}}/>
+     <Stack.Screen name="ScheduleHeader" component={ScheduleHeader}  options={{headerShown: false}}/>
+     <Stack.Screen name="DestionationPopular" component={DestionationPopular}  options={{headerShown: false}}/>
+     <Stack.Screen name="LocationDetail" component={LocationDetail}  options={{headerShown: false}}/>
+    {/* TRUNG DIA DIEM PHO BIEN */}
+      <Stack.Screen name="Destionation12_Head" component={Destionation12_Head}  options={{headerShown: false}}/> 
+
+      <Stack.Screen name="Destionation12" component={Destionation12}  options={{headerShown: false}}/>
+      <Stack.Screen name="HotelResort_Header" component={HotelResort_Header}  options={{headerShown: false}}/>
+
+
+  </Stack.Navigator>
+  )
+ 
+}
+
+///Tab VOUCHER 3 ĐÃ TÍCH HỢP SÃN ==>SAU Ở HOME CHỈ VIỆC GỌI 
+const StackSchedule = ()=>{
+  // <Stack.Navigator>
+
+  // </Stack.Navigator>
+}
+//THÔNG BÁO CŨNG VẬY
+
+const StackProfile = ()=>{
+  return(
+     <Stack.Navigator>
+      <Stack.Screen name="MyProfile" component={MyProfile}  options={{headerShown: false}}/>
+      <Stack.Screen name="Favourite" component={Favourite}  options={{headerShown: false}}/>
+      <Stack.Screen name="Setting" component={Setting}  options={{headerShown: false}}/>
+      <Stack.Screen name="Profile" component={Profile}  options={{headerShown: false}} />
+      <Stack.Screen name="Follow" component={Follow}  options={{headerShown: false}}/>
+
+  </Stack.Navigator>
+  )
+ 
+}
+
+
 // export  {App1,App2};
-export default Stacknavigation;
+export {Stacknavigation ,HomeStack,StackProfile} ;

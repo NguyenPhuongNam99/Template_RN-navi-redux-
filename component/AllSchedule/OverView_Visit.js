@@ -10,6 +10,10 @@ const OverView_Visit = () => {
         navigation.navigate('DetailVisit')
     }
 
+///tách 2 tab screen thành 2 stack
+//nhóm những cái ko có tab vòa một stack
+//rồi dùng useNavigation
+
     return (
         <View style={styles.container}>
             <View style={{ marginBottom: 50 }}>

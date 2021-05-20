@@ -4,8 +4,9 @@ import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity ,Button} fro
 import Modal from 'react-native-modal';
 import {useDispatch,useSelector} from 'react-redux'
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { useNavigation } from '@react-navigation/native';
 
-const UpdateProfile = ({navigation}) => {
+const UpdateProfile = () => {
     const [checkHoten, setCheckhoten] = useState(false);
     const [hoten,setHoten] = useState('')
     const [checkten, setCheckten] = useState(false);
@@ -17,6 +18,7 @@ const UpdateProfile = ({navigation}) => {
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };
+  const navigation = useNavigation();
     const validateHoten = (text1) => {
         let reg =/^(?=.{3,50}$)[a-z]+(?:['_.\s][a-z]+)*$/i;
         if (reg.test(text1) === false) {
@@ -131,7 +133,7 @@ const UpdateProfile = ({navigation}) => {
             </View>
             {
                 checkHoten && checkten ?
-                 <TouchableOpacity style={styles.touchable}  onPress={()=>{navigation.navigate('TabNavigation')}}>
+                 <TouchableOpacity style={styles.touchable}  onPress={()=>navigation.navigate('TabNavigation')}>
                 <Text style={styles.finishOk}>Hoàn thành</Text>
             </TouchableOpacity>
             :

@@ -11,7 +11,7 @@ import Home from '../../component/Home'
 import ScheduleHeader from '../../component/ScheduleHeader'
 import Hotel_Icon from '../../component/Hotel_Icon'
 // import MultipleDetail from '../../component/MultipleDetail'
-import UpdateProfile from '../../component/UpdateProfile'
+// import UpdateProfile from '../../component/UpdateProfile'
 import TabView from '../../component/TabView'
 import DestionationPopular from '../../component/DestionationPopular'
 import Destination12 from '../../component/Destionation12'
@@ -23,6 +23,8 @@ import Profile from '../../component/Profile/Profile'
 // import App2 from '../../src/navigation/Stacknavigation'
 import Notification from '../../component/Notification'
 import App1 from '../../src/navigation/Stacknavigation'
+import { HomeStack,StackProfile} from '../../src/navigation/Stacknavigation'
+import StackLogin from '../../src/navigation/StackLogin'
 const hello = () => {
   return null
 }
@@ -40,13 +42,13 @@ export default function TabNavigation() {
         
         // activeBackgroundColor: '#c4461c',
       }}>
-        <Tab.Screen name="Home"
+        <Tab.Screen name="HomeStack"
         
         options={{
           tabBarIcon:({focused})=> focused ? <Image source={require('../../assets/ac.png')}/>   :    <Icon name="search" size={19} color="#9A9A9A" />
         
         }} 
-        component={Home}
+        component={HomeStack}
         />
       
         <Tab.Screen name="TabVoucher3"
@@ -61,11 +63,11 @@ export default function TabNavigation() {
           tabBarIcon:({focused})=>focused ? <Image source={require('../../assets/ac4.png')} /> : <Image source={require('../../assets/chuong.png')} />
         }}
         component={Notification} />
-        <Tab.Screen name="Profile"
+        <Tab.Screen name="StackProfile"
           options={{
             tabBarIcon:({focused})=>focused ? <Image source={require('../../assets/ac3.png')} /> : <Image source={require('../../assets/ac45.png')} />
           }}
-        component={Profile} />
+        component={StackProfile} />
 
       </Tab.Navigator>
     

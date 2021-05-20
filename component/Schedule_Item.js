@@ -52,7 +52,7 @@ const Schedule_Item = ({ Item,ScheduleNowNavigation }) => {
                         <Image 
                             style={{marginRight:7}}
                             source={Item.location} />
-                        <Text>{Item.des ? Item.des :'Việt Nam' }</Text>
+                        <Text style={{color:'#3076FE',fontSize:scale(10)}}>{Item.des ? Item.des :'Việt Nam' }</Text>
                     </View>
                     <TouchableOpacity style={{ backgroundColor: '#FF5F24', width:scale(104), height: 20, justifyContent: 'center', alignItems: 'center', borderRadius: 5, marginTop: 4 }}>
                         <Text style={{ color: '#FFFFFF', fontSize: 10, fontWeight: 'normal', }}>5,200,000 đ/ người</Text>
