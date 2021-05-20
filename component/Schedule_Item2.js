@@ -1,23 +1,23 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
-import {useSelector,useDispatch} from 'react-redux'
-const ScheduleNow_Item = ({ Item,ScheduleNowNavigation ,check}) => {
+import { useSelector, useDispatch } from 'react-redux'
+const Schedule_Item2 = ({ Item, ScheduleNowNavigation, check }) => {
     const dispatch = useDispatch()
-    const [imageState,setImageState]= useState(false)
-    const item_tym = useSelector(state=>state.item_tym)
-    const setCheck =(item)=>{
+    const [imageState, setImageState] = useState(false)
+    const item_tym = useSelector(state => state.item_tym)
+    const setCheck = (item) => {
         setImageState(!imageState)
-        if(imageState == true){
+        if (imageState == true) {
 
-            dispatch({type:'ADD_TYM',item_tym:item})
-            console.log("item tym la",item)
+            dispatch({ type: 'ADD_TYM', item_tym: item })
+            console.log("item tym la", item)
         }
-        else{
+        else {
             console.log('null')
-        } 
-      
+        }
+
     }
-    const xuly =()=>{
+    const xuly = () => {
         check && check()
         ScheduleNowNavigation && ScheduleNowNavigation()
     }
@@ -65,9 +65,9 @@ const ScheduleNow_Item = ({ Item,ScheduleNowNavigation ,check}) => {
                     </View>
                 </View>
                 <View style={{ flex: 5, alignItems: 'flex-end', marginTop: 16, marginHorizontal: 16 }}>
-                    <View style={{ flexDirection: 'row',alignItems:'center'}}>
-                        <Image 
-                            style={{marginRight:7}}
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <Image
+                            style={{ marginRight: 7 }}
                             source={Item.location} />
                         <Text>{Item.des}</Text>
                     </View>
@@ -75,21 +75,21 @@ const ScheduleNow_Item = ({ Item,ScheduleNowNavigation ,check}) => {
                         <Text style={{ color: '#FFFFFF', fontSize: 10, fontWeight: 'normal', }}>5,200,000 đ/ người</Text>
                     </TouchableOpacity>
 
-                    <View style={{flexDirection:'row',justifyContent:'space-around',marginTop:5}}>
-                        <Image style={{ width: 14, height: 14, marginBottom: 5,marginRight:10 }}
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 5 }}>
+                        <Image style={{ width: 14, height: 14, marginBottom: 5, marginRight: 10 }}
                             resizeMode='stretch'
                             source={Item.share} />
-                            <TouchableOpacity onPress={()=>setCheck(Item)}>
-                                {
-                                    imageState ?  <Image style={{ width: 16, height: 14, marginBottom: 5 }}
+                        <TouchableOpacity onPress={() => setCheck(Item)}>
+                            {
+                                imageState ? <Image style={{ width: 16, height: 14, marginBottom: 5 }}
                                     source={Item.tym2} />
-                                    : 
+                                    :
                                     <Image style={{ width: 16, height: 14, marginBottom: 5 }}
-                            source={Item.tym} />
-                                }
-                                
-                            </TouchableOpacity>
-                       
+                                        source={Item.tym} />
+                            }
+
+                        </TouchableOpacity>
+
                     </View>
 
                 </View>
@@ -112,11 +112,9 @@ const styles = StyleSheet.create({
         elevation: 0.3,
 
         backgroundColor: '#FFFFFF',
-        // marginVertical: 16,
-        // paddingTop: 10,
-        // paddingBottom: 10,
+
         height: 250,
-        marginLeft:15,
+        marginHorizontal: 15,
         marginVertical: 10
 
     },
@@ -135,45 +133,6 @@ const styles = StyleSheet.create({
         flex: 6,
         flexDirection: 'column'
     }
-    // header_shedule: {
-    //     flexDirection: 'row', 
-    //     marginHorizontal: 10,
 
-    //     marginHorizontal:10
-    //     // width:373,
-    //     // backgroundColor:'green'
-    // },
-    // left1: {
-    //     flex: 1,
-    //     // width:'100%'
-
-    //     // flex:1,backgroundColor:'green'
-    // },
-    // right1: {
-    //     flex: 2,
-    //     // width:199
-
-
-    // },
-    // header_shedule: {
-    //     flexDirection: 'row', marginHorizontal: 4
-    // },
-    // left1: {
-    //     flex: 1,
-
-    // },
-    // right1: {
-    //     flex: 4, marginHorizontal: 14
-
-    // },
-    // schedule_bottom: {
-    //     flexDirection: 'row', marginTop: 5
-    // },
-    // header_title_block: {
-    //     marginTop: 16,
-    //     flexDirection: 'row',
-    //     justifyContent: 'space-between',
-    //     marginHorizontal: 16
-    // }
 })
-export default ScheduleNow_Item
+export default Schedule_Item2

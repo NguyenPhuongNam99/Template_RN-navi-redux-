@@ -7,7 +7,8 @@ import MultipleDetail from '../MultipleDetail'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useSelector,useDispatch} from 'react-redux'
 import {Discovery} from '../../Data/LocationPopular_Data'
-import { scale, verticalScale } from 'react-native-size-matters';
+import { scale, verticalScale ,moderateScale } from 'react-native-size-matters';
+import Schedule_Item from '../../component/Schedule_Item'
 
 const LocationDetail = ({navigation}) => {
     const dispatch = useDispatch();
@@ -85,7 +86,7 @@ const LocationDetail = ({navigation}) => {
                     <Icon name="search" size={12} color="#FFFFFF" />
                     </TouchableOpacity>
                 </View>
-                <View style={{ height: 210, backgroundColor: '#FFFFFF', paddingHorizontal: 10, position: 'absolute', top: 150, left: 0, borderTopRightRadius: 13, borderTopLeftRadius: 13 }}>
+                <View style={{ height:verticalScale(210), backgroundColor: '#FFFFFF', paddingHorizontal: 10, position: 'absolute', top: 150, left: 0, borderTopRightRadius: 13, borderTopLeftRadius: 13 }}>
                     <View style={styles.title}>
                         <Text style={styles.title_location}>Đảo Lý Sơn - Vương quốc tỏi</Text>
                         <View style={styles.location}>
@@ -123,7 +124,7 @@ const LocationDetail = ({navigation}) => {
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
                     renderItem={({ item }) =>
-                        <LocationItem Item={item} />
+                        <Schedule_Item Item={item} />
                     }
 
 
@@ -142,7 +143,7 @@ const LocationDetail = ({navigation}) => {
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
                     renderItem={({ item }) =>
-                        <LocationItem Item={item} />
+                        <Schedule_Item Item={item} />
                     }
 
 
@@ -283,10 +284,10 @@ const styles = StyleSheet.create({
     },
     touchable: {
         backgroundColor: '#FF5F24',
-        paddingHorizontal: 16,
+        paddingHorizontal: moderateScale (16),
         justifyContent: 'center',
         alignItems: 'center',
-        height: 30
+        height:verticalScale(30) 
     },
     touchable_text: {
         color: '#FFFFFF',

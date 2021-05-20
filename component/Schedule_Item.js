@@ -1,29 +1,12 @@
 import React,{useState} from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
-import {useSelector,useDispatch} from 'react-redux'
-const ScheduleNow_Item = ({ Item,ScheduleNowNavigation ,check}) => {
-    const dispatch = useDispatch()
-    const [imageState,setImageState]= useState(false)
-    const item_tym = useSelector(state=>state.item_tym)
-    const setCheck =(item)=>{
-        setImageState(!imageState)
-        if(imageState == true){
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
-            dispatch({type:'ADD_TYM',item_tym:item})
-            console.log("item tym la",item)
-        }
-        else{
-            console.log('null')
-        } 
-      
-    }
-    const xuly =()=>{
-        check && check()
-        ScheduleNowNavigation && ScheduleNowNavigation()
-    }
+const Schedule_Item = ({ Item,ScheduleNowNavigation }) => {
+   
     return (
         <View style={styles.container_header} >
-            <TouchableOpacity style={styles.top} onPress={xuly}>
+            <TouchableOpacity style={styles.top} >
                 <View style={styles.left}>
                     <Image style={{ width: '100%', height: '100%', borderTopLeftRadius: 5 }} source={Item.image} />
 
@@ -69,28 +52,13 @@ const ScheduleNow_Item = ({ Item,ScheduleNowNavigation ,check}) => {
                         <Image 
                             style={{marginRight:7}}
                             source={Item.location} />
-                        <Text>{Item.des}</Text>
+                        <Text>{Item.des ? Item.des :'Việt Nam' }</Text>
                     </View>
-                    <TouchableOpacity style={{ backgroundColor: '#FF5F24', width: 104, height: 20, justifyContent: 'center', alignItems: 'center', borderRadius: 5, marginTop: 4 }}>
+                    <TouchableOpacity style={{ backgroundColor: '#FF5F24', width:scale(104), height: 20, justifyContent: 'center', alignItems: 'center', borderRadius: 5, marginTop: 4 }}>
                         <Text style={{ color: '#FFFFFF', fontSize: 10, fontWeight: 'normal', }}>5,200,000 đ/ người</Text>
                     </TouchableOpacity>
 
-                    <View style={{flexDirection:'row',justifyContent:'space-around',marginTop:5}}>
-                        <Image style={{ width: 14, height: 14, marginBottom: 5,marginRight:10 }}
-                            resizeMode='stretch'
-                            source={Item.share} />
-                            <TouchableOpacity onPress={()=>setCheck(Item)}>
-                                {
-                                    imageState ?  <Image style={{ width: 16, height: 14, marginBottom: 5 }}
-                                    source={Item.tym2} />
-                                    : 
-                                    <Image style={{ width: 16, height: 14, marginBottom: 5 }}
-                            source={Item.tym} />
-                                }
-                                
-                            </TouchableOpacity>
-                       
-                    </View>
+                   
 
                 </View>
 
@@ -112,10 +80,8 @@ const styles = StyleSheet.create({
         elevation: 0.3,
 
         backgroundColor: '#FFFFFF',
-        // marginVertical: 16,
-        // paddingTop: 10,
-        // paddingBottom: 10,
-        height: 250,
+       
+        height: 230,
         marginLeft:15,
         marginVertical: 10
 
@@ -176,4 +142,4 @@ const styles = StyleSheet.create({
     //     marginHorizontal: 16
     // }
 })
-export default ScheduleNow_Item
+export default Schedule_Item

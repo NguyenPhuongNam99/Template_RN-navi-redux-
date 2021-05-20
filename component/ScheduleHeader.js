@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet, FlatList, SafeAreaView } from 'react-native';
 import { ScheduleNowData } from '../Data/ScheduleData';
 import ScheduleNow_Item from '../component/ScheduleNow_Item'
+import Schedule_Item2 from '../component/Schedule_Item2'
 const ScheduleHeader = ({ navigation }) => {
     const ScheduleNowNavigation = () => {
         console.log('chuyen tab OverView')
@@ -26,7 +27,7 @@ const ScheduleHeader = ({ navigation }) => {
                     showsHorizontalScrollIndicator={false}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) =>
-                        <ScheduleNow_Item Item={item} ScheduleNowNavigation={() => navigation.navigate('OverView')} />
+                        <Schedule_Item2 Item={item} ScheduleNowNavigation={() => navigation.navigate('OverView')} />
                     }
                 />
 
