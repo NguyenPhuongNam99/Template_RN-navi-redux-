@@ -166,7 +166,7 @@ import { createStore } from 'redux'
 import store from './src/store'
 // import {StackLogin} from './src/navigation/Stacknavigation'
 import FirstScreen from './component/FirstScreen'
-import StackLogin from './src/navigation/StackLogin'
+import {StackLogin }from './src/navigation/Stacknavigation'
 import TabNavigation from './src/navigation/TabNavigation'
 const Stack = createStackNavigator();
 

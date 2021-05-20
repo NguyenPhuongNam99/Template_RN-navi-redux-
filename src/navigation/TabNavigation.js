@@ -32,7 +32,7 @@ const Tab = createBottomTabNavigator();
 
 export default function TabNavigation() {
   return (
-   
+   <NavigationContainer>
       <Tab.Navigator
     
        tabBarOptions={{
@@ -70,6 +70,6 @@ export default function TabNavigation() {
         component={StackProfile} />
 
       </Tab.Navigator>
-    
+      </NavigationContainer>
   );
 }

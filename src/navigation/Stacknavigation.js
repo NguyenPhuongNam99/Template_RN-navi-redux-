@@ -63,6 +63,7 @@ import Combo from '../../component/Combo'
 import BookScreen from "../BookScreen";
 import NearSearch from '../../component/SearchNear/NearSearch'
 import Schedule_Item2 from '../../component/Schedule_Item2'
+import UpdateProfile from '../../src/UpdateProfile'
 const Stack = createStackNavigator();
 
 const Stacknavigation = () => {
@@ -142,15 +143,18 @@ const Stacknavigation = () => {
 }
 
 
-// const StackLogin =()=>{
-//   <Stack.Navigator>
-//       <Stack.Screen name="Login" component={Login}  options={{headerShown: false}} />
+const StackLogin =()=>{
+  return(
+     <Stack.Navigator>
+      <Stack.Screen name="Login" component={Login}  options={{headerShown: false}} />
      
-//       {/* <Stack.Screen name="ConfirmOTP" component={ConfirmOTP}  options={{headerShown: false}} /> */}
-//       <Stack.Screen name="BookScreen" component={BookScreen}  options={{headerShown: false}} />
-//       <Stack.Screen name="UpdateProfile" component={UpdateProfile}  options={{headerShown: false}}/>
-//   </Stack.Navigator>
-// }
+      {/* <Stack.Screen name="ConfirmOTP" component={ConfirmOTP}  options={{headerShown: false}} /> */}
+      <Stack.Screen name="BookScreen" component={BookScreen}  options={{headerShown: false}} />
+      <Stack.Screen name="UpdateProfile" component={UpdateProfile}  options={{headerShown: false}}/>
+  </Stack.Navigator>
+  )
+ 
+}
 
 const HomeStack = ()=>{
   return(
@@ -200,4 +204,4 @@ const StackProfile = ()=>{
 
 
 // export  {App1,App2};
-export {Stacknavigation ,HomeStack,StackProfile} ;
+export {Stacknavigation ,HomeStack,StackProfile,StackLogin} ;

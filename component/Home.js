@@ -8,12 +8,16 @@ import { data, voucherdata, sheduleNowData, Desdata, Expe, DiemDen, Hoteldata } 
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import {ScheduleNowData} from '../Data/ScheduleData'
 import Schedule_Item from '../component/Schedule_Item'
+import { useNavigation } from '@react-navigation/native';
+
 import {
     responsiveHeight,
     responsiveWidth,
     responsiveFontSize
 } from "react-native-responsive-dimensions";
-const Home = ({ navigation }) => {
+const Home = () => {
+    const navigation = useNavigation();
+
     //data icon Top
     const dispatch = useDispatch();
     const checkHotel = (item) => {
