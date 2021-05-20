@@ -293,7 +293,7 @@ const Home = ({ navigation }) => {
                                 <Text style={styles.discount_title1}>Xem thêm ></Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={{ marginTop: 10 }}>
+                        <View >
                             <FlatList
                                 data={ScheduleNowData}
                                 horizontal={true}

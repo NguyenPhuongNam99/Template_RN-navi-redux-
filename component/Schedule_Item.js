@@ -52,7 +52,7 @@ const Schedule_Item = ({ Item,ScheduleNowNavigation }) => {
                         <Image 
                             style={{marginRight:7}}
                             source={Item.location} />
-                        <Text>{Item.des}</Text>
+                        <Text>{Item.des ? Item.des :'Việt Nam' }</Text>
                     </View>
                     <TouchableOpacity style={{ backgroundColor: '#FF5F24', width:scale(104), height: 20, justifyContent: 'center', alignItems: 'center', borderRadius: 5, marginTop: 4 }}>
                         <Text style={{ color: '#FFFFFF', fontSize: 10, fontWeight: 'normal', }}>5,200,000 đ/ người</Text>
@@ -80,9 +80,7 @@ const styles = StyleSheet.create({
         elevation: 0.3,
 
         backgroundColor: '#FFFFFF',
-        // marginVertical: 16,
-        // paddingTop: 10,
-        // paddingBottom: 10,
+       
         height: 230,
         marginLeft:15,
         marginVertical: 10

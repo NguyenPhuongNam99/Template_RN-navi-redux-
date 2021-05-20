@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity,StyleSheet } from 'react-native'
+import { verticalScale } from 'react-native-size-matters';
 
 const LocationItem = ({ Item }) => {
     return (
@@ -47,7 +48,7 @@ const LocationItem = ({ Item }) => {
                 <View style={{ paddingTop: 16,alignItems:'flex-end' }}>
                     <View style={{ flexDirection: 'row', paddingBottom: 6 }}>
                         <Image style={{ height: 15, width: 10, marginRight: 5 }} source={require('../../assets/location.png')} />
-                        <Text style={{ color: '#3076FE', fontSize: 12 ,textAlign:'right'}}>Việt Nam</Text>
+                        <Text style={{ color: '#3076FE', fontSize: 12 ,textAlign:'right'}}>  Việt Nam</Text>
                     </View>
                     <TouchableOpacity style={{ backgroundColor: '#FF5F24', height: 27, justifyContent: 'center', alignItems: 'center', width: 130, borderRadius: 5 }}>
                         <Text>4,500,00 đ/người</Text>
@@ -61,7 +62,7 @@ const LocationItem = ({ Item }) => {
 
 const styles=StyleSheet.create({
     block: {
-        height: 238,
+        height:verticalScale(238),
         marginLeft:15,
         marginTop:10,shadowColor: "#000",
         shadowOffset: {
