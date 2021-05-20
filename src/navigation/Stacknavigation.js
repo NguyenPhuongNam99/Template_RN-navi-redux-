@@ -131,6 +131,45 @@ const Stacknavigation = () => {
   );
 }
 
+const HomeStack = ()=>{
+  return(
+     <Stack.Navigator>
+             <Stack.Screen name="Home1" component={Home}  options={{headerShown: false}} />
+
+     {/* <Stack.Screen name="TabNavigation" component={TabNavigation}  options={{headerShown: false}} /> */}
+     <Stack.Screen name="Hotel_Icon1" component={Hotel_Icon}  options={{headerShown: false}}/>
+     <Stack.Screen name="RestaurantIcon1" component={RestaurantIcon}  options={{headerShown: false}}/>
+     <Stack.Screen name="SelectSchedule1" component={SelectSchedule}  options={{headerShown: false}}/>
+     <Stack.Screen name="ScheduleHeader1" component={ScheduleHeader}  options={{headerShown: false}}/>
+     <Stack.Screen name="DestionationPopular1" component={DestionationPopular}  options={{headerShown: false}}/>
+     <Stack.Screen name="LocationDetail1" component={LocationDetail}  options={{headerShown: false}}/>
+    {/* TRUNG DIA DIEM PHO BIEN */}
+      <Stack.Screen name="Destionation12_Head1" component={Destionation12_Head}  options={{headerShown: false}}/> 
+      <Stack.Screen name="LocationPopular1" component={LocationPopular}  options={{headerShown: false}}/>
+
+      <Stack.Screen name="Destionation121" component={Destionation12}  options={{headerShown: false}}/>
+      <Stack.Screen name="HotelResort_Header1" component={HotelResort_Header}  options={{headerShown: false}}/>
+
+
+  </Stack.Navigator>
+  )
+ 
+}
+
+const StackProfile = ()=>{
+  return(
+     <Stack.Navigator>
+  <Stack.Screen name="Profile1" component={Profile}  options={{headerShown: false}} />
+      <Stack.Screen name="MyProfile1" component={MyProfile}  options={{headerShown: false}}/>
+      <Stack.Screen name="Favourite1" component={Favourite}  options={{headerShown: false}}/>
+      <Stack.Screen name="Setting1" component={Setting}  options={{headerShown: false}}/>
+      <Stack.Screen name="Follow1" component={Follow}  options={{headerShown: false}}/>
+
+  </Stack.Navigator>
+  )
+ 
+}
+
 // const App2 =()=>{
 //   return(
 //     <Stack.Navigator >
@@ -150,4 +189,4 @@ const Stacknavigation = () => {
 //   )
 // }
 // export  {App1,App2};
-export default Stacknavigation;
+export {Stacknavigation,HomeStack,StackProfile};

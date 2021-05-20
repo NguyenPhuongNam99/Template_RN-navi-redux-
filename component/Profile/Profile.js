@@ -33,7 +33,7 @@ const Profile = ({ navigation }) => {
             <View style={styles.header}>
                 <Text style={styles.header_title}>Thông tin cá nhân </Text>
             </View>
-            <TouchableOpacity style={styles.block_image} onPress={() => navigation.navigate('MyProfile')}>
+            <TouchableOpacity style={styles.block_image} onPress={() => navigation.navigate('MyProfile1')}>
                 <Image style={styles.image} source={require('../../assets/nam.jpg')} />
                 <Text style={styles.name}>{nameUser? nameUser: 'Nguyễn Phương Namm'}</Text>
 

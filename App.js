@@ -164,7 +164,7 @@ import reducer from './src/reducer';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux'
 import store from './src/store'
-import Stacknavigation from './src/navigation/Stacknavigation'
+import {Stacknavigation} from './src/navigation/Stacknavigation'
 import FirstScreen from './component/FirstScreen'
 const Stack = createStackNavigator();
 

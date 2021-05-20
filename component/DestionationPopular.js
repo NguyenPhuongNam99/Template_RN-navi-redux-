@@ -13,7 +13,7 @@ const DestionationPopular = ({ navigation }) => {
 
     const check = (item) => {
         dispatch({ type: 'LocationPopular', locationpopular: item })
-        navigation.navigate('LocationDetail')
+        navigation.navigate('LocationDetail1')
 
     }
     return (

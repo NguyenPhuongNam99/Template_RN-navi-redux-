@@ -23,6 +23,7 @@ import Profile from '../../component/Profile/Profile'
 // import App2 from '../../src/navigation/Stacknavigation'
 import Notification from '../../component/Notification'
 import App1 from '../../src/navigation/Stacknavigation'
+import {HomeStack ,StackProfile}from '../../src/navigation/Stacknavigation'
 const hello = () => {
   return null
 }
@@ -46,7 +47,7 @@ export default function TabNavigation() {
           tabBarIcon:({focused})=> focused ? <Image source={require('../../assets/ac.png')}/>   :    <Icon name="search" size={19} color="#9A9A9A" />
         
         }} 
-        component={Home}
+        component={HomeStack}
         />
       
         <Tab.Screen name="TabVoucher3"
@@ -65,7 +66,7 @@ export default function TabNavigation() {
           options={{
             tabBarIcon:({focused})=>focused ? <Image source={require('../../assets/ac3.png')} /> : <Image source={require('../../assets/ac45.png')} />
           }}
-        component={Profile} />
+        component={StackProfile} />
 
       </Tab.Navigator>
     

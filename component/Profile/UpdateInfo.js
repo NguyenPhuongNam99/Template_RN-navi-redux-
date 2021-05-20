@@ -19,7 +19,7 @@ const UpdateInfo = ({navigation}) => {
             <View style={styles.container}>
                 <View style={styles.header}>
                     <View style={styles.headerTitle}>
-                        <TouchableOpacity onPress={()=>navigation.navigate('Profile')}>
+                        <TouchableOpacity onPress={()=>navigation.navigate('Profile1')}>
                             <Text>Hủy</Text>
                         </TouchableOpacity>
                         <Text>Sửa thông tin cá nhân</Text>

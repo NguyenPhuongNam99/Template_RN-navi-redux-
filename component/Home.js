@@ -20,7 +20,7 @@ const Home = ({ navigation }) => {
     }
     const checkDestination = (item) => {
         dispatch({ type: 'LocationPopular', locationpopular: item })
-        navigation.navigate('LocationDetail')
+        navigation.navigate('LocationDetail1')
 
     }
 
@@ -270,7 +270,7 @@ const Home = ({ navigation }) => {
                     {/* lịch trình gần đây */}
                     <View style={styles.Discount}>
                         <Text style={styles.discount_title}>Lịch trình gần đây</Text>
-                        <TouchableOpacity onPress={() => navigation.navigate('ScheduleHeader')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('ScheduleHeader1')}>
                             <Text style={styles.discount_title1}>Xem thêm ></Text>
                         </TouchableOpacity>
                     </View>
@@ -288,7 +288,7 @@ const Home = ({ navigation }) => {
                     {/* destination */}
                     <View style={styles.Discount}>
                         <Text style={styles.discount_title}>Địa điểm phổ biến</Text>
-                        <TouchableOpacity onPress={() => navigation.navigate('DestionationPopular')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('DestionationPopular1')}>
                             <Text style={styles.discount_title1}>Xem thêm ></Text>
                         </TouchableOpacity>
                     </View>
@@ -306,7 +306,7 @@ const Home = ({ navigation }) => {
 
                     <View style={styles.Discount}>
                         <Text style={styles.discount_title}>Trải nghiệm nổi bật</Text>
-                        <TouchableOpacity onPress={() => navigation.navigate('Destionation12')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Destionation121')}>
                             <Text style={styles.discount_title1}>Xem thêm ></Text>
                         </TouchableOpacity>
                     </View>
@@ -324,7 +324,7 @@ const Home = ({ navigation }) => {
 
                     <View style={styles.Discount}>
                         <Text style={styles.discount_title}>Điểm đến tháng 12</Text>
-                        <TouchableOpacity onPress={() => navigation.navigate('LocationPopular')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('LocationPopular1')}>
                             <Text style={styles.discount_title1}>Xem thêm ></Text>
                         </TouchableOpacity>
                     </View>
@@ -344,7 +344,7 @@ const Home = ({ navigation }) => {
 
                     <View style={styles.Discount}>
                         <Text style={styles.discount_title}>Khách sạn & Resort</Text>
-                        <TouchableOpacity onPress={() => navigation.navigate('HotelResort_Header')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('HotelResort_Header1')}>
                             <Text style={styles.discount_title1}>Xem thêm ></Text>
                         </TouchableOpacity>
                     </View>
