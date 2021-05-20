@@ -62,6 +62,7 @@ import MyScheduleGo from '../../component/MySchedule/MyScheduleGo'
 import Combo from '../../component/Combo'
 import BookScreen from "../BookScreen";
 import NearSearch from '../../component/SearchNear/NearSearch'
+import Schedule_Item2 from '../../component/Schedule_Item2'
 const Stack = createStackNavigator();
 
 const Stacknavigation = () => {
@@ -77,6 +78,7 @@ const Stacknavigation = () => {
       <Stack.Screen name="UpdateProfile" component={UpdateProfile}  options={{headerShown: false}}/>
       <Stack.Screen name="Createa2" component={Createa2}  options={{headerShown: false}}/>
       <Stack.Screen name="NearSearch" component={NearSearch}  options={{headerShown: false}}/>
+      <Stack.Screen name="Schedule_Item2" component={Schedule_Item2}  options={{headerShown: false}}/>
 
       <Stack.Screen name="Home" component={Home}  options={{headerShown: false}} />
    <Stack.Screen name="Hotel_Icon" component={Hotel_Icon}  options={{headerShown: false}}/>

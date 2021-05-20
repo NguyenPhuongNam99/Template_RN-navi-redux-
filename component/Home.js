@@ -1,16 +1,18 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, FlatList, TextInput, ScrollView ,SafeAreaView} from 'react-native';
+import { View, Text, Image, StyleSheet, FlatList, TextInput, ScrollView, SafeAreaView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import HotelResort_Header from '../component/LocationPopular/HotelResort_Header'
 import { useDispatch } from 'react-redux'
 import { data, voucherdata, sheduleNowData, Desdata, Expe, DiemDen, Hoteldata } from '../Data/HomeData'
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import {ScheduleNowData} from '../Data/ScheduleData'
+import Schedule_Item from '../component/Schedule_Item'
 import {
     responsiveHeight,
     responsiveWidth,
     responsiveFontSize
-  } from "react-native-responsive-dimensions";
+} from "react-native-responsive-dimensions";
 const Home = ({ navigation }) => {
     //data icon Top
     const dispatch = useDispatch();
@@ -52,8 +54,8 @@ const Home = ({ navigation }) => {
         return (
             <TouchableOpacity onPress={() => check(item.id)}>
                 <View style={{ flexDirection: 'column', paddingHorizontal: 11, paddingTop: 29 }}>
-                    <View style={{width:scale(35), height:verticalScale(35)}}>
-                        <Image style={{ width:'100%', height:'100%', marginBottom: 6, marginHorizontal: 4 }} resizeMode='contain' source={item.img} />
+                    <View style={{ width: scale(35), height: verticalScale(35) }}>
+                        <Image style={{ width: '100%', height: '100%', marginBottom: 6, marginHorizontal: 4 }} resizeMode='contain' source={item.img} />
 
                     </View>
                     <Text style={{ color: '#FFFFFF', fontSize: 12, fontWeight: '500', lineHeight: 14 }}>{item.title}</Text>
@@ -123,7 +125,7 @@ const Home = ({ navigation }) => {
 
     const Destination = ({ Destination_item, checkDestination }) => {
         return (
-            <TouchableOpacity onPress={checkDestination} style={{marginLeft:15}}>
+            <TouchableOpacity onPress={checkDestination} style={{ marginLeft: 15 }}>
                 <Image style={{ width: 150, height: 200, borderRadius: 5 }} source={Destination_item.image} />
                 <Text style={{ position: 'absolute', bottom: 8, left: 19, color: '#FFFFFF', fontSize: 14, fontWeight: '600' }}>{Destination_item.name}</Text>
             </TouchableOpacity>
@@ -136,7 +138,7 @@ const Home = ({ navigation }) => {
 
     const Experient = ({ Experient_item }) => {
         return (
-            <View style={{marginLeft:15}}>
+            <View style={{ marginLeft: 15 }}>
                 <View>
                     <Image style={{ width: 200, height: 200, borderRadius: 5 }} source={Experient_item.image} />
 
@@ -160,7 +162,7 @@ const Home = ({ navigation }) => {
     }
     const Destination1 = ({ Destination1_item }) => {
         return (
-            <View style={{marginLeft:15}}>
+            <View style={{ marginLeft: 15 }}>
                 <Image style={{ width: 150, height: 200, borderRadius: 5 }} source={Destination1_item.imagedd} />
                 <Text style={{ position: 'absolute', bottom: 8, left: 19, fontSize: 14, color: '#FFFFFF', fontWeight: '600' }}>{Destination1_item.namedd}</Text>
             </View>
@@ -171,7 +173,7 @@ const Home = ({ navigation }) => {
 
     const Hotel = ({ HotelItem, check }) => {
         return (
-            <TouchableOpacity onPress={check} style={{marginLeft:15}}>
+            <TouchableOpacity onPress={check} style={{ marginLeft: 15 }}>
                 <Image style={{ width: 160, height: 150, borderRadius: 5, }} source={HotelItem.image} />
                 <View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
@@ -179,7 +181,7 @@ const Home = ({ navigation }) => {
                         <Image style={{ width: 62, height: 10, borderRadius: 5, marginTop: 4 }} source={HotelItem.comment} />
 
                     </View>
-                    <Text style={{ fontSize: 14, color: '#000000', fontWeight: '500'}}>{HotelItem.name}</Text>
+                    <Text style={{ fontSize: 14, color: '#000000', fontWeight: '500' }}>{HotelItem.name}</Text>
                     <View style={{ flexDirection: 'row', marginVertical: 2 }}>
                         <Image style={{ width: 12, height: 14, borderRadius: 14 }}
 
@@ -196,79 +198,79 @@ const Home = ({ navigation }) => {
         )
     }
     return (
-        <SafeAreaView style={{flex:1}}>
-        <View>
-            <ScrollView>
-                <View style={styles.container}>
-                   
-                    <View style={styles.topokk}>
-        <Image style={{ width: '100%', height: '100%' }} source={require('../assets/a.png')} />
-        <View style={{ position: 'absolute', top: verticalScale(20), paddingHorizontal: moderateScale(15) }}>
-          <Text style={{ color: '#FFFFFF', fontSize: responsiveFontSize(2), fontWeight: 'bold' }}>Khám Phá</Text>
-          <Text style={{ color: '#FFFFFF', fontSize: responsiveFontSize(2), fontWeight: 'normal' }}>Lên lịch trình, đặt vé máy bay, khách sạn, tìm kiếm
-          các tour lịch và các hoạt động vui chơi giải trí
+        <SafeAreaView style={{ flex: 1 }}>
+            <View>
+                <ScrollView>
+                    <View style={styles.container}>
+
+                        <View style={styles.topokk}>
+                            <Image style={{ width: '100%', height: '100%' }} source={require('../assets/a.png')} />
+                            <View style={{ position: 'absolute', top: verticalScale(20), paddingHorizontal: moderateScale(15) }}>
+                                <Text style={{ color: '#FFFFFF', fontSize: responsiveFontSize(2), fontWeight: 'bold' }}>Khám Phá</Text>
+                                <Text style={{ color: '#FFFFFF', fontSize: responsiveFontSize(2), fontWeight: 'normal' }}>Lên lịch trình, đặt vé máy bay, khách sạn, tìm kiếm
+                                các tour lịch và các hoạt động vui chơi giải trí
           </Text>
-        </View>
-        <View style={{ position: 'absolute', top: verticalScale(80), }}>
-          <FlatList
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-            data={data}
-            keyExtractor={(item) => item.id.toString()}
-            renderItem={({ item }) =>
-              <Item item={item} />
-            }
-          />
-        
-        </View>
-        <View style={{position:'absolute',bottom:verticalScale(-19),width:'100%'}}>
-            <View style={{marginHorizontal:16}}>
-                <TextInput
-              style={styles.input}
-              placeholder='Bạn muốn đi đâu ?'
-              placeholderTextColor='#B6B6B6'
+                            </View>
+                            <View style={{ position: 'absolute', top: verticalScale(80), }}>
+                                <FlatList
+                                    horizontal={true}
+                                    showsHorizontalScrollIndicator={false}
+                                    data={data}
+                                    keyExtractor={(item) => item.id.toString()}
+                                    renderItem={({ item }) =>
+                                        <Item item={item} />
+                                    }
+                                />
 
-            />
-            <Image style={{ position: 'absolute', top: 10, left: 10, zIndex: 100 }} source={require('../assets/search.png')} />
-            </View>
-          
-          </View>
-          
+                            </View>
+                            <View style={{ position: 'absolute', bottom: verticalScale(-19), width: '100%' }}>
+                                <View style={{ marginHorizontal: 16 }}>
+                                    <TextInput
+                                        style={styles.input}
+                                        placeholder='Bạn muốn đi đâu ?'
+                                        placeholderTextColor='#B6B6B6'
 
-      </View>
-                    <View style={styles.header_title}>
-                        <View style={{ width: '45%' }}>
-                            <TouchableOpacity style={styles.touchable} onPress={() => navigation.navigate('ScreenSuggest')}>
-                                <Text style={styles.touchable_title}>Xem gợi ý </Text>
+                                    />
+                                    <Image style={{ position: 'absolute', top: 10, left: 10, zIndex: 100 }} source={require('../assets/search.png')} />
+                                </View>
+
+                            </View>
+
+
+                        </View>
+                        <View style={styles.header_title}>
+                            <View style={{ width: '45%' }}>
+                                <TouchableOpacity style={styles.touchable} onPress={() => navigation.navigate('ScreenSuggest')}>
+                                    <Text style={styles.touchable_title}>Xem gợi ý </Text>
+                                </TouchableOpacity>
+                            </View>
+                            <View style={{ width: '45%' }}>
+                                <TouchableOpacity style={styles.touchable} onPress={() => navigation.navigate('Createa2')}>
+                                    <Text style={styles.touchable_title}>Tạo lịch trình </Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+
+                        {/* khuyến mại */}
+                        <View style={styles.Discount}>
+                            <Text style={styles.discount_title}>Khuyến mại</Text>
+                            <TouchableOpacity onPress={() => navigation.navigate('DiscountHeader')}>
+                                <Text style={styles.discount_title1}>Xem thêm ></Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={{ width: '45%' }}>
-                            <TouchableOpacity style={styles.touchable} onPress={() => navigation.navigate('Createa2')}>
-                                <Text style={styles.touchable_title}>Tạo lịch trình </Text>
-                            </TouchableOpacity>
+                        <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                            <FlatList
+                                data={voucherdata}
+                                horizontal={true}
+                                showsHorizontalScrollIndicator={false}
+                                keyExtractor={(item) => item.id.toString()}
+                                renderItem={({ item }) =>
+                                    <Voucher voucher_item={item} />
+                                }
+                            />
                         </View>
-                    </View>
-
-                    {/* khuyến mại */}
-                    <View style={styles.Discount}>
-                        <Text style={styles.discount_title}>Khuyến mại</Text>
-                        <TouchableOpacity onPress={() => navigation.navigate('DiscountHeader')}>
-                            <Text style={styles.discount_title1}>Xem thêm ></Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={{ marginHorizontal: 10, marginTop: 10 }}>
-                        <FlatList
-                            data={voucherdata}
-                            horizontal={true}
-                            showsHorizontalScrollIndicator={false}
-                            keyExtractor={(item) => item.id.toString()}
-                            renderItem={({ item }) =>
-                                <Voucher voucher_item={item} />
-                            }
-                        />
-                    </View>
-                    {/* lịch trình gần đây */}
-                    <View style={styles.Discount}>
+                        {/* lịch trình gần đây */}
+                        {/* <View style={styles.Discount}>
                         <Text style={styles.discount_title}>Lịch trình gần đây</Text>
                         <TouchableOpacity onPress={() => navigation.navigate('ScheduleHeader')}>
                             <Text style={styles.discount_title1}>Xem thêm ></Text>
@@ -284,101 +286,122 @@ const Home = ({ navigation }) => {
                                 <SheduleNow sheduleNow_item={item} />
                             }
                         />
-                    </View>
-                    {/* destination */}
-                    <View style={styles.Discount}>
-                        <Text style={styles.discount_title}>Địa điểm phổ biến</Text>
-                        <TouchableOpacity onPress={() => navigation.navigate('DestionationPopular')}>
-                            <Text style={styles.discount_title1}>Xem thêm ></Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={{  marginTop: 10 }}>
-                        <FlatList
-                            data={Desdata}
-                            horizontal={true}
-                            showsHorizontalScrollIndicator={false}
-                            keyExtractor={(item) => item.id.toString()}
-                            renderItem={({ item }) =>
-                                <Destination Destination_item={item} checkDestination={() => checkDestination(item)} />
-                            }
-                        />
-                    </View>
-
-                    <View style={styles.Discount}>
-                        <Text style={styles.discount_title}>Trải nghiệm nổi bật</Text>
-                        <TouchableOpacity onPress={() => navigation.navigate('Destionation12')}>
-                            <Text style={styles.discount_title1}>Xem thêm ></Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={{ marginTop: 10 }}>
-                        <FlatList
-                            data={Expe}
-                            horizontal={true}
-                            showsHorizontalScrollIndicator={false}
-                            keyExtractor={(item) => item.id.toString()}
-                            renderItem={({ item }) =>
-                                <Experient Experient_item={item} />
-                            }
-                        />
-                    </View>
-
-                    <View style={styles.Discount}>
-                        <Text style={styles.discount_title}>Điểm đến tháng 12</Text>
-                        <TouchableOpacity onPress={() => navigation.navigate('LocationPopular')}>
-                            <Text style={styles.discount_title1}>Xem thêm ></Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={{  marginTop: 10 }}>
-                        <FlatList
-                            data={DiemDen}
-                            horizontal={true}
-                            showsHorizontalScrollIndicator={false}
-                            keyExtractor={(item) => item.id.toString()}
-                            renderItem={({ item }) =>
-                                <Destination1 Destination1_item={item} />
-                            }
-                        />
-                    </View>
+                    </View> */}
+                        <View style={styles.Discount}>
+                            <Text style={styles.discount_title}>Lịch trình của tôi</Text>
+                            <TouchableOpacity onPress={() => navigation.navigate('ScheduleHeader')}>
+                                <Text style={styles.discount_title1}>Xem thêm ></Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{ marginTop: 10 }}>
+                            <FlatList
+                                data={ScheduleNowData}
+                                horizontal={true}
+                                showsHorizontalScrollIndicator={false}
+                                keyExtractor={(item) => item.id.toString()}
+                                renderItem={({ item }) =>
+                                    <Schedule_Item Item={item} />
+                                }
+                            />
+                        </View>
 
 
+                        {/* destination */}
+                        <View style={styles.Discount}>
+                            <Text style={styles.discount_title}>Địa điểm phổ biến</Text>
+                            <TouchableOpacity onPress={() => navigation.navigate('DestionationPopular')}>
+                                <Text style={styles.discount_title1}>Xem thêm ></Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{ marginTop: 10 }}>
+                            <FlatList
+                                data={Desdata}
+                                horizontal={true}
+                                showsHorizontalScrollIndicator={false}
+                                keyExtractor={(item) => item.id.toString()}
+                                renderItem={({ item }) =>
+                                    <Destination Destination_item={item} checkDestination={() => checkDestination(item)} />
+                                }
+                            />
+                        </View>
 
-                    <View style={styles.Discount}>
-                        <Text style={styles.discount_title}>Khách sạn & Resort</Text>
-                        <TouchableOpacity onPress={() => navigation.navigate('HotelResort_Header')}>
-                            <Text style={styles.discount_title1}>Xem thêm ></Text>
-                        </TouchableOpacity>
+                        <View style={styles.Discount}>
+                            <Text style={styles.discount_title}>Trải nghiệm nổi bật</Text>
+                            <TouchableOpacity onPress={() => navigation.navigate('Destionation12')}>
+                                <Text style={styles.discount_title1}>Xem thêm ></Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{ marginTop: 10 }}>
+                            <FlatList
+                                data={Expe}
+                                horizontal={true}
+                                showsHorizontalScrollIndicator={false}
+                                keyExtractor={(item) => item.id.toString()}
+                                renderItem={({ item }) =>
+                                    <Experient Experient_item={item} />
+                                }
+                            />
+                        </View>
+
+                        <View style={styles.Discount}>
+                            <Text style={styles.discount_title}>Điểm đến tháng 12</Text>
+                            <TouchableOpacity onPress={() => navigation.navigate('LocationPopular')}>
+                                <Text style={styles.discount_title1}>Xem thêm ></Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{ marginTop: 10 }}>
+                            <FlatList
+                                data={DiemDen}
+                                horizontal={true}
+                                showsHorizontalScrollIndicator={false}
+                                keyExtractor={(item) => item.id.toString()}
+                                renderItem={({ item }) =>
+                                    <Destination1 Destination1_item={item} />
+                                }
+                            />
+                        </View>
+
+
+
+                        <View style={styles.Discount}>
+                            <Text style={styles.discount_title}>Khách sạn & Resort</Text>
+                            <TouchableOpacity onPress={() => navigation.navigate('HotelResort_Header')}>
+                                <Text style={styles.discount_title1}>Xem thêm ></Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{ marginTop: 10 }}>
+                            <FlatList
+                                data={Hoteldata}
+                                horizontal={true}
+                                showsHorizontalScrollIndicator={false}
+                                keyExtractor={(item) => item.id.toString()}
+                                renderItem={({ item }) =>
+                                    <Hotel HotelItem={item} check={() => checkHotel(item)} />
+                                }
+                            />
+                        </View>
+
+
+
                     </View>
-                    <View style={{ marginHorizontal: 10, marginTop: 10 }}>
-                        <FlatList
-                            data={Hoteldata}
-                            horizontal={true}
-                            showsHorizontalScrollIndicator={false}
-                            keyExtractor={(item) => item.id.toString()}
-                            renderItem={({ item }) =>
-                                <Hotel HotelItem={item} check={() => checkHotel(item)} />
-                            }
-                        />
-                    </View>
-
-
-
+                </ScrollView>
+                <View style={{
+                    width: scale(50), height: verticalScale(50), position: 'absolute',
+                    bottom: verticalScale(50), right: verticalScale(48),
+                }}>
+                    <Image style={{
+                        zIndex: 1000
+                    }} source={require('../assets/e.png')} />
                 </View>
-            </ScrollView>
-            <View style={{width:scale(50),height:verticalScale(50) ,position: 'absolute',
-                bottom:verticalScale(50) , right:verticalScale(48),}}>
-                 <Image style={{
-               zIndex: 1000
-            }} source={require('../assets/e.png')} />
+
             </View>
-           
-        </View>
         </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        
+
     },
     image: {
         width: '100%',
@@ -470,7 +493,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-      
+
         elevation: 2,
     },
     header_shedule: {
@@ -495,21 +518,21 @@ const styles = StyleSheet.create({
     }
     ,
     topokk: {
-    height: verticalScale(213),
-    backgroundColor: 'green'
-  },
-  block: {
-    height: verticalScale(104),
-    marginTop: verticalScale(50),
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
+        height: verticalScale(213),
+        backgroundColor: 'green'
+    },
+    block: {
+        height: verticalScale(104),
+        marginTop: verticalScale(50),
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
 
-  },
-  child: {
-    height: verticalScale(104),
-    backgroundColor: 'orange',
-    width: scale(104)
-  },
+    },
+    child: {
+        height: verticalScale(104),
+        backgroundColor: 'orange',
+        width: scale(104)
+    },
 })
 export default Home
 

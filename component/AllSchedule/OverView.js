@@ -69,8 +69,8 @@ const OverView = ({ navigation }) => {
                         <Image style={styles.avatar} source={require('../../assets/nam.jpg')} />
                     </View>
                 </View>
-                <TouchableOpacity onPress={() => navigation.goBack()} style={{ position: 'absolute', top: '2%', left: 15, zIndex: 1000 }}>
-                    <Image style={{ width: 9, height: 12 }} source={require('../../assets/back1.png')} />
+                <TouchableOpacity onPress={() => navigation.goBack()} style={{ position: 'absolute', top: '2%', left: 15, zIndex: 1000,width: 9, height: 12  }}>
+                    <Image style={{width:'100%',height:'100%'}} source={require('../../assets/back11.png')} />
                 </TouchableOpacity>
 
                 <View style={{ flex: 1 }}>
@@ -80,15 +80,7 @@ const OverView = ({ navigation }) => {
                     </View>
 
                     <View style={styles.option}>
-                        {/* {
-                            data.map((item) => (
-                                <ScrollView>
-                                    
-                                </ScrollView>
-                              
-                            )
-                            )
-                        } */}
+                       
                         <FlatList 
                             data={data}
                             showsHorizontalScrollIndicator={false}
