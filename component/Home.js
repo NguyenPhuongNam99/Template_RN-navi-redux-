@@ -269,7 +269,7 @@ const Home = ({ navigation }) => {
                                 }
                             />
                         </View>
-                        {/* lịch trình gần đây */}
+                     
                         {/* <View style={styles.Discount}>
                         <Text style={styles.discount_title}>Lịch trình gần đây</Text>
                         <TouchableOpacity onPress={() => navigation.navigate('ScheduleHeader1')}>
@@ -286,8 +286,26 @@ const Home = ({ navigation }) => {
                                 <SheduleNow sheduleNow_item={item} />
                             }
                         />
-                    </View>
-                    {/* destination */}
+                    </View> */}
+
+                    <View style={styles.Discount}>
+                            <Text style={styles.discount_title}>Lịch trình gần đây</Text>
+                            <TouchableOpacity onPress={() => navigation.navigate('ScheduleHeader')}>
+                                <Text style={styles.discount_title1}>Xem thêm ></Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View >
+                            <FlatList
+                                data={ScheduleNowData}
+                                horizontal={true}
+                                showsHorizontalScrollIndicator={false}
+                                keyExtractor={(item) => item.id.toString()}
+                                renderItem={({ item }) =>
+                                    <Schedule_Item Item={item} />
+                                }
+                            />
+                        </View>
+                  
                     <View style={styles.Discount}>
                         <Text style={styles.discount_title}>Địa điểm phổ biến</Text>
                         <TouchableOpacity onPress={() => navigation.navigate('DestionationPopular1')}>
@@ -384,7 +402,7 @@ const Home = ({ navigation }) => {
                             <Text style={styles.discount_title1}>Xem thêm ></Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+                    <View style={{  marginTop: 10 }}>
                         <FlatList
                             data={Hoteldata}
                             horizontal={true}
