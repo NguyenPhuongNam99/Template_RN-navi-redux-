@@ -5,7 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 // import HomeScreen from './src/HomeScreen'
 // import BookScreen from './src/BookScreen'
 import { NavigationContainer } from '@react-navigation/native';
-
+import ScreenSuggestDefine from '../../component/CteateSchedule/ScreenSuggestDefine'
 // import TestChuyenTab from '../TestChuyenTab';
 import Createa2 from '../../component/CteateSchedule/Createa2'
 import Home from '../../component/Home';
@@ -126,6 +126,7 @@ const Stacknavigation = () => {
       <Stack.Screen name="DetailSchedule" component={DetailSchedule}  options={{headerShown: false}}/>
       <Stack.Screen name="TimeMySchedule" component={TimeMySchedule}  options={{headerShown: false}}/>
       <Stack.Screen name="MyScheduleGo" component={MyScheduleGo}  options={{headerShown: false}}/>
+      <Stack.Screen name="ScreenSuggestDefine" component={ScreenSuggestDefine}  options={{headerShown: false}}/>
 
     </Stack.Navigator>
     // </NavigationContainer> 8678678

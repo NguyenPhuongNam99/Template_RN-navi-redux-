@@ -248,7 +248,7 @@ const ScreenSuggest = ({ navigation }) => {
 
                     </View>
                     <View >
-                        <TouchableOpacity style={{ flex: 1, justifyContent: 'center', alignItems: 'center', height: 35, backgroundColor: '#FF5F24', borderRadius: 5, marginHorizontal: 15 }}>
+                        <TouchableOpacity onPress={()=>navigation.navigate('ScreenSuggestDefine')}  style={{ flex: 1, justifyContent: 'center', alignItems: 'center', height: 35, backgroundColor: '#FF5F24', borderRadius: 5, marginHorizontal: 15 }}>
                             <Text style={{ color: '#FFFFFF', fontSize: 14 }}>Xem gợi ý</Text>
                         </TouchableOpacity>
                     </View>

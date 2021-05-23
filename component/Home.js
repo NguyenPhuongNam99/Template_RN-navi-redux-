@@ -360,7 +360,7 @@ const Home = ({ navigation }) => {
                         />
                     </View>
 
-                        <View style={styles.Discount}>
+                        {/* <View style={styles.Discount}>
                             <Text style={styles.discount_title}>Trải nghiệm nổi bật</Text>
                             <TouchableOpacity onPress={() => navigation.navigate('Destionation12')}>
                                 <Text style={styles.discount_title1}>Xem thêm ></Text>
@@ -376,9 +376,9 @@ const Home = ({ navigation }) => {
                                     <Experient Experient_item={item} />
                                 }
                             />
-                        </View>
+                        </View> */}
 
-                        <View style={styles.Discount}>
+                        {/* <View style={styles.Discount}>
                             <Text style={styles.discount_title}>Điểm đến tháng 12</Text>
                             <TouchableOpacity onPress={() => navigation.navigate('LocationPopular')}>
                                 <Text style={styles.discount_title1}>Xem thêm ></Text>
@@ -394,7 +394,7 @@ const Home = ({ navigation }) => {
                                     <Destination1 Destination1_item={item} />
                                 }
                             />
-                        </View>
+                        </View> */}
 
                     <View style={styles.Discount}>
                         <Text style={styles.discount_title}>Khách sạn & Resort</Text>
