@@ -148,7 +148,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 // import HomeScreen from './src/HomeScreen'
 // import BookScreen from './src/BookScreen'
 // import { NavigationContainer } from '@react-navigation/native';
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer,DarkTheme } from "@react-navigation/native";
 // import TabNavigation from './src/navigation/TabNavigation'
 // import BottomTabNavigator from "./navigation/TabNavigator";
 // import TestChuyenTab from '../TestChuyenTab';
@@ -168,6 +168,7 @@ import store from './src/store'
 import FirstScreen from './component/FirstScreen'
 import {StackLogin }from './src/navigation/Stacknavigation'
 import TabNavigation from './src/navigation/TabNavigation'
+import ChangeTheme from './component/Practice/ChangeTheme'
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -184,11 +185,11 @@ const App = () => {
   return (
 
     <Provider store={store}>
-      <NavigationContainer>
+      {/* <NavigationContainer>
 
        <TabNavi />
        
-      </NavigationContainer>
+      </NavigationContainer> */}
    </Provider>
 
     // <NavigationContainer>
