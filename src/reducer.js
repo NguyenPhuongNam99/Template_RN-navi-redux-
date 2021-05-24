@@ -1,3 +1,4 @@
+import { ActionSheetIOS } from "react-native"
 import { act } from "react-test-renderer"
 import {FisrtDay_Data} from '../Data/OverViewDay_Data'
 const inital ={
@@ -8,7 +9,9 @@ const inital ={
     // peopleMidle:{name:'trẻ em',countMidle:0}
     overviewDay:FisrtDay_Data,
     item_tym:[],
-    statusAction:''
+    statusAction:'',
+    checkFollow : false,
+    addFollow:[]
 }
 const reducer =(state = inital,action)=>{
     switch(action.type){
@@ -149,6 +152,19 @@ const reducer =(state = inital,action)=>{
         case 'NAME_USER':{
             return{
                 ...state,nameUser:action.nameUser
+            }
+        }
+        case 'UPDATECHECK':{
+            return{
+                ...state,checkFollow:!state.checkFollow
+            }
+        }
+        case 'ADDFOLLOW':{
+            return{
+                ...state,
+                addFollow:[
+                    ...state.addFollow,action.item
+                ]
             }
         }
         default :
