@@ -79,7 +79,7 @@ const FirstDay = ({navigation}) => {
             </TouchableOpacity>
              <View style={styles.touchableEnd}>
                 <Text style={styles.price}>2,600,000 đ/người</Text>
-                <TouchableOpacity style={{ backgroundColor: '#FF5F24', width: 71, height: 25, justifyContent: 'center', alignItems: 'center', borderRadius: 5 }}>
+                <TouchableOpacity onPress={()=>navigation.navigate('MapViewTracking')} style={{ backgroundColor: '#FF5F24', width: 71, height: 25, justifyContent: 'center', alignItems: 'center', borderRadius: 5 }}>
                     <Text style={styles.order}>Đặt ngay</Text>
                 </TouchableOpacity>
             </View>

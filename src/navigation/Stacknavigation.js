@@ -63,6 +63,7 @@ import Combo from '../../component/Combo'
 import BookScreen from "../BookScreen";
 import NearSearch from '../../component/SearchNear/NearSearch'
 import Schedule_Item2 from '../../component/Schedule_Item2'
+import MapViewTracking from '../../component/CteateSchedule/MapViewTracking'
 const Stack = createStackNavigator();
 
 const Stacknavigation = () => {
@@ -127,6 +128,7 @@ const Stacknavigation = () => {
       <Stack.Screen name="TimeMySchedule" component={TimeMySchedule}  options={{headerShown: false}}/>
       <Stack.Screen name="MyScheduleGo" component={MyScheduleGo}  options={{headerShown: false}}/>
       <Stack.Screen name="ScreenSuggestDefine" component={ScreenSuggestDefine}  options={{headerShown: false}}/>
+      <Stack.Screen name="MapViewTracking" component={MapViewTracking}  options={{headerShown: false}}/>
 
     </Stack.Navigator>
     // </NavigationContainer> 8678678
