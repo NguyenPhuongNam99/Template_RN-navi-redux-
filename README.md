@@ -43,7 +43,9 @@ project có ndkVersion :...... ===>tìm version này trong android studio và th
 ![image](https://user-images.githubusercontent.com/73121884/118256847-2153ae80-b4d8-11eb-881a-b2abb1992cdf.png)
 ==>nhìn version trong project React native của mình và thiết lập version đó trong android studio
               
-              
+ Hoặc thử cách sau : Thêm đường dẫn ndk vào project của mình ( thêm vào treong file local.property)
+ ndk.dir=C\:\\Users\\HYDRO\\AppData\\Local\\Android\\Sdk\\ndk\\20.1.5948944
+==>20.1 .... => là version của project mình trong file build.gradle
               
  4 Lỗi khi build Project
  ERROR : The specified Android SDK Build Tools version (25.0.0) is ignored, as it is below the minimum supported version (29.0.2) for Android Gradle Plugin 4.0.1.
