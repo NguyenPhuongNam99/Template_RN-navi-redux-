@@ -103,7 +103,9 @@ lưu ý packed name trong firebase phải trùng với packed name trong project
 8 spawnSync ./gradlew EACCES error when running react native project on emulator udara
 
 solved : chmod 755 android/gradlew 
-lhttps://stackoverflow.com/questions/54541734/spawnsync-gradlew-eacces-error-when-running-react-native-project-on-emulator-u
+
+
+https://stackoverflow.com/questions/54541734/spawnsync-gradlew-eacces-error-when-running-react-native-project-on-emulator-u
 
 
    
